@@ -1,0 +1,142 @@
+@import "response.scss";
+
+// "extra-small": 767px,
+// "small": 1023px,
+// "medium": 1279px,
+// "large": 1339px,
+// "xlarge": 1599px,
+// "xxlarge": 1919px,
+// "xxxlarge": 1920px,
+
+.work-wp {
+  max-width: 1920px;
+  margin: 16px;
+
+  @include for-size(small) {
+    margin: 32px;
+  }
+
+  .work-area {
+    // card 영역
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    // justify-content: center;
+    justify-content: space-evenly;
+    .work-card {
+      width: 328px;
+      height: 492px;
+      // transition: all 0.3s ease-in-out;
+      border-radius: 16px;
+      opacity: 0;
+      &.odd {
+        transform: translateY(60px);
+      }
+      &.even {
+        transform: translateY(-60px);
+      }
+      &.onShow {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+
+      @include for-size(extra-small) {
+        width: 336px;
+        height: 504px;
+      }
+      @include for-size(small) {
+        width: 299px;
+        height: 448px;
+      }
+      @include for-size(medium) {
+        width: 280px;
+        height: 420px;
+      }
+      @include for-size(large) {
+        width: 320px;
+        height: 450px;
+      }
+      @include for-size(xlarge) {
+        width: 280px;
+        height: 423px;
+      }
+      @include for-size(xxlarge) {
+        width: 280px;
+        height: 424px;
+      }
+      @include for-size(xxxlarge) {
+      }
+    }
+  }
+
+  // work together 영역
+  .work-together-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .work-together-content {
+      border: 1px solid red;
+      width: 280px;
+      height: 124px;
+
+      @include for-size(extra-small) {
+        width: 280px;
+        height: 124px;
+      }
+      @include for-size(small) {
+        width: 664px;
+        height: 124px;
+      }
+      @include for-size(medium) {
+        width: 728px;
+        height: 91px;
+      }
+      @include for-size(large) {
+        width: 940px;
+        height: 91px;
+      }
+      @include for-size(xlarge) {
+        width: 952px;
+        height: 175px;
+      }
+      @include for-size(xxlarge) {
+        width: 1120px;
+        height: 196px;
+      }
+      @include for-size(xxxlarge) {
+        width: 1400px;
+        height: 124px;
+      }
+    }
+  }
+
+  // work together 영역
+  .more-project-area {
+    .more-project-content {
+      border: 1px solid red;
+      height: 169px;
+      @include for-size(extra-small) {
+        height: 169px;
+      }
+      @include for-size(small) {
+        height: 256px;
+      }
+      @include for-size(medium) {
+        height: 156px;
+      }
+      @include for-size(large) {
+        height: 185px;
+      }
+      @include for-size(xlarge) {
+        height: 314px;
+      }
+      @include for-size(xxlarge) {
+        height: 335px;
+      }
+      @include for-size(xxxlarge) {
+        max-width: 1856px;
+        height: 335px;
+      }
+    }
+  }
+}

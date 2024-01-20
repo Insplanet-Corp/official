@@ -1,48 +1,10 @@
-.wp-router {
-  border: 1px solid red;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  overflow: hidden;
+.router-wp {
+}
+.container-wp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .container {
-  background: #fff;
-  border: 1px solid blue;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 30px;
-  bottom: 0;
+  /* border: 1px solid blue; */
 }
-header {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
-}
-/* 슬라이드 START */
-/* slide right */
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: transform 0.6s cubic-bezier(0.11, 1, 0.53, 1.02);
-}
-.slide-right-enter-from {
-  transform: translateX(100%);
-}
-.slide-right-leave-to {
-  transform: translateX(-100%);
-}
-/* slide left */
-.slide-left-enter-active,
-.slide-left-leave-active {
-  transition: transform 0.6s cubic-bezier(0.11, 1, 0.53, 1.02);
-}
-.slide-left-enter-from {
-  transform: translateX(-100%);
-}
-.slide-left-leave-to {
-  transform: translateX(100%);
-}
-/* 슬라이드 END */

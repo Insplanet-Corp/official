@@ -1,47 +1,53 @@
 <template>
-  <header>
-    <nav>
-      <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/about">About</RouterLink>
-      <RouterLink to="/portfolio">Portfolio</RouterLink>
-    </nav>
-  </header>
-
-  <div class="wp-router">
-    <RouterView v-slot="{ Component }">
-      <transition :name="transitionName">
-        <component :is="Component" class="container" />
-      </transition>
-    </RouterView>
+  <div class="router-wp">
+    <ContentLayout>
+      <RouterView v-slot="{ Component }">
+        <div :class="transitionClass">
+          <Transition
+            :name="transitionName"
+            @before-enter="onBeforeEnter"
+            @after-enter="onAfterEnter"
+          >
+            <component :is="Component" class="container" />
+          </Transition>
+        </div>
+      </RouterView>
+    </ContentLayout>
   </div>
 </template>
 
 <script setup>
-import { watch, ref } from 'vue'
-import { RouterLink, RouterView, useRoute } from 'vue-router'
-let transitionName = ref('none')
-let isGoBack = false
-const route = useRoute()
-// window.addEventlistener('popstate', () => {
-//   isGoBack = true
-// })
+import { watch, ref } from "vue";
+import { RouterLink, RouterView, useRoute } from "vue-router";
+import ContentLayout from "./layouts/ContentLayout.vue";
+
+const transitionName = ref("none");
+const transitionClass = ref("transition-wp");
+let isGoBack = false;
+
+const route = useRoute();
 
 watch(
   () => route.name,
   (to, from) => {
-    // 우선 효과 없는 상태로 초기화
-    transitionName.value = 'none'
+    transitionName.value = "none";
     if (isGoBack) {
-      // 뒤로가기
-      transitionName.value = 'slide-left'
-      isGoBack = false
+      transitionName.value = "slide-left";
+      isGoBack = false;
     } else {
-      // 페이지 이동
-      if (from === undefined) return // 새로고침인 경우
-      transitionName.value = 'slide-right'
+      if (from === undefined) return;
+      transitionName.value = "slide-right";
     }
   }
-)
+);
+
+const onBeforeEnter = () => {
+  transitionClass.value = "transition-wp onSlide";
+};
+
+const onAfterEnter = () => {
+  transitionClass.value = "transition-wp";
+};
 </script>
 
 <style></style>

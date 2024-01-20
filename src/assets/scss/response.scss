@@ -1,0 +1,52 @@
+// 미디어 쿼리를 위한 변수 설정
+$breakpoints: (
+  "extra-small": 767px,
+  "small": 1023px,
+  "medium": 1279px,
+  "large": 1339px,
+  "xlarge": 1599px,
+  "xxlarge": 1919px,
+  "xxxlarge": 1920px,
+);
+
+// 미디어 쿼리를 생성하는 mixin
+@mixin for-size($size) {
+  $breakpoint: map-get($breakpoints, $size);
+
+  @if $breakpoint {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+// 각 구간 해상도에 따른 스타일 적용
+body {
+  @include for-size("extra-small") {
+    // 0 ~ 767px 스타일
+  }
+
+  @include for-size("small") {
+    // 768 ~ 1023px 스타일
+  }
+
+  @include for-size("medium") {
+    // 1024 ~ 1279px 스타일
+  }
+
+  @include for-size("large") {
+    // 1280 ~ 1339px 스타일
+  }
+
+  @include for-size("xlarge") {
+    // 1440 ~ 1599px 스타일
+  }
+
+  @include for-size("xxlarge") {
+    // 1600 ~ 1919px 스타일
+  }
+
+  @include for-size("xxxlarge") {
+    // 1920px 이상 스타일
+  }
+}

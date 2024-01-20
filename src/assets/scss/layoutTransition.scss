@@ -1,0 +1,43 @@
+/* 슬라이드 START */
+/* slide right */
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: transform 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
+}
+.slide-right-enter-from {
+  transform: translateX(100%);
+}
+.slide-right-leave-to {
+  transform: translateX(-100%);
+}
+/* slide left */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: transform 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
+}
+.slide-left-enter-from {
+  transform: translateX(-100%);
+}
+.slide-left-leave-to {
+  transform: translateX(100%);
+}
+/* 슬라이드 END */
+
+.content-area {
+  .transition-wp {
+    position: relative;
+    &.onSlide {
+      width: 100%;
+      overflow: hidden;
+      > div {
+        position: absolute;
+        width: 100%;
+      }
+      .slide-right-enter-active {
+        position: relative;
+      }
+    }
+  }
+  .container {
+  }
+}
