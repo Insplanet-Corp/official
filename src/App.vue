@@ -20,12 +20,14 @@
 import { watch, ref } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import ContentLayout from "./layouts/ContentLayout.vue";
+// import { useOfficialStore } from "@/stores/official";
 
 const transitionName = ref("none");
 const transitionClass = ref("transition-wp");
 let isGoBack = false;
 
 const route = useRoute();
+// const officialStore = useOfficialStore();
 
 watch(
   () => route.name,

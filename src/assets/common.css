@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  max-width: 1920px;
+  margin: auto;
 }
 .container {
   /* border: 1px solid blue; */

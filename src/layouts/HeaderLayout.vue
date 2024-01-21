@@ -9,15 +9,4 @@
     </nav>
   </header>
 </template>
-<style lang="scss" scoped>
-header {
-  display: flex;
-  width: 100%;
-  max-width: 1920px;
-  justify-content: space-between;
-  h1 {
-  }
-  nav {
-  }
-}
-</style>
+<style lang="scss" scoped></style>
