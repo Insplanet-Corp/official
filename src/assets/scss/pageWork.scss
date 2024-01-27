@@ -8,9 +8,15 @@
 // "xxlarge": 1919px,
 // "xxxlarge": 1920px,
 
+// 모바일 사이즈 체크
+
 .work-wp {
   max-width: 1920px;
   margin: 16px;
+
+  img {
+    max-width: 100%;
+  }
 
   @include for-size(small) {
     margin: 32px;
@@ -20,35 +26,42 @@
     // card 영역
     position: relative;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-evenly;
+    // flex-wrap: wrap;
+    // gap: 20px;
+    .work-group {
+    }
     .work-card {
       width: 328px;
       height: 492px;
       background: none;
       border: none;
       transition: all ease 0.5s;
+      &.onHover {
+        // transform: scale(1.02);
+      }
+      &.offHover {
+        // transform: scale(0.98);
+        // opacity: 0.5;
+        // filter: blur(2px);
+      }
+      // &:hover {
+      //   transform: scale(1.02);
+      // }
       .work-link-content {
         width: 100%;
         height: 100%;
-        opacity: 0;
+        // opacity: 0;
         border-radius: 16px;
-        // transition: all ease 1s;
-
-        // transition:
-        //   width 0.5s ease-in-out,
-        //   height 0.5s ease-in-out,
-        //   background-size 0.5s ease-in-out;
         .work-link-image {
           width: 100%;
           height: 100%;
           border-radius: 16px;
           background-position: center;
           background-size: auto 100%;
+          background-repeat: no-repeat;
           transition: all 0.5s ease-in-out;
           &:hover {
-            transform: scale(1.02);
+            // transform: scale(1.02);
             // transition: none;
             background-size: auto 110%;
             filter: brightness(105%) contrast(150%) saturate(110%);
@@ -58,10 +71,10 @@
         }
       }
       &.odd .work-link-content {
-        transform: translateY(60px);
+        // transform: translateY(30px);
       }
       &.even .work-link-content {
-        transform: translateY(-60px);
+        // transform: translateY(-30px);
       }
       &.onShow .work-link-content {
         transform: translateY(0px);
@@ -102,69 +115,133 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .work-together-content {
-      border: 1px solid red;
-      width: 280px;
-      height: 124px;
 
-      @include for-size(extra-small) {
-        width: 280px;
-        height: 124px;
-      }
-      @include for-size(small) {
-        width: 664px;
-        height: 124px;
-      }
-      @include for-size(medium) {
-        width: 728px;
-        height: 91px;
-      }
-      @include for-size(large) {
-        width: 940px;
-        height: 91px;
-      }
-      @include for-size(xlarge) {
-        width: 952px;
-        height: 175px;
-      }
-      @include for-size(xxlarge) {
-        width: 1120px;
-        height: 196px;
-      }
-      @include for-size(xxxlarge) {
-        width: 1400px;
-        height: 124px;
-      }
+    .work-together-content {
+      // border: 1px solid red;
+      // width: 280px;
+      margin-top: 20px;
+      padding: 40px;
+      background: #232323;
+      width: 100%;
+      height: 352px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      // @include for-size(extra-small) {
+      //   width: 280px;
+      //   height: 124px;
+      // }
+      // @include for-size(small) {
+      //   width: 664px;
+      //   height: 124px;
+      // }
+      // @include for-size(medium) {
+      //   width: 728px;
+      //   height: 91px;
+      // }
+      // @include for-size(large) {
+      //   width: 940px;
+      //   height: 91px;
+      // }
+      // @include for-size(xlarge) {
+      //   width: 952px;
+      //   height: 175px;
+      // }
+      // @include for-size(xxlarge) {
+      //   width: 1120px;
+      //   height: 196px;
+      // }
+      // @include for-size(xxxlarge) {
+      //   width: 1400px;
+      //   height: 124px;
+      // }
     }
   }
 
-  // work together 영역
+  // more project 영역
   .more-project-area {
     .more-project-content {
-      border: 1px solid red;
-      height: 169px;
-      @include for-size(extra-small) {
-        height: 169px;
+      padding-top: 40px;
+      padding-bottom: 80px;
+      display: flex;
+      .more-project-title-area {
+        flex: 3;
+        h2 {
+          font-size: 54px;
+        }
+        .title-desc {
+          margin-top: 30px;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          font-size: 12px;
+        }
       }
-      @include for-size(small) {
-        height: 256px;
+
+      .more-project-slide-area {
+        flex: 2;
+        .more-project-slide-area {
+          display: flex;
+          > div {
+            position: relative;
+            flex: 1;
+            height: 465px;
+            &.prev-area {
+              text-align: right;
+              margin: 48px 10px 0 0;
+            }
+            &.next-area {
+              margin: 0px 0 0 10px;
+            }
+            p {
+              height: 423px;
+              background: #1a1a1a;
+              border-radius: 16px;
+            }
+            button {
+              margin-top: 16px;
+              display: inline-block;
+              b {
+                position: relative;
+                top: -7px;
+              }
+              span.arrow {
+                display: inline-block;
+                width: 74px;
+                height: 24px;
+                background: url(../images/more_project_arrow.svg) no-repeat
+                  center center / cover;
+                margin: 0 10px;
+
+                &.right {
+                  transform: scaleX(-1);
+                }
+              }
+            }
+          }
+        }
       }
-      @include for-size(medium) {
-        height: 156px;
-      }
-      @include for-size(large) {
-        height: 185px;
-      }
-      @include for-size(xlarge) {
-        height: 314px;
-      }
-      @include for-size(xxlarge) {
-        height: 335px;
-      }
-      @include for-size(xxxlarge) {
-        max-width: 1856px;
-        height: 335px;
-      }
+      // @include for-size(extra-small) {
+      //   height: 169px;
+      // }
+      // @include for-size(small) {
+      //   height: 256px;
+      // }
+      // @include for-size(medium) {
+      //   height: 156px;
+      // }
+      // @include for-size(large) {
+      //   height: 185px;
+      // }
+      // @include for-size(xlarge) {
+      //   height: 314px;
+      // }
+      // @include for-size(xxlarge) {
+      //   height: 335px;
+      // }
+      // @include for-size(xxxlarge) {
+      //   max-width: 1856px;
+      //   height: 335px;
+      // }
     }
   }
   .work-wp-gradient {
@@ -188,5 +265,32 @@
       }
     }
     // background: red;
+  }
+}
+
+.page-wp {
+  .page-hero-title {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 60px;
+    p {
+      position: relative;
+      font-size: 60px;
+      span {
+        position: absolute;
+        border: 1px solid #fff;
+        height: 40px;
+        border-radius: 20px;
+        right: -40px;
+        top: 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 0 20px;
+      }
+    }
   }
 }

@@ -30,6 +30,11 @@
 /* 슬라이드 END */
 
 .content-area {
+  position: fixed;
+  left: 0;
+  top: 60px;
+  right: 0;
+  bottom: 0;
   .transition-wp {
     position: relative;
     &.onSlide {

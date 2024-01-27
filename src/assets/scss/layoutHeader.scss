@@ -1,12 +1,22 @@
 header {
+  padding: 20px;
+  margin: auto;
   position: relative;
   z-index: 2;
   display: flex;
   width: 100%;
   max-width: 1920px;
   justify-content: space-between;
+
   h1 {
   }
+
   nav {
+    a,
+    button {
+      color: #fff;
+      font-weight: 700;
+      margin-left: 20px;
+    }
   }
 }

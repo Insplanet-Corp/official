@@ -1,12 +1,12 @@
 // 미디어 쿼리를 위한 변수 설정
 $breakpoints: (
-  "extra-small": 767px,
-  "small": 1023px,
-  "medium": 1279px,
-  "large": 1339px,
-  "xlarge": 1599px,
-  "xxlarge": 1919px,
-  "xxxlarge": 1920px,
+  "extra-small": var(--extra-small),
+  "small": var(--small),
+  "medium": var(--medium),
+  "large": var(--large),
+  "xlarge": var(--xlarge),
+  "xxlarge": var(--xxlarge),
+  "xxxlarge": var(--xxxlarge),
 );
 
 // 미디어 쿼리를 생성하는 mixin
