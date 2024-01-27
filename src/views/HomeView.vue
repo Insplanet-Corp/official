@@ -14,9 +14,17 @@
       <div
         v-for="(group, groupIndex) in groupedItems"
         class="work-group"
+        :class="[!(groupIndex % 2 === 0) ? 'odd' : 'even']"
         :key="groupIndex"
       >
-        <div class="work-group-inner">
+        <div
+          ref="workGroupInner"
+          class="work-group-inner"
+          :style="{
+            // transform: `translateY(${isOdd(groupIndex) ? 100 : 0}px)`,
+            transform: `translateY(${getScrollPosition(groupIndex)}px)`,
+          }"
+        >
           <button
             v-for="(work, index) in group"
             :key="index"
@@ -35,7 +43,7 @@
             <div
               class="work-link-content"
               :style="{
-                transition: `all ${Math.random() * 0.6 + 0.6}s cubic-bezier(.58,.45,.31,1) ${Math.random() * 0.2 + 0.2}s`,
+                // transition: `all ${Math.random() * 0.6 + 0.6}s cubic-bezier(.58,.45,.31,1) ${Math.random() * 0.2 + 0.2}s`,
                 backgroundBack: `${workGradientType[work.gradient]}`,
               }"
             >
@@ -111,6 +119,15 @@ const workCards = ref([]);
 const isVisible = ref(workList.value.map(() => false));
 const onShowCount = computed(() => isVisible.value.filter((v) => v).length);
 const hoverIndex = ref(null);
+const cardColumnCount = ref(0);
+
+const scrollPosition = ref(0);
+let scrollTimer = null;
+let autoScrollInterval = null;
+
+// workGroupInner
+const workGroupInner = ref(null);
+const maxWorkGroupInnerHeight = ref(0);
 
 // breakpoint for responsive
 const breakpointCardCount = ref(1);
@@ -145,11 +162,13 @@ const onClickWorkCard = (work, index) => {
 const onMouseEnterWorkCard = (work, index) => {
   // backgroundTypeSelect.value = work.gradient;
   // hoverIndex.value = index;
+  scrollCheckerAndStop();
 };
 
 const onMouseLeaveWorkCard = () => {
   backgroundTypeSelect.value = null;
   hoverIndex.value = null;
+  scrollCheckerAndStart();
 };
 
 const backgroundGradientCheck = (gradient) => {
@@ -194,25 +213,82 @@ const groupedItems = computed(() => {
   workList.value.forEach((item, index) => {
     groups[index % breakpointCardCount.value].push(item);
   });
-  console.log(groups);
+
+  const maxCardCount = groups.reduce(
+    (max, arr) => Math.max(max, arr.length),
+    0
+  );
+  cardColumnCount.value = (maxCardCount / window.innerHeight).toFixed(2);
+  // console.log(groups);
+  // console.log(cardColumnCount.value);
   return groups;
 });
 
 const changeCardLayout = (newBreakpoint) => {
   const breakpoint = newBreakpoint || currentBreakpoint.value;
-  // console.log(breakpoint);
   breakpointCardCount.value = breakpointSetting[breakpoint].cardCount;
-  // console.log(breakpointCardCount);
-  // const { cardCount } = breakpointSetting[breakpoint];
 
-  // workCards.value.forEach((card, index) => {
-  //   card.style.display = index < cardCount ? "block" : "none";
-  // });
+  const workGroupInnerHeights = workGroupInner.value.map(
+    (el) => el.offsetHeight
+  );
+  maxWorkGroupInnerHeight.value =
+    Math.max(...workGroupInnerHeights) - window.innerHeight + 88;
+  // workCards.value[0].offsetHeight -
+  // window.innerHeight +
+  // 88;
+  // console.log();
+  // console.log(maxWorkGroupInnerHeight.value);
+};
+
+const isOdd = (num) => {
+  return num % 2 === 0;
+};
+
+const getScrollPosition = (groupIndex) => {
+  return Math.max(
+    Math.min(0, scrollPosition.value * (isOdd(groupIndex) ? 1.2 : 1)),
+    -maxWorkGroupInnerHeight.value
+  );
+};
+
+const scrollCheckerAndStop = () => {
+  clearInterval(autoScrollInterval);
+};
+const scrollCheckerAndStart = () => {
+  console.log("scrollCheckerAndStart1");
+  if (scrollTimer) {
+    clearTimeout(scrollTimer);
+  }
+
+  scrollTimer = setTimeout(() => {
+    console.log("scrollCheckerAndStart2");
+    startAutoScroll();
+  }, 3000);
 };
 
 const onScrollHandler = (e) => {
-  console.log(e.deltaY);
+  const { deltaY } = e;
+
+  // scrollPosition.value -= deltaY / 5;
+  scrollPosition.value = Math.max(
+    Math.min(0, scrollPosition.value - deltaY / 5),
+    -maxWorkGroupInnerHeight.value
+  );
+
+  clearInterval(autoScrollInterval);
+  scrollCheckerAndStart();
 };
+
+function startAutoScroll() {
+  console.log("startAutoScroll!!");
+  if (autoScrollInterval) {
+    clearInterval(autoScrollInterval);
+  }
+
+  autoScrollInterval = setInterval(() => {
+    scrollPosition.value -= 0.05;
+  }, 1);
+}
 
 onMounted(() => {
   // console.log(responseStyle);
@@ -240,6 +316,7 @@ onMounted(() => {
   });
   checkBreakpoint();
   changeCardLayout();
+  scrollCheckerAndStart();
 });
 
 onUnmounted(() => {

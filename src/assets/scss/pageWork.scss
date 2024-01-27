@@ -26,9 +26,22 @@
     // card 영역
     position: relative;
     display: flex;
+    justify-content: space-around;
     // flex-wrap: wrap;
     // gap: 20px;
     .work-group {
+      &.odd {
+        // transform: translateY(10px);
+      }
+      &.even {
+        // transform: translateY(-10px);
+      }
+
+      .work-group-inner {
+        // todo!!! flex height size error
+        // display: flex;
+        // flex-direction: column;
+      }
     }
     .work-card {
       width: 328px;
@@ -36,6 +49,7 @@
       background: none;
       border: none;
       transition: all ease 0.5s;
+      margin: 10px auto;
       &.onHover {
         // transform: scale(1.02);
       }
