@@ -13,6 +13,12 @@
         </div>
       </RouterView>
     </ContentLayout>
+    {{ officialStore.pageChangerClass }}
+    <div
+      class="pageChangeLoader"
+      :class="`${officialStore.pageChangerClass}`"
+      :style="{ background: officialStore.pageLoaderColor }"
+    ></div>
   </div>
 </template>
 
@@ -20,36 +26,58 @@
 import { watch, ref } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import ContentLayout from "./layouts/ContentLayout.vue";
-// import { useOfficialStore } from "@/stores/official";
+
+import { useOfficialStore } from "@/stores/official";
 
 const transitionName = ref("none");
 const transitionClass = ref("transition-wp");
 let isGoBack = false;
 
 const route = useRoute();
-// const officialStore = useOfficialStore();
+const officialStore = useOfficialStore();
 
 watch(
   () => route.name,
   (to, from) => {
-    transitionName.value = "none";
+    transitionName.value = "fade";
     if (isGoBack) {
-      transitionName.value = "slide-left";
+      transitionName.value = "fade";
       isGoBack = false;
     } else {
       if (from === undefined) return;
-      transitionName.value = "slide-right";
+      transitionName.value = "fade";
     }
   }
 );
 
 const onBeforeEnter = () => {
-  transitionClass.value = "transition-wp onSlide";
+  // console.log("onBeforeEnter");
+  // debugger;
+  // transitionClass.value = "transition-wp onShow";
 };
 
 const onAfterEnter = () => {
-  transitionClass.value = "transition-wp";
+  // console.log("onAfterEnter");
+  // debugger;
+  // transitionClass.value = "transition-wp";
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.pageChangeLoader {
+  z-index: 1;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 0;
+  // background: pink;
+  transition: all 0.6s cubic-bezier(0.58, 0.45, 0.31, 1) 0.2s;
+  &.show {
+    height: 100vh;
+  }
+  &.hide {
+    opacity: 0;
+  }
+}
+</style>

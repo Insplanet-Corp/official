@@ -29,26 +29,35 @@
 }
 /* 슬라이드 END */
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter, .fade-leave-to /* <= Vue 2.1.8에서는 .fade-leave-active 대신 사용 */ {
+  opacity: 0;
+}
+
 .content-area {
   position: fixed;
   left: 0;
   top: 60px;
   right: 0;
   bottom: 0;
+  background: #000;
   .transition-wp {
     position: relative;
-    &.onSlide {
-      width: 100%;
-      overflow: hidden;
-      > div {
-        position: absolute;
-        width: 100%;
-        left: 0;
-      }
-      .slide-right-enter-active {
-        position: relative;
-      }
-    }
+    // &.onSlide {
+    //   width: 100%;
+    //   overflow: hidden;
+    //   > div {
+    //     position: absolute;
+    //     width: 100%;
+    //     left: 0;
+    //   }
+    //   .slide-right-enter-active {
+    //     position: relative;
+    //   }
+    // }
   }
   .container {
   }

@@ -14,7 +14,4 @@ import HeaderLayout from "./HeaderLayout.vue";
 import FooterLayout from "./FooterLayout.vue";
 </script>
 
-<style scoped>
-.content-area {
-}
-</style>
+<style scoped></style>

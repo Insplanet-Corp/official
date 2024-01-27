@@ -12,44 +12,66 @@
 
 .work-wp {
   max-width: 1920px;
-  margin: 16px;
+  margin: 32px;
 
   img {
     max-width: 100%;
   }
 
   @include for-size(small) {
-    margin: 32px;
+    margin: 16px;
   }
 
   .work-area {
     // card 영역
     position: relative;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     // flex-wrap: wrap;
     // gap: 20px;
+    justify-content: space-between;
+    gap: 32px;
+
     .work-group {
+      transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
       &.odd {
         // transform: translateY(10px);
+        transform: translateY(10vh);
+        opacity: 0;
       }
       &.even {
-        // transform: translateY(-10px);
+        transform: translateY(-10vh);
+        opacity: 0;
       }
-
       .work-group-inner {
         // todo!!! flex height size error
         // display: flex;
         // flex-direction: column;
       }
     }
+
+    &.inited {
+      .work-group {
+        &.odd,
+        &.even {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        // transform: translateY(0);
+        // opacity: 1;
+      }
+    }
+
     .work-card {
-      width: 328px;
-      height: 492px;
+      // width: 328px;
+      // height: 492px;
+      width: 100%;
       background: none;
       border: none;
       transition: all ease 0.5s;
-      margin: 10px auto;
+      margin-bottom: 32px;
+      // margin: 10px auto;
+      cursor: pointer;
       &.onHover {
         // transform: scale(1.02);
       }
@@ -82,6 +104,9 @@
             object-fit: scale-down;
             object-position: 50% 50%;
           }
+          img {
+            width: 100%;
+          }
         }
       }
       &.odd .work-link-content {
@@ -90,37 +115,37 @@
       &.even .work-link-content {
         // transform: translateY(-30px);
       }
-      &.onShow .work-link-content {
-        transform: translateY(0px);
-        opacity: 1;
-      }
+      // &.onShow .work-link-content {
+      //   transform: translateY(0px);
+      //   opacity: 1;
+      // }
 
-      @include for-size(extra-small) {
-        width: 336px;
-        height: 504px;
-      }
-      @include for-size(small) {
-        width: 299px;
-        height: 448px;
-      }
-      @include for-size(medium) {
-        width: 280px;
-        height: 420px;
-      }
-      @include for-size(large) {
-        width: 320px;
-        height: 450px;
-      }
-      @include for-size(xlarge) {
-        width: 280px;
-        height: 423px;
-      }
-      @include for-size(xxlarge) {
-        width: 280px;
-        height: 424px;
-      }
-      @include for-size(xxxlarge) {
-      }
+      // @include for-size(extra-small) {
+      //   width: 336px;
+      //   height: 504px;
+      // }
+      // @include for-size(small) {
+      //   width: 299px;
+      //   height: 448px;
+      // }
+      // @include for-size(medium) {
+      //   width: 280px;
+      //   height: 420px;
+      // }
+      // @include for-size(large) {
+      //   width: 320px;
+      //   height: 450px;
+      // }
+      // @include for-size(xlarge) {
+      //   width: 280px;
+      //   height: 423px;
+      // }
+      // @include for-size(xxlarge) {
+      //   width: 280px;
+      //   height: 424px;
+      // }
+      // @include for-size(xxxlarge) {
+      // }
     }
   }
 

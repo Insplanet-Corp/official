@@ -10,7 +10,7 @@
       ></div>
     </div> -->
 
-    <div class="work-area">
+    <div class="work-area" :class="{ inited: isInited }">
       <div
         v-for="(group, groupIndex) in groupedItems"
         class="work-group"
@@ -50,9 +50,14 @@
               <div
                 class="work-link-image"
                 :style="{
-                  backgroundImage: `url(${getFullImagePath(work.image)})`,
+                  // backgroundImage: `url(${getFullImagePath(work.image)})`,
                 }"
               >
+                <img
+                  ref="workCardImages"
+                  :src="getFullImagePath(work.image)"
+                  alt=""
+                />
                 <!-- {{ index }} -->
                 <!-- {{ work.name }} -->
               </div>
@@ -61,47 +66,11 @@
         </div>
       </div>
     </div>
-
-    <!-- 카드 형태의 버튼 영역 -->
-    <div class="work-area" v-if="false">
-      <button
-        class="work-card"
-        v-for="(work, index) in workList"
-        :key="work.id"
-        :class="{
-          [!(index % 2 === 0) ? 'odd' : 'even']: true,
-          onShow: isVisible[index],
-          onHover: isHover(index),
-          offHover: hoverIndex !== null && !isHover(index),
-        }"
-        @mouseenter="onMouseEnterWorkCard(work, index)"
-        @mouseleave="onMouseLeaveWorkCard()"
-        @click="onClickWorkCard(work, index)"
-        ref="workCards"
-      >
-        <div
-          class="work-link-content"
-          :style="{
-            transition: `all ${Math.random() * 0.6 + 0.6}s cubic-bezier(.58,.45,.31,1) ${Math.random() * 0.2 + 0.2}s`,
-            backgroundBack: `${workGradientType[work.gradient]}`,
-          }"
-        >
-          <div
-            class="work-link-image"
-            :style="{ backgroundImage: `url(${getFullImagePath(work.image)})` }"
-          >
-            <!-- {{ index }} -->
-            <!-- {{ work.name }} -->
-          </div>
-        </div>
-      </button>
-      <!-- <button></button> -->
-    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted, computed, watch } from "vue";
+import { ref, onMounted, onUnmounted, computed, watch, nextTick } from "vue";
 import worksSetting from "@/works-setting";
 import workGradient from "@/works-gradient";
 import router from "@/router";
@@ -120,13 +89,16 @@ const isVisible = ref(workList.value.map(() => false));
 const onShowCount = computed(() => isVisible.value.filter((v) => v).length);
 const hoverIndex = ref(null);
 const cardColumnCount = ref(0);
+const isInited = ref(false);
 
 const scrollPosition = ref(0);
 let scrollTimer = null;
 let autoScrollInterval = null;
 
 // workGroupInner
+
 const workGroupInner = ref(null);
+const workCardImages = ref(null);
 const maxWorkGroupInnerHeight = ref(0);
 
 // breakpoint for responsive
@@ -224,20 +196,20 @@ const groupedItems = computed(() => {
   return groups;
 });
 
-const changeCardLayout = (newBreakpoint) => {
+const changeCardLayout = (newBreakpoint, dbg) => {
+  console.log(dbg);
   const breakpoint = newBreakpoint || currentBreakpoint.value;
   breakpointCardCount.value = breakpointSetting[breakpoint].cardCount;
 
-  const workGroupInnerHeights = workGroupInner.value.map(
-    (el) => el.offsetHeight
-  );
+  // const workGroupInnerHeights = workGroupInner.value.map(
+  //   (el) => el.offsetHeight
+  // );
   maxWorkGroupInnerHeight.value =
-    Math.max(...workGroupInnerHeights) - window.innerHeight + 88;
-  // workCards.value[0].offsetHeight -
-  // window.innerHeight +
-  // 88;
-  // console.log();
-  // console.log(maxWorkGroupInnerHeight.value);
+    workGroupInner.value[0].offsetHeight - window.innerHeight - 64;
+
+  // console.log(workGroupInner.value[0].offsetHeight);
+
+  console.log(workGroupInner.value[0].offsetHeight);
 };
 
 const isOdd = (num) => {
@@ -274,13 +246,14 @@ const onScrollHandler = (e) => {
     Math.min(0, scrollPosition.value - deltaY / 5),
     -maxWorkGroupInnerHeight.value
   );
+  // console.log(scrollPosition.value);
 
   clearInterval(autoScrollInterval);
   scrollCheckerAndStart();
 };
 
 function startAutoScroll() {
-  console.log("startAutoScroll!!");
+  // console.log("startAutoScroll!!");
   if (autoScrollInterval) {
     clearInterval(autoScrollInterval);
   }
@@ -292,6 +265,11 @@ function startAutoScroll() {
 
 onMounted(() => {
   // console.log(responseStyle);
+
+  setTimeout(() => {
+    isInited.value = true;
+  }, 100);
+
   const breakpointNames = Object.keys(breakpointSetting);
   breakpoints = breakpointNames.reduce((acc, name) => {
     acc[name] = getCssVariable(name);
@@ -300,23 +278,43 @@ onMounted(() => {
 
   window.addEventListener("resize", checkBreakpoint);
 
-  workList.value.forEach((work, index) => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        isVisible.value[index] = entry.isIntersecting;
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+  // workList.value.forEach((work, index) => {
+  //   const observer = new IntersectionObserver(
+  //     ([entry]) => {
+  //       isVisible.value[index] = entry.isIntersecting;
+  //     },
+  //     {
+  //       threshold: 0.1,
+  //     }
+  //   );
 
-    if (workCards.value[index]) {
-      observer.observe(workCards.value[index]);
-    }
+  //   if (workCards.value[index]) {
+  //     observer.observe(workCards.value[index]);
+  //   }
+  // });
+
+  //
+  const imageElements = workCardImages.value;
+  const promises = imageElements.map(
+    (img) =>
+      new Promise((resolve) => {
+        img.onload = resolve;
+      })
+  );
+
+  Promise.all(promises).then(() => {
+    checkBreakpoint();
+    nextTick(() => {
+      changeCardLayout(null, 1);
+      scrollCheckerAndStart();
+    });
+    // changeCardLayout();
+    // scrollCheckerAndStart();
   });
-  checkBreakpoint();
-  changeCardLayout();
-  scrollCheckerAndStart();
+
+  // checkBreakpoint();
+  // changeCardLayout();
+  // scrollCheckerAndStart();
 });
 
 onUnmounted(() => {
