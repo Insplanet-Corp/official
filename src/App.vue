@@ -1,12 +1,4 @@
 <template>
-  <div
-    class="pageChangeLoader"
-    :class="`${officialStore.pageChangerClass}`"
-    :style="{
-      background: officialStore.pageLoaderColor,
-      zIndex: officialStore.pageLoaderZIndex,
-    }"
-  ></div>
   <HeaderLayout />
   <div class="router-wp">
     <ContentLayout>
@@ -15,10 +7,19 @@
           :is="Component"
           class="page-component"
           :class="`${officialStore.pageTransitionClass}`"
+          :style="officialStore.routePageStyle"
         />
       </router-view>
     </ContentLayout>
   </div>
+  <div
+    class="pageLoader"
+    :class="`${officialStore.pageLoaderClass}`"
+    :style="{
+      background: officialStore.pageLoaderColor,
+      zIndex: officialStore.pageLoaderZIndex,
+    }"
+  ></div>
 </template>
 
 <script setup>
@@ -82,7 +83,7 @@ const onAfterEnter = () => {
   position: relative;
   z-index: 1;
 }
-.pageChangeLoader {
+.pageLoader {
   z-index: 2;
   position: fixed;
   left: 0;
@@ -96,28 +97,32 @@ const onAfterEnter = () => {
   // height 0.6s cubic-bezier(0.58, 0.45, 0.31, 1),
   // opacity 0.6s cubic-bezier(0.58, 0.45, 0.31, 1) 0.6s;
   &.show {
-    transition: height cubic-bezier(0.47, 0, 0, 1) 0.3s;
+    transition: height cubic-bezier(0.47, 0, 0, 1) 0.4s;
     height: 100vh;
     opacity: 1;
   }
   &.hide {
-    transition: opacity cubic-bezier(0.47, 0, 0, 1) 0.2s;
+    transition: opacity ease 0.4s;
     height: 100vh;
     opacity: 0;
   }
 }
 
 .page-component {
+  &.active {
+    transition: all cubic-bezier(0.47, 0, 0, 1) 0.6s;
+  }
   &.show {
-    transition:
-      transform cubic-bezier(0.645, 0.045, 0.355, 1) 0.3s,
-      opacity cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s 0.1s;
     opacity: 0;
     transform: translate3d(0, 101vh, 0);
   }
   &.hide {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transition: all ease 3s;
+    // transition:
+    //   transform cubic-bezier(0.645, 0.045, 0.355, 1) 3s,
+    //   opacity cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s;
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
   }
 }
 .route-change-start {

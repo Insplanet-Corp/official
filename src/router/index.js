@@ -42,11 +42,12 @@ router.beforeEach((to, from, next) => {
   const { params } = to;
 
   officialStore = officialStore || useOfficialStore();
-  // loading
+
+  // officialStore.pageLoaderZindexHandler("2");
+
+  // loading 처리
   officialStore.pageLoaderColorHandler("#000");
   officialStore.pageLoaderZindexHandler("2");
-  // // page
-  // officialStore.pageTransitionHandler("before-transition");
 
   if (params.workId) {
     const toWorkData = worksSettingList.find(
@@ -55,30 +56,44 @@ router.beforeEach((to, from, next) => {
     officialStore.pageLoaderColorHandler(toWorkData.gradient);
   }
 
-  officialStore.pageChangerHandler("show");
+  officialStore.pageLoaderClassHandler("show");
+
+  // setTimeout(() => {
+  //   officialStore.pageLoaderClassHandler("show");
+  // }, 600);
+
   setTimeout(() => {
-    officialStore.pageTransitionHandler("show");
-    // officialStore.pageLoaderZindexHandler("0");
-    next();
-  }, 350);
+    // next();
+
+    officialStore.updateRoutePageStyle({ transform: "translateY(100vh)" });
+    setTimeout(() => {
+      officialStore.pageTransitionHandler("active");
+      next();
+    }, 10);
+
+    // next();
+
+    // setTimeout(() => {
+    //   next();
+    //   // officialStore.updateRoutePageStyle({ transform: "translateY(0)" });
+    // }, 200);
+  }, 200);
+  // next();
 });
 
 router.afterEach((to, from) => {
   officialStore = officialStore || useOfficialStore();
   officialStore.pageLoaderZindexHandler("0");
   setTimeout(() => {
-    // page
-    officialStore.pageTransitionHandler("show hide");
+    // debugger;
+    officialStore.updateRoutePageStyle({ transform: "translateY(0)" });
   }, 10);
-
   setTimeout(() => {
-    // loading
-    officialStore.pageChangerHandler("show hide");
+    officialStore.pageLoaderClassHandler("show hide");
     setTimeout(() => {
-      officialStore.pageChangerHandler(null);
-      officialStore.pageTransitionHandler(null);
-    }, 200);
-  }, 200);
+      officialStore.pageLoaderClassHandler(null);
+    }, 300);
+  }, 300);
 });
 
 export default router;

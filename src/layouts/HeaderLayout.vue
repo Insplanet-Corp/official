@@ -14,9 +14,7 @@
   <el-dialog v-model="dialogVisible" width="30%" :show-close="false">
     <template #header="{ close }">
       <div class="my-header">
-        <el-button type="danger" @click="close" class="btn-close">
-          Close
-        </el-button>
+        <button @click="close" class="btn-close">Close</button>
       </div>
     </template>
     <div class="about-inner">
@@ -90,6 +88,9 @@ const handleClose = () => {
     }
     .btn-close {
       color: #0c0c0c;
+      font-weight: 700;
+      font-size: 18px;
+      padding: 10px;
       span {
         font-size: 16px;
         font-weight: 700;
@@ -125,7 +126,7 @@ const handleClose = () => {
     }
   }
   .about-header {
-    padding: 16px 16px 32px 24px;
+    padding: 46px 16px 32px 24px;
     background: white;
     border-radius: 15px;
     color: #0c0c0c;

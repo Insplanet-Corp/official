@@ -9,11 +9,11 @@ export const useOfficialStore = defineStore("official", () => {
   // }
 
   const pageTransitionClass = ref(null);
-  const pageChangerClass = ref(null);
+  const pageLoaderClass = ref(null);
   const pageLoaderColor = ref("#000");
   const pageLoaderZIndex = ref("0");
-  const pageChangerHandler = (value) => {
-    pageChangerClass.value = value;
+  const pageLoaderClassHandler = (value) => {
+    pageLoaderClass.value = value;
   };
   const pageLoaderColorHandler = (value) => {
     pageLoaderColor.value = value;
@@ -27,14 +27,21 @@ export const useOfficialStore = defineStore("official", () => {
     pageLoaderZIndex.value = value;
   };
 
+  const routePageStyle = ref({});
+  const updateRoutePageStyle = (value) => {
+    routePageStyle.value = value;
+  };
+
   return {
     pageTransitionClass,
-    pageChangerClass,
+    pageLoaderClass,
     pageLoaderColor,
     pageLoaderZIndex,
+    routePageStyle,
     pageTransitionHandler,
-    pageChangerHandler,
+    pageLoaderClassHandler,
     pageLoaderColorHandler,
     pageLoaderZindexHandler,
+    updateRoutePageStyle,
   };
 });
