@@ -227,13 +227,13 @@ const scrollCheckerAndStop = () => {
   clearInterval(autoScrollInterval);
 };
 const scrollCheckerAndStart = () => {
-  console.log("scrollCheckerAndStart1");
+  // console.log("scrollCheckerAndStart1");
   if (scrollTimer) {
     clearTimeout(scrollTimer);
   }
 
   scrollTimer = setTimeout(() => {
-    console.log("scrollCheckerAndStart2");
+    // console.log("scrollCheckerAndStart2");
     startAutoScroll();
   }, 3000);
 };

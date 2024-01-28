@@ -27,6 +27,7 @@ import { watch, ref } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import HeaderLayout from "./layouts/HeaderLayout.vue";
 import ContentLayout from "./layouts/ContentLayout.vue";
+// import router from "./router";
 
 import { useOfficialStore } from "@/stores/official";
 
@@ -37,6 +38,7 @@ let isGoBack = false;
 
 const route = useRoute();
 const officialStore = useOfficialStore();
+const componentData = ref(null);
 
 // watch(
 //   () => route.name,
@@ -55,6 +57,10 @@ const officialStore = useOfficialStore();
 const onBeforeEnter = () => {
   console.log("onBeforeEnter");
   componentChangeClassName.value = "route-change-start";
+
+  // componentData.value = route.meta.componentData;
+  // console.log(router);
+  // debugger;
   // debugger;
   // componentChangeClassName.value = "route-change-start";
   // setTimeout(() => {

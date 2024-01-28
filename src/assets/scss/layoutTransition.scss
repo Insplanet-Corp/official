@@ -16,11 +16,21 @@
 }
 
 .content-area {
-  position: fixed;
+  position: relative;
   left: 0;
   top: 60px;
   right: 0;
   bottom: 0;
+  display: flex;
+  justify-self: center;
+
+  &.fixed-layout {
+    position: fixed;
+  }
+
+  > * {
+    margin: auto;
+  }
   .transition-wp {
     position: relative;
     // &.onSlide {

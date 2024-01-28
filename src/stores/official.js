@@ -12,6 +12,8 @@ export const useOfficialStore = defineStore("official", () => {
   const pageLoaderClass = ref(null);
   const pageLoaderColor = ref("#000");
   const pageLoaderZIndex = ref("0");
+  const pageType = ref("");
+
   const pageLoaderClassHandler = (value) => {
     pageLoaderClass.value = value;
   };
@@ -32,16 +34,22 @@ export const useOfficialStore = defineStore("official", () => {
     routePageStyle.value = value;
   };
 
+  const updatePageType = (value) => {
+    pageType.value = value;
+  };
+
   return {
     pageTransitionClass,
     pageLoaderClass,
     pageLoaderColor,
     pageLoaderZIndex,
     routePageStyle,
+    pageType,
     pageTransitionHandler,
     pageLoaderClassHandler,
     pageLoaderColorHandler,
     pageLoaderZindexHandler,
     updateRoutePageStyle,
+    updatePageType,
   };
 });
