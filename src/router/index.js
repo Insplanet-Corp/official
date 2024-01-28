@@ -43,7 +43,9 @@ router.beforeEach((to, from, next) => {
 
   officialStore = officialStore || useOfficialStore();
 
-  // officialStore.pageLoaderZindexHandler("2");
+  // init all
+  officialStore.pageTransitionHandler("");
+  officialStore.pageLoaderClassHandler("");
 
   // loading 처리
   officialStore.pageLoaderColorHandler("#000");
@@ -58,42 +60,33 @@ router.beforeEach((to, from, next) => {
 
   officialStore.pageLoaderClassHandler("show");
 
-  // setTimeout(() => {
-  //   officialStore.pageLoaderClassHandler("show");
-  // }, 600);
-
   setTimeout(() => {
-    // next();
-
-    officialStore.updateRoutePageStyle({ transform: "translateY(100vh)" });
+    officialStore.updateRoutePageStyle({
+      transform: "translateY(30vh)",
+      opacity: 0,
+    });
     setTimeout(() => {
       officialStore.pageTransitionHandler("active");
       next();
     }, 10);
-
-    // next();
-
-    // setTimeout(() => {
-    //   next();
-    //   // officialStore.updateRoutePageStyle({ transform: "translateY(0)" });
-    // }, 200);
   }, 200);
-  // next();
 });
 
 router.afterEach((to, from) => {
   officialStore = officialStore || useOfficialStore();
   officialStore.pageLoaderZindexHandler("0");
   setTimeout(() => {
-    // debugger;
-    officialStore.updateRoutePageStyle({ transform: "translateY(0)" });
+    officialStore.updateRoutePageStyle({
+      transform: "translateY(0)",
+      opacity: 1,
+    });
   }, 10);
   setTimeout(() => {
     officialStore.pageLoaderClassHandler("show hide");
     setTimeout(() => {
       officialStore.pageLoaderClassHandler(null);
     }, 300);
-  }, 300);
+  }, 400);
 });
 
 export default router;

@@ -110,7 +110,9 @@ const onAfterEnter = () => {
 
 .page-component {
   &.active {
-    transition: all cubic-bezier(0.47, 0, 0, 1) 0.6s;
+    transition:
+      transform cubic-bezier(0.47, 0, 0, 1) 0.4s,
+      opacity ease-out 0.6s 0.2s;
   }
   &.show {
     opacity: 0;
