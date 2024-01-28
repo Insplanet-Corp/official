@@ -1,6 +1,6 @@
 <template>
   <div class="container-wp">
-    <HeaderLayout />
+    <!-- <HeaderLayout /> -->
     <!-- 슬롯을 사용하여 내용을 삽입 -->
     <div class="content-area">
       <slot></slot>
@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-import HeaderLayout from "./HeaderLayout.vue";
+// import HeaderLayout from "./HeaderLayout.vue";
 import FooterLayout from "./FooterLayout.vue";
 </script>
 

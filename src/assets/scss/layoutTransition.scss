@@ -1,40 +1,18 @@
-/* 슬라이드 START */
-/* slide right */
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: transform 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
-  // transition: opacity 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
+.slide-fade-enter-active {
+  transition: all ease-out 0.2s;
 }
-.slide-right-enter-from {
-  transform: translateX(100%);
-  // opacity: 0;
-}
-.slide-right-leave-to {
-  transform: translateX(-100%);
-  // opacity: 0;
-}
-/* slide left */
-.slide-left-enter-active,
-.slide-left-leave-active {
-  transition: transform 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
-  // transition: opacity 0.8s cubic-bezier(0.11, 1, 0.53, 1.02);
-}
-.slide-left-enter-from {
-  transform: translateX(-100%);
-  // opacity: 0;
-}
-.slide-left-leave-to {
-  transform: translateX(100%);
-  // opacity: 0;
-}
-/* 슬라이드 END */
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.slide-fade-leave-active {
+  transition: all cubic-bezier(1, 0.5, 0.8, 1) 0.2s;
 }
-.fade-enter, .fade-leave-to /* <= Vue 2.1.8에서는 .fade-leave-active 대신 사용 */ {
-  opacity: 0;
+
+.slide-fade-enter-from {
+  // transform: translateY(100px);
+  // opacity: 0;
+}
+.slide-fade-leave-to {
+  // transform: translateX(20px);
+  // opacity: 0;
 }
 
 .content-area {
@@ -43,7 +21,6 @@
   top: 60px;
   right: 0;
   bottom: 0;
-  background: #000;
   .transition-wp {
     position: relative;
     // &.onSlide {

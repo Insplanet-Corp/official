@@ -40,39 +40,45 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const { params } = to;
-  // console.log(to);
+
+  officialStore = officialStore || useOfficialStore();
+  // loading
+  officialStore.pageLoaderColorHandler("#000");
+  officialStore.pageLoaderZindexHandler("2");
+  // // page
+  // officialStore.pageTransitionHandler("before-transition");
+
   if (params.workId) {
     const toWorkData = worksSettingList.find(
       (e) => e.link.split("work/")[1] === params.workId
     );
-    // console.log(toWorkData);
-    officialStore = officialStore || useOfficialStore();
-    officialStore.pageChangerHandler("show");
     officialStore.pageLoaderColorHandler(toWorkData.gradient);
-    setTimeout(() => {
-      next();
-    }, 1000);
-  } else {
-    next(); // next()를 호출해야 다음 라우트로 이동합니다.
   }
+
+  officialStore.pageChangerHandler("show");
+  setTimeout(() => {
+    officialStore.pageTransitionHandler("show");
+    // officialStore.pageLoaderZindexHandler("0");
+    next();
+  }, 350);
 });
 
 router.afterEach((to, from) => {
-  // console.log(from);
-  // debugger;
-
-  // const officialStore = useOfficialStore();
-  // officialStore.pageLoaderColorHandler("green");
   officialStore = officialStore || useOfficialStore();
+  officialStore.pageLoaderZindexHandler("0");
   setTimeout(() => {
+    // page
+    officialStore.pageTransitionHandler("show hide");
+  }, 10);
+
+  setTimeout(() => {
+    // loading
     officialStore.pageChangerHandler("show hide");
     setTimeout(() => {
-      officialStore.pageChangerHandler("hide");
-    }, 600);
-  }, 600);
-
-  // officialStore.pageChangerHandler(false);
-  // 화면 전환 후에 호출할 코드
+      officialStore.pageChangerHandler(null);
+      officialStore.pageTransitionHandler(null);
+    }, 200);
+  }, 200);
 });
 
 export default router;

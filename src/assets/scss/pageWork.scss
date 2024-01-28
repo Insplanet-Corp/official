@@ -36,11 +36,11 @@
       transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 1.5s;
       &.odd {
         // transform: translateY(10px);
-        transform: translateY(10vh);
+        transform: translateY(40px);
         opacity: 0;
       }
       &.even {
-        transform: translateY(-10vh);
+        transform: translateY(0px);
         opacity: 0;
       }
       .work-group-inner {
