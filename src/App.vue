@@ -95,7 +95,7 @@ const onAfterEnter = () => {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 0;
+  height: 0 !important;
   // background: pink;
   // transition:
   //   height ease 0.3s,
@@ -104,13 +104,36 @@ const onAfterEnter = () => {
   // opacity 0.6s cubic-bezier(0.58, 0.45, 0.31, 1) 0.6s;
   &.show {
     transition: height cubic-bezier(0.47, 0, 0, 1) 0.4s;
-    height: 100vh;
+    height: 100vh !important;
     opacity: 1;
   }
   &.hide {
     transition: opacity ease 0.4s;
-    height: 100vh;
+    height: 100vh !important;
     opacity: 0;
+    // &.workTransition {
+    //   height: auto;
+    // }
+  }
+
+  &.workTransition {
+    // transition: all ease 0.2s !important;
+    transition:
+      left ease 0.2s,
+      right ease 0.2s,
+      margin ease 0.2s,
+      height ease 0.1s 0.05s,
+      border-radius ease 0.2s,
+      opacity ease 0.8s !important;
+    left: 32px;
+    right: 32px;
+    top: 0;
+    margin-top: 92px;
+    border-radius: 10px;
+    bottom: auto;
+    opacity: 0;
+    height: 51.8vw !important;
+    // height: inherit !important;
   }
 }
 

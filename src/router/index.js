@@ -50,6 +50,7 @@ router.beforeEach((to, from, next) => {
   // loading 처리
   officialStore.pageLoaderColorHandler("#000");
   officialStore.pageLoaderZindexHandler("2");
+  // officialStore.updateLoadingType(params.workId);
 
   if (params.workId) {
     const toWorkData = worksSettingList.find(
@@ -73,8 +74,9 @@ router.beforeEach((to, from, next) => {
 });
 
 router.afterEach((to, from) => {
+  const { params } = to;
   officialStore = officialStore || useOfficialStore();
-  officialStore.pageLoaderZindexHandler("0");
+  // officialStore.pageLoaderZindexHandler("0");
 
   const latoutType = to.name === "home" ? "fixed-layout" : "relative-layout";
   officialStore.updatePageType(latoutType);
@@ -86,10 +88,17 @@ router.afterEach((to, from) => {
     });
   }, 10);
   setTimeout(() => {
-    officialStore.pageLoaderClassHandler("show hide");
-    setTimeout(() => {
-      officialStore.pageLoaderClassHandler(null);
-    }, 300);
+    officialStore.pageLoaderClassHandler(
+      `show hide ${params.workId ? "workTransition" : ""}`
+    );
+    setTimeout(
+      () => {
+        officialStore.pageLoaderClassHandler(
+          params.workId ? "workTransition" : null
+        );
+      },
+      params.workId ? 600 : 300
+    );
   }, 400);
 });
 
