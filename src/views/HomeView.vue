@@ -255,7 +255,7 @@ const onHomeKeyAtHomeView = () => {
   let scrollTopInterval;
   scrollTopInterval = setInterval(() => {
     if (scrollPosition.value < 0) {
-      scrollPosition.value -= Math.floor(scrollPosition.value / 5);
+      scrollPosition.value -= Math.floor(scrollPosition.value / 10);
     } else {
       clearInterval(scrollTopInterval);
     }
