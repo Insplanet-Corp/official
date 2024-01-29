@@ -205,7 +205,7 @@ const changeCardLayout = (newBreakpoint, dbg) => {
   //   (el) => el.offsetHeight
   // );
   maxWorkGroupInnerHeight.value =
-    workGroupInner.value[0].offsetHeight - window.innerHeight - 64;
+    workGroupInner.value[0].offsetHeight - window.innerHeight + 80;
 
   // console.log(workGroupInner.value[0].offsetHeight);
 
@@ -246,10 +246,20 @@ const onScrollHandler = (e) => {
     Math.min(0, scrollPosition.value - deltaY / 5),
     -maxWorkGroupInnerHeight.value
   );
-  // console.log(scrollPosition.value);
 
   clearInterval(autoScrollInterval);
   scrollCheckerAndStart();
+};
+
+const onHomeKeyAtHomeView = () => {
+  let scrollTopInterval;
+  scrollTopInterval = setInterval(() => {
+    if (scrollPosition.value < 0) {
+      scrollPosition.value -= Math.floor(scrollPosition.value / 5);
+    } else {
+      clearInterval(scrollTopInterval);
+    }
+  }, 10);
 };
 
 function startAutoScroll() {
@@ -265,6 +275,8 @@ function startAutoScroll() {
 
 onMounted(() => {
   // console.log(responseStyle);
+
+  window.addEventListener("keydown", onHomeKeyAtHomeView);
 
   setTimeout(() => {
     isInited.value = true;
@@ -319,6 +331,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkBreakpoint);
+  window.removeEventListener("keydown", onHomeKeyAtHomeView);
 });
 </script>
 

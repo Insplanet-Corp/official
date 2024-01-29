@@ -1,5 +1,7 @@
+@import "./response.scss";
+
 header {
-  padding: 20px 32px;
+  padding: 10px 16px;
   margin: auto;
   position: fixed;
   left: 0;
@@ -10,6 +12,12 @@ header {
   width: 100%;
   max-width: 1920px;
   justify-content: space-between;
+
+  @include for-size("extra-small") {
+    padding: 10px 16px;
+    padding: 20px 32px;
+  }
+
   // background: #000;
   // ::after {
   //   content: "";
@@ -27,14 +35,22 @@ header {
   // }
 
   h1 {
+    a {
+      font-family: "Chillax-Variable";
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+    }
   }
 
   nav {
     a,
     button {
+      font-family: "Chillax-Variable";
+      font-size: 18px;
       color: #fff;
       font-weight: 700;
-      margin-left: 20px;
+      margin-left: 64px;
     }
   }
 }

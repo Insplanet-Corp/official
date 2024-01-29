@@ -1,9 +1,7 @@
 <template>
   <header>
     <h1 class="logo">
-      <RouterLink to="/">
-        <img src="../assets/images/logo.png" alt="insplanet" />
-      </RouterLink>
+      <RouterLink to="/"> insplanet </RouterLink>
     </h1>
     <nav>
       <RouterLink to="/work">Work</RouterLink>
@@ -136,7 +134,7 @@ const handleClose = () => {
       margin-bottom: 8px;
       margin-top: 16px;
       line-height: 34px;
-      font-family: "Chillax Variable";
+      font-family: "Chillax-Variable";
     }
     .about-desc {
       font-family: "Pretendard";
@@ -144,7 +142,7 @@ const handleClose = () => {
       color: #999;
       margin-top: 8px;
       line-height: 22px;
-      font-family: "Chillax Variable";
+      font-family: "Chillax-Variable";
       font-weight: 400;
     }
   }
@@ -204,8 +202,9 @@ const handleClose = () => {
       margin-top: 48px;
       dt {
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 700;
         line-height: 18px;
+        font-family: "Chillax-Variable";
       }
       dd {
         font-size: 14px;
