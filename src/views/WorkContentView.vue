@@ -1,6 +1,6 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
-  <div class="work-wp">
+  <div class="work-wp" :class="{ loaded }">
     <component :is="dynamicComponent" />
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
@@ -58,6 +58,7 @@
 import {
   ref,
   onMounted,
+  onUnmounted,
   watch,
   watchEffect,
   computed,
@@ -69,7 +70,7 @@ import axios from "axios";
 const router = useRoute();
 const externalHtml = ref("work");
 // const dynamicComponent = ref(null);
-
+const loaded = ref(false);
 const workId = ref(router.params.workId);
 
 const dynamicComponent = defineAsyncComponent({
@@ -86,6 +87,17 @@ const onPrevClickHandler = () => {
 const onNextClickHandler = () => {
   console.log("onNextClickHandler");
 };
+
+onMounted(() => {
+  setTimeout(() => {
+    console.log("loaded");
+    loaded.value = true;
+  }, 500);
+  // loaded.value = true;
+});
+onUnmounted(() => {
+  loaded.value = false;
+});
 </script>
 
 <style lang="scss" scoped>
@@ -123,6 +135,23 @@ img {
     }
   }
   .project-inquery {
+  }
+}
+
+.work-wp {
+  .work-together-area {
+    transition:
+      margin ease-out 0.5s 0.2s,
+      opacity ease-out 0.8s 0.2s;
+    margin-top: 10vh;
+    opacity: 0;
+  }
+
+  &.loaded {
+    .work-together-area {
+      margin-top: 0;
+      opacity: 1;
+    }
   }
 }
 </style>
