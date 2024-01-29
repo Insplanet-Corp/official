@@ -3,12 +3,12 @@
     <div class="page-hero-title">
       <p>
         All projects
-        <span>11</span>
+        <span>{{ workList.length }}</span>
       </p>
     </div>
     <div class="page-content">
       <ul>
-        <li v-for="(work, index) in workList">
+        <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.projectName }}</div>
           <div class="projectClient">{{ work.projectName }}</div>
           <div class="projectType">{{ work.projectType }}</div>
@@ -22,15 +22,29 @@
         <li><RouterLink to="/work/woori">woori</RouterLink></li> -->
       </ul>
     </div>
+    <button @click="moreProjects">
+      + 더보기 ({{ workList.length - workListPerCount.length }})
+    </button>
     <!-- infiniti scroll 더보기 기능 추가 -->
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import worksSetting from "@/works-setting";
 const { worksSettingList } = worksSetting;
+const perCount = 10;
+const nowCount = ref(perCount);
 const workList = ref(worksSettingList);
+// const workListPerCount = ref(worksSettingList.slice(0, 21));
+const workListPerCount = computed(() =>
+  workList.value.slice(0, nowCount.value)
+);
+
+const moreProjects = () => {
+  console.log("moreProjects");
+  nowCount.value += perCount;
+};
 </script>
 
 <style lang="scss" scoped>
