@@ -119,12 +119,12 @@ const onAfterEnter = () => {
   &.workTransition {
     // transition: all ease 0.2s !important;
     transition:
-      left ease 0.2s,
-      right ease 0.2s,
-      margin ease 0.2s,
-      height ease 0.1s 0.05s,
-      border-radius ease 0.2s,
-      opacity ease 0.8s !important;
+      left ease-out 0.8s,
+      right ease-out 0.8s,
+      margin ease-out 0.7s,
+      height ease-out 0.5s 0.25s,
+      border-radius ease-out 1s,
+      opacity ease-out 0.6s 0.9s !important;
     left: 32px;
     right: 32px;
     top: 0;

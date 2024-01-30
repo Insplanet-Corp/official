@@ -141,8 +141,8 @@ img {
 .work-wp {
   .work-together-area {
     transition:
-      margin ease-out 0.5s 0.2s,
-      opacity ease-out 0.8s 0.2s;
+      margin ease-out 0.5s 0.6s,
+      opacity ease-out 0.8s 0.6s;
     margin-top: 10vh;
     opacity: 0;
   }
