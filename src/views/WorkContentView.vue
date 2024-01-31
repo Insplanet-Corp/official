@@ -33,16 +33,31 @@
             신뢰할 수 있는 파트너로 함께 성장하고 있습니다.
           </p>
         </div>
-        <div class="more-project-slide-area">
-          <div class="more-project-slide-area">
+        <div class="more-project-slide-wp">
+          <div
+            class="more-project-slide-area"
+            :class="{ preSlide, afterSlide }"
+          >
             <div class="prev-area">
-              <p>img</p>
+              <p @click="onLinkHandler(`${worksSettingList[slideCount].link}`)">
+                <img
+                  :src="`/works/images/${worksSettingList[slideCount].image}`"
+                />
+              </p>
               <button @click="onPrevClickHandler()">
                 <span class="arrow"></span> <b>Prev project</b>
               </button>
             </div>
             <div class="next-area">
-              <p>img</p>
+              <p
+                @click="
+                  onLinkHandler(`${worksSettingList[slideCountNext].link}`)
+                "
+              >
+                <img
+                  :src="`/works/images/${worksSettingList[slideCountNext].image}`"
+                />
+              </p>
               <button @click="onNextClickHandler()">
                 <b>Next project</b> <span class="arrow right"></span>
               </button>
@@ -66,6 +81,10 @@ import {
 } from "vue";
 import { useRoute } from "vue-router";
 import axios from "axios";
+import worksSetting from "@/works-setting";
+import route from "@/router";
+
+const { worksSettingList } = worksSetting;
 
 const router = useRoute();
 const externalHtml = ref("work");
@@ -81,18 +100,55 @@ const dynamicComponent = defineAsyncComponent({
   timeout: 3000, // 타임아웃 시간 (ms)
 });
 
+const preSlide = ref(false);
+const afterSlide = ref(false);
+const slideCount = ref(0);
+const slideCountNext = computed(() => {
+  if (slideCount.value + 1 >= worksSettingList.length) {
+    return 0;
+  } else {
+    return slideCount.value + 1;
+  }
+});
 const onPrevClickHandler = () => {
   console.log("onPrevClickHandler");
+  slideProject(-1);
 };
 const onNextClickHandler = () => {
   console.log("onNextClickHandler");
+  slideProject(1);
 };
+
+const onLinkHandler = (path) => {
+  route.push(path);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+const slideProject = (count) => {
+  // console.log("slideProject");
+  preSlide.value = true;
+  setTimeout(() => {
+    slideCount.value += count;
+    if (slideCount.value < 0) {
+      slideCount.value = worksSettingList.length - 1;
+    } else if (slideCount.value >= worksSettingList.length) {
+      slideCount.value = 0;
+    }
+    preSlide.value = false;
+  }, 500);
+};
+
+// const getFullImagePath = (imageName) => {
+//   console.log(imageName);
+//   console.log(import.meta.url);
+//   return new URL(`../works/images/${imageName}`, import.meta.url).href;
+// };
 
 onMounted(() => {
   setTimeout(() => {
     console.log("loaded");
     loaded.value = true;
-  }, 500);
+  }, 300);
   // loaded.value = true;
 });
 onUnmounted(() => {
@@ -139,12 +195,43 @@ img {
 }
 
 .work-wp {
+  overflow: hidden;
   .work-together-area {
     transition:
       margin ease-out 0.5s 0.6s,
       opacity ease-out 0.8s 0.6s;
     margin-top: 10vh;
     opacity: 0;
+  }
+  .more-project-slide-wp {
+    .more-project-slide-area {
+      > div {
+        p {
+          transition: all ease-out 0.5s;
+          transform: translateX(0);
+          opacity: 1;
+          img {
+            height: 100%;
+            width: auto !important;
+            max-width: inherit !important;
+          }
+        }
+      }
+      &.preSlide {
+        .prev-area {
+          p {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+        }
+        .next-area {
+          p {
+            transform: translateX(50px);
+            opacity: 0;
+          }
+        }
+      }
+    }
   }
 
   &.loaded {

@@ -6,7 +6,7 @@
         <span>{{ workList.length }}</span>
       </p>
     </div>
-    <div class="page-content">
+    <div class="page-content" ref="pageContent">
       <ul>
         <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.projectName }}</div>
@@ -22,28 +22,34 @@
         <li><RouterLink to="/work/woori">woori</RouterLink></li> -->
       </ul>
     </div>
-    <button @click="moreProjects">
-      + 더보기 ({{ workList.length - workListPerCount.length }})
-    </button>
+    <div class="content-footer">
+      <button @click="moreProjects" class="more-projects">
+        more ({{ workList.length - workListPerCount.length }})
+      </button>
+    </div>
+
     <!-- infiniti scroll 더보기 기능 추가 -->
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, nextTick } from "vue";
 import worksSetting from "@/works-setting";
 const { worksSettingList } = worksSetting;
 const perCount = 10;
 const nowCount = ref(perCount);
 const workList = ref(worksSettingList);
+const pageContent = ref(null);
 // const workListPerCount = ref(worksSettingList.slice(0, 21));
 const workListPerCount = computed(() =>
   workList.value.slice(0, nowCount.value)
 );
 
 const moreProjects = () => {
-  console.log("moreProjects");
   nowCount.value += perCount;
+  nextTick(() => {
+    window.scrollTo({ top: 9999, behavior: "smooth" });
+  });
 };
 </script>
 
@@ -53,8 +59,16 @@ const moreProjects = () => {
     li {
       padding: 10px 20px;
       display: flex;
-      & + li {
-        border-top: 1px solid #fff;
+      border-bottom: 1px solid #fff;
+      // & + li {
+      //   border-top: 1px solid #fff;
+      // }
+      &:hover {
+        background: #fff;
+        color: #000;
+        a {
+          color: #000;
+        }
       }
       .projectName {
         flex-basis: 20%;
@@ -73,5 +87,29 @@ const moreProjects = () => {
       }
     }
   }
+}
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+}
+.more-projects {
+  /* Button */
+
+  margin: 20px auto;
+  padding: 10px 19px;
+  width: 120px;
+
+  border: 1px solid #ffffff;
+  border-radius: 32px;
+
+  /* Desktop/Chillax/D-Label */
+  font-family: "chillax-variable";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+
+  color: #ffffff;
 }
 </style>

@@ -2,7 +2,7 @@
 
 header {
   padding: 10px 16px;
-  margin: auto;
+  margin: 20px auto 0;
   position: fixed;
   left: 0;
   right: 0;
@@ -13,8 +13,13 @@ header {
   max-width: 1920px;
   justify-content: space-between;
 
+  * {
+    line-height: 0;
+    vertical-align: top;
+  }
+
   @include for-size("extra-small") {
-    padding: 10px 16px;
+    // padding: 10px 16px;
     padding: 20px 32px;
   }
 

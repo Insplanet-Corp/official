@@ -96,6 +96,12 @@ router.afterEach((to, from) => {
         officialStore.pageLoaderClassHandler(
           params.workId ? "workTransition" : null
         );
+
+        if (params.workId) {
+          setTimeout(() => {
+            officialStore.pageLoaderClassHandler(null);
+          }, 500);
+        }
       },
       params.workId ? 600 : 300
     );

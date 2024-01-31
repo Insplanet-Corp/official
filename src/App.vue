@@ -23,13 +23,16 @@
 </template>
 
 <script setup>
-import { watch, ref } from "vue";
+import { watch, ref, onMounted, onUnmounted } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
 import HeaderLayout from "./layouts/HeaderLayout.vue";
 import ContentLayout from "./layouts/ContentLayout.vue";
 // import router from "./router";
 
 import { useOfficialStore } from "@/stores/official";
+import { useRippleStore } from "@/stores/ripple";
+const rippleStore = useRippleStore();
+// const { createRipple } = useRippleEffect();
 
 // const componentChangeClassName = ref("");
 const transitionName = ref("none");
@@ -40,19 +43,38 @@ const route = useRoute();
 const officialStore = useOfficialStore();
 const componentData = ref(null);
 
-// watch(
-//   () => route.name,
-//   (to, from) => {
-//     transitionName.value = "slide-fade";
-//     if (isGoBack) {
-//       transitionName.value = "slide-fade";
-//       isGoBack = false;
-//     } else {
-//       if (from === undefined) return;
-//       transitionName.value = "slide-fade";
-//     }
+const createRipple = (event) => {
+  console.log(event);
+  // const container = event.currentTarget; // currentTarget을 사용하여 정확한 요소를 참조
+  const container = event.target; // currentTarget을 사용하여 정확한 요소를 참조
+  const circle = document.createElement("span");
+  const diameter = Math.max(container.clientWidth, container.clientHeight);
+  const radius = diameter / 2;
+
+  circle.style.width = circle.style.height = `${diameter}px`;
+  circle.style.left = `${event.clientX - container.offsetLeft - radius}px`;
+  circle.style.top = `${event.clientY - container.offsetTop - radius}px`;
+  circle.classList.add("ripple");
+
+  container.appendChild(circle);
+
+  setTimeout(() => {
+    circle.remove();
+  }, 600); // 애니메이션 지속 시간과 일치
+};
+
+// const handleRipple = (event) => {
+//   if (rippleStore.enabled) {
+//     createRipple(event);
 //   }
-// );
+// };
+
+// onMounted(() => {
+//   document.addEventListener("click", handleRipple, true);
+// });
+// onUnmounted(() => {
+//   document.removeEventListener("click", handleRipple, true);
+// });
 
 const onBeforeEnter = () => {
   console.log("onBeforeEnter");
@@ -84,4 +106,20 @@ const onAfterEnter = () => {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.ripple {
+  position: fixed;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+</style>
