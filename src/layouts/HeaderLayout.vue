@@ -89,6 +89,7 @@ const handleClose = () => {
       font-weight: 700;
       font-size: 18px;
       padding: 10px;
+      cursor: pointer;
       span {
         font-size: 16px;
         font-weight: 700;
@@ -201,7 +202,7 @@ const handleClose = () => {
     .contact-list {
       margin-top: 48px;
       dt {
-        font-size: 13px;
+        font-size: 14px;
         font-weight: 700;
         line-height: 18px;
         font-family: "Chillax-Variable";

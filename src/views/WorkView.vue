@@ -14,7 +14,10 @@
           <div class="projectType">{{ work.projectType }}</div>
           <div class="projectYear">{{ work.projectYear }}</div>
           <div class="projectLink">
-            <RouterLink :to="work.link" v-if="work.link">상세보기</RouterLink>
+            <RouterLink :to="work.link" class="btn-projectLink" v-if="work.link"
+              >상세보기
+              <span><img src="/assets/images/project_arrow.svg" /></span
+            ></RouterLink>
           </div>
         </li>
         <!-- <li><RouterLink to="/work/shinhan">shinhan</RouterLink></li>
@@ -69,21 +72,26 @@ const moreProjects = () => {
         a {
           color: #000;
         }
+        .btn-projectLink {
+          img {
+            filter: brightness(0);
+          }
+        }
       }
       .projectName {
-        flex-basis: 20%;
+        flex-basis: 28%;
       }
       .projectClient {
-        flex-basis: 20%;
+        flex-basis: 28%;
       }
       .projectType {
-        flex-basis: 20%;
+        flex-basis: 27%;
       }
       .projectYear {
-        flex-basis: 20%;
+        flex-basis: 10%;
       }
       .projectLink {
-        flex-basis: 20%;
+        flex-basis: 7%;
       }
     }
   }
@@ -95,10 +103,9 @@ const moreProjects = () => {
 }
 .more-projects {
   /* Button */
-
+  cursor: pointer;
   margin: 20px auto;
   padding: 10px 19px;
-  width: 120px;
 
   border: 1px solid #ffffff;
   border-radius: 32px;
@@ -108,8 +115,16 @@ const moreProjects = () => {
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
-  line-height: 20px;
 
   color: #ffffff;
+}
+
+.btn-projectLink {
+  display: flex;
+  span {
+    margin: 0 0 0 10px;
+  }
+  // border: 1px solid red;
+  // padding-right: 30px;
 }
 </style>

@@ -5,7 +5,7 @@
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
       <div class="work-together-content">
-        <h2><img src="../assets/images/title-letsworktogether.svg" /></h2>
+        <h2>Let's work together</h2>
         <div class="work-together-more">
           <div class="project-inquery">
             <!-- mail to link -->
@@ -32,6 +32,7 @@
             가치실현을 위한<br />
             신뢰할 수 있는 파트너로 함께 성장하고 있습니다.
           </p>
+          <RouterLink to="/" class="button default"> All Projects </RouterLink>
         </div>
         <div class="more-project-slide-wp">
           <div
