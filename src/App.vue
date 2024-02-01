@@ -1,6 +1,6 @@
 <template>
   <HeaderLayout />
-  <div class="router-wp">
+  <div class="router-wp" :class="{ mobile }">
     <ContentLayout>
       <router-view v-slot="{ Component }">
         <component
@@ -25,12 +25,18 @@
 <script setup>
 import { watch, ref, onMounted, onUnmounted } from "vue";
 import { RouterLink, RouterView, useRoute } from "vue-router";
+import MobileDetect from "mobile-detect";
 import HeaderLayout from "./layouts/HeaderLayout.vue";
 import ContentLayout from "./layouts/ContentLayout.vue";
 // import router from "./router";
 
 import { useOfficialStore } from "@/stores/official";
 import { useRippleStore } from "@/stores/ripple";
+
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+const isTablet = mobileDetect.tablet();
+const mobile = ref(isMobile || isTablet);
 const rippleStore = useRippleStore();
 // const { createRipple } = useRippleEffect();
 

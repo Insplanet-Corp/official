@@ -3,6 +3,13 @@
 .router-wp {
   position: relative;
   z-index: 1;
+  &.mobile {
+    .content-area {
+      &.fixed-layout {
+        position: relative;
+      }
+    }
+  }
 }
 .pageLoader {
   z-index: 2;

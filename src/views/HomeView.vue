@@ -1,7 +1,12 @@
 <template>
   <!-- {{ breakpointCardCount }}
   {{ currentBreakpoint }} -->
-  <div class="work-wp" @wheel="onScrollHandler">
+  <div
+    class="work-wp"
+    @wheel="onScrollHandler"
+    @touchstart="onTouchstartHandler"
+    @touchend="onTouchendHandler"
+  >
     <!-- <div class="work-wp-gradient" v-if="false">
       <div
         v-for="(background, index) in Object.keys(workGradientType)"
@@ -71,6 +76,12 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted, computed, watch, nextTick } from "vue";
+import MobileDetect from "mobile-detect";
+
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+const isTablet = mobileDetect.tablet();
+const isPotable = isMobile || isTablet;
 import worksSetting from "@/works-setting";
 import workGradient from "@/works-gradient";
 import router from "@/router";
@@ -80,7 +91,7 @@ import router from "@/router";
 // const router = useRoute();
 // import AOS from "aos";
 // import gsap from "gsap";
-
+// console.log(isMobile, isTablet);
 const { worksSettingList } = worksSetting;
 const { workGradientType } = workGradient;
 const workList = ref(worksSettingList);
@@ -90,6 +101,7 @@ const onShowCount = computed(() => isVisible.value.filter((v) => v).length);
 const hoverIndex = ref(null);
 const cardColumnCount = ref(0);
 const isInited = ref(false);
+const mobile = ref(false);
 
 const scrollPosition = ref(0);
 let scrollTimer = null;
@@ -124,16 +136,12 @@ const getFullImagePath = (imageName) => {
 
 // backgroundTypeSelect 값이 변경되면 실행
 const onClickWorkCard = (work, index) => {
-  // console.log(router);
-  // console.log(work.link);
   if (work.link) {
     router.push({ path: work.link });
   }
 };
 
 const onMouseEnterWorkCard = (work, index) => {
-  // backgroundTypeSelect.value = work.gradient;
-  // hoverIndex.value = index;
   scrollCheckerAndStop();
 };
 
@@ -174,7 +182,6 @@ const checkBreakpoint = () => {
 
 // watch
 watch(currentBreakpoint, (newBreakpoint, oldBreakpoint) => {
-  // console.log(newBreakpoint);
   changeCardLayout(newBreakpoint);
 });
 
@@ -191,25 +198,18 @@ const groupedItems = computed(() => {
     0
   );
   cardColumnCount.value = (maxCardCount / window.innerHeight).toFixed(2);
-  // console.log(groups);
-  // console.log(cardColumnCount.value);
   return groups;
 });
 
 const changeCardLayout = (newBreakpoint, dbg) => {
-  console.log(dbg);
   const breakpoint = newBreakpoint || currentBreakpoint.value;
-  breakpointCardCount.value = breakpointSetting[breakpoint].cardCount;
 
-  // const workGroupInnerHeights = workGroupInner.value.map(
-  //   (el) => el.offsetHeight
-  // );
+  // if (isMobile || isTablet) {
+  // }
+
+  breakpointCardCount.value = breakpointSetting[breakpoint].cardCount;
   maxWorkGroupInnerHeight.value =
     workGroupInner.value[0].offsetHeight - window.innerHeight + 80;
-
-  // console.log(workGroupInner.value[0].offsetHeight);
-
-  console.log(workGroupInner.value[0].offsetHeight);
 };
 
 const isOdd = (num) => {
@@ -227,21 +227,27 @@ const scrollCheckerAndStop = () => {
   clearInterval(autoScrollInterval);
 };
 const scrollCheckerAndStart = () => {
-  // console.log("scrollCheckerAndStart1");
   if (scrollTimer) {
     clearTimeout(scrollTimer);
   }
 
   scrollTimer = setTimeout(() => {
-    // console.log("scrollCheckerAndStart2");
     startAutoScroll();
   }, 3000);
+};
+
+const onTouchstartHandler = (e) => {
+  console.log("onTouchstartHandler");
+  scrollCheckerAndStop();
+};
+const onTouchendHandler = (e) => {
+  console.log("onTouchendHandler");
+  scrollCheckerAndStart();
 };
 
 const onScrollHandler = (e) => {
   const { deltaY } = e;
 
-  // scrollPosition.value -= deltaY / 5;
   scrollPosition.value = Math.max(
     Math.min(0, scrollPosition.value - deltaY / 5),
     -maxWorkGroupInnerHeight.value
@@ -263,19 +269,29 @@ const onHomeKeyAtHomeView = () => {
 };
 
 function startAutoScroll() {
-  // console.log("startAutoScroll!!");
   if (autoScrollInterval) {
     clearInterval(autoScrollInterval);
   }
 
-  autoScrollInterval = setInterval(() => {
-    scrollPosition.value -= 0.05;
-  }, 1);
+  if (!isPotable) {
+    autoScrollInterval = setInterval(() => {
+      scrollPosition.value -= 0.05;
+      // }, 1);
+    }, 1);
+  } else {
+    autoScrollInterval = setInterval(() => {
+      console.log("autoScrollInterval");
+      scrollTo({ top: scrollY + 1 });
+      // }, 10);
+    }, 40);
+  }
 }
 
-onMounted(() => {
-  // console.log(responseStyle);
+// const onMobileScrollHandler = () => {
+//   console.log("onMobileScroll");
+// };
 
+onMounted(() => {
   window.addEventListener("keydown", onHomeKeyAtHomeView);
 
   setTimeout(() => {
@@ -288,24 +304,12 @@ onMounted(() => {
     return acc;
   }, {});
 
+  // if (isPotable) {
+  //   window.addEventListener("scroll", onMobileScrollHandler);
+  // }
+
   window.addEventListener("resize", checkBreakpoint);
 
-  // workList.value.forEach((work, index) => {
-  //   const observer = new IntersectionObserver(
-  //     ([entry]) => {
-  //       isVisible.value[index] = entry.isIntersecting;
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (workCards.value[index]) {
-  //     observer.observe(workCards.value[index]);
-  //   }
-  // });
-
-  //
   const imageElements = workCardImages.value;
   const promises = imageElements.map(
     (img) =>
@@ -320,19 +324,23 @@ onMounted(() => {
       changeCardLayout(null, 1);
       scrollCheckerAndStart();
     });
-    // changeCardLayout();
-    // scrollCheckerAndStart();
   });
-
-  // checkBreakpoint();
-  // changeCardLayout();
-  // scrollCheckerAndStart();
 });
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkBreakpoint);
   window.removeEventListener("keydown", onHomeKeyAtHomeView);
+  clearInterval(autoScrollInterval);
+  clearTimeout(scrollTimer);
+  // if (isPotable) {
+  //   window.removeEventListener("scroll", onMobileScrollHandler);
+  // }
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.work-wp {
+  &.mobile {
+  }
+}
+</style>
