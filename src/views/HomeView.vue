@@ -49,7 +49,7 @@
               class="work-link-content"
               :style="{
                 // transition: `all ${Math.random() * 0.6 + 0.6}s cubic-bezier(.58,.45,.31,1) ${Math.random() * 0.2 + 0.2}s`,
-                backgroundBack: `${workGradientType[work.gradient]}`,
+                // backgroundBack: `${workGradientType[work.gradient]}`,
               }"
             >
               <div
@@ -83,7 +83,6 @@ const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
 import worksSetting from "@/works-setting";
-import workGradient from "@/works-gradient";
 import router from "@/router";
 // import responseStyle from "../assets/scss/response.scss";
 // import { useRoute } from "vue-router";
@@ -93,7 +92,6 @@ import router from "@/router";
 // import gsap from "gsap";
 // console.log(isMobile, isTablet);
 const { worksSettingList } = worksSetting;
-const { workGradientType } = workGradient;
 const workList = ref(worksSettingList);
 const workCards = ref([]);
 const isVisible = ref(workList.value.map(() => false));
@@ -277,13 +275,13 @@ function startAutoScroll() {
     autoScrollInterval = setInterval(() => {
       scrollPosition.value -= 0.05;
       // }, 1);
-    }, 1);
+    }, 1000);
   } else {
     autoScrollInterval = setInterval(() => {
       console.log("autoScrollInterval");
       scrollTo({ top: scrollY + 1 });
       // }, 10);
-    }, 40);
+    }, 40000);
   }
 }
 

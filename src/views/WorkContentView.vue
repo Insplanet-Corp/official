@@ -1,7 +1,7 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
   <div class="work-wp" :class="{ loaded }">
-    <component :is="dynamicComponent" />
+    <component :is="dynamicComponent" :workData="workData" />
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
       <div class="work-together-content">
@@ -92,14 +92,16 @@ const externalHtml = ref("work");
 // const dynamicComponent = ref(null);
 const loaded = ref(false);
 const workId = ref(router.params.workId);
+const workData = worksSettingList.find(
+  (e) => e.link === `/work/${workId.value}`
+);
 
-const dynamicComponent = defineAsyncComponent({
-  loader: () => import(`../works/${workId.value}.vue`),
-  // loadingComponent: LoaderComponent, // 로딩 컴포넌트
-  // errorComponent: ErrorComponent, // 에러 발생 시 보여줄 컴포넌트
-  delay: 200, // 로딩 컴포넌트 표시 전 지연 시간 (ms)
-  timeout: 3000, // 타임아웃 시간 (ms)
-});
+const dynamicComponent = defineAsyncComponent(() =>
+  import(`../works/${workId.value}.vue`).then((module) => {
+    // console.log(router.params.workId);
+    return module.default;
+  })
+);
 
 const preSlide = ref(false);
 const afterSlide = ref(false);

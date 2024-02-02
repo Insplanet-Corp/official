@@ -333,6 +333,34 @@
   }
 }
 
+@media (max-width: 768px) {
+  .work-together-content {
+    h2 {
+      font-family: "chillax-ariable";
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 34px; /* 141.667% */
+      text-transform: capitalize;
+    }
+  }
+
+  .more-project-content {
+    h2 {
+      /* Mobile/Chillax/M-Title */
+      font-family: "Chillax Variable";
+      font-size: 24px !important;
+      font-style: normal !important;
+      font-weight: 700 !important;
+      line-height: 34px !important; /* 141.667% */
+      text-transform: capitalize;
+    }
+  }
+  .title-desc {
+    display: none;
+  }
+}
+
 .page-wp {
   width: 100%;
   max-width: 1920px;

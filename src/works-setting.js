@@ -10,6 +10,20 @@ const worksSettingList = [
     projectYear: "2024",
     gradient: "#0046FF",
     use: true,
+    detail: {
+      coverPc: "/works/shinhan/cover.png",
+      coverMobile: "/works/shinhan/cover_m.png",
+      title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
+      overview:
+        "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "신한금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
   },
   {
     name: "lgcns2",
