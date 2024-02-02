@@ -17,7 +17,7 @@ $breakpoints: (
 );
 
 // 미디어 쿼리를 생성하는 mixin
-@mixin for-size($size) {
+@mixin for-size-min($size) {
   $breakpoint: map-get($breakpoints, $size);
 
   @if $breakpoint {
@@ -26,34 +26,43 @@ $breakpoints: (
     }
   }
 }
+@mixin for-size-max($size) {
+  $breakpoint: map-get($breakpoints, $size);
+
+  @if $breakpoint {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
 
 // 각 구간 해상도에 따른 스타일 적용
 body {
-  @include for-size("extra-small") {
+  @include for-size-min("extra-small") {
     // 0 ~ 767px 스타일
   }
 
-  @include for-size("small") {
+  @include for-size-min("small") {
     // 768 ~ 1023px 스타일
   }
 
-  @include for-size("medium") {
+  @include for-size-min("medium") {
     // 1024 ~ 1279px 스타일
   }
 
-  @include for-size("large") {
+  @include for-size-min("large") {
     // 1280 ~ 1339px 스타일
   }
 
-  @include for-size("xlarge") {
+  @include for-size-min("xlarge") {
     // 1440 ~ 1599px 스타일
   }
 
-  @include for-size("xxlarge") {
+  @include for-size-min("xxlarge") {
     // 1600 ~ 1919px 스타일
   }
 
-  @include for-size("xxxlarge") {
+  @include for-size-min("xxxlarge") {
     // 1920px 이상 스타일
   }
 }

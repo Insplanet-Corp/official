@@ -51,12 +51,23 @@
     right: 32px;
     top: 0;
     margin-top: 92px;
-    border-radius: 10px;
+    border-radius: 16px;
     bottom: auto;
     opacity: 0;
     height: 51.8vw !important;
 
-    @include for-size("xxlarge") {
+    @include for-size-max("extra-small") {
+      padding: 32px;
+      margin: auto;
+      left: 16px;
+      right: 16px;
+      top: 0;
+      margin-top: 77px;
+      border-radius: 16px;
+      height: 138vw !important;
+    }
+
+    @include for-size-min("xxlarge") {
       padding: 32px;
       margin: auto;
 

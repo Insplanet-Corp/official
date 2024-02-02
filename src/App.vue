@@ -68,48 +68,6 @@ const createRipple = (event) => {
     circle.remove();
   }, 600); // 애니메이션 지속 시간과 일치
 };
-
-// const handleRipple = (event) => {
-//   if (rippleStore.enabled) {
-//     createRipple(event);
-//   }
-// };
-
-// onMounted(() => {
-//   document.addEventListener("click", handleRipple, true);
-// });
-// onUnmounted(() => {
-//   document.removeEventListener("click", handleRipple, true);
-// });
-
-const onBeforeEnter = () => {
-  console.log("onBeforeEnter");
-  componentChangeClassName.value = "route-change-start";
-
-  // componentData.value = route.meta.componentData;
-  // console.log(router);
-  // debugger;
-  // debugger;
-  // componentChangeClassName.value = "route-change-start";
-  // setTimeout(() => {
-  // componentChangeClassName.value = "route-change-start";
-  // }, 100);
-};
-
-const onAfterEnter = () => {
-  console.log("onAfterEnter");
-  // componentChangeClassName.value = "route-change-start";
-  // setTimeout(() => {
-  //   componentChangeClassName.value = "route-change-end";
-  // }, 400);
-  // setTimeout(() => {
-  // componentChangeClassName.value = "route-change-start";
-  // componentChangeClassName.value = "route-change-end";
-  // }, 300);
-
-  // debugger;
-  // transitionClass.value = "transition-wp";
-};
 </script>
 
 <style lang="scss" scoped>

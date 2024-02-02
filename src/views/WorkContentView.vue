@@ -1,6 +1,6 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
-  <div class="work-wp" :class="{ loaded }">
+  <div class="page-wp" :class="{ loaded }">
     <component :is="dynamicComponent" :workData="workData" />
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
@@ -159,89 +159,4 @@ onUnmounted(() => {
 });
 </script>
 
-<style lang="scss" scoped>
-img {
-  max-width: 100%;
-}
-/* .externalHtml {
-  min-height: 500px;
-  background: rgb(255, 228, 232);
-} */
-
-.work-together-more {
-  display: flex;
-  > div {
-    width: 300px;
-    height: 224px;
-    border-radius: 16px;
-    border: 1px solid #000;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    a {
-      margin-top: 20px;
-      background: #0c0c0c;
-      border-radius: 20px;
-      width: 108px;
-      height: 40px;
-      color: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  }
-  .project-inquery {
-  }
-}
-
-.work-wp {
-  overflow: hidden;
-  .work-together-area {
-    transition:
-      margin ease-out 0.5s 0.6s,
-      opacity ease-out 0.8s 0.6s;
-    margin-top: 10vh;
-    opacity: 0;
-  }
-  .more-project-slide-wp {
-    .more-project-slide-area {
-      > div {
-        p {
-          transition: all ease-out 0.5s;
-          transform: translateX(0);
-          opacity: 1;
-          img {
-            height: 100%;
-            width: auto !important;
-            max-width: inherit !important;
-          }
-        }
-      }
-      &.preSlide {
-        .prev-area {
-          p {
-            transform: translateX(-50px);
-            opacity: 0;
-          }
-        }
-        .next-area {
-          p {
-            transform: translateX(50px);
-            opacity: 0;
-          }
-        }
-      }
-    }
-  }
-
-  &.loaded {
-    .work-together-area {
-      margin-top: 0;
-      opacity: 1;
-    }
-  }
-}
-</style>
+<style lang="scss" scoped></style>

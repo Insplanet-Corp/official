@@ -285,10 +285,6 @@ function startAutoScroll() {
   }
 }
 
-// const onMobileScrollHandler = () => {
-//   console.log("onMobileScroll");
-// };
-
 onMounted(() => {
   window.addEventListener("keydown", onHomeKeyAtHomeView);
 

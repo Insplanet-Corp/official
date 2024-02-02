@@ -5,7 +5,7 @@
       <img :src="detail.coverPc" class="only-pc" />
       <img :src="detail.coverMobile" class="only-mobile" />
     </div>
-    <div class="works-section">
+    <div class="works-section works-slide-show">
       <div class="works-inner">
         <div class="works-box">
           <h3 class="project-title" v-html="detail.title"></h3>
