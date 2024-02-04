@@ -23,6 +23,8 @@
   bottom: 0;
   display: flex;
   justify-self: center;
+  max-width: 1600px;
+  margin: auto;
 
   &.fixed-layout {
     position: fixed;
