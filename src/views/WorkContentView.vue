@@ -40,9 +40,11 @@
             :class="{ preSlide, afterSlide }"
           >
             <div class="prev-area">
-              <p @click="onLinkHandler(`${worksSettingList[slideCount].link}`)">
+              <p
+                @click="onLinkHandler(`${useWorkSettingList[slideCount].link}`)"
+              >
                 <img
-                  :src="`/works/images/${worksSettingList[slideCount].image}`"
+                  :src="`/works/images/${useWorkSettingList[slideCount].image}`"
                 />
               </p>
               <button @click="onPrevClickHandler()">
@@ -52,11 +54,11 @@
             <div class="next-area">
               <p
                 @click="
-                  onLinkHandler(`${worksSettingList[slideCountNext].link}`)
+                  onLinkHandler(`${useWorkSettingList[slideCountNext].link}`)
                 "
               >
                 <img
-                  :src="`/works/images/${worksSettingList[slideCountNext].image}`"
+                  :src="`/works/images/${useWorkSettingList[slideCountNext].image}`"
                 />
               </p>
               <button @click="onNextClickHandler()">
@@ -86,13 +88,17 @@ import worksSetting from "@/works-setting";
 import route from "@/router";
 
 const { worksSettingList } = worksSetting;
+const useWorkSettingList = worksSettingList.filter(
+  (e) => e.use && e.link && e.link !== ""
+);
+// console.log(useWorkSettingList);
 
 const router = useRoute();
 const externalHtml = ref("work");
 // const dynamicComponent = ref(null);
 const loaded = ref(false);
 const workId = ref(router.params.workId);
-const workData = worksSettingList.find(
+const workData = useWorkSettingList.find(
   (e) => e.link === `/work/${workId.value}`
 );
 
@@ -107,7 +113,7 @@ const preSlide = ref(false);
 const afterSlide = ref(false);
 const slideCount = ref(0);
 const slideCountNext = computed(() => {
-  if (slideCount.value + 1 >= worksSettingList.length) {
+  if (slideCount.value + 1 >= useWorkSettingList.length) {
     return 0;
   } else {
     return slideCount.value + 1;
@@ -133,8 +139,8 @@ const slideProject = (count) => {
   setTimeout(() => {
     slideCount.value += count;
     if (slideCount.value < 0) {
-      slideCount.value = worksSettingList.length - 1;
-    } else if (slideCount.value >= worksSettingList.length) {
+      slideCount.value = useWorkSettingList.length - 1;
+    } else if (slideCount.value >= useWorkSettingList.length) {
       slideCount.value = 0;
     }
     preSlide.value = false;
@@ -149,7 +155,7 @@ const slideProject = (count) => {
 
 onMounted(() => {
   setTimeout(() => {
-    console.log("loaded");
+    // console.log("loaded");
     loaded.value = true;
   }, 300);
   // loaded.value = true;

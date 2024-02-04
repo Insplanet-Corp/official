@@ -187,9 +187,12 @@ watch(currentBreakpoint, (newBreakpoint, oldBreakpoint) => {
 const groupedItems = computed(() => {
   let groups = Array.from({ length: breakpointCardCount.value }, () => []);
 
-  workList.value.forEach((item, index) => {
-    groups[index % breakpointCardCount.value].push(item);
-  });
+  // workList.value.forEach((item, index) => {
+  workList.value
+    .filter((item) => item.link && item.link !== "")
+    .forEach((item, index) => {
+      groups[index % breakpointCardCount.value].push(item);
+    });
 
   const maxCardCount = groups.reduce(
     (max, arr) => Math.max(max, arr.length),
