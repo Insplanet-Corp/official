@@ -1,7 +1,7 @@
 <template>
   <header>
     <h1 class="logo">
-      <RouterLink to="/"> insplanet </RouterLink>
+      <RouterLink to="/"> <img src="../assets/images/Logo.svg" /> </RouterLink>
     </h1>
     <nav>
       <RouterLink to="/work">Work</RouterLink>
