@@ -258,15 +258,62 @@ const onScrollHandler = (e) => {
   scrollCheckerAndStart();
 };
 
-const onHomeKeyAtHomeView = () => {
-  let scrollTopInterval;
-  scrollTopInterval = setInterval(() => {
-    if (scrollPosition.value < 0) {
-      scrollPosition.value -= Math.floor(scrollPosition.value / 10);
-    } else {
-      clearInterval(scrollTopInterval);
-    }
-  }, 10);
+let scrollTopInterval;
+const onKeyDownAtHomeView = (event) => {
+  const pageHeight = window.innerHeight;
+  const maxContentHeight = maxWorkGroupInnerHeight.value;
+
+  clearInterval(scrollTopInterval);
+
+  // console.log(event.key);
+
+  if (event.key === "Home") {
+    scrollTopInterval = setInterval(() => {
+      if (scrollPosition.value < 0) {
+        scrollPosition.value -= Math.floor(scrollPosition.value / 10);
+      } else {
+        clearInterval(scrollTopInterval);
+      }
+    }, 10);
+  }
+  if (event.key === "End") {
+    console.log(maxContentHeight);
+    scrollTopInterval = setInterval(() => {
+      if (scrollPosition.value > -maxContentHeight) {
+        scrollPosition.value -= Math.floor(
+          (maxContentHeight - scrollPosition.value) / 10
+        );
+      } else {
+        clearInterval(scrollTopInterval);
+      }
+    }, 10);
+  }
+  if (event.key === "PageDown") {
+    const targetScrollPosition = scrollPosition.value - pageHeight;
+    // console.log(scrollPosition.value, targetScrollPosition);
+    scrollTopInterval = setInterval(() => {
+      if (scrollPosition.value > targetScrollPosition) {
+        scrollPosition.value += Math.floor(
+          (targetScrollPosition - scrollPosition.value) / 10
+        );
+      } else {
+        clearInterval(scrollTopInterval);
+      }
+    }, 10);
+  }
+  if (event.key === "PageUp") {
+    const targetScrollPosition = scrollPosition.value + pageHeight;
+    // console.log(scrollPosition.value, targetScrollPosition);
+    scrollTopInterval = setInterval(() => {
+      if (scrollPosition.value < targetScrollPosition) {
+        scrollPosition.value -= Math.floor(
+          (scrollPosition.value - targetScrollPosition) / 10
+        );
+      } else {
+        clearInterval(scrollTopInterval);
+      }
+    }, 10);
+  }
 };
 
 function startAutoScroll() {
@@ -289,7 +336,7 @@ function startAutoScroll() {
 }
 
 onMounted(() => {
-  window.addEventListener("keydown", onHomeKeyAtHomeView);
+  window.addEventListener("keydown", onKeyDownAtHomeView);
 
   setTimeout(() => {
     isInited.value = true;
@@ -326,7 +373,7 @@ onMounted(() => {
 
 onUnmounted(() => {
   window.removeEventListener("resize", checkBreakpoint);
-  window.removeEventListener("keydown", onHomeKeyAtHomeView);
+  window.removeEventListener("keydown", onKeyDownAtHomeView);
   clearInterval(autoScrollInterval);
   clearTimeout(scrollTimer);
   // if (isPotable) {

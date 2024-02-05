@@ -1,5 +1,8 @@
 @import "./response.scss";
 .work-container {
+  // max-width: 1600px;
+  max-width: 1536px;
+  margin: auto;
   img {
     width: 100%;
   }
