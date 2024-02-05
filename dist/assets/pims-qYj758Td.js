@@ -1,0 +1,1 @@
+import{_ as a}from"./WorkContentCommon-oMP43vma.js";import{d as o,e as s,j as r,g as c}from"./index-GZJEbFnb.js";const n={class:"work-container"},m={__name:"pims",props:{workData:Object},setup(e){const t=e.workData.detail;return(p,l)=>(o(),s("div",n,[r(a,{detail:c(t)},null,8,["detail"])]))}};export{m as default};

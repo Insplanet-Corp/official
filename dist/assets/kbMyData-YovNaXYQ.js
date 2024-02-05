@@ -1,0 +1,1 @@
+import{_ as e}from"./WorkContentCommon-oMP43vma.js";import{d as o,e as r,j as s,g as c}from"./index-GZJEbFnb.js";const n={class:"work-container"},m={__name:"kbMyData",props:{workData:Object},setup(a){const t=a.workData.detail;return(l,p)=>(o(),r("div",n,[s(e,{detail:c(t)},null,8,["detail"])]))}};export{m as default};

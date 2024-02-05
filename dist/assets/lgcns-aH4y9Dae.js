@@ -1,0 +1,1 @@
+import{s,d as e,e as t,i as o}from"./index-GZJEbFnb.js";const c="/insplanet_public/assets/portfolio-atvZDYdi.png",n={},r=o("img",{src:c},null,-1),_=[r];function a(i,l){return e(),t("div",null,_)}const p=s(n,[["render",a]]);export{p as default};

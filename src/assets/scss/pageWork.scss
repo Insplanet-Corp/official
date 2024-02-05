@@ -65,6 +65,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1536px;
+    margin: auto;
 
     .work-together-content {
       // border: 1px solid red;
@@ -95,6 +97,8 @@
 
   // more project 영역
   .more-project-area {
+    max-width: 1536px;
+    margin: auto;
     .more-project-content {
       padding-top: 40px;
       padding-bottom: 80px;
