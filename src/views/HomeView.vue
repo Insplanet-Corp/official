@@ -277,14 +277,14 @@ function startAutoScroll() {
   if (!isPotable) {
     autoScrollInterval = setInterval(() => {
       scrollPosition.value -= 0.05;
-      // }, 1);
-    }, 1000);
+    }, 1);
+    // }, 1000);
   } else {
     autoScrollInterval = setInterval(() => {
       console.log("autoScrollInterval");
       scrollTo({ top: scrollY + 1 });
-      // }, 10);
-    }, 40000);
+    }, 10);
+    // }, 40000);
   }
 }
 

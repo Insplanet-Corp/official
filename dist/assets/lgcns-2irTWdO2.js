@@ -1,0 +1,1 @@
+import{s,d as e,e as t,i as o}from"./index-d2Js88WR.js";const c="/assets/portfolio-atvZDYdi.png",n={},r=o("img",{src:c},null,-1),_=[r];function a(i,l){return e(),t("div",null,_)}const f=s(n,[["render",a]]);export{f as default};
