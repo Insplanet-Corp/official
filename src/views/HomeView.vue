@@ -323,13 +323,13 @@ function startAutoScroll() {
 
   if (!isPotable) {
     autoScrollInterval = setInterval(() => {
-      scrollPosition.value -= 0.05;
+      scrollPosition.value -= 0.12;
     }, 1);
     // }, 1000);
   } else {
     autoScrollInterval = setInterval(() => {
-      console.log("autoScrollInterval");
-      scrollTo({ top: scrollY + 1 });
+      // console.log("autoScrollInterval");
+      scrollTo({ top: scrollY + 2 });
     }, 10);
     // }, 40000);
   }

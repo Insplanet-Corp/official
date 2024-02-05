@@ -1,26 +1,32 @@
 @import "./response.scss";
 
 header {
-  padding: 30px 16px 30px;
-  margin: 0px auto 0;
+  transition: top ease 0.6s;
   position: fixed;
   left: 0;
   right: 0;
-  top: 0;
+  top: -10vh;
   z-index: 3;
-  display: flex;
   width: 100%;
-  max-width: 1920px;
-  justify-content: space-between;
   background: rgba(0, 0, 0, 0.3);
+  &.show {
+    top: 0vh;
+  }
+  > div {
+    padding: 30px 16px 30px;
+    margin: 0px auto 0;
+    display: flex;
+    max-width: 1920px;
+    justify-content: space-between;
+    @include for-size-min("extra-small") {
+      // padding: 10px 16px;
+      padding: 30px 32px 30px;
+    }
+  }
+
   * {
     // line-height: 0;
     // vertical-align: top;
-  }
-
-  @include for-size-min("extra-small") {
-    // padding: 10px 16px;
-    padding: 30px 32px 30px;
   }
 
   // background: #000;

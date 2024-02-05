@@ -3,7 +3,7 @@
     <img :src="detail.coverPc" class="only-pc" />
     <img :src="detail.coverMobile" class="only-mobile" />
   </div>
-  <div class="works-section works-slide-show">
+  <div class="works-section works-slide-show" data-aos="fade-up">
     <div class="works-inner">
       <div class="works-box">
         <h3 class="project-title" v-html="detail.title"></h3>
@@ -44,9 +44,18 @@
 </template>
 
 <script setup>
-import { defineProps } from "vue";
+import { defineProps, onMounted } from "vue";
+import AOS from "aos";
 const props = defineProps({
   detail: Object,
 });
 const detail = props.detail;
+
+onMounted(() => {
+  AOS.init({
+    duration: 1200,
+    delay: 500,
+    offset: 400,
+  });
+});
 </script>

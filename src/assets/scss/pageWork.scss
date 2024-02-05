@@ -10,7 +10,7 @@
 
 .page-wp {
   width: 100%;
-  max-width: 1920px;
+  // max-width: 1920px;
   padding: 16px;
   margin: auto;
   @include for-size-min(small) {
@@ -65,6 +65,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 1920px;
+    margin: auto;
 
     .work-together-content {
       // border: 1px solid red;
@@ -95,8 +97,10 @@
 
   // more project 영역
   .more-project-area {
+    max-width: 1920px;
+    margin: auto;
     .more-project-content {
-      padding-top: 40px;
+      padding-top: 96px;
       padding-bottom: 80px;
       display: flex;
       .more-project-title-area {
@@ -115,6 +119,7 @@
       }
 
       .more-project-slide-wp {
+        margin-top: 113px;
         flex: 2;
         .more-project-slide-area {
           display: flex;
@@ -125,21 +130,43 @@
             &.prev-area {
               text-align: right;
               margin: 48px 10px 0 0;
+              &:hover {
+                img {
+                  filter: brightness(105%) contrast(150%) saturate(110%);
+                }
+                button span.arrow {
+                  animation: moveAndFadePrev 1s ease-out infinite;
+                }
+              }
             }
             &.next-area {
               margin: 0px 0 0 10px;
+              &:hover {
+                img {
+                  filter: brightness(105%) contrast(150%) saturate(110%);
+                }
+                button span.arrow {
+                  animation: moveAndFadeNext 1s ease-out infinite;
+                }
+              }
             }
             p {
               height: 423px;
               // background: #1a1a1a;
               border-radius: 16px;
+              cursor: pointer;
+              img {
+                transition: all 0.5s ease;
+              }
             }
             button {
               margin-top: 16px;
               display: inline-block;
+              cursor: pointer;
               b {
               }
               span.arrow {
+                position: relative;
                 display: inline-block;
                 width: 74px;
                 height: 24px;
@@ -162,13 +189,13 @@
   .works-image {
     margin-bottom: 32px;
   }
-  .works-slide-show {
-    transition:
-      margin ease-out 0.5s 0.6s,
-      opacity ease-out 0.8s 0.6s;
-    margin-top: 10vh;
-    opacity: 0;
-  }
+  // .works-slide-show {
+  //   transition:
+  //     margin ease-out 0.5s 0.6s,
+  //     opacity ease-out 0.8s 0.6s;
+  //   margin-top: 10vh;
+  //   opacity: 0;
+  // }
   .more-project-slide-wp {
     .more-project-slide-area {
       > div {
@@ -201,10 +228,33 @@
   }
 
   &.loaded {
-    .works-slide-show {
-      margin-top: 0;
-      opacity: 1;
-    }
+    // .works-slide-show {
+    //   margin-top: 0;
+    //   opacity: 1;
+    // }
+  }
+}
+
+@keyframes moveAndFadeNext {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 8%;
+    opacity: 0.2;
+  }
+}
+@keyframes moveAndFadePrev {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: -8%;
+    opacity: 0.2;
   }
 }
 

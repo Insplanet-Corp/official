@@ -67,16 +67,16 @@
       height: 138vw !important;
     }
 
-    @include for-size-min("xxlarge") {
-      padding: 32px;
-      margin: auto;
+    // @include for-size-min("xxlarge") {
+    //   padding: 32px;
+    //   margin: auto;
 
-      left: calc((100vw - 1856px) / 2);
-      right: calc((100vw - 1856px) / 2);
-      top: 0;
-      margin-top: 92px;
-      height: calc((1920px) * 0.53) !important;
-    }
+    //   left: calc((100vw - 1856px) / 2);
+    //   right: calc((100vw - 1856px) / 2);
+    //   top: 0;
+    //   margin-top: 92px;
+    //   height: calc((1920px) * 0.53) !important;
+    // }
 
     // height: inherit !important;
   }
