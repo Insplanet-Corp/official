@@ -67,15 +67,15 @@
       height: 138vw !important;
     }
 
-    @include for-size-min("xlarge") {
+    @include for-size-min("xxlarge") {
       padding: 32px;
       margin: auto;
 
-      left: calc((100vw - 1550px) / 2);
-      right: calc((100vw - 1550px) / 2);
+      left: calc((100vw - 1856px) / 2);
+      right: calc((100vw - 1856px) / 2);
       top: 0;
       margin-top: 92px;
-      height: calc((1600px) * 0.53) !important;
+      height: calc((1920px) * 0.53) !important;
     }
 
     // height: inherit !important;
