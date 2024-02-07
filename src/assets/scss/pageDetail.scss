@@ -8,7 +8,7 @@
 .only-pc {
   display: none;
 }
-@media (min-width: 768px) {
+@include for-size-min("extra-small") {
   .only-mobile {
     display: none;
   }
@@ -172,5 +172,118 @@
   }
   .br_pc {
     display: block;
+  }
+}
+
+// content responsive
+@include for-size-min("extra-small") {
+  * {
+    font-size: 14px;
+  }
+  .works-section {
+    .works-inner {
+      width: 728px;
+    }
+    .project-title {
+      font-size: 32px;
+      line-height: 1.4;
+    }
+    .project-text {
+      font-size: 24px;
+      line-height: 1.5;
+    }
+    .sub-title {
+      font-size: 14px;
+    }
+    .sub-text {
+      font-size: 14px;
+    }
+  }
+  .page-wp {
+    .work-together-area .work-together-content h2 {
+      font-size: 24px;
+    }
+    .more-project-area .more-project-content {
+      padding: 96px 32px 240px;
+      .more-project-title-area h2 {
+        font-size: 40px;
+      }
+    }
+    .more-project-area
+      .more-project-content
+      .more-project-title-area
+      .title-desc {
+      font-size: 14px;
+    }
+  }
+}
+
+@include for-size-min("medium") {
+  .works-section {
+    .works-inner {
+      width: 952px;
+    }
+    .project-title {
+      font-size: 32px;
+    }
+    .project-text {
+      font-size: 24px;
+    }
+    .sub-title {
+      font-size: 14px;
+    }
+    .sub-text {
+      font-size: 14px;
+    }
+  }
+  .page-wp {
+    .work-together-area .work-together-content h2 {
+      font-size: 24px;
+    }
+    .more-project-area .more-project-content .more-project-title-area h2 {
+      font-size: 40px;
+    }
+    .more-project-area
+      .more-project-content
+      .more-project-title-area
+      .title-desc {
+      font-size: 14px;
+    }
+  }
+}
+@include for-size-min("xxlarge") {
+  * {
+    font-size: 18px;
+  }
+  .works-section {
+    .works-inner {
+      width: 1400px;
+    }
+    .project-title {
+      font-size: 64px;
+    }
+    .project-text {
+      font-size: 36px;
+    }
+    .sub-title {
+      font-size: 18px;
+    }
+    .sub-text {
+      font-size: 18px;
+    }
+  }
+  .page-wp {
+    .work-together-area .work-together-content h2 {
+      font-size: 40px;
+    }
+    .more-project-area .more-project-content .more-project-title-area h2 {
+      font-size: 104px;
+    }
+    .more-project-area
+      .more-project-content
+      .more-project-title-area
+      .title-desc {
+      font-size: 16px;
+    }
   }
 }
