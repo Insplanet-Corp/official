@@ -44,7 +44,7 @@
                 @click="onLinkHandler(`${useWorkSettingList[slideCount].link}`)"
               >
                 <img
-                  :src="`/works/images/${useWorkSettingList[slideCount].image}`"
+                  :src="`/worksCards/${useWorkSettingList[slideCount].image}`"
                 />
               </p>
               <button @click="onPrevClickHandler()">
@@ -58,7 +58,7 @@
                 "
               >
                 <img
-                  :src="`/works/images/${useWorkSettingList[slideCountNext].image}`"
+                  :src="`/worksCards/${useWorkSettingList[slideCountNext].image}`"
                 />
               </p>
               <button @click="onNextClickHandler()">

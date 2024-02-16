@@ -60,7 +60,7 @@
               >
                 <img
                   ref="workCardImages"
-                  :src="getFullImagePath(work.image)"
+                  :src="`/worksCards/${work.image}`"
                   alt=""
                 />
                 <!-- {{ index }} -->
