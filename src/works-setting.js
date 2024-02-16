@@ -197,7 +197,7 @@ const worksSettingList = [
         "1회용컵 보증금 제도 시행에 따라 자원순환보증금관리센터-사업자-회수사업자-소비자 간 4개의 플랫폼에 제공하고 있는 서비스의 기능 고도화와 인스플래닛의 UI/UX 전략에 의해 수립된 가이드에 따른 디자인 고도화를 진행하였습니다.",
       launch: "Nov, 2022",
       client: "KB국민은행",
-      device: "PC Web",
+      device: "Web(PC)",
       uiux: "Benchmarking, UX Concept Building, UI Concept Building, Prototyping, Wireframing, UI Design, Figma",
       viewplatform: "#none",
     },
@@ -272,7 +272,7 @@ const worksSettingList = [
         "LG전자 오브제 컬렉션의 다양한 색상과 재질을 강조하기 위한 USP 디자인과 전자제품에 따른 인테리어 및 내부 연출 컷 디자인 프로젝트를 진행하였습니다.",
       launch: "Aug, 2022",
       client: "LG 전자",
-      device: "PC Web / Mobile Web",
+      device: "Web(PC/Mobile)",
       uiux: "UI Concept Building, Prototyping, Wireframing, UI Design, Figma",
       viewplatform: "#none",
     },
@@ -297,7 +297,7 @@ const worksSettingList = [
         "분산된 나의 데이터를 한 곳에서 모아보는 마이데이터 시대의 개막에 맞추어 축적된 데이터의 분석과 효율적인 관리로 즉각적인 인사이트를 확보하기 위한 맞춤형 분석 플랫폼을 구축하였습니다.",
       launch: "Mar, 2023",
       client: "KB금융그룹",
-      device: "PC Web",
+      device: "Web(PC)",
       uiux: "Benchmarking, UX Concept Building, UI Concept Building, Prototyping, Wireframing, UI Design, Figma",
       viewplatform: "#none",
     },
@@ -346,7 +346,7 @@ const worksSettingList = [
         "대법원의 인터넷 등기 시스템의 대민 채널인 인터넷 등기소의 차세대 UI/UX의 전략을 수립하고, 전략에 따른 화면 구현정책 및 UI/UX의 표준화 프로젝트를 진행하였습니다.",
       launch: "2025년 런칭 예정",
       client: "대법원",
-      device: "PC Web / Mobile Web",
+      device: "Web(PC/Mobile)",
       uiux: "Benchmarking, UX Concept Building, UI Concept Building, User Flow, Menu Architecture, Prototyping, Wireframing, UI Design, Figma, Test Scenario",
       viewplatform: "#none",
     },
@@ -618,7 +618,8 @@ const worksSettingList = [
       coverMobile: "/works/chinchin/cover_m.png",
       title:
         "ChinChin 글로벌<span class='br_pc'></span> 러닝 어플리케이션<span class='br_pc'></span> UI/UX",
-      subtitle: "AI 및 VR 등 최신 기술이 적용된 영어교육용 어플리케이션",
+      subtitle:
+        "AI 및 VR 등 최신 기술이 적용된 <span class='br_pc'></span>영어교육용 어플리케이션",
       overview:
         "전세계(한국 및 일본 제외) 아동을 대상으로 한 영어 교육용 어플리케이션입니다. AI, VR 등의 최신기술을 적용된 컨텐츠를 보다 쉽고 재미있게 학습할 수 있도록 체계적인 정보구조와 쉬운 UI/UX가 적용되었습니다.",
       launch: "Jul, 2019",
@@ -690,8 +691,10 @@ const worksSettingList = [
     detail: {
       coverPc: "/works/taldosa/cover.png",
       coverMobile: "/works/taldosa/cover_m.png",
-      title: "사주 어플리케이션 탈도사의 점집<span class='br_pc'></span> UI/UX",
-      subtitle: "사주분석 알고리즘이 적용된 운세서비스 어플리케이션",
+      title:
+        "사주 어플리케이션<span class='br_pc'></span> 탈도사의 점집<span class='br_pc'></span> UI/UX",
+      subtitle:
+        "사주분석 알고리즘이 적용된 <span class='br_pc'></span>운세서비스 어플리케이션",
       overview:
         "명리학 기반의 사주 분석 알고리즘이 적용된 운세서비스 어플리케이션입니다. 운세정보를 바로 확인할 수 있도록 기본 서비스로 배치하고, 사주, 신년운세 등 다양한 사주정보를 편리하게 조회할 수 있도록 서비스 접근성을 강화하였습니다.",
       launch: "Jul, 2019",
@@ -721,7 +724,7 @@ const worksSettingList = [
         "열차제어장치 ‘IRU’ 개발성과와 NB Solution의 기술력을 중심으로 구성된 사이트입니다.",
       launch: "Aug, 2019",
       client: "남부솔루션",
-      device: "PC Web",
+      device: "Web(PC)",
       uiux: "UX Concept Building, UI Concept Building, Prototyping, Wireframing",
       viewplatform: "#none",
     },
