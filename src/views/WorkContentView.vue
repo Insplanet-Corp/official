@@ -1,7 +1,7 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
   <div class="page-wp" :class="{ loaded }">
-    <component :is="dynamicComponent" :workData="workData" />
+    <component :is="dynamicComponent" />
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
       <div class="work-together-content">
@@ -41,10 +41,15 @@
           >
             <div class="prev-area">
               <p
-                @click="onLinkHandler(`${useWorkSettingList[slideCount].link}`)"
+                @click="
+                  onLinkHandler(
+                    `${useWorkSettingList[slideCountPrev].link}`,
+                    slideCountPrev
+                  )
+                "
               >
                 <img
-                  :src="`/worksCards/${useWorkSettingList[slideCount].image}`"
+                  :src="`/worksCards/${useWorkSettingList[slideCountPrev].image}`"
                 />
               </p>
               <button @click="onPrevClickHandler()">
@@ -54,7 +59,10 @@
             <div class="next-area">
               <p
                 @click="
-                  onLinkHandler(`${useWorkSettingList[slideCountNext].link}`)
+                  onLinkHandler(
+                    `${useWorkSettingList[slideCountNext].link}`,
+                    slideCountNext
+                  )
                 "
               >
                 <img
@@ -82,11 +90,13 @@ import {
   computed,
   defineAsyncComponent,
 } from "vue";
+import { useOfficialStore } from "@/stores/official";
 import { useRoute } from "vue-router";
 import axios from "axios";
 import worksSetting from "@/works-setting";
 import route from "@/router";
 
+const officialStore = useOfficialStore();
 const { worksSettingList } = worksSetting;
 const useWorkSettingList = worksSettingList.filter(
   (e) => e.use && e.link && e.link !== ""
@@ -98,13 +108,36 @@ const externalHtml = ref("work");
 // const dynamicComponent = ref(null);
 const loaded = ref(false);
 const workId = ref(router.params.workId);
-const workData = useWorkSettingList.find(
+// const workData = ref(
+//   useWorkSettingList.find((e) => e.link === `/work/${workId.value}`)
+// );
+let newWorkData = useWorkSettingList.find(
   (e) => e.link === `/work/${workId.value}`
+);
+officialStore.updateWorkPageDetail(newWorkData);
+
+watch(
+  () => router.params.workId,
+  (newWorkId, oldWorkId) => {
+    // 여기에 함수를 호출
+    // console.log(`workId changed from ${oldWorkId} to ${newWorkId}`);
+    newWorkData = useWorkSettingList.find(
+      (e) => e.link === `/work/${newWorkId}`
+    );
+    console.log(newWorkData);
+    officialStore.updateWorkPageDetail({ ...newWorkData });
+    // console.log(newWorkData);
+    // debugger;
+    // console.log(workData.value);
+  }
 );
 
 const dynamicComponent = defineAsyncComponent(() =>
   import(`../works/${workId.value}.vue`).then((module) => {
     // console.log(router.params.workId);
+    // const workData = useWorkSettingList.find(
+    //   (e) => e.link === `/work/${workId.value}`
+    // );
     return module.default;
   })
 );
@@ -119,17 +152,27 @@ const slideCountNext = computed(() => {
     return slideCount.value + 1;
   }
 });
+
+const slideCountPrev = computed(() => {
+  if (slideCount.value - 1 < 0) {
+    return useWorkSettingList.length - 1;
+  } else {
+    return slideCount.value - 1;
+  }
+});
+
 const onPrevClickHandler = () => {
-  console.log("onPrevClickHandler");
+  // console.log("onPrevClickHandler");
   slideProject(-1);
 };
 const onNextClickHandler = () => {
-  console.log("onNextClickHandler");
+  // console.log("onNextClickHandler");
   slideProject(1);
 };
 
-const onLinkHandler = (path) => {
+const onLinkHandler = (path, newIndex) => {
   route.push(path);
+  slideCount.value = newIndex;
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 

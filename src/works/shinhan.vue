@@ -1,7 +1,7 @@
 <template>
   <div class="work-container">
     <!-- 공통 상단 영역 시작 -->
-    <WorkContentCommon :detail="detail" />
+    <WorkContentCommon />
     <!-- 공통 상단 영역 종료 -->
     <div class="works-content" data-aos="fade-up">
       <img src="/works/shinhan/image_pc_01.png" class="only-pc" />
@@ -41,10 +41,6 @@
 import { onMounted, defineProps } from "vue";
 import AOS from "aos";
 import WorkContentCommon from "@/views/WorkContentCommon.vue";
-const props = defineProps({
-  workData: Object,
-});
-const detail = props.workData.detail;
 
 onMounted(() => {
   AOS.init({

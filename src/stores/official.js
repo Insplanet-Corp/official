@@ -38,6 +38,25 @@ export const useOfficialStore = defineStore("official", () => {
     pageType.value = value;
   };
 
+  const workPageDetail = ref({
+    coverPc: null,
+    coverMobile: null,
+    title: null,
+    subtitle: null,
+    viewplatform: null,
+    overview: null,
+    launch: null,
+    client: null,
+    device: null,
+    uiux: null,
+  });
+
+  const updateWorkPageDetail = (newValue) => {
+    // console.log(newValue);
+    // debugger;
+    workPageDetail.value = { ...newValue };
+  };
+
   return {
     pageTransitionClass,
     pageLoaderClass,
@@ -45,11 +64,13 @@ export const useOfficialStore = defineStore("official", () => {
     pageLoaderZIndex,
     routePageStyle,
     pageType,
+    workPageDetail,
     pageTransitionHandler,
     pageLoaderClassHandler,
     pageLoaderColorHandler,
     pageLoaderZindexHandler,
     updateRoutePageStyle,
     updatePageType,
+    updateWorkPageDetail,
   };
 });

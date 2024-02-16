@@ -44,14 +44,29 @@
 </template>
 
 <script setup>
-import { defineProps, onMounted } from "vue";
+import { ref, defineProps, onMounted, watch } from "vue";
+import { useOfficialStore } from "@/stores/official";
 import AOS from "aos";
-const props = defineProps({
-  detail: Object,
-});
-const detail = props.detail;
+// const props = defineProps({
+//   detail: Object,
+// });
+// const detail = props.detail;
+
+const officialStore = useOfficialStore();
+const workData = officialStore.workPageDetail;
+const detail = ref(workData.detail);
+
+watch(
+  () => officialStore.workPageDetail,
+  (newVal) => {
+    console.log(newVal.detail);
+    // debugger;
+    detail.value = newVal.detail;
+  }
+);
 
 onMounted(() => {
+  console.log(detail);
   AOS.init({
     duration: 1200,
     delay: 500,

@@ -1,7 +1,7 @@
 <template>
   <div class="work-container">
     <!-- 공통 상단 영역 시작 -->
-    <WorkContentCommon :detail="detail" />
+    <WorkContentCommon />
     <!-- 공통 상단 영역 종료 -->
     <div class="works-content">
       <img src="/works/mmaa/image_pc_01.png" class="only-pc" />
@@ -12,10 +12,5 @@
 <script setup>
 import { onMounted, defineProps } from "vue";
 import WorkContentCommon from "@/views/WorkContentCommon.vue";
-
-const props = defineProps({
-  workData: Object,
-});
-const detail = props.workData.detail;
 </script>
 <style lang="scss"></style>
