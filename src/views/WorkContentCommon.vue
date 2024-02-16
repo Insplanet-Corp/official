@@ -27,7 +27,7 @@
           </div>
           <div class="sub-box">
             <em class="sub-title">Client</em>
-            <div clas="sub-text" v-html="detail.client"></div>
+            <div class="sub-text" v-html="detail.client"></div>
           </div>
           <div class="sub-box">
             <em class="sub-title">Device</em>

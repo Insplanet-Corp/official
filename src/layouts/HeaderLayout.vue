@@ -29,14 +29,14 @@
 
           우리는 조금 더 즐겁고<br />
           진화된 디지털 경험을<br />
-          만들기 위한 새로움을 고민합니다. <br /><br />
+          만들기 위해 새로움을 고민합니다. <br /><br />
 
           본질에 대한 이해와 넓은 시야로 <br />
           누구나 공감할 수 있는<br />
           가치를 만듭니다.
         </div>
         <a href="#" class="btn-download"
-          >회사 브로셔 다운로드
+          >회사 브로슈어 다운로드
           <span class="ico-download-wrap"><i class="ico-download"></i></span
         ></a>
         <dl class="contact-list">
@@ -47,7 +47,7 @@
           <dt>Tel</dt>
           <dd>02-2088-5084</dd>
         </dl>
-        <p class="copylight">insplanet ©2018—2024</p>
+        <p class="copylight">Ⓒ 2024. Insplanet all right reserved.</p>
       </div>
     </div>
   </div>

@@ -10,10 +10,10 @@
           <div class="project-inquery">
             <!-- mail to link -->
             <strong>프로젝트 문의</strong>
-            <a>let's Talk</a>
+            <a>Let's Talk</a>
           </div>
           <div class="broshour-download">
-            <strong>회사브로셔 다운로드</strong>
+            <strong>회사 브로슈어 다운로드</strong>
             <a href="">Download</a>
           </div>
         </div>
