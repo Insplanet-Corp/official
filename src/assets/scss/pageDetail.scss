@@ -74,7 +74,7 @@
       font-family: "Pretendard";
       font-size: 64px;
       font-style: normal;
-      font-weight: 900;
+      font-weight: 700;
       line-height: 78px;
       // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
@@ -120,7 +120,7 @@
         display: inline-block;
         width: 24px;
         height: 24px;
-        background: url("../assets/images/ico/ico-view.png") no-repeat 0 0;
+        background: url("../../assets/images/ico/ico-view.png") no-repeat 0 0;
         vertical-align: -8px;
         margin-left: 10px;
       }
@@ -128,7 +128,7 @@
         display: inline-block;
         width: 24px;
         height: 24px;
-        background: url("../assets/images/ico/ico-link.png") no-repeat 0 0;
+        background: url("../../assets/images/ico/ico-link.png") no-repeat 0 0;
         vertical-align: -6px;
         margin-left: 10px;
       }
@@ -183,6 +183,13 @@
   .works-section {
     .works-inner {
       width: 728px;
+      .works-box {
+        padding-right: 16px;
+        & + .works-box {
+          padding-left: 16px;
+          padding-right: 0;
+        }
+      }
     }
     .project-title {
       font-size: 32px;
@@ -222,6 +229,13 @@
   .works-section {
     .works-inner {
       width: 952px;
+      .works-box {
+        padding-right: 37px;
+        & + .works-box {
+          padding-left: 37px;
+          padding-right: 0;
+        }
+      }
     }
     .project-title {
       font-size: 32px;
@@ -251,13 +265,13 @@
     }
   }
 }
-@include for-size-min("xxlarge") {
+@include for-size-min("xlarge") {
   * {
     font-size: 18px;
   }
   .works-section {
     .works-inner {
-      width: 1400px;
+      width: 1120px;
     }
     .project-title {
       font-size: 64px;
@@ -284,6 +298,17 @@
       .more-project-title-area
       .title-desc {
       font-size: 16px;
+    }
+  }
+}
+
+@include for-size-min("xxlarge") {
+  * {
+    font-size: 18px;
+  }
+  .works-section {
+    .works-inner {
+      width: 1400px;
     }
   }
 }
