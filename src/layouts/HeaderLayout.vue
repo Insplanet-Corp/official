@@ -35,7 +35,10 @@
           누구나 공감할 수 있는<br />
           가치를 만듭니다.
         </div>
-        <a href="#" class="btn-download"
+        <a
+          href="/brochure/insplanet_brief.pdf"
+          class="btn-download"
+          target="_blank"
           >회사 브로슈어 다운로드
           <span class="ico-download-wrap"><i class="ico-download"></i></span
         ></a>
@@ -43,9 +46,9 @@
           <dt>contact</dt>
           <dd>서울특별시 중구 퇴계로27길 49, 2층 (저동2가, 센트럴에스빌딩)</dd>
           <dt>Email</dt>
-          <dd>hello@insplanet.co.kr</dd>
+          <dd><a href="hello@insplanet.co.kr">hello@insplanet.co.kr</a></dd>
           <dt>Tel</dt>
-          <dd>02-2088-5084</dd>
+          <dd><a href="tel:02-2088-5084">02-2088-5084</a></dd>
         </dl>
         <p class="copylight">Ⓒ 2024. Insplanet all right reserved.</p>
       </div>

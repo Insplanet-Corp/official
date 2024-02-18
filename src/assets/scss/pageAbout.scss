@@ -7,7 +7,14 @@
       opacity: 1;
       bottom: 0;
     }
+    @include for-size-max("small") {
+      right: calc(50% - 160px);
+      height: 100%;
+      padding-bottom: 30px;
+      overflow: auto;
+    }
   }
+
   .about-bg {
     position: fixed;
     left: 0;
@@ -26,6 +33,9 @@
   bottom: 0;
   // background: #fff;
   z-index: 4;
+
+  @include for-size-max("extra-small") {
+  }
 
   .btn-close {
     position: absolute;
@@ -112,7 +122,7 @@
         display: inline-flex;
         align-items: center;
         width: 100%;
-        margin-top: 48px;
+        margin-top: 32px;
         height: 56px;
         font-family: "Pretendard";
         font-style: normal;
@@ -126,28 +136,29 @@
       .ico-download-wrap {
         width: 40px;
         height: 32px;
-        line-height: 32px;
+        // line-height: 32px;
         background: #0c0c0c;
         border-radius: 20px;
         text-align: center;
         .ico-download {
-          margin-top: 3px;
+          margin-top: 7px;
           display: inline-block;
-          width: 24px;
-          height: 24px;
-          background: url("../assets/images/ico/ico-download-white.png")
-            no-repeat;
+          width: 16px;
+          height: 17px;
+          background: url("../images/ico/ico-download-white.png") no-repeat
+            center / cover;
         }
         &:hover {
           background: #fff;
           border: 1px solid #0c0c0c;
           .ico-download {
-            background: url("../assets/images/ico/ico-download.png") no-repeat;
+            background: url("../images/ico/ico-download.png") no-repeat center /
+              cover;
           }
         }
       }
       .contact-list {
-        margin-top: 48px;
+        margin-top: 32px;
         dt {
           font-size: 14px;
           font-weight: 700;

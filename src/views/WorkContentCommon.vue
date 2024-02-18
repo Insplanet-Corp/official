@@ -3,19 +3,19 @@
     <img :src="detail.coverPc" class="only-pc" />
     <img :src="detail.coverMobile" class="only-mobile" />
   </div>
-  <div class="works-section works-slide-show" data-aos="fade-up">
+  <div class="works-section works-slide-show">
     <div class="works-inner">
       <div class="works-box">
         <h3 class="project-title" v-html="detail.title"></h3>
         <div class="project-text" v-html="detail.subtitle"></div>
         <div class="btn-wrap">
-          <a :href="detail.viewplatform" class="btn-view"
+          <!-- <a :href="detail.viewplatform" class="btn-view"
             >View Platform<i class="ico-view"></i
-          ></a>
+          ></a> -->
         </div>
-        <div class="btn-wrap">
+        <!-- <div class="btn-wrap">
           <a href="#" class="btn-copy">Copy URL <i class="ico-link"></i></a>
-        </div>
+        </div> -->
       </div>
       <div class="works-box">
         <strong class="sub-title">Overview</strong>
@@ -59,18 +59,18 @@ const detail = ref(workData.detail);
 watch(
   () => officialStore.workPageDetail,
   (newVal) => {
-    console.log(newVal.detail);
+    // console.log(newVal.detail);
     // debugger;
     detail.value = newVal.detail;
   }
 );
 
 onMounted(() => {
-  console.log(detail);
+  // console.log(detail);
   AOS.init({
-    duration: 1200,
-    delay: 500,
-    offset: 400,
+    duration: 800,
+    delay: 100,
+    offset: 300,
   });
 });
 </script>

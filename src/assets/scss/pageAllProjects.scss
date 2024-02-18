@@ -1,0 +1,133 @@
+@import "./response.scss";
+
+// "extra-small": 767px,
+// "small": 1023px,
+// "medium": 1279px,
+// "large": 1339px,
+// "xlarge": 1599px,
+// "xxlarge": 1919px,
+// "xxxlarge": 1920px,
+
+.page-content.all-project {
+  ul {
+    li {
+      padding: 10px 0;
+      display: flex;
+      border-bottom: 1px solid #fff;
+      // & + li {
+      //   border-top: 1px solid #fff;
+      // }
+      > * {
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+      &:hover {
+        background: #fff;
+        color: #000;
+        a {
+          color: #000;
+        }
+        .btn-projectLink {
+          img {
+            filter: brightness(0);
+          }
+        }
+      }
+      .projectName {
+        flex-basis: 28%;
+      }
+      .projectClient {
+        flex-basis: 28%;
+      }
+      .projectType {
+        flex-basis: 24%;
+      }
+      .projectYear {
+        flex-basis: 9%;
+      }
+      .projectLink {
+        flex-basis: 11%;
+        a {
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      @include for-size-max("extra-small") {
+      }
+
+      @include for-size-max("small") {
+        .projectYear {
+          flex-basis: 11%;
+        }
+        .projectLink {
+          flex-basis: 9%;
+          p {
+            display: none;
+          }
+          span {
+            margin: 0;
+          }
+        }
+      }
+
+      @include for-size-min("medium") {
+        // 1024 ~ 1279px 스타일
+      }
+
+      @include for-size-min("large") {
+        // 1280 ~ 1339px 스타일
+      }
+
+      @include for-size-min("xlarge") {
+        // 1440 ~ 1599px 스타일
+      }
+
+      @include for-size-min("xxlarge") {
+        // 1600 ~ 1919px 스타일
+      }
+
+      @include for-size-min("xxxlarge") {
+        // 1920px 이상 스타일
+      }
+    }
+  }
+}
+
+.content-footer {
+  display: flex;
+  justify-content: center;
+}
+.more-projects {
+  /* Button */
+  cursor: pointer;
+  margin: 20px auto;
+  padding: 10px 19px;
+
+  border: 1px solid #ffffff;
+  border-radius: 32px;
+
+  /* Desktop/Chillax/D-Label */
+  font-family: "chillax-variable";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+
+  color: #ffffff;
+}
+
+.btn-projectLink {
+  display: flex;
+  span {
+    margin: 0 0 0 10px;
+  }
+  // border: 1px solid red;
+  // padding-right: 30px;
+}

@@ -52,6 +52,9 @@ router.beforeEach((to, from, next) => {
   officialStore.pageLoaderZindexHandler("2");
   // officialStore.updateLoadingType(params.workId);
 
+  // scroll top
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
   if (params.workId) {
     const toWorkData = worksSettingList.find(
       (e) => e.link.split("work/")[1] === params.workId

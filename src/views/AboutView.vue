@@ -19,7 +19,10 @@
           누구나 공감할 수 있는<br />
           가치를 만듭니다.
         </div>
-        <a href="#" class="btn-download"
+        <a
+          href="/brochure/insplanet_brief.pdf"
+          class="btn-download"
+          target="_blank"
           >회사 브로슈어 다운로드
           <span class="ico-download-wrap"><i class="ico-download"></i></span
         ></a>
