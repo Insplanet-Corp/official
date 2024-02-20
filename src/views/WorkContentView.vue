@@ -130,8 +130,9 @@ let dynamicComponent = defineAsyncComponent(() =>
     })
 );
 
+let lastVisibleIndex = 0;
 const refreshImageInteraction = () => {
-  console.log("refreshImageInteraction");
+  // console.log("refreshImageInteraction");
   const images = document.querySelectorAll(".works-content");
   const observer = new IntersectionObserver(
     (entries, index) => {
@@ -145,6 +146,7 @@ const refreshImageInteraction = () => {
           // 화면에 보일 때 'show' 클래스 추가
           entry.target.classList.add("show");
           visibleIndexes.push(index);
+          lastVisibleIndex = index;
         } else {
           // 화면에서 사라질 때 'show' 클래스 제거
           entry.target.classList.remove("show");
@@ -168,10 +170,12 @@ const refreshImageInteraction = () => {
             // img.classList.remove("prev", "next");
           }
         } else {
-          // 보이는 요소가 없으면 모든 클래스 제거
-          // img.classList.remove("prev", "next");
-          images[0].classList.add("next");
-          images[images.length - 1].classList.add("prev");
+          if (window.scrollY < images[0].offsetTop) {
+            images[0].classList.add("next");
+          }
+          if (window.scrollY > images[images.length - 1].offsetTop) {
+            images[images.length - 1].classList.add("prev");
+          }
         }
       });
     },
@@ -183,7 +187,7 @@ const refreshImageInteraction = () => {
 
   // 모든 'fade-in-image' 클래스를 가진 요소를 관찰
   // const images = document.querySelectorAll(".works-content");
-  console.log(images);
+  // console.log(images);
   images.forEach((img) => {
     observer.observe(img);
   });
@@ -197,7 +201,7 @@ watch(
     newWorkData = useWorkSettingList.find(
       (e) => e.link === `/work/${newWorkId}`
     );
-    console.log(newWorkData);
+    // console.log(newWorkData);
 
     dynamicComponent = defineAsyncComponent(() =>
       import(`../works/${newWorkId}.vue`)

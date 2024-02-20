@@ -57,6 +57,11 @@ export const useOfficialStore = defineStore("official", () => {
     workPageDetail.value = { ...newValue };
   };
 
+  const aboutShow = ref(false);
+  const updateAboutShow = (value) => {
+    aboutShow.value = value;
+  };
+
   return {
     pageTransitionClass,
     pageLoaderClass,
@@ -65,6 +70,7 @@ export const useOfficialStore = defineStore("official", () => {
     routePageStyle,
     pageType,
     workPageDetail,
+    aboutShow,
     pageTransitionHandler,
     pageLoaderClassHandler,
     pageLoaderColorHandler,
@@ -72,5 +78,6 @@ export const useOfficialStore = defineStore("official", () => {
     updateRoutePageStyle,
     updatePageType,
     updateWorkPageDetail,
+    updateAboutShow,
   };
 });

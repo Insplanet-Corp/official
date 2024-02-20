@@ -1,1 +1,0 @@
-import{_ as a}from"./WorkContentCommon-43FhzLlQ.js";import{d as o,e as r,j as s,g as c}from"./index-2NFXz5mI.js";const n={class:"work-container"},m={__name:"lgCloudXper",props:{workData:Object},setup(e){const t=e.workData.detail;return(p,i)=>(o(),r("div",n,[s(a,{detail:c(t)},null,8,["detail"])]))}};export{m as default};

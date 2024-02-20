@@ -132,7 +132,7 @@
               margin: 48px 10px 0 0;
               &:hover {
                 img {
-                  filter: brightness(105%) contrast(150%) saturate(110%);
+                  filter: brightness(105%) contrast(110%) saturate(110%);
                 }
                 button span.arrow {
                   animation: moveAndFadePrev 1s ease-out infinite;
@@ -143,7 +143,7 @@
               margin: 0px 0 0 10px;
               &:hover {
                 img {
-                  filter: brightness(105%) contrast(150%) saturate(110%);
+                  filter: brightness(105%) contrast(110%) saturate(110%);
                 }
                 button span.arrow {
                   animation: moveAndFadeNext 1s ease-out infinite;
@@ -157,6 +157,7 @@
               cursor: pointer;
               img {
                 transition: all 0.5s ease;
+                border-radius: 16px;
               }
             }
             button {
@@ -188,6 +189,9 @@
   overflow: hidden;
   .works-image {
     margin-bottom: 32px;
+    img {
+      border-radius: 16px;
+    }
   }
   // .works-slide-show {
   //   transition:
@@ -335,6 +339,21 @@
       }
       .title-desc {
         display: none;
+      }
+    }
+  }
+}
+
+@include for-size-max("small") {
+  .page-wp {
+    .work-together-area {
+      .work-together-content {
+        justify-content: center;
+        .work-together-more {
+          margin-top: 12px;
+          > div {
+          }
+        }
       }
     }
   }

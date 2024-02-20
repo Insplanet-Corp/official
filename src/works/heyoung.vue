@@ -4,24 +4,24 @@
     <WorkContentCommon />
     <!-- 공통 상단 영역 종료 -->
     <div class="works-content">
-      <img src="/works/heyoung/image_pc_01.png" class="only-pc" />
-      <img src="/works/heyoung/image_mobile_01.png" class="only-mobile" />
+      <img src="/works/heyoung/image_pc_01.jpg" class="only-pc" />
+      <img src="/works/heyoung/image_mobile_01.jpg" class="only-mobile" />
     </div>
     <div class="works-content">
-      <img src="/works/heyoung/image_pc_02.png" class="only-pc" />
-      <img src="/works/heyoung/image_mobile_02.png" class="only-mobile" />
+      <img src="/works/heyoung/image_pc_02.jpg" class="only-pc" />
+      <img src="/works/heyoung/image_mobile_02.jpg" class="only-mobile" />
     </div>
     <div class="works-content">
-      <img src="/works/heyoung/image_pc_03.png" class="only-pc" />
-      <img src="/works/heyoung/image_mobile_03.png" class="only-mobile" />
+      <img src="/works/heyoung/image_pc_03.jpg" class="only-pc" />
+      <img src="/works/heyoung/image_mobile_03.jpg" class="only-mobile" />
     </div>
     <div class="works-content">
-      <img src="/works/heyoung/image_pc_04.png" class="only-pc" />
-      <img src="/works/heyoung/image_mobile_04.png" class="only-mobile" />
+      <img src="/works/heyoung/image_pc_04.jpg" class="only-pc" />
+      <img src="/works/heyoung/image_mobile_04.jpg" class="only-mobile" />
     </div>
     <div class="works-content">
-      <img src="/works/heyoung/image_pc_05.png" class="only-pc" />
-      <img src="/works/heyoung/image_mobile_05.png" class="only-mobile" />
+      <img src="/works/heyoung/image_pc_05.jpg" class="only-pc" />
+      <img src="/works/heyoung/image_mobile_05.jpg" class="only-mobile" />
     </div>
   </div>
 </template>

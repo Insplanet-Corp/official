@@ -1,9 +1,158 @@
 // worksList: 작업물 리스트
 const worksSettingList = [
   {
+    name: "wanju",
+    link: "/work/wanju",
+    image: "card_wanju.jpg",
+    projectName: "wanju 슈퍼솔 슈퍼솔",
+    projectClient: "wanju은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#d6c5ab",
+    use: true,
+    detail: {
+      coverPc: "/works/wanju/cover.jpg",
+      coverMobile: "/works/wanju/cover_m.jpg",
+      title: "wanju 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "wanju금융그룹의 새로운 여정,<span class='br_pc'></span>wanju 슈퍼 SoL",
+      overview:
+        "wanju금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 wanju 슈퍼 SoL이 출시되면서 jpdc플러스에서 제공하던 서비스가 jpdc 슈퍼 SoL로 이전되었습니다. 인스플래닛은 jpdc플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "jpdc금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
+    name: "ourhome",
+    link: "/work/ourhome",
+    image: "card_ourhome.jpg",
+    projectName: "ourhome 슈퍼솔 슈퍼솔",
+    projectClient: "ourhome은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#6665dd",
+    use: true,
+    detail: {
+      coverPc: "/works/ourhome/cover.jpg",
+      coverMobile: "/works/ourhome/cover_m.jpg",
+      title: "ourhome 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "ourhome금융그룹의 새로운 여정,<span class='br_pc'></span>ourhome 슈퍼 SoL",
+      overview:
+        "ourhome금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 ourhome 슈퍼 SoL이 출시되면서 jpdc플러스에서 제공하던 서비스가 jpdc 슈퍼 SoL로 이전되었습니다. 인스플래닛은 jpdc플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "jpdc금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
+    name: "naverWhale",
+    link: "/work/naverWhale",
+    image: "card_naverWhale.jpg",
+    projectName: "naverWhale 슈퍼솔 슈퍼솔",
+    projectClient: "naverWhale은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#63ca61",
+    use: true,
+    detail: {
+      coverPc: "/works/naverWhale/cover.jpg",
+      coverMobile: "/works/naverWhale/cover_m.jpg",
+      title: "naverWhale 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "naverWhale금융그룹의 새로운 여정,<span class='br_pc'></span>naverWhale 슈퍼 SoL",
+      overview:
+        "naverWhale금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 naverWhale 슈퍼 SoL이 출시되면서 jpdc플러스에서 제공하던 서비스가 jpdc 슈퍼 SoL로 이전되었습니다. 인스플래닛은 jpdc플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "jpdc금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
+    name: "jpdc",
+    link: "/work/jpdc",
+    image: "card_jpdc.jpg",
+    projectName: "jpdc 슈퍼솔 슈퍼솔",
+    projectClient: "jpdc은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#e1cbb9",
+    use: true,
+    detail: {
+      coverPc: "/works/jpdc/cover.jpg",
+      coverMobile: "/works/jpdc/cover_m.jpg",
+      title: "jpdc 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "jpdc금융그룹의 새로운 여정,<span class='br_pc'></span>jpdc 슈퍼 SoL",
+      overview:
+        "jpdc금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 jpdc 슈퍼 SoL이 출시되면서 jpdc플러스에서 제공하던 서비스가 jpdc 슈퍼 SoL로 이전되었습니다. 인스플래닛은 jpdc플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "jpdc금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
+    name: "superSol",
+    link: "/work/superSol",
+    image: "card_superSol.jpg",
+    projectName: "신한 슈퍼솔 슈퍼솔",
+    projectClient: "신한은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#0046FF",
+    use: true,
+    detail: {
+      coverPc: "/works/superSol/cover.jpg",
+      coverMobile: "/works/superSol/cover_m.jpg",
+      title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
+      overview:
+        "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "신한금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
+    name: "enTrans",
+    link: "/work/enTrans",
+    image: "card_enTrans.jpg",
+    projectName: "enTrans",
+    projectClient: "enTrans",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "lightgray",
+    use: true,
+    detail: {
+      coverPc: "/works/enTrans/cover.jpg",
+      coverMobile: "/works/enTrans/cover_m.jpg",
+      title: "enTrans <span class='br_pc'></span>개발 2024",
+      subtitle: "enTrans,<span class='br_pc'></span>신한 슈퍼 SoL",
+      overview:
+        "enTransenTrans 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "enTrans",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+  {
     name: "shinhan1",
     link: "/work/shinhan",
-    image: "PC_Card_project03.png",
+    image: "PC_Card_project03.jpg",
     projectName: "신한 슈퍼 SQL 유지운영 2024",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -11,8 +160,8 @@ const worksSettingList = [
     gradient: "#0046FF",
     use: true,
     detail: {
-      coverPc: "/works/shinhan/cover.png",
-      coverMobile: "/works/shinhan/cover_m.png",
+      coverPc: "/works/shinhan/cover.jpg",
+      coverMobile: "/works/shinhan/cover_m.jpg",
       title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
       subtitle:
         "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
@@ -28,16 +177,16 @@ const worksSettingList = [
   {
     name: "shinhan1",
     link: "", // link 가 null 이거나 "" 일 경우 메인 화면에 노출되지 않습니다.
-    image: "PC_Card_project03.png",
+    image: "PC_Card_project03.jpg",
     projectName: "신한 슈퍼 SQL 유지운영 2024",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     projectYear: "2024",
     gradient: "#0046FF",
-    use: true, // use 가 false 일 경우 메인 화면, work 에 노출되지 않습니다.
+    use: false, // use 가 false 일 경우 메인 화면, work 에 노출되지 않습니다.
     detail: {
-      coverPc: "/works/shinhan/cover.png",
-      coverMobile: "/works/shinhan/cover_m.png",
+      coverPc: "/works/shinhan/cover.jpg",
+      coverMobile: "/works/shinhan/cover_m.jpg",
       title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
       subtitle:
         "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
@@ -60,7 +209,7 @@ const worksSettingList = [
     projectYear: "2024",
     gradient:
       "linear-gradient(114deg, #E5437A 33.15%, #F28D52 75.83%, #FFD028 105.1%)",
-    use: true,
+    use: false,
     detail: {
       coverPc: "/works/lgcns_cloudxper/cover.png",
       coverMobile: "/works/lgcns_cloudxper/cover_m.png",
@@ -79,16 +228,16 @@ const worksSettingList = [
   {
     name: "homeAndShopping",
     link: "/work/homeAndShopping",
-    image: "card_homeAndShopping.png",
-    projectName: "신한 슈퍼 SQL 유지운영 2024",
-    projectClient: "신한은행",
-    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    image: "card_homeAndShopping.jpg",
+    projectName: "홈앤쇼핑 카카오 챗봇 서비스 구축",
+    projectClient: "카카오",
+    projectType: "업무시스템, APP",
     projectYear: "2024",
     gradient: "rgb(234, 191, 225)",
     use: true,
     detail: {
-      coverPc: "/works/homeAndShopping/cover.png",
-      coverMobile: "/works/homeAndShopping/cover_m.png",
+      coverPc: "/works/homeAndShopping/cover.jpg",
+      coverMobile: "/works/homeAndShopping/cover_m.jpg",
       title: "홈앤쇼핑 카카오 <span class='br_pc'></span>챗봇 서비스 구축",
       subtitle:
         "내 손안의 도우미,<span class='br_pc'></span> 홈앤쇼핑 챗봇 서비스 도입",
@@ -104,7 +253,7 @@ const worksSettingList = [
   {
     name: "paEnter",
     link: "/work/paEnter",
-    image: "card_pa_enter.png",
+    image: "card_pa_enter.jpg",
     projectName: "PA엔터테인먼트 오피셜 사이트 구축",
     projectClient: "PA엔터테인먼트",
     projectType: "-",
@@ -112,8 +261,8 @@ const worksSettingList = [
     gradient: "#402743",
     use: true,
     detail: {
-      coverPc: "/works/paEnter/cover.png",
-      coverMobile: "/works/paEnter/cover_m.png",
+      coverPc: "/works/paEnter/cover.jpg",
+      coverMobile: "/works/paEnter/cover_m.jpg",
       title: "PA엔터테인먼트<span class='br_pc'></span> 오피셜 사이트 구축",
       subtitle: "한류와 대중문화의 중심을<span class='br_pc'></span> 주도하다.",
       overview:
@@ -128,7 +277,7 @@ const worksSettingList = [
   {
     name: "t4k",
     link: "/work/t4k",
-    image: "card_t4k.png",
+    image: "card_t4k.jpg",
     projectName: "T4K 브랜드 사이트 구축",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -137,8 +286,8 @@ const worksSettingList = [
       "linear-gradient(120deg, rgba(170,185,195,1) 0%, rgba(119,119,119,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/t4k/cover.png",
-      coverMobile: "/works/t4k/cover_m.png",
+      coverPc: "/works/t4k/cover.jpg",
+      coverMobile: "/works/t4k/cover_m.jpg",
       title: "T4K 브랜드<span class='br_pc'></span>사이트 구축",
       subtitle:
         "More than OK - 화물차<span class='br_pc'></span>운전자에게 최적화된 기능만 쏙쏙 뽑아 담은 전기트럭",
@@ -154,7 +303,7 @@ const worksSettingList = [
   {
     name: "cosmo",
     link: "/work/cosmo",
-    image: "card_cosmo.png",
+    image: "card_cosmo.jpg",
     projectName: "1회용컵 보증금 관리시스템 고도화",
     projectClient: "자원순환보증금관리센터",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -163,8 +312,8 @@ const worksSettingList = [
       "linear-gradient(120deg, rgba(170,185,195,1) 0%, rgba(119,119,119,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/cosmo/cover.png",
-      coverMobile: "/works/cosmo/cover_m.png",
+      coverPc: "/works/cosmo/cover.jpg",
+      coverMobile: "/works/cosmo/cover_m.jpg",
       title: "1회용컵 보증금<span class='br_pc'></span> 관리시스템 고도화",
       subtitle:
         "지구를 구하는 더하기가 아닌 빼기<span class='br_pc'></span> 1회용 컵 보증금 제도",
@@ -180,7 +329,7 @@ const worksSettingList = [
   {
     name: "pims",
     link: "/work/pims",
-    image: "card_pims.png",
+    image: "card_pims.jpg",
     projectName: "KB 개인정보관리 시스템(PIMS) UI/UX",
     projectClient: "KB국민은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -188,8 +337,8 @@ const worksSettingList = [
     gradient: "#f6be41",
     use: true,
     detail: {
-      coverPc: "/works/pims/cover.png",
-      coverMobile: "/works/pims/cover_m.png",
+      coverPc: "/works/pims/cover.jpg",
+      coverMobile: "/works/pims/cover_m.jpg",
       title:
         "KB 개인정보관리<span class='br_pc'></span> 시스템(PIMS)<span class='br_pc'></span> UI/UX",
       subtitle: "업무 전산화에 따른 UI/UX 전략<span class='br_pc'></span> 수립",
@@ -205,7 +354,7 @@ const worksSettingList = [
   {
     name: "heyoung",
     link: "/work/heyoung",
-    image: "card_heyoung.png",
+    image: "card_heyoung.jpg",
     projectName: "헤이영 캠퍼스 고도화",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -214,8 +363,8 @@ const worksSettingList = [
       "linear-gradient(214deg, #6B71EE -12.26%, #6D72EE 35.23%, #E586E3 91.39%, #D786E3 144.03%)",
     use: true,
     detail: {
-      coverPc: "/works/heyoung/cover.png",
-      coverMobile: "/works/heyoung/cover_m.png",
+      coverPc: "/works/heyoung/cover.jpg",
+      coverMobile: "/works/heyoung/cover_m.jpg",
       title: "헤이영 캠퍼스<span class='br_pc'></span> 고도화",
       subtitle: "스마트한 대학생활 필수 통합앱",
       overview:
@@ -230,7 +379,7 @@ const worksSettingList = [
   {
     name: "shinhanPlus",
     link: "/work/shinhanPlus",
-    image: "card_shinhanPlus.png",
+    image: "card_shinhanPlus.jpg",
     projectName: "신한플러스 해외주식 소수점투자 UI/UX",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -238,8 +387,8 @@ const worksSettingList = [
     gradient: "#fff",
     use: true,
     detail: {
-      coverPc: "/works/shinhanPlus/cover.png",
-      coverMobile: "/works/shinhanPlus/cover_m.png",
+      coverPc: "/works/shinhanPlus/cover.jpg",
+      coverMobile: "/works/shinhanPlus/cover_m.jpg",
       title:
         "신한플러스<span class='br_pc'></span> 해외주식<span class='br_pc'></span> 소수점투자 UI/UX",
       subtitle: "해외주식 소수점 투자",
@@ -280,7 +429,7 @@ const worksSettingList = [
   {
     name: "kbMyData",
     link: "/work/kbMyData",
-    image: "card_kbMyData.png",
+    image: "card_kbMyData.jpg",
     projectName: "KB금융그룹 마이데이터 포털",
     projectClient: "LG 전자",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -289,8 +438,8 @@ const worksSettingList = [
       "linear-gradient(153deg, rgba(55,167,183,1) 0%, rgba(3,7,12,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/kbMyData/cover.png",
-      coverMobile: "/works/kbMyData/cover_m.png",
+      coverPc: "/works/kbMyData/cover.jpg",
+      coverMobile: "/works/kbMyData/cover_m.jpg",
       title: "KB금융그룹<span class='br_pc'></span> 마이데이터 포털",
       subtitle: "여기저기 흩어져 있는 내 정보를 한 곳에서~",
       overview:
@@ -305,7 +454,7 @@ const worksSettingList = [
   {
     name: "kmc",
     link: "/work/kmc",
-    image: "card_kmc.png",
+    image: "card_kmc.jpg",
     projectName: "열차제어시스템 암호키관리센터(KMC) UI",
     projectClient: "LG 전자",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -313,8 +462,8 @@ const worksSettingList = [
     gradient: "linear-gradient(65deg, #034AA9 17.9%, #3B7AFC 84.38%)",
     use: true,
     detail: {
-      coverPc: "/works/kmc/cover.png",
-      coverMobile: "/works/kmc/cover_m.png",
+      coverPc: "/works/kmc/cover.jpg",
+      coverMobile: "/works/kmc/cover_m.jpg",
       title: "열차제어시스템<span class='br_pc'></span> 암호키관리센터(KMC) UI",
       subtitle: "열차제어시스템 암호키관리센터",
       overview:
@@ -335,7 +484,7 @@ const worksSettingList = [
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     projectYear: "2022",
     gradient: "#d9dfeb",
-    use: true,
+    use: false,
     detail: {
       coverPc: "/works/iros/cover.png",
       coverMobile: "/works/iros/cover_m.png",
@@ -354,7 +503,7 @@ const worksSettingList = [
   {
     name: "penthill",
     link: "/work/penthill",
-    image: "card_penthill.png",
+    image: "card_penthill.jpg",
     projectName: "마이홈즈 어플리케이션 구축",
     projectClient: "블루컴",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -363,8 +512,8 @@ const worksSettingList = [
       "linear-gradient(172deg, rgba(78,72,115,1) 0%, rgba(171,143,172,1) 32%, rgba(224,205,199,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/penthill/cover.png",
-      coverMobile: "/works/penthill/cover_m.png",
+      coverPc: "/works/penthill/cover.jpg",
+      coverMobile: "/works/penthill/cover_m.jpg",
       title: "마이홈즈<span class='br_pc'></span> 어플리케이션 구축",
       subtitle: "하이엔드 라이프 서비스 플랫폼",
       overview:
@@ -379,7 +528,7 @@ const worksSettingList = [
   {
     name: "bizpay",
     link: "/work/bizpay",
-    image: "card_bizpay.png",
+    image: "card_bizpay.jpg",
     projectName: "유니코어 비즈페이 어플리케이션 구축",
     projectClient: "비즈페이",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -388,8 +537,8 @@ const worksSettingList = [
       "linear-gradient(180deg, rgba(84,138,72,1) 0%, rgba(27,98,91,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/bizpay/cover.png",
-      coverMobile: "/works/bizpay/cover_m.png",
+      coverPc: "/works/bizpay/cover.jpg",
+      coverMobile: "/works/bizpay/cover_m.jpg",
       title: "유니코어 비즈페이<span class='br_pc'></span> 어플리케이션 구축",
       subtitle: "Portal Payment solution",
       overview:
@@ -404,7 +553,7 @@ const worksSettingList = [
   {
     name: "cosmo2",
     link: "/work/cosmo2",
-    image: "card_cosmo2.png",
+    image: "card_cosmo2.jpg",
     projectName: "1회용컵 보증금 관리시스템 구축",
     projectClient: "자원순환보증금관리센터",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -413,8 +562,8 @@ const worksSettingList = [
       "linear-gradient(301deg, rgba(41,117,155,1) 0%, rgba(14,61,151,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/cosmo2/cover.png",
-      coverMobile: "/works/cosmo2/cover_m.png",
+      coverPc: "/works/cosmo2/cover.jpg",
+      coverMobile: "/works/cosmo2/cover_m.jpg",
       title: "1회용컵 보증금<span class='br_pc'></span> 관리시스템 구축",
       subtitle: "지구를 구하는 더하기가 아닌 빼기 1회용 컵 보증금 제도",
       overview:
@@ -429,7 +578,7 @@ const worksSettingList = [
   {
     name: "shinhanPlusMain",
     link: "/work/shinhanPlusMain",
-    image: "card_shinhanPlusMain.png",
+    image: "card_shinhanPlusMain.jpg",
     projectName: "신한플러스 메인 컨설팅 및 리뉴얼",
     projectClient: "신한 DS",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -438,8 +587,8 @@ const worksSettingList = [
       "linear-gradient(301deg, rgba(41,117,155,1) 0%, rgba(14,61,151,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/shinhanPlusMain/cover.png",
-      coverMobile: "/works/shinhanPlusMain/cover_m.png",
+      coverPc: "/works/shinhanPlusMain/cover.jpg",
+      coverMobile: "/works/shinhanPlusMain/cover_m.jpg",
       title: "신한플러스 메인<span class='br_pc'></span> 컨설팅 및 리뉴얼",
       subtitle:
         "신한금융그룹의 모든 서비스,<span class='br_pc'></span> 신한플러스를 통하다.",
@@ -455,7 +604,7 @@ const worksSettingList = [
   {
     name: "3friends",
     link: "/work/3friends",
-    image: "card_3friends.png",
+    image: "card_3friends.jpg",
     projectName: "세친구 모니터링 시스템 서비스 기획",
     projectClient: "세친구",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -463,8 +612,8 @@ const worksSettingList = [
     gradient: "#fff",
     use: true,
     detail: {
-      coverPc: "/works/3friends/cover.png",
-      coverMobile: "/works/3friends/cover_m.png",
+      coverPc: "/works/3friends/cover.jpg",
+      coverMobile: "/works/3friends/cover_m.jpg",
       title: "세친구 모니터링<span class='br_pc'></span> 시스템 서비스 기획",
       subtitle:
         "국내 최초 AI기반<span class='br_pc'></span> 자동 세무관리 시스템",
@@ -480,7 +629,7 @@ const worksSettingList = [
   {
     name: "shinhanOpenAPI",
     link: "/work/shinhanOpenAPI",
-    image: "card_shinhanOpenAPI.png",
+    image: "card_shinhanOpenAPI.jpg",
     projectName: "신한 Open API 그룹 공통 고도화",
     projectClient: "신한금융그륩",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -488,8 +637,8 @@ const worksSettingList = [
     gradient: "#0046FF",
     use: true,
     detail: {
-      coverPc: "/works/shinhanOpenAPI/cover.png",
-      coverMobile: "/works/shinhanOpenAPI/cover_m.png",
+      coverPc: "/works/shinhanOpenAPI/cover.jpg",
+      coverMobile: "/works/shinhanOpenAPI/cover_m.jpg",
       title: "신한 Open API<span class='br_pc'></span> 그룹 공통 고도화",
       subtitle:
         "신한금융그룹과 핀테크 서비스를<span class='br_pc'></span> 연결하는 신한 API 오픈 플랫폼",
@@ -505,7 +654,7 @@ const worksSettingList = [
   {
     name: "bokjiro",
     link: "/work/bokjiro",
-    image: "card_bokjiro.png",
+    image: "card_bokjiro.jpg",
     projectName: "복지로 차세대 UI/UX 전략 및 표준화",
     projectClient: "보건복지부",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -513,8 +662,8 @@ const worksSettingList = [
     gradient: "#fff",
     use: true,
     detail: {
-      coverPc: "/works/bokjiro/cover.png",
-      coverMobile: "/works/bokjiro/cover_m.png",
+      coverPc: "/works/bokjiro/cover.jpg",
+      coverMobile: "/works/bokjiro/cover_m.jpg",
       title:
         "복지로 차세대<span class='br_pc'></span> UI/UX 전략 및<span class='br_pc'></span>표준화",
       subtitle: "국민이 기뻐하고 신뢰하는 서비스",
@@ -530,7 +679,7 @@ const worksSettingList = [
   {
     name: "mmaa",
     link: "/work/mmaa",
-    image: "card_mmaa.png",
+    image: "card_mmaa.jpg",
     projectName: "군인공제회 자금 관리시스템 재구축",
     projectClient: "군인공제회",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -538,8 +687,8 @@ const worksSettingList = [
     gradient: "#009ba3",
     use: true,
     detail: {
-      coverPc: "/works/mmaa/cover.png",
-      coverMobile: "/works/mmaa/cover_m.png",
+      coverPc: "/works/mmaa/cover.jpg",
+      coverMobile: "/works/mmaa/cover_m.jpg",
       title: "군인공제회 자금<span class='br_pc'></span> 관리시스템 재구축",
       subtitle: "대한민국 군인 복지기관",
       overview:
@@ -554,7 +703,7 @@ const worksSettingList = [
   {
     name: "mentor",
     link: "/work/mentor",
-    image: "card_mentor.png",
+    image: "card_mentor.jpg",
     projectName: "여행의 시작과 끝, 여행 플랫폼 트래멘토",
     projectClient: "YB Holdings",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -563,8 +712,8 @@ const worksSettingList = [
       "linear-gradient(0deg, rgba(213,52,66,1) 0%, rgba(254,147,112,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/mentor/cover.png",
-      coverMobile: "/works/mentor/cover_m.png",
+      coverPc: "/works/mentor/cover.jpg",
+      coverMobile: "/works/mentor/cover_m.jpg",
       title:
         "여행의 시작과 끝, <span class='br_pc'></span>여행 플랫폼 트래멘토",
       subtitle: "믿을 수 있는 여행 지식 공유 플랫폼",
@@ -580,7 +729,7 @@ const worksSettingList = [
   {
     name: "budio",
     link: "/work/budio",
-    image: "card_budio.png",
+    image: "card_budio.jpg",
     projectName: "BUDIO 오디오북 어플리케이션 UI/UX",
     projectClient: "BUDIO",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -588,8 +737,8 @@ const worksSettingList = [
     gradient: "#fb8535",
     use: true,
     detail: {
-      coverPc: "/works/budio/cover.png",
-      coverMobile: "/works/budio/cover_m.png",
+      coverPc: "/works/budio/cover.jpg",
+      coverMobile: "/works/budio/cover_m.jpg",
       title:
         "BUDIO 오디오북<span class='br_pc'></span> 어플리케이션<span class='br_pc'></span> UI/UX",
       subtitle:
@@ -606,7 +755,7 @@ const worksSettingList = [
   {
     name: "chinchin",
     link: "/work/chinchin",
-    image: "card_chinchin.png",
+    image: "card_chinchin.jpg",
     projectName: "ChinChin 글로벌 러닝 어플리케이션 UI/UX",
     projectClient: "ChinChin",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -614,8 +763,8 @@ const worksSettingList = [
     gradient: "#5a74fe",
     use: true,
     detail: {
-      coverPc: "/works/chinchin/cover.png",
-      coverMobile: "/works/chinchin/cover_m.png",
+      coverPc: "/works/chinchin/cover.jpg",
+      coverMobile: "/works/chinchin/cover_m.jpg",
       title:
         "ChinChin 글로벌<span class='br_pc'></span> 러닝 어플리케이션<span class='br_pc'></span> UI/UX",
       subtitle:
@@ -632,7 +781,7 @@ const worksSettingList = [
   {
     name: "castingn",
     link: "/work/castingn",
-    image: "card_castingn.png",
+    image: "card_castingn.jpg",
     projectName: "캐스팅엔 E-PRO UI/UX",
     projectClient: "캐스팅엔",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -640,8 +789,8 @@ const worksSettingList = [
     gradient: "#19529c",
     use: true,
     detail: {
-      coverPc: "/works/castingn/cover.png",
-      coverMobile: "/works/castingn/cover_m.png",
+      coverPc: "/works/castingn/cover.jpg",
+      coverMobile: "/works/castingn/cover_m.jpg",
       title: "캐스팅엔 E-PRO UI/UX",
       subtitle: "AI가 찾아주는 신개념 기업전용 B2B 구매몰, 업무마켓",
       overview:
@@ -656,7 +805,7 @@ const worksSettingList = [
   {
     name: "castingn2",
     link: "/work/castingn2",
-    image: "card_castingn2.png",
+    image: "card_castingn2.jpg",
     projectName: "캐스팅엔 UI/UX 고도화, 유지운영",
     projectClient: "캐스팅엔",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -664,8 +813,8 @@ const worksSettingList = [
     gradient: "#19529c",
     use: true,
     detail: {
-      coverPc: "/works/castingn/cover.png",
-      coverMobile: "/works/castingn/cover_m.png",
+      coverPc: "/works/castingn/cover.jpg",
+      coverMobile: "/works/castingn/cover_m.jpg",
       title: "캐스팅엔 UI/UX<span class='br_pc'></span> 고도화, 유지운영",
       subtitle: "온라인 소싱 중개 플랫폼",
       overview:
@@ -680,7 +829,7 @@ const worksSettingList = [
   {
     name: "taldosa",
     link: "/work/taldosa",
-    image: "card_taldosa.png",
+    image: "card_taldosa.jpg",
     projectName: "사주 어플리케이션 탈도사의 점집 UI/UX",
     projectClient: "dB bank & Seohae IT",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -689,8 +838,8 @@ const worksSettingList = [
       "linear-gradient(185deg, rgba(73,78,113,1) 0%, rgba(48,56,90,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/taldosa/cover.png",
-      coverMobile: "/works/taldosa/cover_m.png",
+      coverPc: "/works/taldosa/cover.jpg",
+      coverMobile: "/works/taldosa/cover_m.jpg",
       title:
         "사주 어플리케이션<span class='br_pc'></span> 탈도사의 점집<span class='br_pc'></span> UI/UX",
       subtitle:
@@ -707,7 +856,7 @@ const worksSettingList = [
   {
     name: "nb",
     link: "/work/nb",
-    image: "card_nb.png",
+    image: "card_nb.jpg",
     projectName: "NB solution 사이트 구축",
     projectClient: "남부솔루션",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -716,8 +865,8 @@ const worksSettingList = [
       "linear-gradient(133deg, rgba(68,160,73,1) 0%, rgba(46,70,161,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/nb/cover.png",
-      coverMobile: "/works/nb/cover_m.png",
+      coverPc: "/works/nb/cover.jpg",
+      coverMobile: "/works/nb/cover_m.jpg",
       title: "NB solution<span class='br_pc'></span> 사이트 구축",
       subtitle: "남부솔루션의 기술 역량",
       overview:
@@ -732,7 +881,7 @@ const worksSettingList = [
   {
     name: "flatApp",
     link: "/work/flatApp",
-    image: "card_flatApp.png",
+    image: "card_flatApp.jpg",
     projectName: "Flat Application 서비스 디자인",
     projectClient: "대구시",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -740,8 +889,8 @@ const worksSettingList = [
     gradient: "#a9beb8",
     use: true,
     detail: {
-      coverPc: "/works/flatApp/cover.png",
-      coverMobile: "/works/flatApp/cover_m.png",
+      coverPc: "/works/flatApp/cover.jpg",
+      coverMobile: "/works/flatApp/cover_m.jpg",
       title: "Flat Application<span class='br_pc'></span> 서비스 디자인",
       subtitle: "교통약자 모바일 플랫폼 서비스 디자인",
       overview:
@@ -756,7 +905,7 @@ const worksSettingList = [
   {
     name: "wMall",
     link: "/work/wMall",
-    image: "card_wMall.png",
+    image: "card_wMall.jpg",
     projectName: "W-mall 멤버십 어플리케이션 UI/UX",
     projectClient: "원신더블유몰",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -765,8 +914,8 @@ const worksSettingList = [
       "linear-gradient(133deg, rgba(150,136,225,1) 0%, rgba(216,185,182,1) 100%)",
     use: true,
     detail: {
-      coverPc: "/works/wMall/cover.png",
-      coverMobile: "/works/wMall/cover_m.png",
+      coverPc: "/works/wMall/cover.jpg",
+      coverMobile: "/works/wMall/cover_m.jpg",
       title: "W-mall 멤버십<span class='br_pc'></span> 어플리케이션 UI/UX",
       subtitle: "샵인샵 형태의 쇼핑몰 & 멤버십 어플리케이션",
       overview:

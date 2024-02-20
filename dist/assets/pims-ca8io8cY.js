@@ -1,0 +1,1 @@
+import{_ as e}from"./WorkContentCommon-YmLVlc2S.js";import{e as o,f as s,k as t}from"./index-w7INBIhN.js";const a={class:"work-container"},i={__name:"pims",setup(r){return(c,_)=>(o(),s("div",a,[t(e)]))}};export{i as default};

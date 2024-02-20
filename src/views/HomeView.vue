@@ -77,22 +77,24 @@
 <script setup>
 import { ref, onMounted, onUnmounted, computed, watch, nextTick } from "vue";
 import MobileDetect from "mobile-detect";
+import worksSetting from "@/works-setting";
+import router from "@/router";
+import { useOfficialStore } from "@/stores/official";
 
+const officialStore = useOfficialStore();
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
-import worksSetting from "@/works-setting";
-import router from "@/router";
 // import responseStyle from "../assets/scss/response.scss";
 // import { useRoute } from "vue-router";
 
 // const router = useRoute();
-// import AOS from "aos";
+//
 // import gsap from "gsap";
 // console.log(isMobile, isTablet);
 const { worksSettingList } = worksSetting;
-const workList = ref(worksSettingList);
+const workList = ref(worksSettingList.filter((e) => e.use));
 const workCards = ref([]);
 const isVisible = ref(workList.value.map(() => false));
 const onShowCount = computed(() => isVisible.value.filter((v) => v).length);
@@ -102,10 +104,6 @@ const isInited = ref(false);
 const mobile = ref(false);
 
 const scrollPosition = ref(0);
-let scrollTimer = null;
-let autoScrollInterval = null;
-
-// workGroupInner
 
 const workGroupInner = ref(null);
 const workCardImages = ref(null);
@@ -204,10 +202,6 @@ const groupedItems = computed(() => {
 
 const changeCardLayout = (newBreakpoint, dbg) => {
   const breakpoint = newBreakpoint || currentBreakpoint.value;
-
-  // if (isMobile || isTablet) {
-  // }
-
   breakpointCardCount.value = breakpointSetting[breakpoint].cardCount;
   maxWorkGroupInnerHeight.value =
     workGroupInner.value[0].offsetHeight - window.innerHeight + 80;
@@ -225,24 +219,24 @@ const getScrollPosition = (groupIndex) => {
 };
 
 const scrollCheckerAndStop = () => {
-  clearInterval(autoScrollInterval);
+  clearInterval(window.autoScrollInterval);
 };
 const scrollCheckerAndStart = () => {
-  if (scrollTimer) {
-    clearTimeout(scrollTimer);
+  if (window.scrollTimer) {
+    clearTimeout(window.scrollTimer);
   }
 
-  scrollTimer = setTimeout(() => {
+  window.scrollTimer = setTimeout(() => {
     startAutoScroll();
   }, 3000);
 };
 
 const onTouchstartHandler = (e) => {
-  console.log("onTouchstartHandler");
+  // console.log("onTouchstartHandler");
   scrollCheckerAndStop();
 };
 const onTouchendHandler = (e) => {
-  console.log("onTouchendHandler");
+  // console.log("onTouchendHandler");
   scrollCheckerAndStart();
 };
 
@@ -254,7 +248,7 @@ const onScrollHandler = (e) => {
     -maxWorkGroupInnerHeight.value
   );
 
-  clearInterval(autoScrollInterval);
+  clearInterval(window.autoScrollInterval);
   scrollCheckerAndStart();
 };
 
@@ -264,8 +258,6 @@ const onKeyDownAtHomeView = (event) => {
   const maxContentHeight = maxWorkGroupInnerHeight.value;
 
   clearInterval(scrollTopInterval);
-
-  // console.log(event.key);
 
   if (event.key === "Home") {
     scrollTopInterval = setInterval(() => {
@@ -290,7 +282,6 @@ const onKeyDownAtHomeView = (event) => {
   }
   if (event.key === "PageDown") {
     const targetScrollPosition = scrollPosition.value - pageHeight;
-    // console.log(scrollPosition.value, targetScrollPosition);
     scrollTopInterval = setInterval(() => {
       if (scrollPosition.value > targetScrollPosition) {
         scrollPosition.value += Math.floor(
@@ -317,17 +308,17 @@ const onKeyDownAtHomeView = (event) => {
 };
 
 function startAutoScroll() {
-  if (autoScrollInterval) {
-    clearInterval(autoScrollInterval);
+  if (window.autoScrollInterval) {
+    clearInterval(window.autoScrollInterval);
   }
 
   if (!isPotable) {
-    autoScrollInterval = setInterval(() => {
+    window.autoScrollInterval = setInterval(() => {
       scrollPosition.value -= 0.12;
     }, 1);
     // }, 1000);
   } else {
-    autoScrollInterval = setInterval(() => {
+    window.autoScrollInterval = setInterval(() => {
       // console.log("autoScrollInterval");
       scrollTo({ top: scrollY + 2 });
     }, 10);
@@ -340,7 +331,7 @@ onMounted(() => {
 
   setTimeout(() => {
     isInited.value = true;
-  }, 100);
+  }, 300);
 
   const breakpointNames = Object.keys(breakpointSetting);
   breakpoints = breakpointNames.reduce((acc, name) => {
@@ -374,17 +365,9 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", checkBreakpoint);
   window.removeEventListener("keydown", onKeyDownAtHomeView);
-  clearInterval(autoScrollInterval);
-  clearTimeout(scrollTimer);
-  // if (isPotable) {
-  //   window.removeEventListener("scroll", onMobileScrollHandler);
-  // }
+  clearInterval(window.autoScrollInterval);
+  clearTimeout(window.scrollTimer);
 });
 </script>
 
-<style scoped>
-.work-wp {
-  &.mobile {
-  }
-}
-</style>
+<style scoped></style>

@@ -3,7 +3,7 @@
     <img :src="detail.coverPc" class="only-pc" />
     <img :src="detail.coverMobile" class="only-mobile" />
   </div>
-  <div class="works-section works-slide-show">
+  <div class="works-section works-slide-show" data-aos="slide-up">
     <div class="works-inner">
       <div class="works-box">
         <h3 class="project-title" v-html="detail.title"></h3>
@@ -47,6 +47,7 @@
 import { ref, defineProps, onMounted, watch } from "vue";
 import { useOfficialStore } from "@/stores/official";
 import AOS from "aos";
+
 // const props = defineProps({
 //   detail: Object,
 // });
@@ -70,7 +71,7 @@ onMounted(() => {
   AOS.init({
     duration: 800,
     delay: 100,
-    offset: 300,
+    offset: 400,
   });
 });
 </script>

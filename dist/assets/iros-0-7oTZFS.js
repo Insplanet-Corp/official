@@ -1,0 +1,1 @@
+import{_ as e}from"./WorkContentCommon-YmLVlc2S.js";import{e as o,f as r,k as s}from"./index-w7INBIhN.js";const t={class:"work-container"},m={__name:"iros",setup(a){return(c,_)=>(o(),r("div",t,[s(e)]))}};export{m as default};

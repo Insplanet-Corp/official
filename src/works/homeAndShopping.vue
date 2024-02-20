@@ -4,9 +4,9 @@
     <WorkContentCommon />
     <!-- 공통 상단 영역 종료 -->
     <div class="works-content">
-      <img src="/works/homeAndShopping/image_pc_01.png" class="only-pc" />
+      <img src="/works/homeAndShopping/image_pc_01.jpg" class="only-pc" />
       <img
-        src="/works/homeAndShopping/image_mobile_01.png"
+        src="/works/homeAndShopping/image_mobile_01.jpg"
         class="only-mobile"
       />
     </div>

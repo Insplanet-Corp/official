@@ -55,6 +55,10 @@ router.beforeEach((to, from, next) => {
   // scroll top
   window.scrollTo({ top: 0, behavior: "smooth" });
 
+  // clear intervals
+  if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
+  if (window.scrollTimer) clearTimeout(window.scrollTimer);
+
   if (params.workId) {
     const toWorkData = worksSettingList.find(
       (e) => e.link.split("work/")[1] === params.workId
@@ -83,6 +87,8 @@ router.afterEach((to, from) => {
 
   const latoutType = to.name === "home" ? "fixed-layout" : "relative-layout";
   officialStore.updatePageType(latoutType);
+
+  window.scrollTo({ top: 0 });
 
   setTimeout(() => {
     officialStore.updateRoutePageStyle({

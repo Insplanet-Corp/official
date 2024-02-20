@@ -1,0 +1,1 @@
+import{_ as e}from"./WorkContentCommon-YmLVlc2S.js";import{e as t,f as o,k as a}from"./index-w7INBIhN.js";const r={class:"work-container"},i={__name:"lgObjet",setup(s){return(c,_)=>(t(),o("div",r,[a(e)]))}};export{i as default};

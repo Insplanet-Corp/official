@@ -20,8 +20,8 @@
 .work-container {
   .works-content {
     margin-top: 32px;
-
     img {
+      border-radius: 16px;
       opacity: 0;
       transform: scale(0.95) translateY(200px);
       transition: all ease-out 0.8s;
@@ -51,6 +51,10 @@
         transform: scale(1) translateY(0px);
       }
       &.prev:not(.show) img {
+        opacity: 0;
+        transform: scale(0.95) translateY(-200px);
+      }
+      &.next:not(.show) img {
         opacity: 0;
         transform: scale(0.95) translateY(-200px);
       }
