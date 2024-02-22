@@ -1,1 +1,0 @@
-import{_ as e}from"./WorkContentCommon-YmLVlc2S.js";import{e as a,f as t,k as o}from"./index-w7INBIhN.js";const r={class:"work-container"},i={__name:"kbMyData",setup(s){return(c,_)=>(a(),t("div",r,[o(e)]))}};export{i as default};

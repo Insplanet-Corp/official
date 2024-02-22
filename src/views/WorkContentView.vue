@@ -110,12 +110,19 @@ const externalHtml = ref("work");
 // const dynamicComponent = ref(null);
 const loaded = ref(false);
 const workId = ref(router.params.workId);
+const workIndex = ref(router.params.workIndex || 0);
 // const workData = ref(
 //   useWorkSettingList.find((e) => e.link === `/work/${workId.value}`)
 // );
 let newWorkData = useWorkSettingList.find(
   (e) => e.link === `/work/${workId.value}`
 );
+
+const initSlideCount = useWorkSettingList.findIndex(
+  (item) => item.name === newWorkData.name
+);
+// slideCount.value = newSlideCount;
+
 officialStore.updateWorkPageDetail(newWorkData);
 
 let dynamicComponent = defineAsyncComponent(() =>
@@ -202,6 +209,10 @@ watch(
       (e) => e.link === `/work/${newWorkId}`
     );
     // console.log(newWorkData);
+    const newSlideCount = useWorkSettingList.findIndex(
+      (item) => item.name === newWorkData.name
+    );
+    slideCount.value = newSlideCount;
 
     dynamicComponent = defineAsyncComponent(() =>
       import(`../works/${newWorkId}.vue`)
@@ -225,7 +236,7 @@ watch(
 const goingUp = ref(false);
 const preSlide = ref(false);
 const afterSlide = ref(false);
-const slideCount = ref(0);
+const slideCount = ref(initSlideCount);
 const slideCountNext = computed(() => {
   if (slideCount.value + 1 >= useWorkSettingList.length) {
     return 0;

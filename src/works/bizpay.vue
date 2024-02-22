@@ -7,10 +7,6 @@
       <img src="/works/bizpay/image_pc_01.jpg" class="only-pc" />
       <img src="/works/bizpay/image_mobile_01.jpg" class="only-mobile" />
     </div>
-    <div class="works-content">
-      <img src="/works/bizpay/image_pc_02.jpg" class="only-pc" />
-      <img src="/works/bizpay/image_mobile_02.jpg" class="only-mobile" />
-    </div>
   </div>
 </template>
 <script setup>

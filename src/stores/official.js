@@ -39,27 +39,46 @@ export const useOfficialStore = defineStore("official", () => {
   };
 
   const workPageDetail = ref({
-    coverPc: null,
-    coverMobile: null,
-    title: null,
-    subtitle: null,
-    viewplatform: null,
-    overview: null,
-    launch: null,
-    client: null,
-    device: null,
-    uiux: null,
+    name: null,
+    link: null,
+    image: null,
+    projectName: null,
+    projectClient: null,
+    projectType: null,
+    projectYear: null,
+    gradient: null,
+    use: null,
+    detail: {
+      coverPc: null,
+      coverMobile: null,
+      title: null,
+      subtitle: null,
+      overview: null,
+      launch: null,
+      client: null,
+      device: null,
+      uiux: null,
+      viewplatform: null,
+    },
   });
 
   const updateWorkPageDetail = (newValue) => {
-    // console.log(newValue);
-    // debugger;
     workPageDetail.value = { ...newValue };
   };
 
   const aboutShow = ref(false);
   const updateAboutShow = (value) => {
     aboutShow.value = value;
+  };
+
+  const homeScrollPosition = ref(0);
+  const updateHomeScrollPosition = (value) => {
+    homeScrollPosition.value = value;
+  };
+
+  const pageLoaderHeight = ref(0);
+  const updatePageLoaderHeight = (value) => {
+    pageLoaderHeight.value = value;
   };
 
   return {
@@ -71,6 +90,8 @@ export const useOfficialStore = defineStore("official", () => {
     pageType,
     workPageDetail,
     aboutShow,
+    homeScrollPosition,
+    pageLoaderHeight,
     pageTransitionHandler,
     pageLoaderClassHandler,
     pageLoaderColorHandler,
@@ -79,5 +100,7 @@ export const useOfficialStore = defineStore("official", () => {
     updatePageType,
     updateWorkPageDetail,
     updateAboutShow,
+    updateHomeScrollPosition,
+    updatePageLoaderHeight,
   };
 });

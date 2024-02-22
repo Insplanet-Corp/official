@@ -20,22 +20,26 @@
 .work-container {
   .works-content {
     margin-top: 32px;
-    img {
+    img,
+    .works-section {
       border-radius: 16px;
       opacity: 0;
       transform: scale(0.95) translateY(200px);
       transition: all ease-out 0.8s;
     }
 
-    &.show img {
+    &.show img,
+    &.show .works-section {
       opacity: 1;
       transform: scale(1) translateY(0px);
     }
-    &.prev:not(.show) img {
+    &.prev:not(.show) img,
+    &.prev:not(.show) .works-section {
       opacity: 0;
       transform: scale(0.95) translateY(-200px);
     }
-    &.prev.next:not(.show) img {
+    &.prev.next:not(.show) img,
+    &.prev.next:not(.show) .works-section {
       opacity: 0;
       transform: scale(0.95) translateY(200px);
     }
@@ -43,22 +47,27 @@
 
   &.goingUp {
     .works-content {
-      img {
+      img,
+      .works-section {
         transform: scale(0.95) translateY(200px);
       }
-      &.show img {
+      &.show img,
+      &.show .works-section {
         opacity: 1;
         transform: scale(1) translateY(0px);
       }
-      &.prev:not(.show) img {
+      &.prev:not(.show) img,
+      &.prev:not(.show) .works-section {
         opacity: 0;
         transform: scale(0.95) translateY(-200px);
       }
-      &.next:not(.show) img {
+      &.next:not(.show) img,
+      &.next:not(.show) .works-section {
         opacity: 0;
         transform: scale(0.95) translateY(-200px);
       }
-      &.prev.next:not(.show) img {
+      &.prev.next:not(.show) img,
+      &.prev.next:not(.show) .works-section {
         opacity: 0;
         transform: scale(0.95) translateY(-200px);
       }

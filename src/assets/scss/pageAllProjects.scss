@@ -24,7 +24,7 @@
       //   border-top: 1px solid #fff;
       // }
       > * {
-        padding: 0 10px;
+        padding: 0 16px;
         display: flex;
         align-items: center;
         // &:first-child {
@@ -47,34 +47,52 @@
         }
       }
       .projectName {
-        flex-basis: 28%;
+        flex-basis: 69%;
       }
       .projectClient {
-        flex-basis: 28%;
+        // flex-basis: 28%;
+        display: none;
       }
       .projectType {
-        flex-basis: 24%;
+        // flex-basis: 24%;
+        display: none;
       }
       .projectYear {
-        flex-basis: 9%;
+        // flex-basis: 9%;
+        flex-basis: 20%;
       }
       .projectLink {
-        flex-basis: 11%;
-        a {
-          display: flex;
-          align-items: center;
+        // flex-basis: 11%;
+        // a {
+        //   display: flex;
+        //   align-items: center;
+        // }
+        flex-basis: 15%;
+        p {
+          display: none;
+        }
+        span {
+          margin: 0;
         }
       }
 
-      @include for-size-max("extra-small") {
-      }
-
-      @include for-size-max("small") {
+      @include for-size-min("extra-small") {
+        .projectName {
+          flex-basis: 69%;
+        }
+        .projectClient {
+          // flex-basis: 28%;
+          display: none;
+        }
+        .projectType {
+          // flex-basis: 24%;
+          display: none;
+        }
         .projectYear {
-          flex-basis: 11%;
+          flex-basis: 20%;
         }
         .projectLink {
-          flex-basis: 9%;
+          flex-basis: 15%;
           p {
             display: none;
           }
@@ -84,12 +102,69 @@
         }
       }
 
-      @include for-size-min("medium") {
+      @include for-size-min("small") {
+        > * {
+          padding: 0 32px;
+        }
         // 1024 ~ 1279px 스타일
+        .projectName {
+          flex-basis: 40%;
+        }
+        .projectClient {
+          flex-basis: 30%;
+          display: block;
+        }
+        .projectType {
+          // flex-basis: 24%;
+          display: none;
+        }
+        .projectYear {
+          flex-basis: 15%;
+        }
+        .projectLink {
+          flex-basis: 15%;
+          p {
+            display: block;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            span {
+              margin-left: 8px;
+            }
+          }
+        }
       }
 
-      @include for-size-min("large") {
+      @include for-size-min("medium") {
         // 1280 ~ 1339px 스타일
+        .projectName {
+          flex-basis: 30%;
+        }
+        .projectClient {
+          flex-basis: 20%;
+          display: block;
+        }
+        .projectType {
+          flex-basis: 25%;
+          display: block;
+        }
+        .projectYear {
+          flex-basis: 15%;
+        }
+        .projectLink {
+          flex-basis: 15%;
+          p {
+            display: block;
+          }
+          a {
+            display: flex;
+            align-items: center;
+            span {
+              margin-left: 8px;
+            }
+          }
+        }
       }
 
       @include for-size-min("xlarge") {

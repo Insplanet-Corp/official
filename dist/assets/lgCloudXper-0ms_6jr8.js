@@ -1,1 +1,0 @@
-import{_ as e}from"./WorkContentCommon-YmLVlc2S.js";import{e as o,f as r,k as t}from"./index-w7INBIhN.js";const a={class:"work-container"},p={__name:"lgCloudXper",setup(s){return(c,_)=>(o(),r("div",a,[t(e)]))}};export{p as default};

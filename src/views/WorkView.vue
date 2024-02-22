@@ -10,7 +10,7 @@
       <ul>
         <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.projectName }}</div>
-          <div class="projectClient">{{ work.projectName }}</div>
+          <div class="projectClient">{{ work.projectClient }}</div>
           <div class="projectType">{{ work.projectType }}</div>
           <div class="projectYear">{{ work.projectYear }}</div>
           <div class="projectLink">

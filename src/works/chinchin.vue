@@ -11,10 +11,6 @@
       <img src="/works/chinchin/image_pc_02.jpg" class="only-pc" />
       <img src="/works/chinchin/image_mobile_02.jpg" class="only-mobile" />
     </div>
-    <div class="works-content">
-      <img src="/works/chinchin/image_pc_03.jpg" class="only-pc" />
-      <img src="/works/chinchin/image_mobile_03.jpg" class="only-mobile" />
-    </div>
   </div>
 </template>
 <script setup>

@@ -2,8 +2,6 @@ import "./assets/main.css";
 import "./assets/common.css";
 import "./assets/scss/index.scss";
 
-import "aos/dist/aos.css";
-
 import { createApp } from "vue";
 import { createPinia } from "pinia";
 

@@ -32,7 +32,7 @@
         >
           <button
             v-for="(work, index) in group"
-            :key="index"
+            :key="work.name"
             class="work-card"
             :class="{
               [!(index % 2 === 0) ? 'odd' : 'even']: true,
@@ -40,9 +40,10 @@
               onHover: isHover(index),
               offHover: hoverIndex !== null && !isHover(index),
             }"
+            :id="`workCard-${work.name}`"
             @mouseenter="onMouseEnterWorkCard(work, index)"
             @mouseleave="onMouseLeaveWorkCard()"
-            @click="onClickWorkCard(work, index)"
+            @click="onClickWorkCard(work)"
             ref="workCards"
           >
             <div
@@ -66,6 +67,9 @@
                 <!-- {{ index }} -->
                 <!-- {{ work.name }} -->
               </div>
+            </div>
+            <div class="work-title">
+              <p :class="work.projectNameColor">{{ work.projectName }}</p>
             </div>
           </button>
         </div>
@@ -131,9 +135,14 @@ const getFullImagePath = (imageName) => {
 };
 
 // backgroundTypeSelect 값이 변경되면 실행
-const onClickWorkCard = (work, index) => {
+
+const onClickWorkCard = (work) => {
+  console.log(scrollPosition.value);
   if (work.link) {
-    router.push({ path: work.link });
+    router.push({
+      path: work.link,
+    });
+    officialStore.updateHomeScrollPosition(scrollPosition.value);
   }
 };
 
@@ -174,6 +183,7 @@ const checkBreakpoint = () => {
     }
   }
   currentBreakpoint.value = matchedBreakpoint;
+  changeCardLayout(null, 1);
 };
 
 // watch
@@ -189,7 +199,10 @@ const groupedItems = computed(() => {
   workList.value
     .filter((item) => item.link && item.link !== "")
     .forEach((item, index) => {
-      groups[index % breakpointCardCount.value].push(item);
+      groups[index % breakpointCardCount.value].push({
+        ...item,
+        ...{ originIndex: index },
+      });
     });
 
   const maxCardCount = groups.reduce(
@@ -269,7 +282,7 @@ const onKeyDownAtHomeView = (event) => {
     }, 10);
   }
   if (event.key === "End") {
-    console.log(maxContentHeight);
+    // console.log(maxContentHeight);
     scrollTopInterval = setInterval(() => {
       if (scrollPosition.value > -maxContentHeight) {
         scrollPosition.value -= Math.floor(
@@ -327,6 +340,26 @@ function startAutoScroll() {
 }
 
 onMounted(() => {
+  console.log("HomeView onMounted");
+  const officialStore = useOfficialStore();
+  // console.log(officialStore.workPageDetail.name);
+  console.log(officialStore.homeScrollPosition);
+
+  if (officialStore.homeScrollPosition) {
+    // const targetElement = document.querySelector(
+    //   `#workCard-${officialStore.workPageDetail.name}`
+    // );
+    // console.log(targetElement);
+    // console.log(targetElement);
+    scrollPosition.value = officialStore.homeScrollPosition;
+    // targetElement.classList.add("prepare");
+
+    // setTimeout(() => {
+    //   targetElement.classList.remove("prepare");
+    // }, 2000);
+  }
+  // console.log(officialStore.workPageDetail);
+
   window.addEventListener("keydown", onKeyDownAtHomeView);
 
   setTimeout(() => {
