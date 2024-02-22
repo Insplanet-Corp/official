@@ -340,25 +340,11 @@ function startAutoScroll() {
 }
 
 onMounted(() => {
-  console.log("HomeView onMounted");
   const officialStore = useOfficialStore();
-  // console.log(officialStore.workPageDetail.name);
-  console.log(officialStore.homeScrollPosition);
 
   if (officialStore.homeScrollPosition) {
-    // const targetElement = document.querySelector(
-    //   `#workCard-${officialStore.workPageDetail.name}`
-    // );
-    // console.log(targetElement);
-    // console.log(targetElement);
     scrollPosition.value = officialStore.homeScrollPosition;
-    // targetElement.classList.add("prepare");
-
-    // setTimeout(() => {
-    //   targetElement.classList.remove("prepare");
-    // }, 2000);
   }
-  // console.log(officialStore.workPageDetail);
 
   window.addEventListener("keydown", onKeyDownAtHomeView);
 
