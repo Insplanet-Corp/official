@@ -62,6 +62,7 @@
                 <img
                   ref="workCardImages"
                   :src="`/worksCards/${work.image}`"
+                  @error="onImageError"
                   alt=""
                 />
                 <!-- {{ index }} -->
@@ -90,13 +91,6 @@ const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
-// import responseStyle from "../assets/scss/response.scss";
-// import { useRoute } from "vue-router";
-
-// const router = useRoute();
-//
-// import gsap from "gsap";
-// console.log(isMobile, isTablet);
 const { worksSettingList } = worksSetting;
 const workList = ref(worksSettingList.filter((e) => e.use));
 const workCards = ref([]);
@@ -108,7 +102,6 @@ const isInited = ref(false);
 const mobile = ref(false);
 
 const scrollPosition = ref(0);
-
 const workGroupInner = ref(null);
 const workCardImages = ref(null);
 const maxWorkGroupInnerHeight = ref(0);
@@ -134,10 +127,11 @@ const getFullImagePath = (imageName) => {
   return new URL(`../works/images/${imageName}`, import.meta.url).href;
 };
 
-// backgroundTypeSelect 값이 변경되면 실행
+const onImageError = (event) => {
+  event.target.src = `/worksCards/temp.jpg`;
+};
 
 const onClickWorkCard = (work) => {
-  console.log(scrollPosition.value);
   if (work.link) {
     router.push({
       path: work.link,
@@ -245,11 +239,9 @@ const scrollCheckerAndStart = () => {
 };
 
 const onTouchstartHandler = (e) => {
-  // console.log("onTouchstartHandler");
   scrollCheckerAndStop();
 };
 const onTouchendHandler = (e) => {
-  // console.log("onTouchendHandler");
   scrollCheckerAndStart();
 };
 
@@ -307,7 +299,6 @@ const onKeyDownAtHomeView = (event) => {
   }
   if (event.key === "PageUp") {
     const targetScrollPosition = scrollPosition.value + pageHeight;
-    // console.log(scrollPosition.value, targetScrollPosition);
     scrollTopInterval = setInterval(() => {
       if (scrollPosition.value < targetScrollPosition) {
         scrollPosition.value -= Math.floor(
@@ -329,13 +320,10 @@ function startAutoScroll() {
     window.autoScrollInterval = setInterval(() => {
       scrollPosition.value -= 0.12;
     }, 1);
-    // }, 1000);
   } else {
     window.autoScrollInterval = setInterval(() => {
-      // console.log("autoScrollInterval");
       scrollTo({ top: scrollY + 2 });
     }, 10);
-    // }, 40000);
   }
 }
 
@@ -357,10 +345,6 @@ onMounted(() => {
     acc[name] = getCssVariable(name);
     return acc;
   }, {});
-
-  // if (isPotable) {
-  //   window.addEventListener("scroll", onMobileScrollHandler);
-  // }
 
   window.addEventListener("resize", checkBreakpoint);
 
