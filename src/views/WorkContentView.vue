@@ -103,17 +103,9 @@ const { worksSettingList } = worksSetting;
 const useWorkSettingList = worksSettingList.filter(
   (e) => e.use && e.link && e.link !== ""
 );
-// console.log(useWorkSettingList);
-
 const router = useRoute();
-const externalHtml = ref("work");
-// const dynamicComponent = ref(null);
 const loaded = ref(false);
 const workId = ref(router.params.workId);
-const workIndex = ref(router.params.workIndex || 0);
-// const workData = ref(
-//   useWorkSettingList.find((e) => e.link === `/work/${workId.value}`)
-// );
 let newWorkData = useWorkSettingList.find(
   (e) => e.link === `/work/${workId.value}`
 );
@@ -121,7 +113,6 @@ let newWorkData = useWorkSettingList.find(
 const initSlideCount = useWorkSettingList.findIndex(
   (item) => item.name === newWorkData.name
 );
-// slideCount.value = newSlideCount;
 
 officialStore.updateWorkPageDetail(newWorkData);
 
@@ -139,7 +130,6 @@ let dynamicComponent = defineAsyncComponent(() =>
 
 let lastVisibleIndex = 0;
 const refreshImageInteraction = () => {
-  // console.log("refreshImageInteraction");
   const images = document.querySelectorAll(".works-content");
   const observer = new IntersectionObserver(
     (entries, index) => {
@@ -191,10 +181,6 @@ const refreshImageInteraction = () => {
       threshold: 0.1, // 10%의 요소가 보일 때 콜백 함수 실행
     }
   );
-
-  // 모든 'fade-in-image' 클래스를 가진 요소를 관찰
-  // const images = document.querySelectorAll(".works-content");
-  // console.log(images);
   images.forEach((img) => {
     observer.observe(img);
   });
@@ -203,12 +189,9 @@ const refreshImageInteraction = () => {
 watch(
   () => router.params.workId,
   (newWorkId, oldWorkId) => {
-    // 여기에 함수를 호출
-    // console.log(`workId changed from ${oldWorkId} to ${newWorkId}`);
     newWorkData = useWorkSettingList.find(
       (e) => e.link === `/work/${newWorkId}`
     );
-    // console.log(newWorkData);
     const newSlideCount = useWorkSettingList.findIndex(
       (item) => item.name === newWorkData.name
     );
@@ -227,9 +210,6 @@ watch(
     );
 
     officialStore.updateWorkPageDetail({ ...newWorkData });
-    // console.log(newWorkData);
-    // debugger;
-    // console.log(workData.value);
   }
 );
 
@@ -254,11 +234,9 @@ const slideCountPrev = computed(() => {
 });
 
 const onPrevClickHandler = () => {
-  // console.log("onPrevClickHandler");
   slideProject(-1);
 };
 const onNextClickHandler = () => {
-  // console.log("onNextClickHandler");
   slideProject(1);
 };
 
@@ -269,7 +247,6 @@ const onLinkHandler = (path, newIndex) => {
 };
 
 const slideProject = (count) => {
-  // console.log("slideProject");
   preSlide.value = true;
   setTimeout(() => {
     slideCount.value += count;
@@ -282,30 +259,20 @@ const slideProject = (count) => {
   }, 500);
 };
 
-// const getFullImagePath = (imageName) => {
-//   console.log(imageName);
-//   console.log(import.meta.url);
-//   return new URL(`../works/images/${imageName}`, import.meta.url).href;
-// };
-
 let lastScrollPosition = 0;
 const handleScroll = () => {
   const currentScrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;
 
-  // 현재 스크롤 위치가 이전 스크롤 위치보다 크면 스크롤이 아래로 진행되고 있음
   goingUp.value = currentScrollPosition < lastScrollPosition;
 
-  // 스크롤 위치 업데이트
   lastScrollPosition = currentScrollPosition;
 };
 
 onMounted(() => {
   setTimeout(() => {
-    // console.log("loaded");
     loaded.value = true;
   }, 300);
-  // loaded.value = true;
 
   window.addEventListener("scroll", handleScroll);
 });

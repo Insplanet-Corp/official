@@ -49,11 +49,6 @@
 import { ref, defineProps, onMounted, watch } from "vue";
 import { useOfficialStore } from "@/stores/official";
 
-// const props = defineProps({
-//   detail: Object,
-// });
-// const detail = props.detail;
-
 const officialStore = useOfficialStore();
 const workData = officialStore.workPageDetail;
 const detail = ref(workData.detail);
@@ -61,8 +56,6 @@ const detail = ref(workData.detail);
 watch(
   () => officialStore.workPageDetail,
   (newVal) => {
-    // console.log(newVal.detail);
-    // debugger;
     detail.value = newVal.detail;
   }
 );

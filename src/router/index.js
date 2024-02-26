@@ -44,7 +44,6 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const { params } = to;
-  // console.log(to);
   officialStore = officialStore || useOfficialStore();
 
   // init all
@@ -87,7 +86,6 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
   const { params } = to;
   officialStore = officialStore || useOfficialStore();
-  // officialStore.pageLoaderZindexHandler("0");
 
   const latoutType = to.name === "home" ? "fixed-layout" : "relative-layout";
   officialStore.updatePageType(latoutType);

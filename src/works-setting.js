@@ -1,32 +1,6 @@
 // worksList: 작업물 리스트
 const worksSettingList = [
   {
-        name: "myWork",
-        link: "/work/myWork",
-        image: "card_myWork.jpg",
-        projectName: "myWork 프로젝트",
-        projectNameColor: "dark",
-        projectClient: "myWork 클라이언트",
-        projectType: "프로젝트 타입",
-        projectYear: "2024",
-        gradient: "#f5f5f5",
-        use: true,
-        detail: {
-            coverPc: "/works/myWork/cover.jpg",
-            coverMobile: "/works/myWork/cover_m.jpg",
-            title: "myWork title",
-            subtitle:
-            "myWork subtitle",
-            overview:
-            "myWork overview",
-            launch: "-",
-            client: "-",
-            device: "-",
-            uiux: "-",
-            viewplatform: "-",
-        },
-    },
-  {
     name: "wanju",
     link: "/work/wanju",
     image: "card_wanju.jpg",

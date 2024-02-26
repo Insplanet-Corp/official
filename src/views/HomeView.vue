@@ -1,20 +1,10 @@
 <template>
-  <!-- {{ breakpointCardCount }}
-  {{ currentBreakpoint }} -->
   <div
     class="work-wp"
     @wheel="onScrollHandler"
     @touchstart="onTouchstartHandler"
     @touchend="onTouchendHandler"
   >
-    <!-- <div class="work-wp-gradient" v-if="false">
-      <div
-        v-for="(background, index) in Object.keys(workGradientType)"
-        :style="{ backgroundImage: workGradientType[background] }"
-        :class="{ onShow: backgroundGradientCheck(background) }"
-      ></div>
-    </div> -->
-
     <div class="work-area" :class="{ inited: isInited }">
       <div
         v-for="(group, groupIndex) in groupedItems"
@@ -26,7 +16,6 @@
           ref="workGroupInner"
           class="work-group-inner"
           :style="{
-            // transform: `translateY(${isOdd(groupIndex) ? 100 : 0}px)`,
             transform: `translateY(${getScrollPosition(groupIndex)}px)`,
           }"
         >
@@ -36,7 +25,6 @@
             class="work-card"
             :class="{
               [!(index % 2 === 0) ? 'odd' : 'even']: true,
-              // onShow: isVisible[index],
               onHover: isHover(index),
               offHover: hoverIndex !== null && !isHover(index),
             }"
@@ -46,27 +34,14 @@
             @click="onClickWorkCard(work)"
             ref="workCards"
           >
-            <div
-              class="work-link-content"
-              :style="{
-                // transition: `all ${Math.random() * 0.6 + 0.6}s cubic-bezier(.58,.45,.31,1) ${Math.random() * 0.2 + 0.2}s`,
-                // backgroundBack: `${workGradientType[work.gradient]}`,
-              }"
-            >
-              <div
-                class="work-link-image"
-                :style="{
-                  // backgroundImage: `url(${getFullImagePath(work.image)})`,
-                }"
-              >
+            <div class="work-link-content">
+              <div class="work-link-image">
                 <img
                   ref="workCardImages"
                   :src="`/worksCards/${work.image}`"
                   @error="onImageError"
                   alt=""
                 />
-                <!-- {{ index }} -->
-                <!-- {{ work.name }} -->
               </div>
             </div>
             <div class="work-title">
@@ -274,7 +249,6 @@ const onKeyDownAtHomeView = (event) => {
     }, 10);
   }
   if (event.key === "End") {
-    // console.log(maxContentHeight);
     scrollTopInterval = setInterval(() => {
       if (scrollPosition.value > -maxContentHeight) {
         scrollPosition.value -= Math.floor(
