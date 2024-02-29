@@ -16,7 +16,6 @@ header {
     padding: 15px 16px 15px;
     margin: 0px auto 0;
     display: flex;
-    max-width: 1920px;
     justify-content: space-between;
     @include for-size-min("extra-small") {
       // padding: 10px 16px;

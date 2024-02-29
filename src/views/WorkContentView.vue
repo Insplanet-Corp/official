@@ -1,7 +1,8 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
   <div class="page-wp" :class="{ loaded }">
-    <component :is="dynamicComponent" :class="{ goingUp }" />
+    <component :is="dynamicComponent" />
+    <!-- <component :is="dynamicComponent" :class="{ goingUp }" /> -->
     <!-- "Let's work together" 내용의 영역 -->
     <div class="work-together-area">
       <div class="work-together-content">
