@@ -127,7 +127,7 @@
         </div>
         <figure class="works-figure">
           <ul class="works-figure-content">
-            <li>
+            <li class="figure-cms01">
               <img
                 src="/works/shinhan/img_pc_cms01.png"
                 alt=""
@@ -135,7 +135,7 @@
                 style="--delayImg: 0.75s"
               />
             </li>
-            <li>
+            <li class="figure-cms02">
               <img
                 src="/works/shinhan/img_pc_cms02.png"
                 alt=""
@@ -143,7 +143,7 @@
                 style="--delayImg: 0.5s"
               />
             </li>
-            <li>
+            <li class="figure-cms03">
               <img
                 src="/works/shinhan/img_pc_cms03.png"
                 alt=""
@@ -251,7 +251,7 @@
     </div>
     <!--// 신한투자증권 브랜드 아이덴티티 -->
 
-    <!-- 신한투자증권 브랜드 아이덴티티 -->
+    <!-- 검색엔진 최적화(SEO) -->
     <div class="works-content">
       <div class="works-section theme-darkblue section07">
         <div class="works-desc horizontal">
@@ -300,12 +300,94 @@
         </div>
       </div>
     </div>
-    <!--// 신한투자증권 브랜드 아이덴티티 -->
+    <!--// 검색엔진 최적화(SEO) -->
 
+    <!-- 신한카드 UX Writing 가이드 -->
     <div class="works-content">
-      <img src="/works/shinhan/image_pc_02.jpg" class="only-pc" />
-      <img src="/works/shinhan/image_mobile_02.jpg" class="only-mobile" />
+      <div class="works-section section08">
+        <div class="works-figure">
+          <img
+            src="/works/shinhan/img_pc_ux01.png"
+            alt=""
+            class="only-pc ux-icon"
+            style="--delayImg: 0.5s"
+          />
+          <div class="works-desc">
+            <h3 class="works-desc-title">신한카드 UX Writing 가이드</h3>
+            <p class="works-desc-text">
+              투자 콘텐츠에 대한 이해도를 높이고 고객과 '통' 하는 글쓰기를 위해
+              <br />
+              신한카드 UX Writing 가이드 를 준수하였다. <br />
+              한눈에 알 수 있는 표시, 직접적이고 구체적인 표현을 사용하였으며
+              <br />
+              문장 톤앤매너를 통일성 있게 유지했다.<br />
+            </p>
+          </div>
+          <img
+            src="/works/shinhan/img_pc_ux02.png"
+            alt=""
+            class="only-pc ux-device"
+            style="--delayImg: 0.75s"
+          />
+          <div class="device-text">
+            <ul class="left">
+              <li class="device-text-uno">
+                <img
+                  src="/works/shinhan/img_pc_ux0301.png"
+                  alt=""
+                  style="--delayImg: 1s"
+                />
+              </li>
+              <li class="device-text-dos">
+                <img
+                  src="/works/shinhan/img_pc_ux0302.png"
+                  alt=""
+                  style="--delayImg: 1.05s"
+                />
+              </li>
+              <li class="device-text-tres">
+                <img
+                  src="/works/shinhan/img_pc_ux0303.png"
+                  alt=""
+                  style="--delayImg: 1.15s"
+                />
+              </li>
+            </ul>
+            <ul class="right">
+              <li class="device-text-uno">
+                <img
+                  src="/works/shinhan/img_pc_ux0401.png"
+                  alt=""
+                  style="--delayImg: 1s"
+                />
+              </li>
+              <li class="device-text-dos">
+                <img
+                  src="/works/shinhan/img_pc_ux0402.png"
+                  alt=""
+                  style="--delayImg: 1.05s"
+                />
+              </li>
+              <li class="device-text-tres">
+                <img
+                  src="/works/shinhan/img_pc_ux0403.png"
+                  alt=""
+                  style="--delayImg: 1.15s"
+                />
+              </li>
+              <li class="device-text-quatro">
+                <img
+                  src="/works/shinhan/img_pc_ux0404.png"
+                  alt=""
+                  style="--delayImg: 1.3s"
+                />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
+    <!--// 신한카드 UX Writing 가이드 -->
   </div>
 </template>
 <script setup>
@@ -345,9 +427,27 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
 .section03 {
   .works-figure {
     margin-top: 128px;
+    opacity: 0;
+    transform: translateY(200px);
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
     &-content {
       max-width: 1158px;
       gap: 24px;
+      li {
+        transition: transform 0.75s ease-in-out;
+        transition-delay: 0.5s;
+        img {
+          transition: unset;
+        }
+      }
+      .figure-cms01 {
+        transform: translateX(394px);
+      }
+      .figure-cms03 {
+        transform: translateX(-394px);
+      }
     }
   }
 }
@@ -405,6 +505,130 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       margin-top: 128px;
       max-width: 1142px;
     }
+  }
+}
+.section08 {
+  position: relative;
+  background-color: #f5f5f5;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 304px;
+    display: block;
+    border-radius: 50%;
+    width: 71.25vw;
+    height: 71.25vw;
+    max-width: 1140px;
+    max-height: 1140px;
+    margin: auto;
+    background-color: #2a3fec;
+    z-index: -1;
+    transform: scale(0);
+    transition: transform 0.75s;
+  }
+  .works-desc {
+    margin: 16px 0 65px;
+    &-title,
+    &-text {
+      text-align: center;
+      color: #fff;
+    }
+  }
+  .works-figure {
+    flex-direction: column;
+    align-items: center;
+    .ux-icon {
+      max-width: 318px;
+      animation: uxIcons 1s ease-in-out 0.75s infinite alternate;
+    }
+    .ux-device {
+      max-width: 535px;
+    }
+  }
+  .device-text {
+    position: absolute;
+    top: 304px;
+    width: 1140px;
+    height: 1140px;
+    li {
+      position: absolute;
+    }
+    .left {
+      .device-text-uno {
+        top: 518px;
+        left: -54px;
+        width: 282px;
+        height: 54px;
+      }
+      .device-text-dos {
+        top: 381px;
+        left: 159px;
+        width: 198px;
+        height: 44px;
+      }
+      .device-text-tres {
+        top: 743px;
+        left: 176px;
+        width: 141px;
+        height: 36px;
+      }
+    }
+    .right {
+      .device-text-uno {
+        right: -54px;
+        top: 497px;
+        width: 243px;
+        height: 54px;
+      }
+      .device-text-dos {
+        right: 24px;
+        top: 280px;
+        width: 193px;
+        height: 54px;
+      }
+      .device-text-tres {
+        right: 151px;
+        top: 411px;
+        width: 151px;
+        height: 36px;
+      }
+      .device-text-quatro {
+        right: 123px;
+        top: 640px;
+        width: 206px;
+        height: 54px;
+      }
+    }
+  }
+}
+.works-content.show {
+  .section03 {
+    .works-figure {
+      opacity: 1;
+      transform: translateY(0);
+      &-content {
+        .figure-cms01,
+        .figure-cms03 {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+  .section08 {
+    &::after {
+      transform: scale(1);
+    }
+  }
+}
+
+@keyframes uxIcons {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(-5px);
   }
 }
 </style>
