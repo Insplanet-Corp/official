@@ -56,7 +56,8 @@
                 />
               </p>
               <button @click="onPrevClickHandler()">
-                <span class="arrow"></span> <b>Prev project</b>
+                <span class="arrow"></span>
+                <b>Prev {{ isPotable ? "" : "project" }}</b>
               </button>
             </div>
             <div class="next-area">
@@ -73,7 +74,8 @@
                 />
               </p>
               <button @click="onNextClickHandler()">
-                <b>Next project</b> <span class="arrow right"></span>
+                <b>Next {{ isPotable ? "" : "project" }}</b>
+                <span class="arrow right"></span>
               </button>
             </div>
           </div>
@@ -95,9 +97,14 @@ import {
 } from "vue";
 import { useOfficialStore } from "@/stores/official";
 import { useRoute } from "vue-router";
+import MobileDetect from "mobile-detect";
 import axios from "axios";
 import worksSetting from "@/works-setting";
 import route from "@/router";
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+const isTablet = mobileDetect.tablet();
+const isPotable = isMobile || isTablet;
 
 const officialStore = useOfficialStore();
 const { worksSettingList } = worksSetting;

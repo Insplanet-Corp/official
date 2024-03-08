@@ -49,60 +49,50 @@
     <!-- 모바일 대세 소형+세로형 콘텐츠 -->
     <div class="works-content">
       <div class="works-section section02">
-        <div class="works-desc horizontal">
+        <div class="works-desc" :class="{ horizontal: !isPotable }">
           <h3 class="works-desc-title" style="--delay: 0.5s">
             모바일 대세 <br />소형+세로형 콘텐츠
           </h3>
           <p class="works-desc-text" style="--delay: 0.5s">
             모바일이 대세가 되면서 국내 기업들의 콘텐츠 형태에도 변화가
             생겼다.<br />기존 TV와 데스크탑 형태를 중심으로 제작되던 대형+가로형
-            형식보다는 스마트폰 화면 형태의 소형+세로형 <br />콘텐츠로 제작되는
-            콘텐츠를 많이 볼 수 있는 요즘이다.<br /><br />그러다보니 고품질,
-            고용량의 콘텐츠보다는 SNS 에 공유하기 좋은 가벼운 세로 형태의
-            콘텐츠로 대부분의 <br />콘텐츠가 변화하고 있다.<br />요즘 소위
+            형식보다는 스마트폰 화면 형태의 소형+세로형
+            <br class="only-pc" />콘텐츠로 제작되는 콘텐츠를 많이 볼 수 있는
+            요즘이다.<br /><br />그러다보니 고품질, 고용량의 콘텐츠보다는 SNS 에
+            공유하기 좋은 가벼운 세로 형태의 콘텐츠로 대부분의
+            <br class="only-pc" />콘텐츠가 변화하고 있다.<br />요즘 소위
             ‘핫’하다는 콘텐츠는 이처럼 모바일 환경 맞춤 콘텐츠인 경우가
             대부분이다.
           </p>
         </div>
         <figure class="works-figure">
           <ul class="works-figure-content">
-            <li>
+            <li class="only-pc">
               <img
                 src="/works/shinhan/img_pc_content01.png"
                 alt=""
-                class="only-pc"
                 style="--delayImg: 0.75s"
               />
-              <img
-                src="/works/shinhan/img_pc_content01.png"
-                alt=""
-                class="only-mobile"
-              />
             </li>
-            <li>
+            <li class="only-pc">
               <img
                 src="/works/shinhan/img_pc_content02.png"
                 alt=""
-                class="only-pc"
                 style="--delayImg: 0.5s"
               />
-              <img
-                src="/works/shinhan/img_pc_content02.png"
-                alt=""
-                class="only-mobile"
-              />
             </li>
-            <li>
+            <li class="only-pc">
               <img
                 src="/works/shinhan/img_pc_content03.png"
                 alt=""
-                class="only-pc"
                 style="--delayImg: 1s"
               />
+            </li>
+            <li class="only-mobile">
               <img
-                src="/works/shinhan/img_pc_content03.png"
+                src="/works/shinhan/img_mobile_content.png"
                 alt=""
-                class="only-mobile"
+                style="--delayImg: 0.75s"
               />
             </li>
           </ul>
@@ -116,7 +106,7 @@
     <!-- 콘텐츠관리시스템 (CMS) 도입 -->
     <div class="works-content">
       <div class="works-section theme-blue section03">
-        <div class="works-desc horizontal">
+        <div class="works-desc" :class="{ horizontal: !isPotable }">
           <h3 class="works-desc-title">콘텐츠관리시스템<br />(CMS) 도입</h3>
           <p class="works-desc-text">
             이번 신한금융투자 프로젝트에서는 콘텐츠관리시스템(CMS)을 도입하여<br />금융상품,
@@ -134,6 +124,12 @@
                 class="only-pc"
                 style="--delayImg: 0.75s"
               />
+              <img
+                src="/works/shinhan/img_mobile_cms01.png"
+                alt=""
+                class="only-mobile"
+                style="--delayImg: 0.75s"
+              />
             </li>
             <li class="figure-cms02">
               <img
@@ -142,6 +138,12 @@
                 class="only-pc"
                 style="--delayImg: 0.5s"
               />
+              <img
+                src="/works/shinhan/img_mobile_cms02.png"
+                alt=""
+                class="only-mobile"
+                style="--delayImg: 0.75s"
+              />
             </li>
             <li class="figure-cms03">
               <img
@@ -149,6 +151,12 @@
                 alt=""
                 class="only-pc"
                 style="--delayImg: 1s"
+              />
+              <img
+                src="/works/shinhan/img_mobile_cms03.png"
+                alt=""
+                class="only-mobile"
+                style="--delayImg: 0.75s"
               />
             </li>
           </ul>
@@ -161,7 +169,10 @@
     <div class="works-content">
       <div class="works-section theme-gradient section04">
         <div class="works-desc">
-          <h3 class="works-desc-title">누구나 모바일 콘텐츠를 소비하는 시대</h3>
+          <h3 class="works-desc-title">
+            누구나 모바일 콘텐츠를 <br class="only-mobile" />
+            소비하는 시대
+          </h3>
           <p class="works-desc-text">
             누구나 맘에 드는 콘텐츠를 지인에 공유할 수 있도록 <br />디바이스 OS
             별 모바일웹 공유기능을 구현했다.
@@ -174,6 +185,12 @@
             class="only-pc"
             style="--delayImg: 0.75s"
           />
+          <img
+            src="/works/shinhan/img_mobile_anyone.png"
+            alt=""
+            class="only-mobile"
+            style="--delayImg: 0.75s"
+          />
         </div>
       </div>
     </div>
@@ -182,8 +199,11 @@
     <!-- 신한투자증권 디지털 홍보채널 -->
     <div class="works-content">
       <div class="works-section theme-darkblue section05">
-        <div class="works-desc horizontal">
-          <h3 class="works-desc-title">신한투자증권 디지털 홍보채널</h3>
+        <div class="works-desc" :class="{ horizontal: !isPotable }">
+          <h3 class="works-desc-title">
+            신한투자증권 <br class="only-mobile" />
+            디지털 홍보채널
+          </h3>
           <p class="works-desc-text">
             모바일 홈페이지(모바일웹) 개편으로 신한투자증권 디지털 홍보채널의
             역할에 포커스를 두었으며 <br />
@@ -203,6 +223,12 @@
             class="only-pc"
             style="--delayImg: 0.75s"
           />
+          <img
+            src="/works/shinhan/img_mobile_channel.png"
+            alt=""
+            class="only-mobile"
+            style="--delayImg: 0.75s"
+          />
         </div>
       </div>
     </div>
@@ -211,7 +237,7 @@
     <!-- 신한투자증권 브랜드 아이덴티티 -->
     <div class="works-content">
       <div class="works-section section06">
-        <div class="works-figure">
+        <div class="works-figure" v-if="!isPotable">
           <img
             src="/works/shinhan/img_pc_bi01.png"
             alt=""
@@ -219,8 +245,10 @@
             style="--delayImg: 0.75s"
           />
         </div>
-        <div class="works-desc horizontal">
-          <h3 class="works-desc-title">신한투자증권 브랜드 아이덴티티</h3>
+        <div class="works-desc" :class="{ horizontal: !isPotable }">
+          <h3 class="works-desc-title">
+            신한투자증권 <br class="only-mobile" />브랜드 아이덴티티
+          </h3>
           <p class="works-desc-text">
             브랜드 아이덴티티에 집중한 디자인으로 브랜드 톤 앤 매너의
             통일성을유지하며 밝고 생생한 <br />컬러와 3D 요소로 친근한 이미지를
@@ -228,7 +256,7 @@
           </p>
         </div>
         <div class="works-figure">
-          <ul class="works-figure-content">
+          <ul class="works-figure-content" v-if="!isPotable">
             <li>
               <img
                 src="/works/shinhan/img_pc_bi0201.png"
@@ -246,6 +274,29 @@
               />
             </li>
           </ul>
+          <ul class="works-figure-content" v-if="isPotable">
+            <li>
+              <img
+                src="/works/shinhan/img_mobile_bi01.png"
+                alt=""
+                style="--delayImg: 0.5s"
+              />
+            </li>
+            <li>
+              <img
+                src="/works/shinhan/img_mobile_bi02.png"
+                alt=""
+                style="--delayImg: 0.65s"
+              />
+            </li>
+            <li>
+              <img
+                src="/works/shinhan/img_mobile_bi03.png"
+                alt=""
+                style="--delayImg: 0.8s"
+              />
+            </li>
+          </ul>
         </div>
       </div>
     </div>
@@ -254,7 +305,7 @@
     <!-- 검색엔진 최적화(SEO) -->
     <div class="works-content">
       <div class="works-section theme-darkblue section07">
-        <div class="works-desc horizontal">
+        <div class="works-desc" :class="{ horizontal: !isPotable }">
           <h3 class="works-desc-title">검색엔진 최적화(SEO)</h3>
           <p class="works-desc-text">
             검색엔진 최적화(SEO)를 통해 네이버, 구글 등 검색 사이트에서
@@ -268,6 +319,12 @@
             src="/works/shinhan/img_pc_seo.png"
             alt=""
             class="only-pc"
+            style="--delayImg: 0.75s"
+          />
+          <img
+            src="/works/shinhan/img_mobile_seo.png"
+            alt=""
+            class="only-mobile"
             style="--delayImg: 0.75s"
           />
           <div class="blind">
@@ -313,10 +370,12 @@
             style="--delayImg: 0.5s"
           />
           <div class="works-desc">
-            <h3 class="works-desc-title">신한카드 UX Writing 가이드</h3>
+            <h3 class="works-desc-title">
+              신한카드 <br class="only-mobile" />UX Writing 가이드
+            </h3>
             <p class="works-desc-text">
               투자 콘텐츠에 대한 이해도를 높이고 고객과 '통' 하는 글쓰기를 위해
-              <br />
+              <br class="only-mobile" />
               신한카드 UX Writing 가이드 를 준수하였다. <br />
               한눈에 알 수 있는 표시, 직접적이고 구체적인 표현을 사용하였으며
               <br />
@@ -324,22 +383,35 @@
             </p>
           </div>
           <img
+            src="/works/shinhan/img_mobile_ux01.png"
+            alt=""
+            class="only-mobile ux-icon"
+            style="--delayImg: 0.5s"
+          />
+          <img
             src="/works/shinhan/img_pc_ux02.png"
             alt=""
             class="only-pc ux-device"
+            style="--delayImg: 0.75s"
+          />
+          <img
+            src="/works/shinhan/img_mobile_ux02.png"
+            alt=""
+            class="only-mobile ux-device"
             style="--delayImg: 0.75s"
           />
           <div class="device-text">
             <ul class="left">
               <li class="device-text-uno">
                 <img
-                  src="/works/shinhan/img_pc_ux0301.png"
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0301.png' : '/works/shinhan/img_mobile_ux0301.png'}`"
                   alt=""
                   style="--delayImg: 1s"
                 />
               </li>
               <li class="device-text-dos">
                 <img
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0302.png' : '/works/shinhan/img_mobile_ux0302.png'}`"
                   src="/works/shinhan/img_pc_ux0302.png"
                   alt=""
                   style="--delayImg: 1.05s"
@@ -347,6 +419,7 @@
               </li>
               <li class="device-text-tres">
                 <img
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0303.png' : '/works/shinhan/img_mobile_ux0303.png'}`"
                   src="/works/shinhan/img_pc_ux0303.png"
                   alt=""
                   style="--delayImg: 1.15s"
@@ -356,21 +429,21 @@
             <ul class="right">
               <li class="device-text-uno">
                 <img
-                  src="/works/shinhan/img_pc_ux0401.png"
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0401.png' : '/works/shinhan/img_mobile_ux0401.png'}`"
                   alt=""
                   style="--delayImg: 1s"
                 />
               </li>
               <li class="device-text-dos">
                 <img
-                  src="/works/shinhan/img_pc_ux0402.png"
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0402.png' : '/works/shinhan/img_mobile_ux0402.png'}`"
                   alt=""
                   style="--delayImg: 1.05s"
                 />
               </li>
               <li class="device-text-tres">
                 <img
-                  src="/works/shinhan/img_pc_ux0403.png"
+                  :src="`${!isPotable ? '/works/shinhan/img_pc_ux0403.png' : '/works/shinhan/img_mobile_ux0403.png'}`"
                   alt=""
                   style="--delayImg: 1.15s"
                 />
@@ -378,6 +451,7 @@
               <li class="device-text-quatro">
                 <img
                   src="/works/shinhan/img_pc_ux0404.png"
+                  class="only-pc"
                   alt=""
                   style="--delayImg: 1.3s"
                 />
@@ -392,8 +466,15 @@
 </template>
 <script setup>
 import { onMounted, defineProps } from "vue";
+import MobileDetect from "mobile-detect";
 
 import WorkContentCommon from "@/views/WorkContentCommon.vue";
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
+const isTablet = mobileDetect.tablet();
+const isPotable = isMobile || isTablet;
+
+console.debug("isPotable", isMobile, isTablet, isPotable);
 </script>
 <style lang="scss">
 @import "../assets/scss/response.scss";
@@ -409,44 +490,92 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
 }
 .section02 {
   .works-figure {
-    margin-top: 142px;
+    margin-top: 40px;
+    @include for-size-min("extra-small") {
+      margin-top: 142px;
+      &-content {
+        max-width: 1302px;
+        gap: 16px;
 
-    &-content {
-      max-width: 1302px;
-      gap: 16px;
-
-      li:first-of-type {
-        margin-top: 93px;
-      }
-      li:last-of-type {
-        margin-top: 34px;
+        li:first-of-type {
+          margin-top: 93px;
+        }
+        li:last-of-type {
+          margin-top: 34px;
+        }
       }
     }
   }
 }
 .section03 {
   .works-figure {
-    margin-top: 128px;
-    opacity: 0;
-    transform: translateY(200px);
-    transition:
-      transform 0.5s ease-in-out,
-      opacity 0.5s ease-in-out;
-    &-content {
-      max-width: 1158px;
-      gap: 24px;
-      li {
-        transition: transform 0.75s ease-in-out;
-        transition-delay: 0.5s;
-        img {
-          transition: unset;
+    @include for-size-min("extra-small") {
+      margin: 128px auto 0;
+      opacity: 0;
+      transform: translateY(200px);
+      transition:
+        transform 0.5s ease-in-out,
+        opacity 0.5s ease-in-out;
+      &-content {
+        max-width: 1158px;
+        gap: 24px;
+        li {
+          transition: transform 0.75s ease-in-out;
+          transition-delay: 0.5s;
+          img {
+            transition: unset;
+          }
+        }
+        .figure-cms01 {
+          transform: translateX(394px);
+        }
+        .figure-cms03 {
+          transform: translateX(-394px);
         }
       }
-      .figure-cms01 {
-        transform: translateX(394px);
+    }
+    @include for-size-max("extra-small") {
+      --sliderPos: 66.666;
+      --sliderCnt: 3;
+      margin: 40px 0 0;
+      justify-content: flex-start;
+      width: 300vw;
+      &-content {
+        position: relative;
+        gap: 16px;
+        animation: 9s slider infinite;
+        animation-play-state: paused;
+        &:hover {
+          animation-play-state: paused;
+        }
+        li {
+          img {
+            width: 66.66667vw;
+          }
+        }
       }
-      .figure-cms03 {
-        transform: translateX(-394px);
+      @keyframes slider {
+        0% {
+          left: 0;
+        }
+        30% {
+          left: 0;
+        }
+        33% {
+          left: calc(var(--sliderPos) * -1vw);
+        }
+        63% {
+          left: calc(var(--sliderPos) * -1vw);
+        }
+        66% {
+          left: calc(var(--sliderPos) * -2vw);
+        }
+        95% {
+          left: calc(var(--sliderPos) * -2vw);
+        }
+        100% {
+          left: 0;
+        }
       }
     }
   }
@@ -464,13 +593,25 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       ),
       #fff;
   }
-  .works-figure {
-    position: absolute;
-    max-width: 400px;
-    bottom: 0;
-    right: calc(50vw - 768px + 85px);
-    img {
-      border-radius: 16px 16px 0 0;
+  @include for-size-min("extra-small") {
+    .works-figure {
+      position: absolute;
+      max-width: 400px;
+      bottom: 0;
+      right: calc(50vw - 768px + 85px);
+      img {
+        border-radius: 16px 16px 0 0;
+      }
+    }
+  }
+  @include for-size-max("extra-small") {
+    padding-bottom: 0;
+    .works-figure {
+      margin-top: 40px;
+      img {
+        max-width: 73.333vw;
+        border-radius: 16px 16px 0 0;
+      }
     }
   }
 }
@@ -480,8 +621,16 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
   background-position: center center;
   background-size: contain;
 
+  @include for-size-max("extra-small") {
+    background-image: url("/works/shinhan/bg_section_channel_mo.png");
+    background-size: cover;
+  }
   .works-figure {
     margin-top: 128px;
+
+    @include for-size-max("extra-small") {
+      margin: 40px -24px 0;
+    }
     img {
       max-width: 1589px;
     }
@@ -493,10 +642,24 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     margin: 0 auto;
     .works-figure-content {
       gap: 110px;
+      @include for-size-max("extra-small") {
+        margin-top: 40px;
+        flex-direction: column;
+        gap: 0;
+        li:nth-child(2) {
+          margin: 48px 0 24px;
+        }
+      }
     }
   }
   .works-desc {
     margin: 128px auto;
+    @include for-size-max("extra-small") {
+      margin: auto;
+      &-title {
+        text-align: center;
+      }
+    }
   }
 }
 .section07 {
@@ -504,12 +667,18 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     img {
       margin-top: 128px;
       max-width: 1142px;
+      @include for-size-max("extra-small") {
+        margin-top: 40px;
+      }
     }
   }
 }
 .section08 {
   position: relative;
   background-color: #f5f5f5;
+  @include for-size-max("extra-small") {
+    overflow: hidden;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -527,6 +696,10 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     z-index: -1;
     transform: scale(0);
     transition: transform 0.75s;
+    @include for-size-max("extra-small") {
+      top: 380px;
+      transform-origin: center 70px;
+    }
   }
   .works-desc {
     margin: 16px 0 65px;
@@ -534,17 +707,36 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     &-text {
       text-align: center;
       color: #fff;
+      @include for-size-max("extra-small") {
+        color: var(--baseBlack);
+        text-align: left;
+      }
+    }
+    @include for-size-max("extra-small") {
+      margin-bottom: 32px;
+      &-text {
+        margin-top: 32px;
+      }
     }
   }
   .works-figure {
     flex-direction: column;
     align-items: center;
     .ux-icon {
+      position: relative;
+      z-index: 10;
       max-width: 318px;
       animation: uxIcons 1s ease-in-out 0.75s infinite alternate;
+      @include for-size-max("extra-small") {
+        max-width: 150px;
+      }
     }
     .ux-device {
       max-width: 535px;
+      @include for-size-max("extra-small") {
+        margin-top: -20px;
+        max-width: 220px;
+      }
     }
   }
   .device-text {
@@ -552,53 +744,108 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     top: 304px;
     width: 1140px;
     height: 1140px;
+    @include for-size-max("extra-small") {
+      top: 280px;
+      width: 300px;
+      height: 600px;
+    }
     li {
       position: absolute;
     }
-    .left {
-      .device-text-uno {
-        top: 518px;
-        left: -54px;
-        width: 282px;
-        height: 54px;
+    @include for-size-min("extra-small") {
+      .left {
+        .device-text-uno {
+          top: 518px;
+          left: -54px;
+          width: 282px;
+          height: 54px;
+        }
+        .device-text-dos {
+          top: 381px;
+          left: 159px;
+          width: 198px;
+          height: 44px;
+        }
+        .device-text-tres {
+          top: 743px;
+          left: 176px;
+          width: 141px;
+          height: 36px;
+        }
       }
-      .device-text-dos {
-        top: 381px;
-        left: 159px;
-        width: 198px;
-        height: 44px;
-      }
-      .device-text-tres {
-        top: 743px;
-        left: 176px;
-        width: 141px;
-        height: 36px;
+      .right {
+        .device-text-uno {
+          right: -54px;
+          top: 497px;
+          width: 243px;
+          height: 54px;
+        }
+        .device-text-dos {
+          right: 24px;
+          top: 280px;
+          width: 193px;
+          height: 54px;
+        }
+        .device-text-tres {
+          right: 151px;
+          top: 411px;
+          width: 151px;
+          height: 36px;
+        }
+        .device-text-quatro {
+          right: 123px;
+          top: 640px;
+          width: 206px;
+          height: 54px;
+        }
       }
     }
-    .right {
-      .device-text-uno {
-        right: -54px;
-        top: 497px;
-        width: 243px;
-        height: 54px;
+    @include for-size-max("extra-small") {
+      .left {
+        .device-text-uno {
+          top: 305px;
+          left: 0;
+          width: 100px;
+          height: 27px;
+        }
+        .device-text-dos {
+          top: 74px;
+          left: 0;
+          width: 96px;
+          height: 22px;
+        }
+        .device-text-tres {
+          top: 500px;
+          left: 35px;
+          width: 68px;
+          height: 18px;
+        }
       }
-      .device-text-dos {
-        right: 24px;
-        top: 280px;
-        width: 193px;
-        height: 54px;
-      }
-      .device-text-tres {
-        right: 151px;
-        top: 411px;
-        width: 151px;
-        height: 36px;
-      }
-      .device-text-quatro {
-        right: 123px;
-        top: 640px;
-        width: 206px;
-        height: 54px;
+      .right {
+        .device-text-uno {
+          right: 17px;
+          top: 312px;
+          width: 93px;
+          height: 27px;
+        }
+        .device-text-dos {
+          right: 17px;
+          top: 262px;
+          width: 99px;
+          height: 24px;
+        }
+        .device-text-tres {
+          right: 31px;
+          top: 421px;
+          width: 74px;
+          height: 18px;
+        }
+        .device-text-quatro {
+          right: 123px;
+          top: 640px;
+          width: 206px;
+          height: 54px;
+        }
       }
     }
   }
@@ -613,12 +860,18 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         .figure-cms03 {
           transform: translateX(0);
         }
+        @include for-size-max("extra-small") {
+          animation-play-state: running;
+        }
       }
     }
   }
   .section08 {
     &::after {
       transform: scale(1);
+      @include for-size-max("extra-small") {
+        transform: scale(1.5);
+      }
     }
   }
 }

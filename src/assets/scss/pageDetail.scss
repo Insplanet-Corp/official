@@ -1,5 +1,5 @@
 :root {
-  --baseBlack: #0C0C0C;
+  --baseBlack: #0c0c0c;
 }
 @import "./response.scss";
 .work-container {
@@ -143,17 +143,17 @@
     }
   }
   &.theme-darkblue {
-    background-color: #1B2042;
+    background-color: #1b2042;
   }
   &.theme-blue {
-    background-color: #2A3FEC;
+    background-color: #2a3fec;
   }
   &.theme-darkblue,
   &.theme-blue {
     .works-desc {
       &-title,
       &-text {
-        color: #fff
+        color: #fff;
       }
     }
   }
@@ -308,6 +308,7 @@
 
 @media (max-width: 768px) {
   .works-content {
+    overflow: hidden;
     width: 100%;
   }
   .br_pc {
