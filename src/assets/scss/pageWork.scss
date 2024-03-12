@@ -1,0 +1,399 @@
+@import "./response.scss";
+
+// "extra-small": 767px,
+// "small": 1023px,
+// "medium": 1279px,
+// "large": 1339px,
+// "xlarge": 1599px,
+// "xxlarge": 1919px,
+// "xxxlarge": 1920px,
+
+.page-wp {
+  width: 100%;
+  // max-width: 1920px;
+  padding: 16px;
+  margin: auto;
+  @include for-size-min(small) {
+    padding: 32px;
+    // margin: auto;
+  }
+
+  .page-hero-title {
+    margin: 60px 0;
+    height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 60px;
+    @include for-size-max("extra-small") {
+      justify-content: start;
+      padding: 0;
+      margin: 15px 0;
+      height: 90px;
+    }
+    p {
+      position: relative;
+      font-size: 104px;
+      font-family: "chillax-variable";
+      font-weight: 700;
+
+      @include for-size-max("extra-small") {
+        font-size: 40px;
+      }
+      span {
+        position: absolute;
+        border: 1px solid #fff;
+        height: 40px;
+        border-radius: 20px;
+        right: -40px;
+        top: 0;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 0 20px;
+        @include for-size-max("extra-small") {
+          right: -60px;
+        }
+      }
+    }
+  }
+
+  // work together 영역
+  .work-together-area {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // max-width: 1920px;
+    margin: auto;
+
+    .work-together-content {
+      // border: 1px solid red;
+      // width: 280px;
+      margin-top: 20px;
+      padding: 40px;
+      background: #232323;
+      width: 100%;
+      height: 352px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 16px;
+      h2 {
+        /* Let’s work together */
+
+        font-family: "chillax-variable";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 56px;
+
+        color: #ffffff;
+      }
+    }
+  }
+
+  // more project 영역
+  .more-project-area {
+    // max-width: 1920px;
+    margin: auto;
+    .more-project-content {
+      padding-top: 96px;
+      padding-bottom: 80px;
+      display: flex;
+      .more-project-title-area {
+        flex: 3;
+        h2 {
+          font-family: "chillax-variable";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 104px;
+        }
+        .title-desc {
+          margin: 30px 0 32px;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          font-size: 16px;
+        }
+      }
+
+      .more-project-slide-wp {
+        margin-top: 113px;
+        flex: 2;
+        .more-project-slide-area {
+          display: flex;
+          > div {
+            position: relative;
+            flex: 1;
+            height: 465px;
+            &.prev-area {
+              text-align: right;
+              margin: 48px 10px 0 0;
+              &:hover {
+                img {
+                  filter: brightness(105%) contrast(110%) saturate(110%);
+                }
+                button span.arrow {
+                  animation: moveAndFadePrev 1s ease-out infinite;
+                }
+              }
+            }
+            &.next-area {
+              margin: 0px 0 0 10px;
+              &:hover {
+                img {
+                  filter: brightness(105%) contrast(110%) saturate(110%);
+                }
+                button span.arrow {
+                  animation: moveAndFadeNext 1s ease-out infinite;
+                }
+              }
+            }
+            p {
+              height: 423px;
+              // background: #1a1a1a;
+              border-radius: 16px;
+              cursor: pointer;
+              img {
+                transition: all 0.5s ease;
+                border-radius: 16px;
+              }
+            }
+            button {
+              margin-top: 16px;
+              display: inline-block;
+              cursor: pointer;
+              b {
+              }
+              span.arrow {
+                position: relative;
+                display: inline-block;
+                width: 74px;
+                height: 24px;
+                background: url(../images/more_project_arrow.svg) no-repeat
+                  center center / cover;
+                margin: 0 10px;
+
+                &.right {
+                  transform: scaleX(-1);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  overflow: hidden;
+  .works-image {
+    margin-bottom: 32px;
+    img {
+      border-radius: 16px;
+    }
+  }
+  // .works-slide-show {
+  //   transition:
+  //     margin ease-out 0.5s 0.6s,
+  //     opacity ease-out 0.8s 0.6s;
+  //   margin-top: 10vh;
+  //   opacity: 0;
+  // }
+  .more-project-slide-wp {
+    .more-project-slide-area {
+      > div {
+        p {
+          transition: all ease-out 0.5s;
+          transform: translateX(0);
+          opacity: 1;
+          img {
+            height: 100%;
+            width: auto !important;
+            max-width: inherit !important;
+          }
+        }
+      }
+      &.preSlide {
+        .prev-area {
+          p {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+        }
+        .next-area {
+          p {
+            transform: translateX(50px);
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.loaded {
+    // .works-slide-show {
+    //   margin-top: 0;
+    //   opacity: 1;
+    // }
+  }
+}
+
+@keyframes moveAndFadeNext {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 8%;
+    opacity: 0.2;
+  }
+}
+@keyframes moveAndFadePrev {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: -8%;
+    opacity: 0.2;
+  }
+}
+
+@include for-size-max("extra-small") {
+  .page-wp {
+    .work-together-area {
+      .work-together-content {
+        height: auto;
+        padding: 40px 16px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        h2 {
+          font-family: "chillax-ariable";
+          font-size: 24px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 34px;
+          text-transform: capitalize;
+          flex: 1;
+          margin-bottom: 24px;
+        }
+        .work-together-more {
+          width: 100%;
+          display: flex;
+          flex: 1;
+          flex-direction: column;
+          > div {
+            height: 170px;
+            width: 100%;
+            margin-left: 0;
+            & + div {
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .more-project-area {
+      .more-project-content {
+        flex-direction: column;
+        padding: 40px 0;
+        .more-project-title-area {
+          display: flex;
+          justify-content: space-around;
+          margin-bottom: 24px;
+          h2 {
+            /* Mobile/Chillax/M-Title */
+            font-family: "Chillax Variable";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 34px; /* 141.667% */
+            text-transform: capitalize;
+          }
+        }
+        .more-project-slide-wp {
+          margin: 0;
+          .more-project-slide-area {
+            > div {
+              height: auto;
+              width: 50%;
+              margin: 0px 0 0 10px !important;
+              p {
+                height: auto;
+                img {
+                  height: auto !important;
+                  width: 100% !important;
+                }
+              }
+              &.prev-area {
+                text-align: left;
+              }
+              &.next-area {
+                text-align: right;
+              }
+            }
+          }
+        }
+      }
+      .title-desc {
+        display: none;
+      }
+    }
+  }
+}
+
+@include for-size-max("small") {
+  .page-wp {
+    .work-together-area {
+      .work-together-content {
+        justify-content: center;
+        .work-together-more {
+          margin-top: 12px;
+          > div {
+          }
+        }
+      }
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+.work-together-more {
+  display: flex;
+  > div {
+    width: 300px;
+    height: 224px;
+    border-radius: 16px;
+    border: 1px solid #000;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a {
+      margin-top: 20px;
+      background: #0c0c0c;
+      border-radius: 20px;
+      width: 108px;
+      height: 40px;
+      color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .project-inquery {
+  }
+}
+
+@media (max-width: 768px) {
+}

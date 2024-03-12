@@ -1,0 +1,208 @@
+/**
+ * @license
+ *
+ * Font Family: Chillax
+ * Designed by: Manushi Parikh
+ * URL: https://www.fontshare.com/fonts/chillax
+ * © 2024 Indian Type Foundry
+ *
+ * Font Styles:
+ * Chillax Variable(Variable font)
+ * Chillax Extralight
+ * Chillax Light
+ * Chillax Regular
+ * Chillax Medium
+ * Chillax Semibold
+ * Chillax Bold
+ *
+*/
+
+/**
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 700.0;
+*
+* available axes:
+
+* 'wght' (range from 200.0 to 700.0)
+
+*/
+
+@font-face {
+  font-family: "Chillax-Variable";
+  src:
+    url("/assets/fonts/chillax/Chillax-Variable.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Variable.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Extralight";
+  src:
+    url("/assets/fonts/chillax/Chillax-Extralight.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Extralight.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Extralight.ttf") format("truetype");
+  font-weight: 200;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Light";
+  src:
+    url("/assets/fonts/chillax/Chillax-Light.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Light.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Regular";
+  src:
+    url("/assets/fonts/chillax/Chillax-Regular.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Regular.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Medium";
+  src:
+    url("/assets/fonts/chillax/Chillax-Medium.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Medium.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Semibold";
+  src:
+    url("/assets/fonts/chillax/Chillax-Semibold.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Semibold.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Chillax-Bold";
+  src:
+    url("/assets/fonts/chillax/Chillax-Bold.woff2") format("woff2"),
+    url("/assets/fonts/chillax/Chillax-Bold.woff") format("woff"),
+    url("/assets/fonts/chillax/Chillax-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 900;
+  font-display: swap;
+  src:
+    local("Pretendard Black"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Black.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Black.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 800;
+  font-display: swap;
+  src:
+    local("Pretendard ExtraBold"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-ExtraBold.woff2)
+      format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-ExtraBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 700;
+  font-display: swap;
+  src:
+    local("Pretendard Bold"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Bold.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Bold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  font-display: swap;
+  src:
+    local("Pretendard SemiBold"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-SemiBold.woff2)
+      format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-SemiBold.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  font-display: swap;
+  src:
+    local("Pretendard Medium"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Medium.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  font-display: swap;
+  src:
+    local("Pretendard Regular"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Regular.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  font-display: swap;
+  src:
+    local("Pretendard Light"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Light.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Light.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 200;
+  font-display: swap;
+  src:
+    local("Pretendard ExtraLight"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-ExtraLight.woff2)
+      format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-ExtraLight.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  font-display: swap;
+  src:
+    local("Pretendard Thin"),
+    url(/assets/fonts/pretendard/woff2/Pretendard-Thin.woff2) format("woff2"),
+    url(/assets/fonts/pretendard/woff/Pretendard-Thin.woff) format("woff");
+}

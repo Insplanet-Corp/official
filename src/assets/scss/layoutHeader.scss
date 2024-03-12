@@ -1,0 +1,57 @@
+@import "./response.scss";
+
+header {
+  transition: top ease 0.6s;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -10vh;
+  z-index: 3;
+  width: 100%;
+  // background: rgba(0, 0, 0, 0.3);
+  &.show {
+    top: 0vh;
+  }
+  > div {
+    padding: 15px 16px 15px;
+    margin: 0px auto 0;
+    display: flex;
+    justify-content: space-between;
+    @include for-size-min("extra-small") {
+      // padding: 10px 16px;
+      padding: 30px 32px 30px;
+    }
+  }
+
+  * {
+    // line-height: 0;
+    // vertical-align: top;
+  }
+
+  h1 {
+    a {
+      font-family: "Chillax-Variable";
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+      // text-shadow: 0px 0px 10px #000;
+    }
+  }
+
+  nav {
+    a,
+    button {
+      font-family: "Chillax-Variable";
+      font-size: 18px;
+      color: #fff;
+      font-weight: 700;
+      margin-left: 64px;
+      // text-shadow: 0px 0px 10px #000;
+      cursor: pointer;
+      @include for-size-max("extra-small") {
+        margin-left: 32px;
+      }
+    }
+  }
+}

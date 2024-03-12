@@ -1,0 +1,17 @@
+@import "./response.scss";
+
+.button {
+  &.default {
+    font-family: "chillax-variable";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+
+    @include for-size-max("extra-small") {
+      padding: 6px 15px;
+    }
+  }
+}
