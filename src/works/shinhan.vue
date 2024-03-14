@@ -230,6 +230,21 @@
             style="--delayImg: 0.75s"
           />
         </div>
+        <figure class="bg-video">
+          <video
+            :src="videoSrc"
+            autoplay
+            muted
+            loop
+            playsinline
+            class="bg-video-player"
+          >
+            <source
+              src="/works/shinhan/movie_shinhan_channel_PC.mp4"
+              type="video/mp4; codecs=hevc"
+            />
+          </video>
+        </figure>
       </div>
     </div>
     <!--// 신한투자증권 디지털 홍보채널 -->
@@ -474,7 +489,13 @@ const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
 
-console.debug("isPotable", isMobile, isTablet, isPotable);
+console.debug("isTablet", isTablet, isMobile);
+
+const videoSrc = isMobile
+  ? "/works/shinhan/movie_shinhan_channel_MO.mp4"
+  : isTablet
+    ? "/works/shinhan/movie_shinhan_channel_TA.mp4"
+    : "/works/shinhan/movie_shinhan_channel_PC.mp4";
 </script>
 <style lang="scss">
 @import "../assets/scss/response.scss";
@@ -633,6 +654,24 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
     }
     img {
       max-width: 1589px;
+    }
+  }
+  .works-figure {
+    visibility: hidden;
+  }
+  .bg-video {
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 16px;
+    &-player {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   }
 }
