@@ -154,7 +154,7 @@ const refreshImageInteraction = () => {
           lastVisibleIndex = index;
         } else {
           // 화면에서 사라질 때 'show' 클래스 제거
-          entry.target.classList.remove("show");
+          // entry.target.classList.remove("show");
         }
       });
 
@@ -166,11 +166,11 @@ const refreshImageInteraction = () => {
 
           // 현재 인덱스가 보이는 인덱스의 범위 밖에 있는 경우 클래스 조정
           if (index < firstVisibleIndex) {
-            img.classList.add("prev");
+            // img.classList.add("prev");
             img.classList.remove("next");
           } else if (index > lastVisibleIndex) {
             img.classList.add("next");
-            img.classList.remove("prev");
+            // img.classList.remove("prev");
           } else {
             // img.classList.remove("prev", "next");
           }
@@ -178,9 +178,9 @@ const refreshImageInteraction = () => {
           if (window.scrollY < images[0].offsetTop) {
             images[0].classList.add("next");
           }
-          if (window.scrollY > images[images.length - 1].offsetTop) {
-            images[images.length - 1].classList.add("prev");
-          }
+          // if (window.scrollY > images[images.length - 1].offsetTop) {
+          //   images[images.length - 1].classList.add("prev");
+          // }
         }
       });
     },
