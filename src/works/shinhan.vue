@@ -480,6 +480,7 @@
   </div>
 </template>
 <script setup>
+// TODO: MOBILE DETECT 공통 함수로 변경 필요
 import { onMounted, defineProps } from "vue";
 import MobileDetect from "mobile-detect";
 
@@ -489,13 +490,20 @@ const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
 
-console.debug("isTablet", isTablet, isMobile);
+// console.debug(
+//   "isTablet",
+//   window.navigator.userAgent,
+//   isTablet,
+//   isMobile,
+//   isPotable
+// );
 
-const videoSrc = isMobile
-  ? "/works/shinhan/movie_shinhan_channel_MO.mp4"
-  : isTablet
-    ? "/works/shinhan/movie_shinhan_channel_TA.mp4"
-    : "/works/shinhan/movie_shinhan_channel_PC.mp4";
+const videoSrc =
+  isMobile && !isTablet
+    ? "/works/shinhan/movie_shinhan_channel_MO.mp4"
+    : isTablet && !isMobile
+      ? "/works/shinhan/movie_shinhan_channel_TA.mp4"
+      : "/works/shinhan/movie_shinhan_channel_PC.mp4";
 </script>
 <style lang="scss">
 @import "../assets/scss/response.scss";
@@ -623,6 +631,13 @@ const videoSrc = isMobile
       img {
         border-radius: 16px 16px 0 0;
       }
+    }
+  }
+  @include for-size-minmax("extra-small", "medium") {
+    .works-figure {
+      right: 20px;
+      max-width: 40vw;
+      z-index: -1;
     }
   }
   @include for-size-max("extra-small") {
