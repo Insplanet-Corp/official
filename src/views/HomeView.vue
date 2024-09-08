@@ -202,6 +202,7 @@ const getScrollPosition = (groupIndex) => {
 
 const scrollCheckerAndStop = () => {
   clearInterval(window.autoScrollInterval);
+  stopScrolling(); // mobile
 };
 const scrollCheckerAndStart = () => {
   if (window.scrollTimer) {
@@ -285,6 +286,37 @@ const onKeyDownAtHomeView = (event) => {
   }
 };
 
+let scrollAnimationFrameId = null; // requestAnimationFrame ID를 저장할 변수
+
+function scrollToY(targetY, duration = 1000) {
+  const startY = window.scrollY; // 현재 스크롤 위치
+  const distance = targetY - startY; // 스크롤해야 할 거리
+  let startTime = null;
+
+  const animateScroll = (currentTime) => {
+    if (!startTime) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1); // 진행 상황 (0에서 1 사이)
+
+    // 리니어 스크롤 진행
+    window.scrollTo(0, startY + distance * progress);
+
+    if (timeElapsed < duration) {
+      scrollAnimationFrameId = requestAnimationFrame(animateScroll); // 애니메이션 ID 저장
+    }
+  };
+
+  scrollAnimationFrameId = requestAnimationFrame(animateScroll); // 첫 번째 애니메이션 호출
+}
+
+function stopScrolling() {
+  if (scrollAnimationFrameId) {
+    cancelAnimationFrame(scrollAnimationFrameId); // 진행 중인 스크롤 애니메이션 취소
+    scrollAnimationFrameId = null; // ID 초기화
+    // document.removeEventListener('keydown', stopScrolling); // 이벤트 리스너 제거
+  }
+}
+
 function startAutoScroll() {
   if (window.autoScrollInterval) {
     clearInterval(window.autoScrollInterval);
@@ -295,9 +327,12 @@ function startAutoScroll() {
       scrollPosition.value -= 0.12;
     }, 1);
   } else {
-    window.autoScrollInterval = setInterval(() => {
-      scrollTo({ top: scrollY + 2 });
-    }, 10);
+    const cardHeight = workCards.value[0].clientHeight;
+    const timePerCard = 4000;
+    scrollToY(
+      maxWorkGroupInnerHeight.value,
+      (maxWorkGroupInnerHeight.value * timePerCard) / cardHeight
+    );
   }
 }
 
