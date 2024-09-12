@@ -56,8 +56,8 @@
                 />
               </p>
               <button @click="onPrevClickHandler()">
-                <span class="arrow"></span>
-                <b>Prev {{ isPotable ? "" : "project" }}</b>
+                <!-- <span class="arrow"></span> -->
+                <b>Prev project</b>
               </button>
             </div>
             <div class="next-area">
@@ -74,8 +74,8 @@
                 />
               </p>
               <button @click="onNextClickHandler()">
-                <b>Next {{ isPotable ? "" : "project" }}</b>
-                <span class="arrow right"></span>
+                <b>Next project</b>
+                <!-- <span class="arrow right"></span> -->
               </button>
             </div>
           </div>
