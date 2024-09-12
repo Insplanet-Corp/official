@@ -1,11 +1,14 @@
 import worksSetting from "@/works-setting";
 import { createRouter, createWebHistory } from "vue-router";
+import MobileDetect from "mobile-detect";
 import HomeView from "../views/HomeView.vue";
 import { useOfficialStore } from "@/stores/official.js";
 
 // const officialStore = useOfficialStore();
 const { worksSettingList } = worksSetting;
 let officialStore;
+const mobileDetect = new MobileDetect(window.navigator.userAgent);
+const isMobile = mobileDetect.mobile();
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -40,6 +43,9 @@ const router = createRouter({
       redirect: "/",
     },
   ],
+  scrollBehavior() {
+    return { top: 0 };
+  },
 });
 
 router.beforeEach((to, from, next) => {
@@ -55,9 +61,6 @@ router.beforeEach((to, from, next) => {
   officialStore.pageLoaderZindexHandler("2");
   // officialStore.updateLoadingType(params.workId);
 
-  // scroll top
-  window.scrollTo({ top: 0, behavior: "smooth" });
-
   // clear intervals
   if (window.autoScrollInterval) clearInterval(window.autoScrollInterval);
   if (window.scrollTimer) clearTimeout(window.scrollTimer);
@@ -69,7 +72,9 @@ router.beforeEach((to, from, next) => {
     officialStore.pageLoaderColorHandler(toWorkData.gradient);
   }
 
-  officialStore.pageLoaderClassHandler("show");
+  if (!isMobile) {
+    officialStore.pageLoaderClassHandler("show");
+  }
 
   setTimeout(() => {
     officialStore.updateRoutePageStyle({
@@ -90,14 +95,13 @@ router.afterEach((to, from) => {
   const latoutType = to.name === "home" ? "fixed-layout" : "relative-layout";
   officialStore.updatePageType(latoutType);
 
-  window.scrollTo({ top: 0 });
-
   setTimeout(() => {
     officialStore.updateRoutePageStyle({
       transform: "translateY(0)",
       opacity: 1,
     });
   }, 10);
+  if (isMobile) return;
   setTimeout(() => {
     officialStore.pageLoaderClassHandler(
       `show hide ${params.workId ? "workTransition" : ""}`
