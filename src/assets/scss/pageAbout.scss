@@ -1,6 +1,6 @@
 @import "./response.scss";
 .popupAbout {
-  transition: right ease-out 0.8s;
+  transition: right ease-out 0.3s;
   a {
     color: #0c0c0c;
   }
@@ -31,7 +31,7 @@
   position: fixed;
   width: 320px;
   //   right: 32px;
-  right: -200vw;
+  right: -320px;
   top: 12px;
   bottom: 0;
   // background: #fff;
