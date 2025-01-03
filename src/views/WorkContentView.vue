@@ -3,27 +3,26 @@
   <div class="page-wp" :class="{ loaded }">
     <component :is="dynamicComponent" />
     <!-- <component :is="dynamicComponent" :class="{ goingUp }" /> -->
-    <!-- "Let's work together" 내용의 영역 -->
-    <div class="work-together-area">
+    <section class="work-together-area">
       <div class="work-together-content">
         <h2>Let's work together</h2>
         <div class="work-together-more">
-          <div class="project-inquery">
-            <strong>프로젝트 문의</strong>
+          <div>
+            <b>프로젝트 문의</b>
             <a href="mailto:hello@insplanet.co.kr">Let's Talk</a>
           </div>
-          <div class="brochure-download">
-            <strong>회사 브로슈어 다운로드</strong>
+          <div>
+            <b>회사 브로슈어 다운로드</b>
             <a href="/brochure/insplanet_brief.pdf" target="_blank">Download</a>
           </div>
         </div>
       </div>
 
       <!-- 내용 추가 -->
-    </div>
+    </section>
 
     <!-- "More project" 슬라이드 영역 -->
-    <div class="more-project-area">
+    <section class="more-project-area">
       <div class="more-project-content">
         <div class="more-project-title-area">
           <h2>More Projects</h2>
@@ -80,7 +79,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -97,7 +96,6 @@ import {
 import { useOfficialStore } from "@/stores/official";
 import { useRoute } from "vue-router";
 import MobileDetect from "mobile-detect";
-import axios from "axios";
 import worksSetting from "@/works-setting";
 import route from "@/router";
 const mobileDetect = new MobileDetect(window.navigator.userAgent);

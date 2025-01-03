@@ -1,13 +1,13 @@
 <template>
   <div class="popupAbout">
     <div class="about-inner">
-      <div class="about-header">
+      <header class="about-header">
         <i class="ico-round"></i>
         <h2 class="about-title">in's planet</h2>
         <p class="about-desc">OPEN COLLABORATION CREATIVE COMPANY</p>
-      </div>
-      <div class="about-content">
-        <div class="about-text">
+      </header>
+      <section class="about-content">
+        <p class="about-text">
           호기심이 가득한 오늘, <br />
           무한한 가능성의 내일.  <br /><br />
 
@@ -18,14 +18,17 @@
           본질에 대한 이해와 넓은 시야로 <br />
           누구나 공감할 수 있는<br />
           가치를 만듭니다.
-        </div>
+        </p>
         <a
           href="/brochure/insplanet_brief.pdf"
           class="btn-download"
           target="_blank"
-          >회사 브로슈어 다운로드
-          <span class="ico-download-wrap"><i class="ico-download"></i></span
-        ></a>
+        >
+          회사 브로슈어 다운로드
+          <span class="ico-download-wrap">
+            <i class="ico-download"></i>
+          </span>
+        </a>
         <dl class="contact-list">
           <dt>contact</dt>
           <dd>서울특별시 중구 퇴계로27길 49, 2층 (저동2가, 센트럴에스빌딩)</dd>
@@ -35,7 +38,7 @@
           <dd>02-2088-5084</dd>
         </dl>
         <p class="copylight">Ⓒ 2024. Insplanet all right reserved.</p>
-      </div>
+      </section>
     </div>
   </div>
 </template>
