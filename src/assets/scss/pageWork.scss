@@ -8,11 +8,41 @@
 // "xxlarge": 1919px,
 // "xxxlarge": 1920px,
 
+@keyframes moveAndFadeNext {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 8%;
+    opacity: 0.2;
+  }
+}
+@keyframes moveAndFadePrev {
+  0%,
+  30% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: -8%;
+    opacity: 0.2;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+// 반응형을 왜 이렇게 했지...
+
 .page-wp {
   width: 100%;
-  // max-width: 1920px;
   padding: 16px;
   margin: auto;
+  overflow: hidden;
+
   @include for-size-min(small) {
     padding: 32px;
     // margin: auto;
@@ -60,14 +90,12 @@
     }
   }
 
-  // work together 영역
   .work-together-area {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     // max-width: 1920px;
     margin: auto;
-
     .work-together-content {
       // border: 1px solid red;
       // width: 280px;
@@ -82,34 +110,26 @@
       align-items: center;
       border-radius: 16px;
       h2 {
-        /* Let’s work together */
-
-        font-family: "chillax-variable";
+        font-family: "Chillax-Variable";
         font-style: normal;
         font-weight: 700;
         font-size: 40px;
         line-height: 56px;
-
         color: #ffffff;
       }
     }
   }
 
-  // more project 영역
   .more-project-area {
-    // max-width: 1920px;
-    margin: auto;
     .more-project-content {
       padding-top: 96px;
       padding-bottom: 80px;
       display: flex;
       .more-project-title-area {
-        flex: 3;
         h2 {
-          font-family: "chillax-variable";
-          font-style: normal;
-          font-weight: 700;
+          font-family: "Chillax-Variable";
           font-size: 104px;
+          font-weight: bold;
         }
         .title-desc {
           margin: 30px 0 32px;
@@ -186,7 +206,6 @@
     }
   }
 
-  overflow: hidden;
   .works-image {
     margin-bottom: 32px;
     img {
@@ -230,35 +249,11 @@
       }
     }
   }
-
   &.loaded {
     // .works-slide-show {
     //   margin-top: 0;
     //   opacity: 1;
     // }
-  }
-}
-
-@keyframes moveAndFadeNext {
-  0%,
-  30% {
-    left: 0;
-    opacity: 1;
-  }
-  100% {
-    left: 8%;
-    opacity: 0.2;
-  }
-}
-@keyframes moveAndFadePrev {
-  0%,
-  30% {
-    left: 0;
-    opacity: 1;
-  }
-  100% {
-    left: -8%;
-    opacity: 0.2;
   }
 }
 
@@ -272,10 +267,8 @@
         justify-content: center;
         flex-direction: column;
         h2 {
-          font-family: "chillax-ariable";
+          font-family: "Chillax-Variable";
           font-size: 24px;
-          font-style: normal;
-          font-weight: 700;
           line-height: 34px;
           text-transform: capitalize;
           flex: 1;
@@ -307,12 +300,10 @@
           justify-content: space-around;
           margin-bottom: 24px;
           h2 {
-            /* Mobile/Chillax/M-Title */
-            font-family: "Chillax Variable";
+            font-family: "Chillax-Variable";
             font-size: 24px;
-            font-style: normal;
             font-weight: 700;
-            line-height: 34px; /* 141.667% */
+            line-height: 34px;
             text-transform: capitalize;
           }
         }
@@ -354,16 +345,10 @@
         justify-content: center;
         .work-together-more {
           margin-top: 12px;
-          > div {
-          }
         }
       }
     }
   }
-}
-
-img {
-  max-width: 100%;
 }
 
 .work-together-more {
@@ -391,9 +376,4 @@ img {
       align-items: center;
     }
   }
-  .project-inquery {
-  }
-}
-
-@media (max-width: 768px) {
 }
