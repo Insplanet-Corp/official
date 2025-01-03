@@ -76,11 +76,8 @@ const cardColumnCount = ref(0);
 const isInited = ref(false);
 const mobile = ref(false);
 
-const scrollPosition = ref(0);
 const workGroupInner = ref(null);
 const workCardImages = ref(null);
-const maxWorkGroupInnerHeight = ref(0);
-
 // breakpoint for responsive
 const breakpointCardCount = ref(1);
 const breakpointSetting = {
@@ -95,11 +92,29 @@ const breakpointSetting = {
 let breakpoints;
 
 const currentBreakpoint = ref("");
-
 const backgroundTypeSelect = ref(null);
 
-const getFullImagePath = (imageName) => {
-  return new URL(`../works/images/${imageName}`, import.meta.url).href;
+// 컨테이너 엘리먼트 class="work-wp" 핸들러
+
+const scrollPosition = ref(0);
+const maxWorkGroupInnerHeight = ref(0);
+
+const onScrollHandler = (e) => {
+  const { deltaY } = e;
+
+  scrollPosition.value = Math.max(
+    Math.min(0, scrollPosition.value - deltaY / 3),
+    -maxWorkGroupInnerHeight.value
+  );
+
+  clearInterval(window.autoScrollInterval);
+  scrollCheckerAndStart();
+};
+const onTouchstartHandler = (e) => {
+  scrollCheckerAndStop();
+};
+const onTouchendHandler = (e) => {
+  scrollCheckerAndStart();
 };
 
 const onImageError = (event) => {
@@ -107,12 +122,12 @@ const onImageError = (event) => {
 };
 
 const onClickWorkCard = (work) => {
-  if (work.link) {
-    router.push({
-      path: work.link,
-    });
-    officialStore.updateHomeScrollPosition(scrollPosition.value);
-  }
+  if (!work.link) return;
+
+  router.push({
+    path: work.link,
+  });
+  officialStore.updateHomeScrollPosition(scrollPosition.value);
 };
 
 const onMouseEnterWorkCard = (work, index) => {
@@ -213,26 +228,8 @@ const scrollCheckerAndStart = () => {
   }, 3000);
 };
 
-const onTouchstartHandler = (e) => {
-  scrollCheckerAndStop();
-};
-const onTouchendHandler = (e) => {
-  scrollCheckerAndStart();
-};
-
-const onScrollHandler = (e) => {
-  const { deltaY } = e;
-
-  scrollPosition.value = Math.max(
-    Math.min(0, scrollPosition.value - deltaY / 5),
-    -maxWorkGroupInnerHeight.value
-  );
-
-  clearInterval(window.autoScrollInterval);
-  scrollCheckerAndStart();
-};
-
 let scrollTopInterval;
+
 const onKeyDownAtHomeView = (event) => {
   const pageHeight = window.innerHeight;
   const maxContentHeight = maxWorkGroupInnerHeight.value;
