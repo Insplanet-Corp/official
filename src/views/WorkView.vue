@@ -16,7 +16,7 @@
           <div class="projectLink">
             <RouterLink :to="work.link" class="btn-projectLink" v-if="work.link"
               ><p>상세보기</p>
-              <span><img src="/assets/images/project_arrow.svg" /></span
+              <span><img src="/images/project_arrow.svg" /></span
             ></RouterLink>
           </div>
         </li>

@@ -145,12 +145,10 @@ const refreshImageInteraction = () => {
       entries.forEach((entry) => {
         const index = Array.from(images).indexOf(entry.target);
         if (entry.isIntersecting) {
-          // 화면에 보일 때 'show' 클래스 추가
           entry.target.classList.add("show");
           visibleIndexes.push(index);
           lastVisibleIndex = index;
         } else {
-          // 화면에서 사라질 때 'show' 클래스 제거
           entry.target.classList.remove("show");
         }
       });
