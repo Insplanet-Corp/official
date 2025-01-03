@@ -1,13 +1,5 @@
-:root {
-  --baseBlack: #0c0c0c;
-}
 @import "./response.scss";
-.work-container {
-  // max-width: 1600px;
-  img {
-    width: 100%;
-  }
-}
+
 .only-pc {
   display: none;
 }
@@ -19,7 +11,6 @@
     display: block;
   }
 }
-
 .blind {
   position: absolute;
   visibility: hidden;
@@ -28,6 +19,10 @@
 }
 
 .work-container {
+  // max-width: 1600px;
+  img {
+    width: 100%;
+  }
   .works-content {
     margin-top: 32px;
     img,
@@ -122,17 +117,6 @@
   .works-desc {
     margin: 0 auto;
     max-width: 1120px;
-    &-title,
-    &-text {
-      color: var(--baseBlack);
-    }
-    &-title {
-      @include Titlelarge;
-    }
-    &-text {
-      margin-top: 24px;
-      @include Body;
-    }
   }
   .horizontal {
     display: flex;
@@ -150,12 +134,7 @@
   }
   &.theme-darkblue,
   &.theme-blue {
-    .works-desc {
-      &-title,
-      &-text {
-        color: #fff;
-      }
-    }
+    color: #fff;
   }
 
   .works-figure {
@@ -168,32 +147,45 @@
     }
   }
 }
-.project-title {
+.sub-wrap {
+  margin-top: 24px;
+  .sub-box {
+    display: flex;
+    gap: 16px;
+    .work-description-key {
+      width: 50px;
+    }
+  }
+  & div:nth-last-of-type(1) {
+    span {
+      display: block;
+    }
+  }
+}
+
+.work-title {
   font-size: 32px;
-  font-style: normal;
   font-weight: 700;
+  line-height: 1.15;
 }
-.project-text {
+.work-subtitle {
   margin-top: 16px;
+  margin-bottom: 40px;
   font-size: 24px;
-  font-style: normal;
   font-weight: 700;
+  line-height: 1.25;
 }
 
-.sub-title {
-  font-size: 14px;
-  font-style: normal;
+.work-description-key {
+  /* font-size: 18px;
+  line-height: 24px; */
   font-weight: 700;
-  line-height: 18px; /* 128.571% */
+  font-style: normal;
 }
 
-.sub-text {
-  margin-top: 8px;
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px; /* 128.571% */
+.work-description-value {
+  /* font-size: 18px;
+  line-height: 26px; */
 }
 
 @media (min-width: 768px) {
@@ -203,25 +195,16 @@
     .works-inner {
       display: flex;
       justify-content: center;
-      // max-width: 1120px;
       max-width: 1920px;
       margin: auto;
+
+      .work-description-value {
+        margin-top: 8px;
+        margin-bottom: 32px;
+      }
     }
     .works-box {
       width: 50%;
-    }
-    .project-title {
-      font-family: "Pretendard";
-      font-size: 64px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: 78px;
-      // text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    .project-text {
-      margin-top: 32px;
-      font-size: 36px;
-      line-height: 46px;
     }
     .btn-wrap {
       margin-top: 46px;
@@ -278,21 +261,21 @@
       flex-wrap: wrap;
       margin-top: 104px;
       .sub-box {
+        flex-direction: column;
+        gap: 0;
         flex: 1;
       }
     }
-    .sub-title {
+    .work-description-key {
       display: block;
-      font-family: "Pretendard";
       font-size: 16px;
       font-style: normal;
       font-weight: 700;
       line-height: 24px;
     }
-    .sub-text {
+    .work-description-value {
       display: block;
       margin-top: 8px;
-      font-family: "Pretendard";
       font-size: 16px;
       font-style: normal;
       font-weight: 400;
@@ -314,55 +297,11 @@
   }
 }
 
-// content responsive
-* {
-  font-size: 14px;
-}
 @include for-size-min("extra-small") {
-  * {
-    font-size: 14px;
-  }
   .works-section {
     .works-inner {
       width: 728px;
-      .works-box {
-        padding-right: 16px;
-        & + .works-box {
-          padding-left: 16px;
-          padding-right: 0;
-        }
-      }
-    }
-    .project-title {
-      font-size: 32px;
-      line-height: 1.4;
-    }
-    .project-text {
-      font-size: 24px;
-      line-height: 1.5;
-    }
-    .sub-title {
-      font-size: 14px;
-    }
-    .sub-text {
-      font-size: 14px;
-    }
-  }
-  .page-wp {
-    .work-together-area .work-together-content h2 {
-      font-size: 24px;
-    }
-    .more-project-area .more-project-content {
-      padding: 96px 32px 240px;
-      .more-project-title-area h2 {
-        font-size: 40px;
-      }
-    }
-    .more-project-area
-      .more-project-content
-      .more-project-title-area
-      .title-desc {
-      font-size: 14px;
+      gap: 40px;
     }
   }
 }
@@ -371,86 +310,69 @@
   .works-section {
     .works-inner {
       width: 952px;
-      .works-box {
-        padding-right: 37px;
-        & + .works-box {
-          padding-left: 37px;
-          padding-right: 0;
-        }
+      gap: 72px;
+
+      .work-title {
+        font-size: 48px;
       }
-    }
-    .project-title {
-      font-size: 32px;
-    }
-    .project-text {
-      font-size: 24px;
-    }
-    .sub-title {
-      font-size: 14px;
-    }
-    .sub-text {
-      font-size: 14px;
-    }
-  }
-  .page-wp {
-    .work-together-area .work-together-content h2 {
-      font-size: 24px;
-    }
-    .more-project-area .more-project-content .more-project-title-area h2 {
-      font-size: 40px;
-    }
-    .more-project-area
-      .more-project-content
-      .more-project-title-area
-      .title-desc {
-      font-size: 14px;
+      .work-subtitle {
+        margin-top: 32px;
+        font-size: 24px;
+      }
+      .work-description-key {
+        font-size: 14px;
+        line-height: 18px;
+      }
+      .work-description-value {
+        font-size: 14px;
+        line-height: 18px;
+      }
     }
   }
 }
 @include for-size-min("xlarge") {
-  * {
-    font-size: 18px;
-  }
   .works-section {
     .works-inner {
       width: 1120px;
-    }
-    .project-title {
-      font-size: 64px;
-    }
-    .project-text {
-      font-size: 36px;
-    }
-    .sub-title {
-      font-size: 18px;
-    }
-    .sub-text {
-      font-size: 18px;
-    }
-  }
-  .page-wp {
-    .work-together-area .work-together-content h2 {
-      font-size: 40px;
-    }
-    .more-project-area .more-project-content .more-project-title-area h2 {
-      font-size: 104px;
-    }
-    .more-project-area
-      .more-project-content
-      .more-project-title-area
-      .title-desc {
-      font-size: 16px;
+      .work-description-key {
+        font-size: 16px;
+        line-height: 24px;
+      }
+      .work-description-value {
+        margin-top: 8px;
+        margin-bottom: 32px;
+        font-size: 16px;
+        line-height: 26px;
+      }
     }
   }
 }
 
 @include for-size-min("xxlarge") {
-  * {
-    font-size: 18px;
-  }
   .works-section {
     .works-inner {
       width: 1400px;
+      gap: 120px;
+      .work-title {
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.15;
+      }
+      .work-subtitle {
+        margin-top: 32px;
+        font-size: 36px;
+        line-height: 46px;
+      }
+
+      .work-description-key {
+        font-size: 18px;
+        line-height: 24px;
+      }
+
+      .work-description-value {
+        font-size: 18px;
+        line-height: 26px;
+      }
     }
   }
 }
