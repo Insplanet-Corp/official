@@ -34,9 +34,12 @@
           href="/brochure/insplanet_brief.pdf"
           class="btn-download"
           target="_blank"
-          >회사 브로슈어 다운로드
-          <span class="ico-download-wrap"><i class="ico-download"></i></span
-        ></a>
+        >
+          회사 브로슈어 다운로드
+          <span class="ico-download-wrap">
+            <i class="ico-download"></i>
+          </span>
+        </a>
         <dl class="contact-list">
           <dt>contact</dt>
           <dd>서울특별시 중구 퇴계로27길 49, 2층 (저동2가, 센트럴에스빌딩)</dd>
@@ -55,8 +58,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from "vue";
 import { useOfficialStore } from "@/stores/official";
-import { ElMessageBox } from "element-plus";
-import { ElButton, ElDialog } from "element-plus";
 
 const officialStore = useOfficialStore();
 const dialogVisible = ref(false);
@@ -67,6 +68,7 @@ let lastScrollPosition = 0;
 const handleScroll = () => {
   const currentScrollPosition =
     window.pageYOffset || document.documentElement.scrollTop;
+
   if (currentScrollPosition < lastScrollPosition) {
     // 스크롤이 위로 이동할 때
     showHeader.value = true;
@@ -76,6 +78,7 @@ const handleScroll = () => {
       showHeader.value = false;
     }
   }
+
   lastScrollPosition = currentScrollPosition;
 };
 

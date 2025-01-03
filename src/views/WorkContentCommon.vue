@@ -21,7 +21,7 @@
               <em class="sub-title">{{ key }}</em>
               <span class="sub-text" v-html="value"></span>
             </div>
-            <div class="mt-30">
+            <div style="margin-top: 30px; width: 100%">
               <em class="sub-title">UIUX</em>
               <span class="sub-text" v-html="detail.uiux"></span>
             </div>
