@@ -9,11 +9,10 @@
         <h2>Let's work together</h2>
         <div class="work-together-more">
           <div class="project-inquery">
-            <!-- mail to link -->
             <strong>프로젝트 문의</strong>
             <a href="mailto:hello@insplanet.co.kr">Let's Talk</a>
           </div>
-          <div class="broshour-download">
+          <div class="brochure-download">
             <strong>회사 브로슈어 다운로드</strong>
             <a href="/brochure/insplanet_brief.pdf" target="_blank">Download</a>
           </div>

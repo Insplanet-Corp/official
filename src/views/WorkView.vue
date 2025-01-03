@@ -1,12 +1,12 @@
 <template>
   <div class="page-wp work">
-    <div class="page-hero-title">
+    <header class="page-hero-title">
       <p>
         All projects
         <span>{{ workList.length }}</span>
       </p>
-    </div>
-    <div class="page-content all-project" ref="pageContent">
+    </header>
+    <section class="page-content all-project" ref="pageContent">
       <ul>
         <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.projectName }}</div>
@@ -20,18 +20,13 @@
             ></RouterLink>
           </div>
         </li>
-        <!-- <li><RouterLink to="/work/shinhan">shinhan</RouterLink></li>
-        <li><RouterLink to="/work/kb">kb</RouterLink></li>
-        <li><RouterLink to="/work/woori">woori</RouterLink></li> -->
       </ul>
-    </div>
-    <div class="content-footer">
+    </section>
+    <footer class="content-footer">
       <button @click="moreProjects" class="more-projects">
         more ({{ workList.length - workListPerCount.length }})
       </button>
-    </div>
-
-    <!-- infiniti scroll 더보기 기능 추가 -->
+    </footer>
   </div>
 </template>
 

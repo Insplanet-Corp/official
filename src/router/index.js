@@ -15,11 +15,6 @@ const router = createRouter({
       name: "home",
       component: HomeView,
     },
-    // {
-    //   path: "/portfolio",
-    //   name: "portfolio",
-    //   component: () => import("../views/PortfolioView.vue"),
-    // },
     {
       path: "/work/:workId",
       name: "workContent",

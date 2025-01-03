@@ -275,6 +275,7 @@
     }
     .sub-wrap {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 104px;
       .sub-box {
         flex: 1;
