@@ -1,11 +1,11 @@
 <template>
   <div class="page-wp work">
-    <header class="page-hero-title">
+    <div class="page-hero-title">
       <p>
         All projects
         <span>{{ workList.length }}</span>
       </p>
-    </header>
+    </div>
     <section class="page-content all-project" ref="pageContent">
       <ul>
         <li v-for="(work, index) in workListPerCount">

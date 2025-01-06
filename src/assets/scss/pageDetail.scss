@@ -167,6 +167,8 @@
   font-size: 32px;
   font-weight: 700;
   line-height: 1.15;
+  white-space: pre-line;
+  word-break: break-all;
 }
 .work-subtitle {
   margin-top: 16px;
@@ -174,6 +176,8 @@
   font-size: 24px;
   font-weight: 700;
   line-height: 1.25;
+
+  white-space: pre-line;
 }
 
 .work-description-key {
@@ -186,6 +190,7 @@
 .work-description-value {
   /* font-size: 18px;
   line-height: 26px; */
+  white-space: pre-line;
 }
 
 @media (min-width: 768px) {
@@ -206,6 +211,7 @@
     .works-box {
       width: 50%;
     }
+
     .btn-wrap {
       margin-top: 46px;
       & + .btn-wrap {
@@ -334,6 +340,13 @@
   .works-section {
     .works-inner {
       width: 1120px;
+
+      .works-box {
+        max-width: 495px;
+      }
+      .works-box + .works-box {
+        max-width: 100%;
+      }
       .work-description-key {
         font-size: 16px;
         line-height: 24px;
@@ -353,6 +366,13 @@
     .works-inner {
       width: 1400px;
       gap: 120px;
+      .works-box {
+        max-width: 560px;
+      }
+      .works-box + .works-box {
+        max-width: 100%;
+      }
+
       .work-title {
         font-size: 64px;
         font-weight: 700;

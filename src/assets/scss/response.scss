@@ -69,7 +69,7 @@ body {
 
 // fontsize
 @mixin typo-graphy($fsize: 16, $lhsize: 24, $isBold: 400, $family: "inherit") {
-  @if ($family != 'inherit') {
+  @if ($family != "inherit") {
     font-family: $family;
   }
   @if ($isBold != 400) {
@@ -79,38 +79,23 @@ body {
   line-height: calc($lhsize * 1px);
 }
 @mixin Headlarge {
-  @include typo-graphy(64, 78, 700)
+  @include typo-graphy(64, 78, 700);
 }
 @mixin Head {
-  @include typo-graphy(36, 46, 700)
+  @include typo-graphy(36, 46, 700);
 }
-@mixin Titlelarge {
-  @include for-size-max("extra-small") {
-    @include typo-graphy(24, 30, 700)
-  }
-  @include for-size-min("extra-small") {
-    @include typo-graphy(32, 43, 700)
-  }
-}
+
 @mixin Title {
   @include for-size-max("extra-small") {
-    @include typo-graphy(24, 30)
+    @include typo-graphy(24, 30);
   }
   @include for-size-min("extra-small") {
-    @include typo-graphy(24, 30)
+    @include typo-graphy(24, 30);
   }
 }
 @mixin BodyLarge {
-  @include typo-graphy(18, 26)
-}
-@mixin Body {
-  @include for-size-max("extra-small") {
-    @include typo-graphy(14, 18)
-  }
-  @include for-size-min("extra-small") {
-    @include typo-graphy(16, 24)
-  }
+  @include typo-graphy(18, 26);
 }
 @mixin Label {
-  @include typo-graphy(14, 18)
+  @include typo-graphy(14, 18);
 }

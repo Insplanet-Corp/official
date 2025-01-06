@@ -140,7 +140,7 @@ img {
 
       .more-project-slide-wp {
         margin-top: 113px;
-        flex: 2;
+        margin-left: auto;
         .more-project-slide-area {
           display: flex;
           > div {
@@ -297,7 +297,7 @@ img {
         padding: 40px 0;
         .more-project-title-area {
           display: flex;
-          justify-content: space-around;
+          justify-content: space-between;
           margin-bottom: 24px;
           h2 {
             font-family: "Chillax-Variable";
@@ -310,10 +310,11 @@ img {
         .more-project-slide-wp {
           margin: 0;
           .more-project-slide-area {
+            gap: 10px;
             > div {
               height: auto;
               width: 50%;
-              margin: 0px 0 0 10px !important;
+              margin: 0px 0 0 0 !important;
               p {
                 height: auto;
                 img {
