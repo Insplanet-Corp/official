@@ -38,9 +38,6 @@ public // 정적파일
  ├─assets
  │  ├─fonts
  │  │  ├─chillax
- │  │  └─pretendard
- │  │      ├─woff
- │  │      └─woff2
  │  └─images
  ├─brochure
  ├─works // 각 works 별 상세이미지
@@ -114,11 +111,8 @@ works 관리 파일, 설정 가능 부분은 다음과 같습니다.
     name: "shinhanPlus", // 프로젝트 이름 - url 경로와, works 의 파일 과 같아야 합니다.
     link: "/work/shinhanPlus", // 사용될 링크
     image: "card_shinhanPlus.jpg", // 카드 이미지 명 (public/worksCard 폴더 하위)
-    projectName: "신한플러스 해외주식 소수점투자 UI/UX",
     projectNameColor: "light",
-    projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#fff",
     use: true,
     detail: {

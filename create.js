@@ -67,7 +67,6 @@ async function addProjectToFile() {
         name: "${projectName}",
         link: "/work/${projectName}",
         image: "card_${projectName}.jpg",
-        projectName: "${projectName} 프로젝트",
         projectNameColor: "dark",
         projectClient: "${projectName} 클라이언트",
         projectType: "프로젝트 타입",

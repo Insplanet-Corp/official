@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="work-title">
-              <p :class="work.projectNameColor">{{ work.projectName }}</p>
+              <p :class="work.projectNameColor">{{ work.detail.title.replace(/<span[^>]*>.*?<\/span>/g, '') }}</p>
             </div>
           </button>
         </div>
