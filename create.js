@@ -71,7 +71,6 @@ async function addProjectToFile() {
         projectNameColor: "dark",
         projectClient: "${projectName} 클라이언트",
         projectType: "프로젝트 타입",
-        projectYear: "2024",
         gradient: "#f5f5f5",
         use: true,
         detail: {

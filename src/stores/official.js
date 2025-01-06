@@ -45,7 +45,6 @@ export const useOfficialStore = defineStore("official", () => {
     projectName: null,
     projectClient: null,
     projectType: null,
-    projectYear: null,
     gradient: null,
     use: null,
     detail: {

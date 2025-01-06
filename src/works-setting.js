@@ -7,7 +7,6 @@
 //   projectNameColor: "light",
 //   projectClient: "LG 전자",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   projectYear: "2022",
 //   gradient: "linear-gradient(65deg, #034AA9 17.9%, #3B7AFC 84.38%)",
 //   use: true,
 //   detail: {
@@ -33,7 +32,6 @@
 //   projectNameColor: "light",
 //   projectClient: "PA엔터테인먼트",
 //   projectType: "-",
-//   projectYear: "2023",
 //   gradient: "#402743",
 //   use: true,
 //   detail: {
@@ -59,7 +57,6 @@
 //   projectNameColor: "light",
 //   projectClient: "LG 전자",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   projectYear: "2022",
 //   gradient:
 //     "linear-gradient(120deg, rgba(235,197,196,1) 0%, rgba(191,160,142,1) 100%)",
 //   use: true,
@@ -86,7 +83,6 @@
 //   projectNameColor: "light",
 //   projectClient: "신한은행",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   projectYear: "2024",
 //   gradient: "#0046FF",
 //   use: false, // use 가 false 일 경우 메인 화면, work 에 노출되지 않습니다.
 //   detail: {
@@ -112,7 +108,6 @@
 //   projectNameColor: "light",
 //   projectClient: "LG CNS",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   projectYear: "2024",
 //   gradient:
 //     "linear-gradient(114deg, #E5437A 33.15%, #F28D52 75.83%, #FFD028 105.1%)",
 //   use: false,
@@ -141,7 +136,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "카카오",
     projectType: "원닥터 ONE DOCTOR",
-    projectYear: "2024",
     gradient: "rgb(234, 191, 225)",
     use: false,
     detail: {
@@ -165,7 +159,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "카카오",
     projectType: "DAP GenAI Platform",
-    projectYear: "2024",
     gradient: "rgb(234, 191, 225)",
     use: false,
     detail: {
@@ -189,7 +182,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "카카오",
     projectType: "업무시스템, APP",
-    projectYear: "2024",
     gradient: "rgb(234, 191, 225)",
     use: false,
     detail: {
@@ -214,7 +206,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "카카오",
     projectType: "업무시스템, APP",
-    projectYear: "2024",
     gradient: "rgb(234, 191, 225)",
     use: true,
     detail: {
@@ -239,7 +230,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#0046FF",
     use: true,
     detail: {
@@ -266,7 +256,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "enTrans",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "lightgray",
     use: true,
     detail: {
@@ -292,7 +281,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "jpdc은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#e1cbb9",
     use: true,
     detail: {
@@ -316,7 +304,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "naverWhale은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#63ca61",
     use: true,
     detail: {
@@ -341,7 +328,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient:
       "linear-gradient(120deg, rgba(170,185,195,1) 0%, rgba(119,119,119,1) 100%)",
     use: true,
@@ -366,7 +352,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "자원순환보증금관리센터",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient:
       "linear-gradient(120deg, rgba(170,185,195,1) 0%, rgba(119,119,119,1) 100%)",
     use: true,
@@ -393,7 +378,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "KB국민은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#f6be41",
     use: true,
     detail: {
@@ -418,7 +402,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient:
       "linear-gradient(214deg, #6B71EE -12.26%, #6D72EE 35.23%, #E586E3 91.39%, #D786E3 144.03%)",
     use: true,
@@ -443,7 +426,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP , 유지운영",
-    projectYear: "2022",
     gradient: "#fff",
     use: true,
     detail: {
@@ -467,7 +449,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "LG 전자",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient:
       "linear-gradient(153deg, rgba(55,167,183,1) 0%, rgba(3,7,12,1) 100%)",
     use: true,
@@ -493,7 +474,6 @@ const worksSettingList = [
   //   projectNameColor: "light",
   //   projectClient: "LG 전자",
   //   projectType: "공공기관, 업무시스템, APP, 유지운영",
-  //   projectYear: "2022",
   //   gradient: "#d9dfeb",
   //   use: false,
   //   detail: {
@@ -520,7 +500,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "블루컴",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2021",
     gradient:
       "linear-gradient(172deg, rgba(78,72,115,1) 0%, rgba(171,143,172,1) 32%, rgba(224,205,199,1) 100%)",
     use: true,
@@ -545,7 +524,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "비즈페이",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2021",
     gradient:
       "linear-gradient(180deg, rgba(84,138,72,1) 0%, rgba(27,98,91,1) 100%)",
     use: true,
@@ -571,7 +549,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "자원순환보증금관리센터",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient:
       "linear-gradient(301deg, rgba(41,117,155,1) 0%, rgba(14,61,151,1) 100%)",
     use: true,
@@ -596,7 +573,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "신한 DS",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient:
       "linear-gradient(301deg, rgba(41,117,155,1) 0%, rgba(14,61,151,1) 100%)",
     use: true,
@@ -621,7 +597,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "세친구",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#fff",
     use: true,
     detail: {
@@ -646,7 +621,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "신한금융그륩",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#0046FF",
     use: true,
     detail: {
@@ -671,7 +645,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "보건복지부",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#fff",
     use: true,
     detail: {
@@ -696,7 +669,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "캐스팅엔",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#19529c",
     use: true,
     detail: {
@@ -721,7 +693,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "군인공제회",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#009ba3",
     use: true,
     detail: {
@@ -745,7 +716,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "YB Holdings",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient:
       "linear-gradient(0deg, rgba(213,52,66,1) 0%, rgba(254,147,112,1) 100%)",
     use: true,
@@ -770,7 +740,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "BUDIO",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#fb8535",
     use: true,
     detail: {
@@ -794,7 +763,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "ChinChin",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#5a74fe",
     use: true,
     detail: {
@@ -818,7 +786,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "캐스팅엔",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2022",
     gradient: "#19529c",
     use: true,
     detail: {
@@ -843,7 +810,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "dB bank & Seohae IT",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2019",
     gradient:
       "linear-gradient(185deg, rgba(73,78,113,1) 0%, rgba(48,56,90,1) 100%)",
     use: true,
@@ -871,7 +837,6 @@ const worksSettingList = [
     projectNameColor: "light",
     projectClient: "남부솔루션",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2019",
     gradient:
       "linear-gradient(133deg, rgba(68,160,73,1) 0%, rgba(46,70,161,1) 100%)",
     use: true,
@@ -897,7 +862,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "대구시",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2019",
     gradient: "#a9beb8",
     use: true,
     detail: {
@@ -923,7 +887,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "원신더블유몰",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2019",
     gradient:
       "linear-gradient(133deg, rgba(150,136,225,1) 0%, rgba(216,185,182,1) 100%)",
     use: true,
@@ -950,7 +913,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "ourhome은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#6665dd",
     use: false,
     detail: {
@@ -974,7 +936,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "ourhome은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#6665dd",
     use: false,
     detail: {
@@ -999,7 +960,6 @@ const worksSettingList = [
     projectNameColor: "dark",
     projectClient: "ourhome은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#6665dd",
     use: true,
     detail: {
@@ -1024,7 +984,6 @@ const worksSettingList = [
     projectNameColor: "dark", // dark, dark
     projectClient: "wanju은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#d6c5ab",
     use: true,
     detail: {
