@@ -830,18 +830,17 @@ const worksSettingList = [
     },
   },
 
-  // TODO
   {
-    name: "kiaCSE",
-    link: "/work/kiaCSE",
-    image: "card_ourhome.jpg",
+    name: "baasidAp",
+    link: "/work/baasidApp",
+    image: "card_baasidApp.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     gradient: "#6665dd",
-    use: false,
+    use: true,
     detail: {
-      coverPc: "/works/ourhome/cover.jpg",
-      coverMobile: "/works/ourhome/cover_m.jpg",
+      coverPc: "/works/baasidApp/cover.jpg",
+      coverMobile: "/works/baasidApp/cover_m.jpg",
       title: "BaaSid Security Application",
       subtitle: "블록체인 기반의 보안 인증 시스템",
       overview: `BasSid는 블록체인 기술이 결합된 통합 보안 인증 시스템입니다.\n인스플래닛은 블록체인을 통한 데이터 분리 분산으로 유출 걱정없는 통합인증 시스템을 간편하게 이용할 수 있도록 쉽고 명확한 UI/UX에 집중하였습니다.\n마이크로 인터랙션으로 즉각적인 시각적 피드백을 제공함으로써 사용자에게 시스템과의 상호작용을 자연스럽게 인식시키고, 일관된 비주얼과 톤앤매너로 BaaSid의 브랜드 아이덴티티와 서비스 가치를 높일 수 있도록 디자인하였습니다.`,
