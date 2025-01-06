@@ -10,9 +10,9 @@
       <ul>
         <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.projectName }}</div>
-          <div class="projectClient">{{ work.projectClient }}</div>
+          <div class="projectClient">{{ work.detail.client }}</div>
           <div class="projectType">{{ work.projectType }}</div>
-          <div class="projectYear">{{ work.projectYear }}</div>
+          <div class="projectYear">{{ work.detail.launch.slice(-4) }}</div>
           <div class="projectLink">
             <RouterLink
               :to="work.link"

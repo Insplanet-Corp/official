@@ -43,7 +43,6 @@ export const useOfficialStore = defineStore("official", () => {
     link: null,
     image: null,
     projectName: null,
-    projectClient: null,
     projectType: null,
     gradient: null,
     use: null,
