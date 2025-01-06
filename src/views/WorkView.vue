@@ -42,7 +42,7 @@ import worksSetting from "@/works-setting";
 const { worksSettingList } = worksSetting;
 const perCount = 10;
 const nowCount = ref(perCount);
-const workList = ref(worksSettingList.filter((e) => e.use));
+const workList = ref(worksSettingList.filter((item) => item.use));
 const pageContent = ref(null);
 // const workListPerCount = ref(worksSettingList.slice(0, 21));
 const workListPerCount = computed(() =>

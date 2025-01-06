@@ -106,7 +106,7 @@ const isPotable = isMobile || isTablet;
 const officialStore = useOfficialStore();
 const { worksSettingList } = worksSetting;
 const useWorkSettingList = worksSettingList.filter(
-  (e) => e.use && e.link && e.link !== ""
+  (item) => item.use && item.link && item.link !== ""
 );
 const router = useRoute();
 const loaded = ref(false);

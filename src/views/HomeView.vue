@@ -67,7 +67,7 @@ const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
 const isPotable = isMobile || isTablet;
 const { worksSettingList } = worksSetting;
-const workList = ref(worksSettingList.filter((e) => e.use));
+const workList = ref(worksSettingList.filter((item) => item.use));
 const workCards = ref([]);
 const isVisible = ref(workList.value.map(() => false));
 const onShowCount = computed(() => isVisible.value.filter((v) => v).length);
