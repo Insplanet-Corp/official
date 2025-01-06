@@ -40,9 +40,7 @@ export const useOfficialStore = defineStore("official", () => {
 
   const workPageDetail = ref({
     name: null,
-    link: null,
     image: null,
-    projectName: null,
     projectType: null,
     gradient: null,
     use: null,

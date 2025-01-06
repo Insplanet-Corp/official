@@ -1,7 +1,6 @@
 // 삭제
 // {
 //   name: "kmc",
-//   link: "/work/kmc",
 //   image: "card_kmc.jpg",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -24,7 +23,6 @@
 
 // {
 //   name: "paEnter",
-//   link: "/work/paEnter",
 //   image: "card_pa_enter.jpg",
 //   projectNameColor: "light",
 //   projectType: "-",
@@ -47,7 +45,6 @@
 
 // {
 //   name: "lgObjet",
-//   link: "/work/lgObjet",
 //   image: "card_lgObjet.png",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -71,7 +68,6 @@
 
 // {
 //   name: "shinhan2",
-//   link: "", // link 가 null 이거나 "" 일 경우 메인 화면에 노출되지 않습니다.
 //   image: "PC_Card_project03.jpg",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -94,7 +90,6 @@
 // },
 // {
 //   name: "lgcns_cloudxper",
-//   link: "/work/lgCloudXper",
 //   image: "card_lg_cloud_xper.png",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -120,7 +115,6 @@
 const worksSettingList = [
   {
     name: "perfectwin",
-    link: "/work/homeAndShopping",
     image: "card_homeAndShopping.jpg",
     projectNameColor: "dark",
     projectType: "원닥터 ONE DOCTOR",
@@ -141,7 +135,6 @@ const worksSettingList = [
   },
   {
     name: "perfectwin",
-    link: "/work/homeAndShopping",
     image: "card_homeAndShopping.jpg",
     projectNameColor: "dark",
     projectType: "DAP GenAI Platform",
@@ -162,7 +155,6 @@ const worksSettingList = [
   },
   {
     name: "perfectwin",
-    link: "/work/homeAndShopping",
     image: "card_homeAndShopping.jpg",
     projectNameColor: "dark",
     projectType: "업무시스템, APP",
@@ -184,7 +176,6 @@ const worksSettingList = [
 
   {
     name: "homeAndShopping",
-    link: "/work/homeAndShopping",
     image: "card_homeAndShopping.jpg",
     projectNameColor: "dark",
     projectType: "업무시스템, APP",
@@ -206,7 +197,6 @@ const worksSettingList = [
 
   {
     name: "superSol",
-    link: "/work/superSol",
     image: "card_superSol.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -230,7 +220,6 @@ const worksSettingList = [
 
   {
     name: "enTrans",
-    link: "/work/enTrans",
     image: "card_enTrans.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -253,7 +242,6 @@ const worksSettingList = [
 
   {
     name: "jpdc",
-    link: "/work/jpdc",
     image: "card_jpdc.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -274,7 +262,6 @@ const worksSettingList = [
   },
   {
     name: "naverWhale",
-    link: "/work/naverWhale",
     image: "card_naverWhale.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -296,7 +283,6 @@ const worksSettingList = [
   },
   {
     name: "t4k",
-    link: "/work/t4k",
     image: "card_t4k.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -318,7 +304,6 @@ const worksSettingList = [
   },
   {
     name: "cosmo",
-    link: "/work/cosmo",
     image: "card_cosmo.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -342,7 +327,6 @@ const worksSettingList = [
   },
   {
     name: "pims",
-    link: "/work/pims",
     image: "card_pims.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -364,7 +348,6 @@ const worksSettingList = [
   },
   {
     name: "heyoung",
-    link: "/work/heyoung",
     image: "card_heyoung.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -386,7 +369,6 @@ const worksSettingList = [
   },
   {
     name: "shinhanPlus",
-    link: "/work/shinhanPlus",
     image: "card_shinhanPlus.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP , 유지운영",
@@ -407,7 +389,6 @@ const worksSettingList = [
   },
   {
     name: "kbMyData",
-    link: "/work/kbMyData",
     image: "card_kbMyData.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -430,7 +411,6 @@ const worksSettingList = [
 
   // {
   //   name: "iros",
-  //   link: "/work/iros",
   //   image: "card_iros.png",
   //   projectNameColor: "light",
   //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -454,7 +434,6 @@ const worksSettingList = [
 
   {
     name: "penthill",
-    link: "/work/penthill",
     image: "card_penthill.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -476,7 +455,6 @@ const worksSettingList = [
   },
   {
     name: "bizpay",
-    link: "/work/bizpay",
     image: "card_bizpay.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -499,7 +477,6 @@ const worksSettingList = [
   },
   {
     name: "cosmo2",
-    link: "/work/cosmo2",
     image: "card_cosmo2.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -521,7 +498,6 @@ const worksSettingList = [
   },
   {
     name: "shinhanPlusMain",
-    link: "/work/shinhanPlusMain",
     image: "card_shinhanPlusMain.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -543,7 +519,6 @@ const worksSettingList = [
   },
   {
     name: "3friends",
-    link: "/work/3friends",
     image: "card_3friends.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -565,7 +540,6 @@ const worksSettingList = [
   },
   {
     name: "shinhanOpenAPI",
-    link: "/work/shinhanOpenAPI",
     image: "card_shinhanOpenAPI.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -587,7 +561,6 @@ const worksSettingList = [
   },
   {
     name: "bokjiro",
-    link: "/work/bokjiro",
     image: "card_bokjiro.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -609,7 +582,6 @@ const worksSettingList = [
 
   {
     name: "castingn",
-    link: "/work/castingn",
     image: "card_castingn.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -631,7 +603,6 @@ const worksSettingList = [
 
   {
     name: "mmaa",
-    link: "/work/mmaa",
     image: "card_mmaa.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -652,7 +623,6 @@ const worksSettingList = [
   },
   {
     name: "mentor",
-    link: "/work/mentor",
     image: "card_mentor.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -674,7 +644,6 @@ const worksSettingList = [
   },
   {
     name: "budio",
-    link: "/work/budio",
     image: "card_budio.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -695,7 +664,6 @@ const worksSettingList = [
   },
   {
     name: "chinchin",
-    link: "/work/chinchin",
     image: "card_chinchin.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -716,7 +684,6 @@ const worksSettingList = [
   },
   {
     name: "castingn2",
-    link: "/work/castingn2",
     image: "card_castingn2.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -738,7 +705,6 @@ const worksSettingList = [
 
   {
     name: "taldosa",
-    link: "/work/taldosa",
     image: "card_taldosa.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -763,7 +729,6 @@ const worksSettingList = [
 
   {
     name: "nb",
-    link: "/work/nb",
     image: "card_nb.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -786,7 +751,6 @@ const worksSettingList = [
 
   {
     name: "flatApp",
-    link: "/work/flatApp",
     image: "card_flatApp.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -809,7 +773,6 @@ const worksSettingList = [
 
   {
     name: "wMall",
-    link: "/work/wMall",
     image: "card_wMall.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -832,7 +795,6 @@ const worksSettingList = [
 
   {
     name: "baasidAp",
-    link: "/work/baasidApp",
     image: "card_baasidApp.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -853,7 +815,6 @@ const worksSettingList = [
   },
   {
     name: "kiaCSE",
-    link: "/work/kiaCSE",
     image: "card_kia.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -875,7 +836,6 @@ const worksSettingList = [
 
   {
     name: "ourhome",
-    link: "/work/ourhome",
     image: "card_ourhome.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -897,7 +857,6 @@ const worksSettingList = [
   },
   {
     name: "wanju",
-    link: "/work/wanju",
     image: "card_wanju.jpg",
     projectNameColor: "dark", // dark, dark
     projectType: "공공기관, 업무시스템, APP, 유지운영",

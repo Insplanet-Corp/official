@@ -65,13 +65,11 @@ async function addProjectToFile() {
     // 새로운 프로젝트 객체를 정의합니다.
     const newProject = `{
         name: "${projectName}",
-        link: "/work/${projectName}",
         image: "card_${projectName}.jpg",
         projectNameColor: "dark",
         projectClient: "${projectName} 클라이언트",
         projectType: "프로젝트 타입",
         gradient: "#f5f5f5",
-        use: true,
         detail: {
             coverPc: "/works/${projectName}/cover.jpg",
             coverMobile: "/works/${projectName}/cover_m.jpg",

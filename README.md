@@ -109,12 +109,10 @@ works 관리 파일, 설정 가능 부분은 다음과 같습니다.
 ```javascript
 {
     name: "shinhanPlus", // 프로젝트 이름 - url 경로와, works 의 파일 과 같아야 합니다.
-    link: "/work/shinhanPlus", // 사용될 링크
     image: "card_shinhanPlus.jpg", // 카드 이미지 명 (public/worksCard 폴더 하위)
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     gradient: "#fff",
-    use: true,
     detail: {
       coverPc: "/works/shinhanPlus/cover.jpg",
       coverMobile: "/works/shinhanPlus/cover_m.jpg",
