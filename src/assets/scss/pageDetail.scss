@@ -25,6 +25,7 @@
   }
   .works-content {
     margin-top: 32px;
+    border-radius: 16px;
     img,
     .works-section {
       --delayImg: 0s;
@@ -168,7 +169,7 @@
   font-weight: 700;
   line-height: 1.15;
   white-space: pre-line;
-  word-break: break-all;
+  word-break: keep-all;
 }
 .work-subtitle {
   margin-top: 16px;

@@ -70,6 +70,7 @@ async function addProjectToFile() {
         projectClient: "${projectName} 클라이언트",
         projectType: "프로젝트 타입",
         gradient: "#f5f5f5",
+        use: true,
         detail: {
             coverPc: "/works/${projectName}/cover.jpg",
             coverMobile: "/works/${projectName}/cover_m.jpg",

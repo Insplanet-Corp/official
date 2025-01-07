@@ -88,10 +88,13 @@
       overflow: hidden;
       cursor: pointer;
       .work-title {
+        text-align: left;
+        word-break: keep-all;
         transition: all ease 0.5s;
         position: absolute;
         left: 24px;
-        bottom: -24px;
+        right: 24px;
+        bottom: -48px;
         p {
           color: #111;
           font-weight: bold;

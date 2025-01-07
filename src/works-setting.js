@@ -1,6 +1,7 @@
 // 삭제
 // {
 //   name: "kmc",
+//   link: "/work/kmc",
 //   image: "card_kmc.jpg",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -23,6 +24,7 @@
 
 // {
 //   name: "paEnter",
+//   link: "/work/paEnter",
 //   image: "card_pa_enter.jpg",
 //   projectNameColor: "light",
 //   projectType: "-",
@@ -45,6 +47,7 @@
 
 // {
 //   name: "lgObjet",
+//   link: "/work/lgObjet",
 //   image: "card_lgObjet.png",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -68,6 +71,7 @@
 
 // {
 //   name: "shinhan2",
+//   link: "", // link 가 null 이거나 "" 일 경우 메인 화면에 노출되지 않습니다.
 //   image: "PC_Card_project03.jpg",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -90,6 +94,7 @@
 // },
 // {
 //   name: "lgcns_cloudxper",
+//   link: "/work/lgCloudXper",
 //   image: "card_lg_cloud_xper.png",
 //   projectNameColor: "light",
 //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -114,15 +119,16 @@
 
 const worksSettingList = [
   {
-    name: "perfectwin",
-    image: "card_homeAndShopping.jpg",
+    name: "onedoctor",
+    link: "/work/onedoctor",
+    image: "card_onedoctor.png",
     projectNameColor: "dark",
     projectType: "원닥터 ONE DOCTOR",
-    gradient: "rgb(234, 191, 225)",
-    use: false,
+    gradient: "rgba(32, 204, 175, 1)",
+    use: true,
     detail: {
-      coverPc: "/works/homeAndShopping/cover.jpg",
-      coverMobile: "/works/homeAndShopping/cover_m.jpg",
+      coverPc: "/works/onedoctor/cover.jpg",
+      coverMobile: "/works/onedoctor/cover_m.jpg",
       title: `원닥터<span class='br_pc'></span> ONE DOCTOR`,
       subtitle: `주치의가 관리해주는<span class='br_pc'></span> 건강관리 서비스`,
       overview: `동네 의원에서 주치의처럼 체계적이고 지속적으로 관리할 수 있도록 도와주는 원닥터 앱의 디자인과 React 퍼블리싱으로 최적의 모바일 UIUX를 구현하였습니다.\n자연스런 플로우의 채팅UI와 친절하고 따뜻한 UX라이팅을 적용하여 사용자에게 긍정적인 경험을 제공합니다.`,
@@ -133,16 +139,18 @@ const worksSettingList = [
       viewplatform: "#none",
     },
   },
+
   {
-    name: "perfectwin",
-    image: "card_homeAndShopping.jpg",
+    name: "dap",
+    link: "/work/dap",
+    image: "card_dap.png",
     projectNameColor: "dark",
     projectType: "DAP GenAI Platform",
     gradient: "rgb(234, 191, 225)",
     use: false,
     detail: {
-      coverPc: "/works/homeAndShopping/cover.jpg",
-      coverMobile: "/works/homeAndShopping/cover_m.jpg",
+      coverPc: "/works/dap/cover.jpg",
+      coverMobile: "/works/dap/cover_m.jpg",
       title: `DAP GenAI Platform`,
       subtitle: `생성형 AI의 4대 솔루션<span class='br_pc'></span> 고도화`,
       overview: `LG CNS의 생성형 AI의 4대 솔루션인 DAP GenAI 플랫폼의 고도화에 맞춰 최적화된 화면 및 디자인을 선보입니다.\nAI 오로라 컨셉에 맟는 미래지향적인 고차원 세계적인 비주얼과 하나의 디자인 시스템을 활용한 일관된 UI로 사용자의 정보접근성을 높이고자 했습니다. `,
@@ -153,16 +161,18 @@ const worksSettingList = [
       viewplatform: "#none",
     },
   },
+
   {
     name: "perfectwin",
-    image: "card_homeAndShopping.jpg",
+    link: "/work/perfectwin",
+    image: "card_perfectwin.png",
     projectNameColor: "dark",
     projectType: "업무시스템, APP",
-    gradient: "rgb(234, 191, 225)",
-    use: false,
+    gradient: "rgba(2, 168, 246, 1)",
+    use: true,
     detail: {
-      coverPc: "/works/homeAndShopping/cover.jpg",
-      coverMobile: "/works/homeAndShopping/cover_m.jpg",
+      coverPc: "/works/perfectwin/cover.jpg",
+      coverMobile: "/works/perfectwin/cover_m.jpg",
       title: `PerfecTwin`,
       subtitle: `IT 시스템 테스트의<span class='br_pc'></span> 새로운 기준`,
       overview: `100% 실제 거래 데이터로 시스템을 검증하는 병렬 검증 솔루션인 PerfecTwin의 고도화에 맞춰 Dark, Light의 두 가지 모드를 포함한 디자인시스템을 구축하고, 이를 기반으로 한 UI디자인 및 그래픽 디자인을 진행하였습니다. `,
@@ -175,7 +185,35 @@ const worksSettingList = [
   },
 
   {
+    name: "shinhan1",
+    link: "/work/shinhan",
+    image: "PC_Card_project03.jpg",
+    projectName: "신한 슈퍼 SQL 유지운영 2024",
+    projectNameColor: "light",
+    projectClient: "신한은행",
+    projectType: "공공기관, 업무시스템, APP, 유지운영",
+    projectYear: "2024",
+    gradient: "#0046FF",
+    use: true,
+    detail: {
+      coverPc: "/works/shinhan/cover.jpg",
+      coverMobile: "/works/shinhan/cover_m.jpg",
+      title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      subtitle:
+        "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
+      overview:
+        "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+      launch: "Jan, 2024",
+      client: "신한금융그룹",
+      device: "Mobile Application",
+      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+      viewplatform: "https://www.shinhan.com/index.jsp",
+    },
+  },
+
+  {
     name: "homeAndShopping",
+    link: "/work/homeAndShopping",
     image: "card_homeAndShopping.jpg",
     projectNameColor: "dark",
     projectType: "업무시스템, APP",
@@ -197,6 +235,7 @@ const worksSettingList = [
 
   {
     name: "superSol",
+    link: "/work/superSol",
     image: "card_superSol.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -220,6 +259,7 @@ const worksSettingList = [
 
   {
     name: "enTrans",
+    link: "/work/enTrans",
     image: "card_enTrans.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -242,6 +282,7 @@ const worksSettingList = [
 
   {
     name: "jpdc",
+    link: "/work/jpdc",
     image: "card_jpdc.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -262,6 +303,7 @@ const worksSettingList = [
   },
   {
     name: "naverWhale",
+    link: "/work/naverWhale",
     image: "card_naverWhale.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -283,6 +325,7 @@ const worksSettingList = [
   },
   {
     name: "t4k",
+    link: "/work/t4k",
     image: "card_t4k.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -304,6 +347,7 @@ const worksSettingList = [
   },
   {
     name: "cosmo",
+    link: "/work/cosmo",
     image: "card_cosmo.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -327,6 +371,7 @@ const worksSettingList = [
   },
   {
     name: "pims",
+    link: "/work/pims",
     image: "card_pims.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -348,6 +393,7 @@ const worksSettingList = [
   },
   {
     name: "heyoung",
+    link: "/work/heyoung",
     image: "card_heyoung.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -369,6 +415,7 @@ const worksSettingList = [
   },
   {
     name: "shinhanPlus",
+    link: "/work/shinhanPlus",
     image: "card_shinhanPlus.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP , 유지운영",
@@ -389,6 +436,7 @@ const worksSettingList = [
   },
   {
     name: "kbMyData",
+    link: "/work/kbMyData",
     image: "card_kbMyData.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -411,6 +459,7 @@ const worksSettingList = [
 
   // {
   //   name: "iros",
+  //   link: "/work/iros",
   //   image: "card_iros.png",
   //   projectNameColor: "light",
   //   projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -434,6 +483,7 @@ const worksSettingList = [
 
   {
     name: "penthill",
+    link: "/work/penthill",
     image: "card_penthill.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -455,6 +505,7 @@ const worksSettingList = [
   },
   {
     name: "bizpay",
+    link: "/work/bizpay",
     image: "card_bizpay.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -477,6 +528,7 @@ const worksSettingList = [
   },
   {
     name: "cosmo2",
+    link: "/work/cosmo2",
     image: "card_cosmo2.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -498,6 +550,7 @@ const worksSettingList = [
   },
   {
     name: "shinhanPlusMain",
+    link: "/work/shinhanPlusMain",
     image: "card_shinhanPlusMain.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -508,7 +561,8 @@ const worksSettingList = [
       coverPc: "/works/shinhanPlusMain/cover.jpg",
       coverMobile: "/works/shinhanPlusMain/cover_m.jpg",
       title: "신한플러스 메인 UIUX 컨설팅 및 리뉴얼",
-      subtitle: "신한금융그룹의 모든 서비스, 신한플러스를 통하다",
+      subtitle:
+        "신한금융그룹의 모든 서비스,<span class='br_pc'></span> 신한플러스를 통하다",
       overview: `신한플러스는 신한금융그룹의 모든 서비스 사용자를 위한 혜택 서비스 플랫폼입니다.\n인스플래닛은 고객의 다양한 금융환경 대응과 만족도 향상을 위해, 신한플러스의 서비스(멤버십, 금융, 혜택) 영역에 대한 접근성을 향상 및 이용 편의성 제고, 교차 거래 활성화를 유도하기 위해 UIUX 컨설팅 및 리뉴얼을 진행하였습니다.`,
       launch: "Jan, 2021",
       client: "신한금융그룹",
@@ -519,6 +573,7 @@ const worksSettingList = [
   },
   {
     name: "3friends",
+    link: "/work/3friends",
     image: "card_3friends.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -540,6 +595,7 @@ const worksSettingList = [
   },
   {
     name: "shinhanOpenAPI",
+    link: "/work/shinhanOpenAPI",
     image: "card_shinhanOpenAPI.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -561,6 +617,7 @@ const worksSettingList = [
   },
   {
     name: "bokjiro",
+    link: "/work/bokjiro",
     image: "card_bokjiro.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -582,6 +639,7 @@ const worksSettingList = [
 
   {
     name: "castingn",
+    link: "/work/castingn",
     image: "card_castingn.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -603,8 +661,9 @@ const worksSettingList = [
 
   {
     name: "mmaa",
+    link: "/work/mmaa",
     image: "card_mmaa.jpg",
-    projectNameColor: "light",
+    projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     gradient: "#009ba3",
     use: true,
@@ -623,6 +682,7 @@ const worksSettingList = [
   },
   {
     name: "mentor",
+    link: "/work/mentor",
     image: "card_mentor.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -644,6 +704,7 @@ const worksSettingList = [
   },
   {
     name: "budio",
+    link: "/work/budio",
     image: "card_budio.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -664,8 +725,9 @@ const worksSettingList = [
   },
   {
     name: "chinchin",
+    link: "/work/chinchin",
     image: "card_chinchin.jpg",
-    projectNameColor: "light",
+    projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
     gradient: "#5a74fe",
     use: true,
@@ -684,6 +746,7 @@ const worksSettingList = [
   },
   {
     name: "castingn2",
+    link: "/work/castingn2",
     image: "card_castingn2.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -705,6 +768,7 @@ const worksSettingList = [
 
   {
     name: "taldosa",
+    link: "/work/taldosa",
     image: "card_taldosa.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -729,6 +793,7 @@ const worksSettingList = [
 
   {
     name: "nb",
+    link: "/work/nb",
     image: "card_nb.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -751,6 +816,7 @@ const worksSettingList = [
 
   {
     name: "flatApp",
+    link: "/work/flatApp",
     image: "card_flatApp.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -773,6 +839,7 @@ const worksSettingList = [
 
   {
     name: "wMall",
+    link: "/work/wMall",
     image: "card_wMall.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -795,6 +862,7 @@ const worksSettingList = [
 
   {
     name: "baasidAp",
+    link: "/work/baasidApp",
     image: "card_baasidApp.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -815,6 +883,7 @@ const worksSettingList = [
   },
   {
     name: "kiaCSE",
+    link: "/work/kiaCSE",
     image: "card_kia.jpg",
     projectNameColor: "light",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -836,6 +905,7 @@ const worksSettingList = [
 
   {
     name: "ourhome",
+    link: "/work/ourhome",
     image: "card_ourhome.jpg",
     projectNameColor: "dark",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
@@ -857,6 +927,7 @@ const worksSettingList = [
   },
   {
     name: "wanju",
+    link: "/work/wanju",
     image: "card_wanju.jpg",
     projectNameColor: "dark", // dark, dark
     projectType: "공공기관, 업무시스템, APP, 유지운영",

@@ -3,7 +3,7 @@
   <div class="page-wp" :class="{ loaded }">
     <component :is="dynamicComponent" />
     <!-- <component :is="dynamicComponent" :class="{ goingUp }" /> -->
-    <section class="work-together-area">
+    <section class="work-together-area" v-motion-fade>
       <div class="work-together-content">
         <h2>Let's work together</h2>
         <div class="work-together-more">
