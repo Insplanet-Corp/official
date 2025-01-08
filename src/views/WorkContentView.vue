@@ -123,7 +123,9 @@ officialStore.updateWorkPageDetail(newWorkData);
 
 let lastVisibleIndex = 0;
 const refreshImageInteraction = () => {
-  const images = document.querySelectorAll(".works-content");
+  const images = document.querySelectorAll(
+    ".works-content, .works-content-item"
+  );
   const observer = new IntersectionObserver(
     (entries, index) => {
       // 화면에 보이는 요소의 인덱스를 저장하는 배열

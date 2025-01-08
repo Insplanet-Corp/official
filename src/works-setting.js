@@ -144,10 +144,10 @@ const worksSettingList = [
     name: "dap",
     link: "/work/dap",
     image: "card_dap.png",
-    projectNameColor: "dark",
+    projectNameColor: "light",
     projectType: "DAP GenAI Platform",
-    gradient: "rgb(234, 191, 225)",
-    use: false,
+    gradient: "rgba(156, 89, 252, 1)",
+    use: true,
     detail: {
       coverPc: "/works/dap/cover.jpg",
       coverMobile: "/works/dap/cover_m.jpg",
