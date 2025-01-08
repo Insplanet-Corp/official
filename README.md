@@ -1,10 +1,15 @@
 # insplanet official Front-end Document
 
+## CI/CD
+### vercel로 자동 배포
+ - 기존 가비아 컨테이너 호스팅을 사용하는 경우, 클라이언트사이드 라우팅에 대한 대응이 되지 않아 404 오류 페이지 발생.
+ - 기존 원본 코드와 배포 코드의 저장소가 분리되어 유지보수의 어려움.
+
 ## 프로젝트를 시작하기 전에
 
 ### 필수 설치 환경
 
-- nodejs, npm (nodejs 설치시 npm 자동설치) [link](https://nodejs.org/en)
+- nodejs [link](https://nodejs.org/en)
 - git [link](https://git-scm.com/)
 
 ### 추천 에디터, 및 에디터 확장프로그램
@@ -18,15 +23,9 @@
 
 vue3 공식 사이트 [link](https://vuejs.org/)
 
-### branch
-
-- main - staging 에 해당하는 산출물 브랜치, dev 에서 개발한 뒤 main 브랜치에 올려서 배포하는것을 권장.
-- dev - 개발시 사용되는 브랜치
-
 ## 프로젝트 폴더 구조
 
 ```
-
  dist // npm run build 시 생성되는 산출물 파일
 .github
  └─workflows // git actions 자동배포 쉘스크립트
@@ -124,30 +123,6 @@ works 관리 파일, 설정 가능 부분은 다음과 같습니다.
       viewplatform: "#none",
     },
   },
-```
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
 
 ## 쉽게 새로운 프로젝트 추가하는 방법
