@@ -43,7 +43,7 @@ const detail = ref(workData.detail);
 const subDetails = ref({
   Launch: detail.value.launch,
   Client: detail.value.client,
-  Device: detail.value.device,
+  Service: detail.value.device,
 });
 
 watch(
@@ -53,7 +53,7 @@ watch(
     subDetails.value = {
       Launch: detail.value.launch,
       Client: detail.value.client,
-      Device: detail.value.device,
+      Service: detail.value.device,
     };
   }
 );

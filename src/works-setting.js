@@ -222,7 +222,7 @@ const worksSettingList = [
     detail: {
       coverPc: "/works/homeAndShopping/cover.jpg",
       coverMobile: "/works/homeAndShopping/cover_m.jpg",
-      title: `홈앤쇼핑 카카오 챗봇 서비스`,
+      title: `홈앤쇼핑\n 카카오 챗봇 서비스`,
       subtitle: `카카오톡으로 하는 \n간편 주문`,
       overview: `카카오톡 챗봇을 활용한 홈앤쇼핑 카카오톡 주문하기 서비스의 디자인과 퍼블리싱을 진행하였습니다. \n최신 트렌드인 클레이모피즘을 적용한 3D 이미지로 친근한 브랜드 이미지를 구축하고, 연계되는 상품상세, 주문 화면 등 최적의 모바일 UI를 구현하였습니다.`,
       launch: "Nov, 2023",
@@ -335,7 +335,7 @@ const worksSettingList = [
     detail: {
       coverPc: "/works/t4k/cover.jpg",
       coverMobile: "/works/t4k/cover_m.jpg",
-      title: "T4K 브랜드 사이트 및 관리시스템 구축",
+      title: "T4K 브랜드 사이트<span class='br_pc'></span> 및 관리시스템 구축",
       subtitle: `사람에게 맞춘\n새로운 전기트럭, T4K`,
       overview: `T4K는 신규 출시된 GS글로벌의 전기트럭 T4K의 공식 사이트입니다. \n인스플래닛은 전기차의 특성과 브랜드에 대한 이해와 접근으로 T4K의 시작을 함께 디자인하였습니다.\n T4K만의 특징과 스토리텔링이 있는 제품 PDP를 중점으로 한 차별화·감성화 전략, 일관된 톤앤매너와 최적의 UI/UX로 T4K만의 차별화된 브랜드 아이덴티티를 확립하고, 출시 예정 차량을 고려한 유연한 설계와 효율적인 CMS로 중장기적으로 확장이 가능한 효율적인 통합 시스템을 구축하였습니다.`,
       launch: "Apr, 2023",
@@ -539,7 +539,8 @@ const worksSettingList = [
       coverPc: "/works/cosmo2/cover.jpg",
       coverMobile: "/works/cosmo2/cover_m.jpg",
       title: "1회용컵 보증금 처리지  원금 시스템 구축",
-      subtitle: "지구를 구하는 더하기가 아닌 빼기 1회용 컵 보증금 제도",
+      subtitle:
+        "지구를 구하는 더하기가 아닌 빼기<span class='br_pc'></span> 1회용 컵 보증금 제도",
       overview: `1회용컵 보증금 제도 시행에 따라 보증금 부과, 반환 및 회수, 재활용 등 전 과정을 점검할 수 있는 관리체계의 구축과 전 시스템의 UIUX를 진행하였습니다.\n센터와 사업자를 위한 관리시스템(WEB)과 판매 사업자, 회수재활용사업자용 어플리케이션, 소비자용 어플리케이션 까지 총 4개의 플랫폼을 아우르는 시스템을 기반으로 서비스를 효율적으로 관리하고, 소비자가 서비스를 잘 사용할 수 있도록 UIUX에 집중하였습니다.`,
       launch: "Dec, 2022",
       client: "신한금융그룹",
@@ -627,7 +628,8 @@ const worksSettingList = [
       coverPc: "/works/bokjiro/cover.jpg",
       coverMobile: "/works/bokjiro/cover_m.jpg",
       title: "복지로 차세대<span class='br_pc'></span> UI/UX",
-      subtitle: "국민이 기뻐하고 신뢰하는 서비스, 복지로",
+      subtitle:
+        "국민이 기뻐하고 신뢰하는 서비스,<span class='br_pc'></span> 복지로",
       overview: `인스플래닛은 보건복지부의 복지서비스 포털 ‘복지로’ 차세대 프로젝트의 UI/UX 컨설팅 및 구현방안을 전담하였습니다.\n모든 국민이 차별없이 누리는 맞춤형 복지플랫폼을 목표로 국민이 기뻐하고 신뢰하는 서비스를 만들기 위해 고민하였습니다. 쉽고 명확한 정보구조와 배려깊고 친절한 디자인으로 누구나 쉽게 복지혜택을 누릴 수 있는 복지플랫폼으로 나아갈 수 있도록 UI/UX를 진행하였습니다.`,
       launch: "Oct, 2020",
       client: "보건복지부",
@@ -753,8 +755,8 @@ const worksSettingList = [
     gradient: "#19529c",
     use: true,
     detail: {
-      coverPc: "/works/castingn/cover.jpg",
-      coverMobile: "/works/castingn/cover_m.jpg",
+      coverPc: "/works/castingn2/cover.jpg",
+      coverMobile: "/works/castingn2/cover_m.jpg",
       title: "캐스팅엔 UI/UX<span class='br_pc'></span> 고도화 및 유지운영",
       subtitle: "온라인 소싱 중개 플랫폼",
       overview: `소싱이 필요한 기업고객에게 검증된 전문 업체를 연결하여, 아웃소싱/외주 업무의 완성까지 책임지는 신개념의 B2B 온라인 소싱 중개 플랫폼인 CastingN의 연간 유지운영 및 고도화를 진행하였습니다.\n소규모 거래에서 중/대형 거래로의 확장된 사업의 규모를 표현하고, 안정적이며 신뢰를 주는 시각적인 메시지를 전달하는 디자인이 적용되었습니다,`,

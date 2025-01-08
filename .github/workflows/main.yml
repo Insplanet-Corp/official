@@ -24,4 +24,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           port: 22
           source: "./dist/*"
-          target: "/public_new/"
+          target: "/public/"

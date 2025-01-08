@@ -121,18 +121,6 @@ const initSlideCount = useWorkSettingList.findIndex(
 
 officialStore.updateWorkPageDetail(newWorkData);
 
-let dynamicComponent = defineAsyncComponent(() =>
-  import(`../works/${workId.value}.vue`)
-    .then((module) => {
-      return module.default;
-    })
-    .finally(() => {
-      setTimeout(() => {
-        refreshImageInteraction();
-      }, 500);
-    })
-);
-
 let lastVisibleIndex = 0;
 const refreshImageInteraction = () => {
   const images = document.querySelectorAll(".works-content");
@@ -188,6 +176,18 @@ const refreshImageInteraction = () => {
     observer.observe(img);
   });
 };
+
+let dynamicComponent = defineAsyncComponent(() =>
+  import(`../works/${workId.value}.vue`)
+    .then((module) => {
+      return module.default;
+    })
+    .finally(() => {
+      setTimeout(() => {
+        refreshImageInteraction();
+      }, 500);
+    })
+);
 
 watch(
   () => router.params.workId,

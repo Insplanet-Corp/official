@@ -1,21 +1,68 @@
 <template>
-  <div class="work-container onedoctor">
+  <div class="work-container">
     <!-- 공통 상단 영역 시작 -->
     <WorkContentCommon />
 
-    <div class="works-content">
-      <img src="/works/onedoctor/image_pc_01.png" class="only-pc" />
-      <img src="/works/onedoctor/image_mobile_01.png" class="only-mobile" />
-    </div>
+    <section class="works-content section01">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-title">DAP GenAI Platform</p>
+          <p class="section-description">
+            DAP GenAI Platform은 기업특화 생성형 AI 플랫폼으로, 기업고객은
+            온프레미스, 클라우드 등 보유중인 인프라에 설치해 비즈니스에 필요한
+            생성형 AI 서비스를 빠르게 만들어 즉각적인 가치 창출을 할 수
+            있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="works-content section02">
+      <div class="section-inner">
+        <div class="section-header">
+          <p class="section-title">Visual Image</p>
+          <p class="section-description">
+            AI 오로라 컨셉에 맍게 미래지향적이고 고차원 세계적인 비주얼을
+            표현하였습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="works-content section03">
+      <div class="section-header">
+        <p class="section-title">Unified Design</p>
+        <p class="section-description">
+          DAP GenAI Text, Image, KL 하나의 디자인 시스템을 활용해 일관되고
+          통일된 Design을 진행하였습니다.
+        </p>
+      </div>
+
+      <div>
+        <figure></figure>
+        <b>GenAI Text</b>
+        <p>
+          비즈니스에 특화된 언어 생성형 AI서비스와 초거대 언어모델(LLM) 구현
+        </p>
+      </div>
+      <div>
+        <figure></figure>
+        <b>GenAI KL</b>
+        <p>사내 다양한 문서를 지식화하며 필요한 지식을 찾고 활용</p>
+      </div>
+      <div>
+        <figure></figure>
+        <b>GenAI Image</b>
+        <p>
+          정교한 이미지를 생성하고 맞춤형 초거대 비전모델(LVM)도 손쉽게 제작
+        </p>
+      </div>
+    </section>
 
     <section class="works-content section01">
       <div class="section-inner">
         <div class="section-texts">
-          <img
-            class="section-icon"
-            src="/works/onedoctor/section01_icon.png"
-            alt=""
-          />
+          <img src="/works/onedoctor/section01_icon.png" alt="" />
           <p class="section-title">채팅 UI를 활용한 친근감 형성</p>
           <p class="section-description">
             사용자가 건강기록을 입력하면 의료 전문가와 직접 상담하는듯한 답변이
@@ -35,11 +82,7 @@
     <section class="works-content section02">
       <div class="section-inner">
         <div class="section-texts">
-          <img
-            class="section-icon"
-            src="/works/onedoctor/section02_icon.png"
-            alt=""
-          />
+          <img src="/works/onedoctor/section02_icon.png" alt="" />
           <p class="section-title">등록된 디바이스와의 자동 호환</p>
           <p class="section-description">
             사용자가 현재 사용하고 있는 혈압계 · 혈당계를 원닥터 앱과 동기화시켜
@@ -56,11 +99,7 @@
     <section class="works-content section03">
       <div class="section-inner">
         <div class="section-texts">
-          <img
-            class="section-icon"
-            src="/works/onedoctor/section03_icon.png"
-            alt=""
-          />
+          <img src="/works/onedoctor/section03_icon.png" alt="" />
           <p class="section-title">친절하고 따뜻한 UX라이팅</p>
           <p class="section-description">
             의사선생님과 직접 소통하는듯이 친절하고 따뜻한 말투의 통일된 UX
@@ -91,14 +130,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
 <style lang="scss">
 @import "../assets/scss/response.scss";
 // 공통
-.onedoctor .section01,
-.onedoctor .section02,
-.onedoctor .section03 {
-  background-color: #fff;
-}
 .section-inner {
-  display: flex;
-  align-items: center;
   gap: 196px;
 
   max-width: 1096px;
@@ -108,8 +140,12 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
   position: relative;
 }
 .section-icon {
-  // 공통에서 16px로 잡힘;
-  border-radius: 0 !important;
+}
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 .section-title {
   font-size: 50px;
@@ -133,6 +169,21 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
   transition: all ease-out 0.8s;
   transition-delay: var(--delayImg);
 }
+
+//
+.section01 {
+  padding: 160px 0;
+  background-color: rgba(28, 7, 45, 1);
+}
+.section02 {
+  padding: 100px 0;
+  background-color: #000;
+}
+.section03 {
+  padding: 200px 0;
+  background-color: rgba(21, 7, 40, 1);
+}
+//
 
 .section01 {
   border-radius: 16px 16px 0 0 !important;

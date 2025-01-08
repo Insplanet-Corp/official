@@ -103,7 +103,7 @@ const onScrollHandler = (e) => {
   const { deltaY } = e;
 
   scrollPosition.value = Math.max(
-    Math.min(0, scrollPosition.value - deltaY / 3),
+    Math.min(0, scrollPosition.value - deltaY / 1.5),
     -maxWorkGroupInnerHeight.value
   );
 
