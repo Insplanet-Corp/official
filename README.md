@@ -18,10 +18,6 @@
 
 vue3 공식 사이트 [link](https://vuejs.org/)
 
-## git repository
-
-[https://github.com/Insplanet-Corp/official](https://github.com/Insplanet-Corp/official)
-
 ### branch
 
 - main - staging 에 해당하는 산출물 브랜치, dev 에서 개발한 뒤 main 브랜치에 올려서 배포하는것을 권장.
