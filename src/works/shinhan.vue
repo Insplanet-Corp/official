@@ -12,16 +12,13 @@
             Mobile First
           </h3>
           <p class="works-desc-text" style="--delay: 1s">
-            신종 코로나바이러스 감염증(코로나19)의 팬데믹(세계적 대유행)은
-            '모바일 퍼스트(mobile first)' 중심의 새로운 세계 질서를 만들었다.<br />모바일
-            퍼스트 현상을 증명이라도 하듯 2023년 현재 한국 성인의 97.4%가
-            스마트폰을 사용중 이다.<br /><br />팬데믹은 금융시장에서도 새로운
-            변화를 만들어 냈다.<br />코로나 19 장기화에 따른 실물시장 침체,
-            월급으로 노후를 보장하기 어려운 '백세시대 환갑퇴직' 시대가 도래함에
-            따라 대중의 금융투자는 생활의 일부로 자리매김하는 추세이다.<br />팬데믹
-            이전에 비해 개인투자자의 규모는 3배가 증가하였으며 투자연령층 또한
-            40~50 대에 집중되었던 것에서 젋은층, 고령층 전반으로 확산되고
-            있다.<br /><br />금융서비스들은 이 같은 변화에 어떻게 대응해야 할까.
+            신한투자증권에서 제공하는 정보를 디바이스와 해상도의 제약없이 빠르게
+            제공받을 수 있도록 반응형 그리드 시스템을 활용하여 모바일에 최적화된
+            디자인을 적용하였습니다.<br /><br />신한투자증권 모바일 웹사이트
+            개편은 디지털 홍보채널의 역할에 포커스를 두었으며, 비 로그인 상태인
+            신규 고객이 신한금융투자 콘텐츠를 소비하고 공유하는것에 대한 모든
+            장벽을 없애고, 유용한 투자정보를 다양한 채널로 공유하여 잠재고객의
+            유입기반을 마련하였습니다.
           </p>
         </div>
         <figure class="works-figure">
@@ -49,22 +46,6 @@
     <!-- 모바일 대세 소형+세로형 콘텐츠 -->
     <div class="works-content">
       <div class="works-section section02">
-        <div class="works-desc" :class="{ horizontal: !isPotable }">
-          <h3 class="works-desc-title" style="--delay: 0.5s">
-            모바일 대세 <br />소형+세로형 콘텐츠
-          </h3>
-          <p class="works-desc-text" style="--delay: 0.5s">
-            모바일이 대세가 되면서 국내 기업들의 콘텐츠 형태에도 변화가
-            생겼다.<br />기존 TV와 데스크탑 형태를 중심으로 제작되던 대형+가로형
-            형식보다는 스마트폰 화면 형태의 소형+세로형
-            <br class="only-pc" />콘텐츠로 제작되는 콘텐츠를 많이 볼 수 있는
-            요즘이다.<br /><br />그러다보니 고품질, 고용량의 콘텐츠보다는 SNS 에
-            공유하기 좋은 가벼운 세로 형태의 콘텐츠로 대부분의
-            <br class="only-pc" />콘텐츠가 변화하고 있다.<br />요즘 소위
-            ‘핫’하다는 콘텐츠는 이처럼 모바일 환경 맞춤 콘텐츠인 경우가
-            대부분이다.
-          </p>
-        </div>
         <figure class="works-figure">
           <ul class="works-figure-content">
             <li class="only-pc">
@@ -109,10 +90,8 @@
         <div class="works-desc" :class="{ horizontal: !isPotable }">
           <h3 class="works-desc-title">콘텐츠관리시스템<br />(CMS) 도입</h3>
           <p class="works-desc-text">
-            이번 신한금융투자 프로젝트에서는 콘텐츠관리시스템(CMS)을 도입하여<br />금융상품,
-            투자정보, 트레이딩 등 유용한 투자정보를 다양한 채널로 공유하여
-            잠재고객의 유입기반<br />
-            마련을 추구했다.
+            콘텐츠관리시스템(CMS)을 도입으로 금융상품, 투자정보, 트레이딩 등
+            유용한 투자정보를 효율적으로 관리하고 배포할 수 있습니다.
           </p>
         </div>
         <figure class="works-figure">
@@ -174,8 +153,10 @@
             소비하는 시대
           </h3>
           <p class="works-desc-text">
-            누구나 맘에 드는 콘텐츠를 지인에 공유할 수 있도록 <br />디바이스 OS
-            별 모바일웹 공유기능을 구현했다.
+            누구나 맘에 드는 콘텐츠를 지인에 공유할 수 있도록<span
+              class="br_pc"
+            ></span>
+            디바이스 OS 별 모바일웹 공유기능을 구현했습니다.
           </p>
         </div>
         <div class="works-figure">
@@ -205,15 +186,10 @@
             디지털 홍보채널
           </h3>
           <p class="works-desc-text">
-            모바일 홈페이지(모바일웹) 개편으로 신한투자증권 디지털 홍보채널의
-            역할에 포커스를 두었으며 <br />
-            비로그인 상태인 신규 고객이 신한금융투자 콘텐츠를 소비하고
-            공유하는데 대한 모든 장벽을<br />
-            없앴다. <br /><br />홈화면은 고객유치를 위한 다양한 금융이벤트
-            배너가 자리 잡고 있으며 디자인 적인 재미를 주고자<br />
-            5가지 톤의 배경의 사용했다. <br /><br />디지털홍보 콘텐츠를 강조하는
-            채널인 만큼 콘텐츠 가독성을 높이기 위해 카드형 UI 구조로 정보를<br />
-            그룹핑 하였다.
+            원페이지 스크롤링 형식의 카드형 UI로 신규고객을 위한 다양한
+            금융이벤트를 집중도 있게 전달합니다. 디지털 홍보의 특성에 맞는
+            다양한 컬러와 이미지로 시각적 임팩트를 높이고, 캐주얼한 톤앤매너로
+            밝은 이미지를 구축하였습니다.
           </p>
         </div>
         <div class="works-figure">
@@ -250,8 +226,8 @@
             신한투자증권 <br class="only-mobile" />브랜드 아이덴티티
           </h3>
           <p class="works-desc-text">
-            브랜드 아이덴티티에 집중한 디자인으로 브랜드 톤 앤 매너의
-            통일성을유지하며 밝고 생생한 <br />컬러와 3D 요소로 친근한 이미지를
+            브랜드 아이덴티티에 집중한 디자인으로 브랜드 톤 앤 매너의 통일성을
+            유지하며 밝고 생생한 <br />컬러와 3D 요소로 친근한 이미지를
             부여했다.
           </p>
         </div>
@@ -304,7 +280,7 @@
 
     <!-- 검색엔진 최적화(SEO) -->
     <div class="works-content">
-      <div class="works-section theme-darkblue section07">
+      <div class="works-section section07">
         <div class="works-desc" :class="{ horizontal: !isPotable }">
           <h3 class="works-desc-title">검색엔진 최적화(SEO)</h3>
           <p class="works-desc-text">
@@ -374,12 +350,14 @@
               신한카드 <br class="only-mobile" />UX Writing 가이드
             </h3>
             <p class="works-desc-text">
-              투자 콘텐츠에 대한 이해도를 높이고 고객과 '통' 하는 글쓰기를 위해
-              <br class="only-mobile" />
-              신한카드 UX Writing 가이드 를 준수하였다. <br />
+              투자 콘텐츠에 대한 이해도를 높이고 고객과 '통’ 하는 글쓰기를
+              위해<br class="only-pc" />
+              신한카드 UX Writing 가이드 를 준수하였습니다.<br
+                class="only-pc"
+              />
               한눈에 알 수 있는 표시, 직접적이고 구체적인 표현을 사용하였으며
-              <br />
-              문장 톤앤매너를 통일성 있게 유지했다.<br />
+              <br class="only-pc" />
+              문장 톤앤매너를 통일성 있게 유지하였습니다.
             </p>
           </div>
           <img
@@ -507,7 +485,23 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
     }
   }
 }
+.section01 {
+  .works-desc {
+    .works-desc-title {
+      margin-bottom: 24px;
+    }
+  }
+}
 .section03 {
+  .works-desc {
+    gap: 137px;
+    .works-desc-title {
+      min-width: 222px;
+    }
+    .works-desc-text {
+      margin-right: 80px;
+    }
+  }
   .works-figure {
     @include for-size-min("extra-small") {
       margin: 128px auto 0;
@@ -583,6 +577,11 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
 .section04 {
   position: relative;
   overflow: hidden;
+  .works-desc {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
   &.theme-gradient {
     background: linear-gradient(
         180deg,
@@ -625,6 +624,15 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
     background-image: url("/works/shinhan/bg_section_channel_mo.png");
     background-size: cover;
   }
+
+  .works-desc {
+    gap: 75px;
+    .works-desc-title {
+      width: -webkit-fill-available;
+    }
+    .works-desc-text {
+    }
+  }
   .works-figure {
     margin-top: 128px;
 
@@ -656,13 +664,12 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
     margin: 128px auto;
     @include for-size-max("extra-small") {
       margin: auto;
-      &-title {
-        text-align: center;
-      }
     }
   }
 }
 .section07 {
+  background-color: rgba(11, 23, 96, 1);
+  color: #fff;
   .works-figure {
     img {
       margin-top: 128px;
@@ -882,6 +889,91 @@ console.debug("isPotable", isMobile, isTablet, isPotable);
   }
   to {
     transform: translateY(-5px);
+  }
+}
+
+@include for-size-max("small") {
+  // 몰라
+  .work-container .works-content {
+    margin-top: 0;
+  }
+  .work-container {
+    .works-desc {
+      .works-desc-title {
+        font-size: 24px;
+        line-height: 30px;
+      }
+      .works-desc-text {
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    .section01 {
+      padding: 48px 32px;
+    }
+
+    .section03 {
+      .works-desc {
+        max-width: 80%;
+        margin: 0 auto;
+        gap: 32px;
+
+        flex-direction: column;
+
+        .works-desc-title {
+          width: 100%;
+          text-align: center;
+        }
+        .works-desc-text {
+          margin-right: 0;
+        }
+      }
+    }
+    .section04 {
+      padding: 48px 32px;
+      .works-desc {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .section05 {
+      padding: 48px 32px;
+      .works-desc {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .section06 {
+      padding: 48px 32px;
+      .works-desc {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .section07 {
+      padding: 48px 32px;
+      .works-desc {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+    .section08 {
+      margin-block: 0;
+      padding: 48px 32px;
+      .works-desc {
+        gap: 32px;
+        display: flex;
+        flex-direction: column;
+        .works-desc-text {
+          margin-top: 0;
+        }
+      }
+    }
   }
 }
 </style>

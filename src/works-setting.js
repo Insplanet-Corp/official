@@ -70,29 +70,6 @@
 // },
 
 // {
-//   name: "shinhan2",
-//   link: "", // link 가 null 이거나 "" 일 경우 메인 화면에 노출되지 않습니다.
-//   image: "PC_Card_project03.jpg",
-//   projectNameColor: "light",
-//   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   gradient: "#0046FF",
-//   use: false, // use 가 false 일 경우 메인 화면, work 에 노출되지 않습니다.
-//   detail: {
-//     coverPc: "/works/shinhan/cover.jpg",
-//     coverMobile: "/works/shinhan/cover_m.jpg",
-//     title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
-//     subtitle:
-//       "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
-//     overview:
-//       "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
-//     launch: "Jan, 2024",
-//     client: "신한금융그룹",
-//     device: "Mobile Application",
-//     uiux: "Prototyping, Wireframing, UI Design, Maintenance",
-//     viewplatform: "https://www.shinhan.com/index.jsp",
-//   },
-// },
-// {
 //   name: "lgcns_cloudxper",
 //   link: "/work/lgCloudXper",
 //   image: "card_lg_cloud_xper.png",
@@ -183,31 +160,49 @@ const worksSettingList = [
       viewplatform: "#none",
     },
   },
-
+  // {
+  //   name: "shinhan2",
+  //   link: "", // link 가 null 이거나 "" 일 경우 메인 화면에 노출되지 않습니다.
+  //   image: "PC_Card_project03.jpg",
+  //   projectNameColor: "light",
+  //   projectType: "공공기관, 업무시스템, APP, 유지운영",
+  //   gradient: "#0046FF",
+  //   use: false, // use 가 false 일 경우 메인 화면, work 에 노출되지 않습니다.
+  //   detail: {
+  //     coverPc: "/works/shinhan/cover.jpg",
+  //     coverMobile: "/works/shinhan/cover_m.jpg",
+  //     title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+  //     subtitle:
+  //       "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
+  //     overview:
+  //       "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+  //     launch: "Jan, 2024",
+  //     client: "신한금융그룹",
+  //     device: "Mobile Application",
+  //     uiux: "Prototyping, Wireframing, UI Design, Maintenance",
+  //     viewplatform: "https://www.shinhan.com/index.jsp",
+  //   },
+  // },
   {
     name: "shinhan1",
     link: "/work/shinhan",
     image: "PC_Card_project03.jpg",
-    projectName: "신한 슈퍼 SQL 유지운영 2024",
     projectNameColor: "light",
-    projectClient: "신한은행",
     projectType: "공공기관, 업무시스템, APP, 유지운영",
-    projectYear: "2024",
     gradient: "#0046FF",
     use: true,
     detail: {
       coverPc: "/works/shinhan/cover.jpg",
       coverMobile: "/works/shinhan/cover_m.jpg",
-      title: "신한 슈퍼SOL 유지 <span class='br_pc'></span>운영 2024",
+      title: "신한 SoL증권<span class='br_pc'></span> 모바일 웹 리뉴얼",
       subtitle:
-        "신한금융그룹의 새로운 여정,<span class='br_pc'></span>신한 슈퍼 SoL",
-      overview:
-        "신한금융그룹의 모든 금융 네트워크를 한 곳에서 해결할 수 있는 신한 슈퍼 SoL이 출시되면서 신한플러스에서 제공하던 서비스가 신한 슈퍼 SoL로 이전되었습니다. 인스플래닛은 신한플러스 서비스에서 안정적인 유지운영을 진행해 왔으며, 서비스 이관 후 2024년에도 유지운영 업무를 수행하고 있습니다.",
+        "더 쉽고 편안한, <span class='br_pc'></span>더 새로운 금융투자서비스",
+      overview: `인스플래닛은 더 쉽고 편안한, 더 새로운 금융을 비전으로 하는 신한투자증권 모바일 웹 개편 및 콘텐츠관리시스템(CMS) 연계 구축 프로젝트를 진행하였습니다.\n 신한투자증권에서 제공하는 정보를 디바이스와 해상도의 제약 없이 빠르게 제공받을 수 되었으며, 금융상품, 투자가이드 등 유용한 투자정보를 다양한 채널로 공유하여 잠재고객의 유입기반을 마련하였습니다.`,
       launch: "Jan, 2024",
-      client: "신한금융그룹",
-      device: "Mobile Application",
-      uiux: "Prototyping, Wireframing, UI Design, Maintenance",
-      viewplatform: "https://www.shinhan.com/index.jsp",
+      client: "신한투자증권",
+      device: "Mobile Web",
+      uiux: "Benchmarking, User Analysis, Concept Building, Menu Architecture, Prototyping, UI Design, Visual Design, Publishing, Test Case, Test Scenario, CMS",
+      viewplatform: "",
     },
   },
 

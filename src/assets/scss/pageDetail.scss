@@ -36,6 +36,14 @@
       transition-delay: var(--delayImg);
     }
 
+    .works-desc {
+      .works-desc-title {
+        font-size: 32px;
+        line-height: 42px;
+        font-weight: bold;
+      }
+    }
+
     &.show img,
     &.show .works-section {
       opacity: 1;
