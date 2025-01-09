@@ -2,7 +2,7 @@
   <header :class="{ show: showHeader }">
     <div>
       <h1 class="logo">
-        <RouterLink to="/">
+        <RouterLink to="/" @click="handleClick">
           <img src="../assets/images/Logo.svg" />
         </RouterLink>
       </h1>
@@ -56,7 +56,7 @@
   </div>
 </template>
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { useOfficialStore } from "@/stores/official";
 
 const officialStore = useOfficialStore();
@@ -64,6 +64,10 @@ const dialogVisible = ref(false);
 
 const showHeader = ref(true);
 let lastScrollPosition = 0;
+
+const handleClick = () => {
+  officialStore.updateLastActionToHome("logo");
+};
 
 const handleScroll = () => {
   const currentScrollPosition =

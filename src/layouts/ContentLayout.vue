@@ -16,5 +16,3 @@ import { useOfficialStore } from "@/stores/official";
 
 const officialStore = useOfficialStore();
 </script>
-
-<style scoped></style>

@@ -1,9 +1,43 @@
 <template>
   <!-- <div v-html="externalHtml" class="externalHtml"></div> -->
+  <nav
+    class="works-controller"
+    :class="{ goingUp: goingUp && !isElementInView }"
+  >
+    <button
+      class="prev-button"
+      @click="
+        onLinkHandler(
+          `${useWorkSettingList[slideCountPrev].link}`,
+          slideCountPrev
+        )
+      "
+    >
+      <img src="/icons/icon_chevron_left.svg" />
+      PREV
+    </button>
+    <RouterLink to="/" @click="handleHamburgerClick">
+      <button class="hamberger-button">
+        <img src="/icons/icon_hamburger.svg" aria-hidden="true" />
+      </button>
+    </RouterLink>
+    <button
+      class="next-button"
+      @click="
+        onLinkHandler(
+          `${useWorkSettingList[slideCountNext].link}`,
+          slideCountNext
+        )
+      "
+    >
+      NEXT
+      <img src="/icons/icon_chevron_right.svg" />
+    </button>
+  </nav>
   <div class="page-wp" :class="{ loaded }">
     <component :is="dynamicComponent" />
     <!-- <component :is="dynamicComponent" :class="{ goingUp }" /> -->
-    <section class="work-together-area" v-motion-fade>
+    <section class="work-together-area">
       <div class="work-together-content">
         <h2>Let's work together</h2>
         <div class="work-together-more">
@@ -17,12 +51,11 @@
           </div>
         </div>
       </div>
-
       <!-- 내용 추가 -->
     </section>
 
     <!-- "More project" 슬라이드 영역 -->
-    <section class="more-project-area">
+    <section class="more-project-area" ref="moreProjects">
       <div class="more-project-content">
         <div class="more-project-title-area">
           <h2>More Projects</h2>
@@ -92,6 +125,7 @@ import {
   watchEffect,
   computed,
   defineAsyncComponent,
+  onBeforeUnmount,
 } from "vue";
 import { useOfficialStore } from "@/stores/official";
 import { useRoute } from "vue-router";
@@ -118,6 +152,10 @@ let newWorkData = useWorkSettingList.find(
 const initSlideCount = useWorkSettingList.findIndex(
   (item) => item.name === newWorkData.name
 );
+
+const handleHamburgerClick = () => {
+  officialStore.updateLastActionToHome("hamburger");
+};
 
 officialStore.updateWorkPageDetail(newWorkData);
 
@@ -265,14 +303,49 @@ const slideProject = (count) => {
 };
 
 let lastScrollPosition = 0;
+const currentScrollPosition = ref(0);
+
 const handleScroll = () => {
-  const currentScrollPosition =
+  currentScrollPosition.value =
     window.pageYOffset || document.documentElement.scrollTop;
 
-  goingUp.value = currentScrollPosition < lastScrollPosition;
-
-  lastScrollPosition = currentScrollPosition;
+  goingUp.value = currentScrollPosition.value < lastScrollPosition;
+  lastScrollPosition = currentScrollPosition.value;
 };
+
+// morePorjects element가 뷰포트에 들어왔ㅇ르 대 체크
+const moreProjects = ref(null);
+const isElementInView = ref(false);
+
+const observerCallback = (entries) => {
+  entries.forEach((entry) => {
+    isElementInView.value = entry.isIntersecting;
+  });
+};
+
+let observer = null;
+
+onMounted(() => {
+  observer = new IntersectionObserver(observerCallback, {
+    root: null,
+    rootMargin: "0px",
+    threshold: 0.1,
+  });
+
+  if (moreProjects.value) {
+    observer.observe(moreProjects.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (observer && moreProjects.value) {
+    observer.unobserve(moreProjects.value);
+  }
+});
+
+// watchEffect(() => {
+//   console.log(`isElementInView? ${isElementInView.value}`);
+// });
 
 onMounted(() => {
   setTimeout(() => {
@@ -288,4 +361,44 @@ onUnmounted(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.works-controller {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  border: 1px solid #000;
+  padding: 0 8px;
+  border-radius: 100px;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.12);
+  background-color: #fff;
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 1000;
+  transform: translate(-50%, 100px);
+  transition: all ease 0.5s;
+  &.goingUp {
+    transform: translate(-50%, 0);
+  }
+  button:hover {
+    opacity: 0.75;
+    cursor: pointer;
+  }
+  .prev-button,
+  .next-button {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 8px;
+    gap: 8px;
+    color: #000;
+    img {
+      width: 16px;
+    }
+  }
+  .hamberger-button {
+    width: 48px;
+    height: 48px;
+  }
+}
+</style>

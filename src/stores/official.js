@@ -14,6 +14,11 @@ export const useOfficialStore = defineStore("official", () => {
   const pageLoaderZIndex = ref("0");
   const pageType = ref("");
 
+  const lastActionToHome = ref(null); // 'hamburger' | 'logo'
+  const updateLastActionToHome = (action) => {
+    lastActionToHome.value = action;
+  };
+
   const pageLoaderClassHandler = (value) => {
     pageLoaderClass.value = value;
   };
@@ -98,5 +103,9 @@ export const useOfficialStore = defineStore("official", () => {
     updateAboutShow,
     updateHomeScrollPosition,
     updatePageLoaderHeight,
+
+    //
+    lastActionToHome,
+    updateLastActionToHome,
   };
 });

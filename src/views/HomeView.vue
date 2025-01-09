@@ -301,8 +301,10 @@ function startAutoScroll() {
 onMounted(() => {
   const officialStore = useOfficialStore();
 
+  // 홈에서의 이전 스크롤 위치
   if (officialStore.homeScrollPosition) {
-    scrollPosition.value = officialStore.homeScrollPosition;
+    const isLogoClick = officialStore.lastActionToHome === 'logo'
+    scrollPosition.value = isLogoClick ? 0 : officialStore.homeScrollPosition;
   }
 
   window.addEventListener("keydown", onKeyDownAtHomeView);
