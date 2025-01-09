@@ -38,20 +38,17 @@
     <component :is="dynamicComponent" />
     <!-- <component :is="dynamicComponent" :class="{ goingUp }" /> -->
     <section class="work-together-area">
-      <div class="work-together-content">
-        <h2>Let's work together</h2>
-        <div class="work-together-more">
-          <div>
-            <b>프로젝트 문의</b>
-            <a href="mailto:hello@insplanet.co.kr">Let's Talk</a>
-          </div>
-          <div>
-            <b>회사 브로슈어 다운로드</b>
-            <a href="/brochure/insplanet_brief.pdf" target="_blank">Download</a>
-          </div>
+      <h2>Let's work together</h2>
+      <div class="work-together-more">
+        <div>
+          <b>프로젝트 문의</b>
+          <a href="mailto:hello@insplanet.co.kr">Let's Talk</a>
+        </div>
+        <div>
+          <b>회사 브로슈어 다운로드</b>
+          <a href="/brochure/insplanet_brief.pdf" target="_blank">Download</a>
         </div>
       </div>
-      <!-- 내용 추가 -->
     </section>
 
     <!-- "More project" 슬라이드 영역 -->
