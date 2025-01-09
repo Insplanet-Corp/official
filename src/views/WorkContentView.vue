@@ -366,8 +366,9 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   height: 48px;
-  border: 1px solid #000;
-  padding: 0 8px;
+  gap: 8px;
+  padding: 0 12px;
+  border: 1px solid rgba(35, 35, 35, 1);
   border-radius: 100px;
   box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.12);
   background-color: #fff;
@@ -389,9 +390,11 @@ onUnmounted(() => {
     display: flex;
     align-items: center;
     height: 100%;
-    padding: 0 8px;
+    padding: 0 4px;
     gap: 8px;
-    color: #000;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(35, 35, 35, 1);
     img {
       width: 16px;
     }
