@@ -378,6 +378,7 @@ onUnmounted(() => {
   z-index: 1000;
   transform: translate(-50%, 100px);
   transition: all ease 0.5s;
+
   &.goingUp {
     transform: translate(-50%, 0);
   }
