@@ -50,14 +50,13 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
 </script>
 <style lang="scss">
 @import "../assets/scss/response.scss";
-img {
-  display: block;
-}
+
 .t4k {
   .section02 {
     padding: 160px;
     background-color: rgba(29, 31, 35, 1);
     img {
+      display: block;
       width: 100%;
       max-width: 1230px;
       margin: 0 auto;
@@ -72,6 +71,7 @@ img {
     overflow: hidden;
     div {
       img {
+        display: block;
         width: 100%;
         max-width: 1230px;
         margin: 0 auto;
