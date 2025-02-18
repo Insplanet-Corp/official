@@ -733,7 +733,7 @@ const worksSettingList = [
       coverMobile: "/works/chinchin/cover_m.jpg",
       title: "ChinChin 글로벌 러닝 어플리케이션",
       subtitle: "AI 및 VR 등 최신 기술이 적용된 영어교육용 어플리케이션",
-      overview: `친친은 미국 현지 아이들이 배우는 방식으로 발음을 습득하고, 읽기를 통해 어휘를 학습하는 것은 물론 문법의 기초를 쌓는 학습법을 토대로 개발된 언어 학습 어플리케이션입니다.\n탄탄한 기초 학습 후, 다른 나라의 문화와 문학 공부를 통해 영어라는 언어를 습득하는 것은 물론, 다양한 학습 테마를 통해 Listening, Communication, Critical thinking 및 종합적 사고를 키우는 것을 목표로 합니다.\n미국에 본사를 둔 Alpha 어학원의 교수법을 토대로 AI, VR 등 최신기술을 적용하여 컨텐츠를 구성하고, 보다 쉽게 학습할 수 있도록 체계인 정보 구성과 쉬운 UI로 설계되었습니다.`,
+      overview: `친친은 미국 현지 아이들이 배우는 방식으로 발음을 습득하고, 읽기를 통해 어휘를 학습하는 것은 물론 문법의 기초를 쌓는 학습법을 토대로 개발된 언어 학습 어플리케이션입니다.\n탄탄한 기초 학습 후, 다른 나라의 문화와 문학 공부를 통해 영어라는 언어를 습득하는 것은 물론, 다양한 학습 테마를 통해 Listening, Communication, Critical thinking 및 종합적 사고를 키우는 것을 목표로 합니다.\n미국에 본사를 둔 Alpha 어학원의 교수법을 토대로 AI, VR 등 최신기술을 적용하여 컨텐츠를 구성하고, 보다 쉽게 학습할 수 있도록 체계적인 정보 구성과 쉬운 UI로 설계되었습니다.`,
       launch: "Jul, 2019",
       client: "Alpha 어학원",
       device: "Mobile Application",
