@@ -401,6 +401,9 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       flex-direction: column !important;
       gap: 32px;
     }
+    .section-texts {
+      padding-inline: 32px;
+    }
     .section03 .section-inner {
       align-items: center;
       gap: 32px;
@@ -429,6 +432,12 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
           left: 2.5%;
         }
       }
+    }
+  }
+
+  @include for-size-max("extra-small") {
+    .section-images {
+      // max-width: 200px !important;
     }
   }
 }

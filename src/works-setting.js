@@ -1,26 +1,4 @@
 // 삭제
-// {
-//   name: "kmc",
-//   link: "/work/kmc",
-//   image: "card_kmc.jpg",
-//   projectNameColor: "light",
-//   projectType: "공공기관, 업무시스템, APP, 유지운영",
-//   gradient: "linear-gradient(65deg, #034AA9 17.9%, #3B7AFC 84.38%)",
-//   use: true,
-//   detail: {
-//     coverPc: "/works/kmc/cover.jpg",
-//     coverMobile: "/works/kmc/cover_m.jpg",
-//     title: "열차제어시스템<span class='br_pc'></span> 암호키관리센터(KMC) UI",
-//     subtitle: "열차제어시스템 암호키관리센터",
-//     overview:
-//       "지·차상 간 무선전송 데이터의 보안을 위한 암호키 관리장치인 키관리센터(KMC) 시스템의 On/Off-line 통합 인터페이스와 운영자 편의를 고려한 UX 가이드를 수립하였습니다.",
-//     launch: "2022.01~2022.02",
-//     client: "남부솔루션",
-//     device: "Web(PC)",
-//     uiux: "Benchmarking, UX Concept Building, UI Concept Building, Menu Architecture, Prototyping, Wireframing, UI Design, Test Scenario",
-//     viewplatform: "#none",
-//   },
-// },
 
 // {
 //   name: "paEnter",
@@ -95,6 +73,28 @@
 // },
 
 const worksSettingList = [
+  // {
+  //   name: "kr",
+  //   link: "/work/kr",
+  //   image: "card_kr.jpg",
+  //   projectNameColor: "light",
+  //   projectType: "공공기관, 업무시스템, APP, 유지운영",
+  //   gradient: "rgba(7, 7, 7, 1)",
+  //   use: true,
+  //   detail: {
+  //     coverPc: "/works/kr/cover.jpg",
+  //     coverMobile: "/works/kr/cover_m.jpg",
+  //     title: "암호키관리시스템<span class='br_pc'></span> 구축",
+  //     subtitle:
+  //       "선제적 대응이 가능한<span class='br_pc'></span> 암호키관리시스템",
+  //     overview: `열차제어에 필요한 키를 배포·관리하는 KMC 시스템의 고도화를 진행하였습니다.\n기존 시스템의 열차제어 키 배포·관리 뿐 아니라 관제와 현장설비 간의 데이터 안전전송을 위한 장비 및 키 배포·관리로 시스템을 확장하여 열차 사고 예방을 위해 선제적 대응이 가능한 통합관리시스템으로 설계하였습니다.\n주 사용자인 관제사와 철도 업무환경에 대한 이해를 바탕으로 실시간 모니터링 대시보드, 업무 중심으로 최적화된 UI/UX, 시맨틱 컬러 시스템 도입 등 정확한 인지와 빠른 대응이 가능한 시스템을 구축하였습니다.`,
+  //     launch: "Jul, 2024",
+  //     client: "남부솔루션",
+  //     device: "PC Application",
+  //     uiux: "Benchmarking, User Analysis, Concept Building, Menu Architecture, Service Planning, Prototyping, UI Design, Visual Design, Publishing, Test Case, Test Scenario, React, Figma, Mui",
+  //     viewplatform: "#none",
+  //   },
+  // },
   {
     name: "onedoctor",
     link: "/work/onedoctor",
@@ -130,7 +130,7 @@ const worksSettingList = [
       coverMobile: "/works/dap/cover_m.jpg",
       title: `DAP GenAI Platform`,
       subtitle: `생성형 AI의 4대 솔루션<span class='br_pc'></span> 고도화`,
-      overview: `LG CNS의 생성형 AI의 4대 솔루션인 DAP GenAI 플랫폼의 고도화에 맞춰 최적화된 화면 및 디자인을 선보입니다.\nAI 오로라 컨셉에 맟는 미래지향적인 고차원 세계적인 비주얼과 하나의 디자인 시스템을 활용한 일관된 UI로 사용자의 정보접근성을 높이고자 했습니다. `,
+      overview: `LG CNS의 생성형 AI의 4대 솔루션인 DAP GenAI 플랫폼의 고도화에 맞춰 최적화된 화면 및 디자인을 선보입니다.\nAI 오로라 컨셉에 맞는 미래지향적인 고차원 세계적인 비주얼과 하나의 디자인 시스템을 활용한 일관된 UI로 사용자의 정보접근성을 높이고자 했습니다. `,
       launch: "April, 2024",
       client: "LG CNS",
       device: "WEB Solution",
@@ -197,7 +197,7 @@ const worksSettingList = [
       title: "신한 SoL증권<span class='br_pc'></span> 모바일 웹 리뉴얼",
       subtitle:
         "더 쉽고 편안한, <span class='br_pc'></span>더 새로운 금융투자서비스",
-      overview: `인스플래닛은 더 쉽고 편안한, 더 새로운 금융을 비전으로 하는 신한투자증권 모바일 웹 개편 및 콘텐츠관리시스템(CMS) 연계 구축 프로젝트를 진행하였습니다.\n 신한투자증권에서 제공하는 정보를 디바이스와 해상도의 제약 없이 빠르게 제공받을 수 되었으며, 금융상품, 투자가이드 등 유용한 투자정보를 다양한 채널로 공유하여 잠재고객의 유입기반을 마련하였습니다.`,
+      overview: `인스플래닛은 더 쉽고 편안한, 더 새로운 금융을 비전으로 하는 신한투자증권 모바일 웹 개편 및 콘텐츠관리시스템(CMS) 연계 구축 프로젝트를 진행하였습니다.\n 신한투자증권에서 제공하는 정보를 디바이스와 해상도의 제약 없이 빠르게 제공받을 수 있게 되었으며, 금융상품, 투자가이드 등 유용한 투자정보를 다양한 채널로 공유하여 잠재고객의 유입기반을 마련하였습니다.`,
       launch: "Jan, 2024",
       client: "신한투자증권",
       device: "Mobile Web",
@@ -754,7 +754,7 @@ const worksSettingList = [
       coverMobile: "/works/castingn2/cover_m.jpg",
       title: "캐스팅엔 UI/UX<span class='br_pc'></span> 고도화 및 유지운영",
       subtitle: "온라인 소싱 중개 플랫폼",
-      overview: `소싱이 필요한 기업고객에게 검증된 전문 업체를 연결하여, 아웃소싱/외주 업무의 완성까지 책임지는 신개념의 B2B 온라인 소싱 중개 플랫폼인 CastingN의 연간 유지운영 및 고도화를 진행하였습니다.\n소규모 거래에서 중/대형 거래로의 확장된 사업의 규모를 표현하고, 안정적이며 신뢰를 주는 시각적인 메시지를 전달하는 디자인이 적용되었습니다,`,
+      overview: `소싱이 필요한 기업고객에게 검증된 전문 업체를 연결하여, 아웃소싱/외주 업무의 완성까지 책임지는 신개념의 B2B 온라인 소싱 중개 플랫폼인 CastingN의 연간 유지운영 및 고도화를 진행하였습니다.\n소규모 거래에서 중/대형 거래로의 확장된 사업의 규모를 표현하고, 안정적이며 신뢰를 주는 시각적인 메시지를 전달하는 디자인이 적용되었습니다.`,
       launch: "May, 2020",
       client: "캐스팅엔",
       device: "Responsive Web",
@@ -870,7 +870,7 @@ const worksSettingList = [
       coverMobile: "/works/baasidApp/cover_m.jpg",
       title: "BaaSid Security Application",
       subtitle: "블록체인 기반의 보안 인증 시스템",
-      overview: `BasSid는 블록체인 기술이 결합된 통합 보안 인증 시스템입니다.\n인스플래닛은 블록체인을 통한 데이터 분리 분산으로 유출 걱정없는 통합인증 시스템을 간편하게 이용할 수 있도록 쉽고 명확한 UI/UX에 집중하였습니다.\n마이크로 인터랙션으로 즉각적인 시각적 피드백을 제공함으로써 사용자에게 시스템과의 상호작용을 자연스럽게 인식시키고, 일관된 비주얼과 톤앤매너로 BaaSid의 브랜드 아이덴티티와 서비스 가치를 높일 수 있도록 디자인하였습니다.`,
+      overview: `BaaSid는 블록체인 기술이 결합된 통합 보안 인증 시스템입니다.\n인스플래닛은 블록체인을 통한 데이터 분리 분산으로 유출 걱정없는 통합인증 시스템을 간편하게 이용할 수 있도록 쉽고 명확한 UI/UX에 집중하였습니다.\n마이크로 인터랙션으로 즉각적인 시각적 피드백을 제공함으로써 사용자에게 시스템과의 상호작용을 자연스럽게 인식시키고, 일관된 비주얼과 톤앤매너로 BaaSid의 브랜드 아이덴티티와 서비스 가치를 높일 수 있도록 디자인하였습니다.`,
       launch: "Mar, 2019",
       client: "바스 홀딩스",
       device: "Mobile Application",

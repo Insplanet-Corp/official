@@ -31,7 +31,7 @@
         <div class="section-header">
           <p class="section-title">Visual Image</p>
           <p class="section-description">
-            AI 오로라 컨셉에 맍게 미래지향적이고 고차원 세계적인 비주얼을
+            AI 오로라 컨셉에 맞게 미래지향적이고 고차원 세계적인 비주얼을
             표현하였습니다.
           </p>
         </div>
