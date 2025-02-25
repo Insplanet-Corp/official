@@ -362,6 +362,7 @@ onUnmounted(() => {
 .works-controller {
   display: flex;
   align-items: center;
+  width: max-content;
   height: 48px;
   gap: 8px;
   padding: 0 12px;
