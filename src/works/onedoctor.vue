@@ -152,13 +152,11 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .section-images {
         display: flex;
         justify-content: center;
-        width: 100%;
         max-width: 480px;
         position: relative;
 
         img:nth-of-type(1) {
-          max-width: 360px;
-          text-align: center;
+          max-width: 384px;
         }
         img:nth-of-type(2) {
           max-width: 132px;
@@ -191,7 +189,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .section-texts {
         display: flex;
         flex-direction: column;
-        width: 420px;
+        max-width: 420px;
         gap: 24px;
 
         img {
@@ -201,7 +199,6 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .section-images {
         display: flex;
         justify-content: center;
-        width: 100%;
         max-width: 480px;
         position: relative;
 
@@ -241,11 +238,12 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .section-images {
         display: flex;
         justify-content: center;
-        align-items: center;
         min-width: 938px;
         height: 938px;
         position: relative;
         z-index: 1;
+
+        // 그림자 숨기고 다시 export 해야 함.
 
         img {
           width: auto;
@@ -255,7 +253,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         img:nth-of-type(1) {
           max-width: 360px;
           height: fit-content;
-          text-align: center;
+          margin-top: 103px;
         }
         img:nth-of-type(2) {
           position: absolute;
@@ -404,6 +402,31 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     .section-texts {
       padding-inline: 32px;
     }
+
+    .section01 {
+      .section-inner {
+        .section-images {
+          margin: 0 20px;
+        }
+      }
+    }
+
+    .section02 {
+      .section-inner {
+        .section-images {
+          margin: 0 20px;
+
+          img:nth-of-type(2) {
+            width: calc(100% + 10px);
+            max-width: calc(100% + 10px);
+            left: -7px;
+            right: -5px;
+            bottom: 12px;
+          }
+        }
+      }
+    }
+
     .section03 .section-inner {
       align-items: center;
       gap: 32px;
@@ -412,24 +435,40 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         min-width: auto;
       }
       .section-images {
-        min-width: 95%;
-        height: auto;
+        margin: 0 20px;
+
+        img {
+          // TODO 고정된 height가 아니라 각각 width를 줘야 함..???
+          height: 80px;
+        }
+
+        .section-circles {
+        }
+
+        img:nth-of-type(1) {
+          width: 100%;
+        }
+
         img:nth-of-type(2) {
-          top: 20%;
+          top: 40%;
           right: 5%;
         }
+
+        img:nth-of-type(2) {
+          top: 45%;
+          right: -4%;
+        }
         img:nth-of-type(3) {
-          max-width: 280px;
-          top: 40%;
-          left: 5%;
+          top: 50%;
+          left: -5%;
         }
         img:nth-of-type(4) {
-          bottom: 20%;
-          right: 2.5%;
+          bottom: 10%;
+          right: -5%;
         }
         img:nth-of-type(5) {
-          bottom: 10%;
-          left: 2.5%;
+          bottom: 5%;
+          left: -2%;
         }
       }
     }
