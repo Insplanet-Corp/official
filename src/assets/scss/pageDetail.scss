@@ -24,7 +24,7 @@
     width: 100%;
   }
   .works-content {
-    margin-top: 32px;
+    margin-top: 16px;
     border-radius: 16px;
     img,
     .works-section {
@@ -220,6 +220,20 @@
 }
 
 @media (min-width: 768px) {
+  .work-description-key {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .work-description-value {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .work-container .works-content {
+    margin-top: 32px;
+  }
+
   .works-section {
     margin-top: 32px;
     padding: 176px 24px;
@@ -291,6 +305,7 @@
     .sub-wrap {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: row;
       margin-top: 104px;
       .sub-box {
         flex-direction: column;
@@ -350,14 +365,6 @@
       .work-subtitle {
         margin-top: 32px;
         font-size: 24px;
-      }
-      .work-description-key {
-        font-size: 14px;
-        line-height: 18px;
-      }
-      .work-description-value {
-        font-size: 14px;
-        line-height: 18px;
       }
     }
   }
