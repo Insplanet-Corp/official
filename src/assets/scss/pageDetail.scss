@@ -156,18 +156,35 @@
     }
   }
 }
+
+.works-box {
+  > .work-description-value {
+    margin-top: 8px;
+  }
+}
 .sub-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   margin-top: 24px;
   .sub-box {
     display: flex;
     gap: 16px;
-    .work-description-key {
-      width: 50px;
-    }
+  }
+  .work-description-key {
+    width: 50px;
+  }
+  .work-description-value {
+    font-size: 14px;
+    line-height: 18px;
   }
   & div:nth-last-of-type(1) {
+    em,
     span {
       display: block;
+    }
+    .work-description-value {
+      margin-top: 8px;
     }
   }
 }
@@ -190,15 +207,15 @@
 }
 
 .work-description-key {
-  /* font-size: 18px;
-  line-height: 24px; */
+  font-size: 14px;
+  line-height: 18px;
   font-weight: 700;
   font-style: normal;
 }
 
 .work-description-value {
-  /* font-size: 18px;
-  line-height: 26px; */
+  font-size: 14px;
+  line-height: 18px;
   white-space: pre-line;
 }
 
