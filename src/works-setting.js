@@ -73,6 +73,29 @@
 // },
 
 const worksSettingList = [
+  {
+    name: "onNuri",
+    link: "/work/onNuri",
+    image: "card_onnuri.png",
+    projectNameColor: "dark",
+    projectClient: "onNuri 클라이언트",
+    projectType: "프로젝트 타입",
+    gradient: "#FC5603",
+    use: true,
+    detail: {
+      coverPc: "/works/onNuri/cover.jpg",
+      coverMobile: "/works/onNuri/cover_m.jpg",
+      title: "온누리\n디지털상품권",
+      subtitle: "-",
+      overview:
+        "안정적인 지급결제 서비스를 전국적으로 유연하게 대응할 수 있도록 확장성을 고려한 차세대 지급결제플랫폼을 구축하여 온누리 디지털상품권 서비스를 런칭하였습니다.",
+      launch: "Mar, 2025",
+      client: "조폐공사",
+      device: "Website, Application",
+      uiux: "Benchmarking, User Analysis, Concept Building, Menu Architecture, Service Planning, Prototyping, UI Design, Visual Design, Publishing, Test Case, Test Scenario, React, Figma, Mui",
+      viewplatform: "#none",
+    },
+  },
   // {
   //   name: "kr",
   //   link: "/work/kr",
