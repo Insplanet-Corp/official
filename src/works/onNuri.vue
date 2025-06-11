@@ -857,8 +857,10 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
           margin-bottom: 62px;
           li {
             transition: trnsform ease-out 0.3s;
-            &:nth-child(5) {
-              margin-left: 38px;
+            @include for-size-min("extra-small") {
+              &:nth-child(5) {
+                margin-left: 38px;
+              }
             }
           }
         }
