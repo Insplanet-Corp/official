@@ -1160,7 +1160,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         margin-top: 0;
         padding: 0;
         height: auto;
-        transform: translateY(-70px);
+        transform: translateY(-20px);
         &::before,
         &::after {
           display: none;
@@ -1174,7 +1174,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .img-glass {
         transform: translateX(calc(50% - 225px)) translateY(0);
         @include for-size-max("extra-small") {
-          transform: translateY(0);
+          transform: translateY(-70px);
         }
       }
     }
