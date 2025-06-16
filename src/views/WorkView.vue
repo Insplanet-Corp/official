@@ -11,7 +11,7 @@
         <li v-for="(work, index) in workListPerCount">
           <div class="projectName">{{ work.detail.title.replace(/<span[^>]*>.*?<\/span>/g, '') }}</div>
           <div class="projectClient">{{ work.detail.client }}</div>
-          <div class="projectType">{{ work.projectType }}</div>
+          <div class="projectType">{{ work.detail.device }}</div>
           <div class="projectYear">{{ work.detail.launch.slice(-4) }}</div>
           <div class="projectLink">
             <RouterLink

@@ -79,14 +79,14 @@ const worksSettingList = [
     image: "card_onnuri.png",
     projectNameColor: "dark",
     projectClient: "onNuri 클라이언트",
-    projectType: "프로젝트 타입",
+    projectType: "온누리 디지털상품권",
     gradient: "#FC5603",
     use: true,
     detail: {
       coverPc: "/works/onNuri/cover.jpg",
       coverMobile: "/works/onNuri/cover_m.jpg",
       title: "온누리\n디지털상품권",
-      subtitle: "-",
+      subtitle: "언제 어디서나 편리하게\n혜택을 받으세요",
       overview:
         "안정적인 지급결제 서비스를 전국적으로 유연하게 대응할 수 있도록 확장성을 고려한 차세대 지급결제플랫폼을 구축하여 온누리 디지털상품권 서비스를 런칭하였습니다.",
       launch: "Mar, 2025",

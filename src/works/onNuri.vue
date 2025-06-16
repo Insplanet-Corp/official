@@ -89,23 +89,9 @@
     <section class="works-content section03">
       <div class="content-card type01">
         <ul class="color-list">
-          <li>
-            <img src="/works/onNuri/icon_color01.png" alt="" srcset="" />Primary
-          </li>
-          <li>
-            <img
-              src="/works/onNuri/icon_color02.png"
-              alt=""
-              srcset=""
-            />Secondary
-          </li>
-          <li>
-            <img
-              src="/works/onNuri/icon_color03.png"
-              alt=""
-              srcset=""
-            />Tertiary
-          </li>
+          <li><i class="icon primary" />Primary</li>
+          <li><i class="icon secondary" />Secondary</li>
+          <li><i class="icon tertiary" />Tertiary</li>
         </ul>
         <div class="color-content">
           <p class="tit">부드러운 컬러</p>
@@ -143,8 +129,8 @@
           <li><img src="/works/onNuri/icon_easy01.png" alt="" /></li>
           <li><img src="/works/onNuri/icon_easy02.png" alt="" /></li>
           <li><img src="/works/onNuri/icon_easy03.png" alt="" /></li>
-          <li><img src="/works/onNuri/icon_easy04.png" alt="" /></li>
           <li><img src="/works/onNuri/icon_easy05.png" alt="" /></li>
+          <li><img src="/works/onNuri/icon_easy04.png" alt="" /></li>
         </ul>
         <p class="tit">쉽고 명확한 UI</p>
         <p class="desc">
@@ -156,8 +142,10 @@
     <section class="works-content section04">
       <p class="tit">글래스모피즘</p>
       <p class="desc">
-        시각적인 깊이와 입체감을 표현하는 디자인 접근 방식으로 <br />사용자가
-        인터페이스의 우선순위와 깊이감을 쉽게 이해할 수 있도록 합니다.
+        시각적인 깊이와 입체감을 표현하는 디자인 접근
+        <br class="only-mobile" />방식으로 <br class="only-pc" />사용자가
+        인터페이스의 우선순위와 <br class="only-mobile" />깊이감을 쉽게 이해할
+        수 있도록 합니다.
       </p>
       <figure class="img-glass">
         <img src="/works/onNuri/img_glass.png" alt="" class="only-pc" />
@@ -178,18 +166,44 @@
         사용합니다.
       </p>
       <div class="card-wrapper">
-        <img src="/works/onNuri/img_elderly01.png" alt="" class="only-pc" />
-        <img src="/works/onNuri/img_elderly02.png" alt="" class="only-pc" />
-        <img
-          src="/works/onNuri/img_elderly01_m.png"
-          alt=""
-          class="only-mobile"
-        />
-        <img
-          src="/works/onNuri/img_elderly02_m.png"
-          alt=""
-          class="only-mobile"
-        />
+        <div class="card-content">
+          <p class="tit-card">작은글씨</p>
+          <p class="info-card">이번 달 최대 충전 가능한 금액은</p>
+          <p class="amount-card">
+            <strong>500,000 <span>원</span></strong
+            >입니다.
+          </p>
+          <img
+            src="/works/onNuri/img_elderly01.png"
+            alt=""
+            :srcset="
+              [
+                '/works/onNuri/img_elderly01_m.png 1024w',
+                '/works/onNuri/img_elderly01_t.png 1279w',
+                '/works/onNuri/img_elderly01.png   1280w',
+              ].join(', ')
+            "
+          />
+        </div>
+        <div class="card-content big">
+          <p class="tit-card">큰글씨</p>
+          <p class="info-card">이번 달 최대 충전 가능한 금액은</p>
+          <p class="amount-card">
+            <strong>500,000 <span>원</span></strong>
+            입니다.
+          </p>
+          <img
+            alt=""
+            :srcset="
+              [
+                '/works/onNuri/img_elderly02_m.png 1024w',
+                '/works/onNuri/img_elderly02_t.png 1279w',
+                '/works/onNuri/img_elderly02.png   1280w',
+              ].join(', ')
+            "
+            src="/works/onNuri/img_elderly02.png"
+          />
+        </div>
       </div>
     </section>
     <section class="works-content section06">
@@ -212,6 +226,13 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
 </script>
 <style lang="scss">
 @import "/src/assets/scss/response.scss";
+@font-face {
+  font-family: "MICEGothic";
+  src: url("https://cdn.jsdelivr.net/gh/fontbee/font@main/Micecontents/MICEGothic.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
 .onnuri {
   --primary: #e54e03;
   --delayTime: 0.5s;
@@ -272,7 +293,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     flex-direction: column;
     align-items: center;
     padding: 160px 0;
-    background-color: var(--primary);
+    background-color: #fc5603;
 
     .balloon {
       position: relative;
@@ -414,8 +435,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       flex-direction: column;
       gap: 20px;
       color: #ffffff;
-      width: 1300px;
-      margin-top: 160px;
+      max-width: 1300px;
       margin-inline: auto;
       .tit {
         @include title01;
@@ -429,8 +449,9 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       flex-direction: column;
       align-items: flex-end;
       margin-top: 120px;
-      width: 1300px;
       margin-inline: auto;
+      padding-inline: 118px;
+      max-width: 1536px;
       .keyword-box {
         position: relative;
         &.type01 {
@@ -474,7 +495,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             background-color: #fff;
             border-radius: 16px;
             top: -250px;
-            right: 198px;
+            right: 80px;
             color: #000;
             transform-origin: center bottom;
             transform: rotate(-120deg);
@@ -554,7 +575,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             bottom: -114px;
             width: 400px;
             border-radius: 16px;
-            background-color: var(--primary);
+            background-color: #fc5603;
             padding: 24px;
             font-size: 16px;
             font-weight: 500;
@@ -592,7 +613,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             font-size: 16px;
             font-weight: 600;
             color: #000;
-            background-color: var(--primary);
+            background-color: #fc5603;
             transform: translateX(200%);
             opacity: 0;
             transition: all ease-out 0.8s;
@@ -621,6 +642,20 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         font-size: 96px;
         font-weight: 700;
         line-height: 1;
+        @include for-size-max("xlarge") {
+          font-size: 80px;
+        }
+      }
+      @include for-size-max("xlarge") {
+        width: 100%;
+        padding-inline: 54px;
+        .keyword {
+          &-box {
+            &.type01 {
+              // align-self: center;
+            }
+          }
+        }
       }
     }
     @include for-size-max("extra-small") {
@@ -635,17 +670,17 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .content {
         width: 100%;
         margin-top: 85px;
-        align-items: flex-start;
+        align-items: center;
+        padding-inline: 0px;
         .keyword {
           font-size: 32px;
           line-height: 30px;
           &-box {
-            width: 100%;
+            width: 73.333vw;
             &.type01 {
               flex-direction: column;
               align-items: flex-start;
               gap: 24px;
-              padding-inline: 32px;
               .desc {
                 padding: 4px;
                 padding-left: 8px;
@@ -658,8 +693,9 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
                 width: 100px;
                 height: 100px;
                 top: -85px;
-                right: 48px;
+                right: 0;
                 gap: 5px;
+                border-radius: 8px;
                 &:after {
                   width: 10px;
                   height: 8px;
@@ -672,14 +708,15 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             }
             &.type02 {
               padding-block: 12px;
-              padding-inline: 32px;
+              // padding-inline: 32px;
+              align-self: unset;
+              gap: 10px;
               flex-direction: row-reverse;
-              border-width: 1px 0;
-              border-style: solid;
-              border-color: #4d4d4d;
-              &::before,
+              &::before {
+                top: 0;
+              }
               &::after {
-                display: none;
+                bottom: 0;
               }
               .balloon {
                 position: static;
@@ -687,6 +724,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
                 width: 108px;
                 border-radius: 6px;
                 font-size: 8px;
+                flex: 1;
                 strong {
                   font-size: 10px;
                 }
@@ -694,7 +732,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
               .desc {
                 position: absolute;
                 top: -54px;
-                right: 32px;
+                right: 0;
                 padding: 6px;
                 width: 60px;
                 height: 60px;
@@ -706,12 +744,14 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
               }
             }
             &.type03 {
-              padding: 12px 32px;
+              padding-block: 12px;
               height: unset;
               box-sizing: border-box;
               .desc {
+                padding: 4px;
+                padding-right: 8px;
                 top: unset;
-                right: 32px;
+                right: 0;
                 bottom: -24px;
                 font-size: 10px;
                 img {
@@ -775,13 +815,14 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .tit {
         @include title02;
       }
-      .dexc {
+      .desc {
         @include body02;
       }
       &.type01 {
         display: flex;
         align-items: center;
         justify-content: center;
+        align-items: flex-end;
         flex-direction: column;
         color: #000;
         grid-area: wideTop;
@@ -793,6 +834,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
           display: flex;
           flex-direction: column;
           gap: 24px;
+          margin-right: 300px;
         }
         .color-list {
           position: absolute;
@@ -819,13 +861,60 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             font-size: 36px;
             font-weight: 600;
             line-height: 64px;
-            transform: translateX(-50px);
+            transform: translateX(-30px);
             transition: transform ease-out 0.3s;
+            .icon {
+              width: 40px;
+              height: 40px;
+              background-repeat: no-repeat;
+              background-size: contain;
+              background-position: center center;
+              &.primary {
+                background-image: url("/works/onNuri/icon_color01.png");
+              }
+              &.secondary {
+                background-image: url("/works/onNuri/icon_color02.png");
+              }
+              &.tertiary {
+                background-image: url("/works/onNuri/icon_color03.png");
+              }
+            }
             &:nth-child(2) {
               margin-block: -10px;
-              transform: translateX(-90px);
+              transform: translateX(-70px);
               z-index: 2;
             }
+          }
+        }
+        @include for-size-max("large") {
+          .color-list {
+            li {
+              padding-block: 33px;
+              font-size: 28px;
+              transform: translateX(-90px);
+              .icon {
+                width: 36px;
+                height: 36px;
+              }
+              &:nth-child(2) {
+                transform: translateX(-120px);
+              }
+            }
+          }
+          align-items: flex-end;
+          // .color-content {
+          //   margin-right: 32px;
+          // }
+        }
+
+        @media (min-width: 1025px) and (max-width: 1599px) {
+          .color-content {
+            margin-right: 164px;
+          }
+        }
+        @media (max-width: 1024px) {
+          .color-content {
+            margin-right: 32px;
           }
         }
         &:hover {
@@ -833,6 +922,18 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             transform: translateX(-20px);
             &:nth-child(2) {
               transform: translateX(-40px);
+            }
+            @include for-size-max("large") {
+              transform: translateX(-70px);
+              &:nth-child(2) {
+                transform: translateX(-90px);
+              }
+            }
+            @include for-size-max("extra-small") {
+              transform: translateX(-20px);
+              &:nth-child(2) {
+                transform: translateX(-40px);
+              }
             }
           }
         }
@@ -865,6 +966,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
           }
         }
         .desc {
+          margin-top: 24px;
           text-align: center;
         }
         &:hover {
@@ -875,6 +977,43 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             }
           }
         }
+        @include for-size-max("large") {
+          padding-inline: 0;
+          align-items: flex-start;
+          img {
+            width: 52px;
+          }
+          .visual-list {
+            width: 342px;
+            gap: 32px;
+            transform: translateX(-20px);
+          }
+          .tit,
+          .desc {
+            word-break: keep-all;
+            text-align: left;
+            margin-inline: 24px;
+          }
+          .only-pc {
+            display: none;
+          }
+        }
+        // @include for-size-max("small") {
+        //   padding-inline: 0;
+        //   .visual-list {
+        //     width: 342px;
+        //     gap: 32px;
+        //     transform: translateX(-20px);
+        //   }
+        //   .tit,
+        //   .desc {
+        //     word-break: keep-all;
+        //     margin-inline: 24px;
+        //   }
+        //   .only-pc {
+        //     display: none;
+        //   }
+        // }
       }
       &.type03 {
         grid-area: narrowBtm;
@@ -891,11 +1030,17 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
           margin-top: 68px;
         }
         .desc {
+          margin-top: 24px;
           text-align: center;
         }
         &:hover {
           img {
             transform: translateY(-30px) !important;
+          }
+        }
+        @include for-size-max("large") {
+          img {
+            width: 280px;
           }
         }
       }
@@ -983,6 +1128,20 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             }
           }
         }
+        @include for-size-max("large") {
+          .easy-list {
+            margin-left: 32px;
+            gap: 20px;
+            li {
+              &:first-of-type {
+                margin-right: 16px;
+                &:after {
+                  transform: scale(10) translateX(6.8px);
+                }
+              }
+            }
+          }
+        }
       }
     }
     @include for-size-max("extra-small") {
@@ -1009,9 +1168,10 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
                 font-size: 20px;
                 line-height: 37px;
                 border-radius: 18px;
-                img {
-                  width: 23px;
-                  height: 23px;
+                gap: 10px;
+                .icon {
+                  width: 24px;
+                  height: 24px;
                 }
 
                 transform: translateX(-20px);
@@ -1039,6 +1199,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             column-gap: 24px;
             row-gap: 20px;
             justify-content: flex-end;
+            transform: unset;
             li:nth-child(4) {
               margin-right: auto;
             }
@@ -1051,13 +1212,18 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
             margin-top: 32px;
             text-align: left;
           }
+          .tit,
+          .desc {
+            margin-inline: 0;
+          }
         }
         &.type03 {
           padding: 56px 32px 0;
           align-items: flex-start;
           height: 358px;
           .tit {
-            margin: 0 0 32px;
+            margin: 0 0 0;
+            text-align: center;
           }
           img {
             margin: 64px auto 0;
@@ -1114,15 +1280,17 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     }
     .img-glass {
       position: relative;
-      margin-top: 280px;
+      margin-top: 120px;
       padding: 69px 25px 29px;
       height: 1192px;
       z-index: 1;
+      opacity: 0;
       transform: translateX(calc(50% - 225px)) translateY(100px);
-      transition: transform ease-out 0.8s;
+      transition: all ease-out 0.8s;
       transition-delay: var(--delayTime);
       img {
         width: 1136px;
+        max-width: unset;
       }
       &:before {
         content: "";
@@ -1150,7 +1318,7 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
     @include for-size-max("extra-small") {
       height: 204dvw;
       padding-top: 56px;
-      background-image: none;
+      background-image: url("/works/onNuri/bg_glass_back_m.png");
       .tit,
       .desc {
         text-align: left;
@@ -1160,24 +1328,40 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
         margin-top: 32px;
       }
       .img-glass {
-        margin-top: 0;
+        position: relative;
         padding: 0;
-        height: auto;
-        transform: translateY(-20px);
-        &::before,
-        &::after {
-          display: none;
+        width: 51.6667vw;
+        height: 105.555vw;
+        margin: 0 auto;
+        margin-top: 64px;
+        transform: unset;
+        top: 100px;
+        &::before {
+          width: 51.6667vw;
+          height: 105.555vw;
+          border-radius: 24px;
+        }
+        &:after {
+          width: 51.6667vw;
+          background-image: url("/works/onNuri/bg_glass_frame_m.png");
+          background-size: contain;
         }
         img {
-          width: 100%;
+          position: absolute;
+          top: 5.555vw;
+          left: 2.777vw;
+          width: 68.8888vw;
+          max-width: unset;
         }
       }
     }
     &.show {
       .img-glass {
+        opacity: 1;
         transform: translateX(calc(50% - 225px)) translateY(0);
         @include for-size-max("extra-small") {
-          transform: translateY(-70px);
+          transform: unset;
+          top: 0;
         }
       }
     }
@@ -1192,19 +1376,167 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       @include title01;
     }
     .desc {
+      margin-top: 20px;
       @include body01;
     }
-    .card-wrapper {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-      margin-top: 67px;
-      img {
-        max-width: unset;
+    .card {
+      &-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 20px;
+        margin-top: 80px;
         transition: all ease-out 0.8s;
         transform: translateY(100px) !important;
         transition-delay: var(--delayTime);
         opacity: 0;
+        img {
+          max-width: unset;
+        }
+      }
+      &-content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        height: 540px;
+        padding-inline: 56px;
+        border-radius: 16px;
+        background-color: #f6f6f6;
+        .tit-card {
+          position: absolute;
+          padding: 10px 18px;
+          left: 4px;
+          top: -13px;
+          font-size: 27px;
+          line-height: 1.3;
+          background-color: #fff;
+          border-radius: 9999px;
+          color: #e54e03;
+          border: 2px solid #e54e03;
+        }
+        .info-card {
+          margin-top: 158px;
+          font-size: 16px;
+          line-height: 1.5;
+          color: #1a1a1b;
+          font-family: "MICEGothic";
+        }
+        .amount-card {
+          display: flex;
+          align-items: baseline;
+          gap: 4px;
+          flex-wrap: wrap;
+          font-size: 20px;
+          line-height: 140%;
+          font-weight: 700;
+          color: #1a1a1b;
+          margin: 4px 0 40px;
+          strong {
+            display: inline-flex;
+            align-items: baseline;
+            position: relative;
+            font-size: 24px;
+            font-weight: 700;
+            z-index: 1;
+            &::after {
+              content: "";
+              position: absolute;
+              width: 100%;
+              height: 8px;
+              display: block;
+              left: 0;
+              right: 0;
+              bottom: 5px;
+              background: #febb9a;
+              z-index: -1;
+            }
+            span {
+              font-size: 20px;
+              line-height: 140%;
+              font-weight: 700;
+            }
+          }
+        }
+        &.big {
+          .info-card {
+            margin-top: 96px;
+            font-size: 32px;
+            letter-spacing: -0.05em;
+          }
+          .amount-card {
+            margin-bottom: 48px;
+            font-size: 40px;
+            strong {
+              font-size: 48px;
+              span {
+                font-size: 40px;
+              }
+              &::after {
+                height: 16px;
+                bottom: 10px;
+              }
+            }
+          }
+        }
+        img {
+          max-width: 476px !important;
+          border: 1px solid #fc5603;
+          box-shadow: 0 4px 8px #00000006;
+        }
+      }
+    }
+    @include for-size-max("xlarge") {
+      .card {
+        &-content {
+          .tit-card {
+            padding: 9px 18px;
+            font-size: 20px;
+            border-width: 1px;
+            left: 24px;
+            top: -16px;
+          }
+          .info-card {
+            font-size: 16px;
+          }
+          &.big {
+            .info-card {
+              font-size: 24px;
+            }
+            .amount-card {
+              font-size: 36px;
+              strong {
+                font-size: 44px;
+                span {
+                  font-size: 36px;
+                }
+                &::after {
+                  height: 16px;
+                  bottom: 10px;
+                }
+              }
+            }
+          }
+          img {
+            border-radius: 12px;
+          }
+        }
+      }
+    }
+    @include for-size-max("large") {
+      padding-inline: 60px;
+      .card {
+        &-content {
+          padding-inline: 28px;
+          padding-bottom: 80px;
+          height: auto;
+          .info-card {
+            margin-top: 80px;
+          }
+          &.big .info-card {
+            margin-top: 80px;
+            font-size: 22px;
+          }
+        }
       }
     }
     @include for-size-max("extra-small") {
@@ -1213,18 +1545,75 @@ import WorkContentCommon from "@/views/WorkContentCommon.vue";
       .desc {
         margin-top: 32px;
       }
-      .card-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 50px;
+      .card {
+        &-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          margin-top: 50px;
+        }
+        &-content {
+          padding-inline: 16px;
+          padding-block: 32px;
+          height: unset;
+          .tit-card {
+            left: 16px;
+            top: -13px;
+            padding: 4px 8px;
+            font-size: 14px;
+            font-weight: 600;
+            border-width: 1px;
+          }
+          .info-card {
+            font-size: 12px;
+            margin-top: unset !important;
+          }
+          .amount-card {
+            margin-bottom: 16px;
+            font-size: 14px;
+            strong {
+              font-size: 17px;
+              &::after {
+                height: 6px;
+              }
+              span {
+                font-size: 14px;
+              }
+            }
+          }
+          &.big {
+            .info-card {
+              font-size: 24px;
+            }
+            .amount-card {
+              margin-bottom: 24px;
+              font-size: 27px;
+              strong {
+                font-size: 27px;
+                &::after {
+                  height: 12px;
+                }
+                span {
+                  font-size: 24px;
+                }
+              }
+            }
+          }
+          img {
+            border-radius: 8px;
+          }
+        }
       }
     }
     &.show {
-      .card-wrapper {
-        img {
+      .card {
+        &-wrapper {
+          gap: 24px;
           opacity: 1;
           transform: translateY(0) !important;
+          img {
+            max-width: unset;
+          }
         }
       }
     }
