@@ -811,28 +811,29 @@ const worksSettingList = [
     },
   },
 
-  {
-    name: "nb",
-    link: "/work/nb",
-    image: "card_nb.jpg",
-    projectNameColor: "light",
-    projectType: "공공기관, 업무시스템, APP, 유지운영",
-    gradient:
-      "linear-gradient(133deg, rgba(68,160,73,1) 0%, rgba(46,70,161,1) 100%)",
-    use: true,
-    detail: {
-      coverPc: "/works/nb/cover.jpg",
-      coverMobile: "/works/nb/cover_m.jpg",
-      title: "남부솔루션<span class='br_pc'></span> 오피셜 사이트 구축",
-      subtitle: "남부솔루션의 기술 역량",
-      overview: `인스플래닛은 워드프레스를 활용하여 남부솔루션의 오피셜 사이트를 구축하였습니다.\n남부솔루션의 핵심사업인 열차제어장치 ‘IRU’의 개발성과를 중심으로 기업연구소의 기술력을 표현할 수 있는 이미지와 심플한 UI/UX로 남부솔루션의 아이덴티티를 구축하였습니다.`,
-      launch: "Aug, 2019",
-      client: "남부솔루션",
-      device: "Responsive Web",
-      uiux: "Benchmarking, Concept Building, Prototyping, Wireframing, UI Design, Visual Design, Wordpress",
-      viewplatform: "#none",
-    },
-  },
+  // 2025-07-09 삭제
+  // {
+  //   name: "nb",
+  //   link: "/work/nb",
+  //   image: "card_nb.jpg",
+  //   projectNameColor: "light",
+  //   projectType: "공공기관, 업무시스템, APP, 유지운영",
+  //   gradient:
+  //     "linear-gradient(133deg, rgba(68,160,73,1) 0%, rgba(46,70,161,1) 100%)",
+  //   use: true,
+  //   detail: {
+  //     coverPc: "/works/nb/cover.jpg",
+  //     coverMobile: "/works/nb/cover_m.jpg",
+  //     title: "남부솔루션<span class='br_pc'></span> 오피셜 사이트 구축",
+  //     subtitle: "남부솔루션의 기술 역량",
+  //     overview: `인스플래닛은 워드프레스를 활용하여 남부솔루션의 오피셜 사이트를 구축하였습니다.\n남부솔루션의 핵심사업인 열차제어장치 ‘IRU’의 개발성과를 중심으로 기업연구소의 기술력을 표현할 수 있는 이미지와 심플한 UI/UX로 남부솔루션의 아이덴티티를 구축하였습니다.`,
+  //     launch: "Aug, 2019",
+  //     client: "남부솔루션",
+  //     device: "Responsive Web",
+  //     uiux: "Benchmarking, Concept Building, Prototyping, Wireframing, UI Design, Visual Design, Wordpress",
+  //     viewplatform: "#none",
+  //   },
+  // },
 
   {
     name: "flatApp",
