@@ -561,7 +561,7 @@ const worksSettingList = [
         "지구를 구하는 더하기가 아닌 빼기<span class='br_pc'></span> 1회용 컵 보증금 제도",
       overview: `1회용컵 보증금 제도 시행에 따라 보증금 부과, 반환 및 회수, 재활용 등 전 과정을 점검할 수 있는 관리체계의 구축과 전 시스템의 UIUX를 진행하였습니다.\n센터와 사업자를 위한 관리시스템(WEB)과 판매 사업자, 회수재활용사업자용 어플리케이션, 소비자용 어플리케이션 까지 총 4개의 플랫폼을 아우르는 시스템을 기반으로 서비스를 효율적으로 관리하고, 소비자가 서비스를 잘 사용할 수 있도록 UIUX에 집중하였습니다.`,
       launch: "Dec, 2022",
-      client: "신한금융그룹",
+      client: "자원순환보증금센터",
       device: "Website, Application",
       uiux: "User Analysis, Concept Building, Menu Architecture, Prototyping, UI Design, Visual Design, Publishing, Test Case, Test Scenario, CMS",
       viewplatform: "#none",
