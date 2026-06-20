@@ -31,7 +31,7 @@
           누구나 공감할 수 있는 가치를 만듭니다.
         </div>
         <a
-          href="/brochure/insplanet_brief.pdf"
+          :href="brochureUrl"
           class="btn-download"
           target="_blank"
         >
@@ -58,9 +58,11 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { useOfficialStore } from "@/stores/official";
+import { resolveBrochureUrl, FALLBACK_BROCHURE_URL } from "@/lib/brochure";
 
 const officialStore = useOfficialStore();
 const dialogVisible = ref(false);
+const brochureUrl = ref(FALLBACK_BROCHURE_URL);
 
 const showHeader = ref(true);
 let lastScrollPosition = 0;
@@ -91,8 +93,9 @@ const clickDialogVisible = (value) => {
   officialStore.updateAboutShow(value);
 };
 
-onMounted(() => {
+onMounted(async () => {
   window.addEventListener("scroll", handleScroll);
+  brochureUrl.value = await resolveBrochureUrl();
 });
 
 onBeforeUnmount(() => {

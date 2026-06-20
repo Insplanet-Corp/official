@@ -28,12 +28,24 @@ Supabase 대시보드 **SQL Editor** 에 [`supabase/contacts.sql`](supabase/cont
 - 공개(anon): 문의 **등록(insert)** 만 가능
 - 로그인 사용자: **조회/수정/삭제** 가능
 
-## 4. 어드민 계정 만들기
+## 4. Storage 버킷 생성 (브로셔 교체용)
+
+[`supabase/storage.sql`](supabase/storage.sql) 내용을 SQL Editor 에서 실행합니다.
+공개 `assets` 버킷과 정책이 생성됩니다.
+
+- 공개(anon): 다운로드/조회만 가능
+- 로그인 사용자(어드민): 업로드/교체/삭제 가능
+
+> 어드민의 **브로셔 교체** 페이지에서 PDF를 올리면 `assets/brochure/insplanet_brief.pdf`
+> 로 저장되고, 사이트의 "회사 브로슈어 다운로드" 버튼이 자동으로 이 파일을 받습니다.
+> Storage 에 파일이 없으면 번들된 기본 PDF(`public/brochure/insplanet_brief.pdf`)로 폴백합니다.
+
+## 5. 어드민 계정 만들기
 
 Supabase 대시보드 **Authentication > Users > Add user** 에서
 이메일/비밀번호로 계정을 생성합니다. (**Auto Confirm User** 체크 → 이메일 인증 없이 바로 로그인)
 
-## 5. 실행
+## 6. 실행
 
 ```
 npm install
@@ -42,6 +54,7 @@ npm run dev
 
 - 로그인: `http://localhost:5173/admin/login`
 - 문의 목록: `http://localhost:5173/admin`
+- 브로셔 교체: `http://localhost:5173/admin/brochure`
 
 ## 공개 문의 폼
 

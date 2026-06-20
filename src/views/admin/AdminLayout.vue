@@ -17,6 +17,7 @@ const handleLogout = async () => {
       <h1 class="admin-logo">INSPLANET Admin</h1>
       <nav class="admin-nav">
         <router-link :to="{ name: 'adminContacts' }">문의 내역</router-link>
+        <router-link :to="{ name: 'adminBrochure' }">브로셔 교체</router-link>
       </nav>
       <div class="admin-account">
         <span class="admin-email">{{ adminStore.session?.user?.email }}</span>
@@ -59,7 +60,7 @@ const handleLogout = async () => {
   text-decoration: none;
   font-size: 14px;
 }
-.admin-nav a.router-link-active {
+.admin-nav a.router-link-exact-active {
   color: #2454ff;
   font-weight: 600;
 }

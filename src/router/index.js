@@ -46,6 +46,11 @@ const router = createRouter({
           name: "adminContacts",
           component: () => import("../views/admin/AdminContacts.vue"),
         },
+        {
+          path: "brochure",
+          name: "adminBrochure",
+          component: () => import("../views/admin/AdminBrochure.vue"),
+        },
       ],
     },
     {

@@ -46,7 +46,7 @@
         </div>
         <div>
           <b>회사 브로슈어 다운로드</b>
-          <a href="/brochure/insplanet_brief.pdf" target="_blank">Download</a>
+          <a :href="brochureUrl" target="_blank">Download</a>
         </div>
       </div>
     </section>
@@ -129,6 +129,7 @@ import { useRoute } from "vue-router";
 import MobileDetect from "mobile-detect";
 import worksSetting from "@/works-setting";
 import route from "@/router";
+import { resolveBrochureUrl, FALLBACK_BROCHURE_URL } from "@/lib/brochure";
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();
@@ -141,6 +142,7 @@ const useWorkSettingList = worksSettingList.filter(
 );
 const router = useRoute();
 const loaded = ref(false);
+const brochureUrl = ref(FALLBACK_BROCHURE_URL);
 const workId = ref(router.params.workId);
 let newWorkData = useWorkSettingList.find(
   (e) => e.link === `/work/${workId.value}`
@@ -344,12 +346,13 @@ onBeforeUnmount(() => {
 //   console.log(`isElementInView? ${isElementInView.value}`);
 // });
 
-onMounted(() => {
+onMounted(async () => {
   setTimeout(() => {
     loaded.value = true;
   }, 300);
 
   window.addEventListener("scroll", handleScroll);
+  brochureUrl.value = await resolveBrochureUrl();
 });
 onUnmounted(() => {
   loaded.value = false;
