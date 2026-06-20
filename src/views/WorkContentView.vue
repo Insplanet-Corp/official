@@ -42,7 +42,7 @@
       <div class="work-together-more">
         <div>
           <b>프로젝트 문의</b>
-          <a href="mailto:hello@insplanet.co.kr">Let's Talk</a>
+          <router-link to="/contact">Let's Talk</router-link>
         </div>
         <div>
           <b>회사 브로슈어 다운로드</b>
