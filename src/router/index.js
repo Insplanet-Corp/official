@@ -3,6 +3,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import { useOfficialStore } from "@/stores/official.js";
 import { useAdminStore } from "@/stores/admin.js";
+import { trackPageview } from "@/lib/analytics.js";
 
 // const officialStore = useOfficialStore();
 const { worksSettingList } = worksSetting;
@@ -50,6 +51,11 @@ const router = createRouter({
           path: "brochure",
           name: "adminBrochure",
           component: () => import("../views/admin/AdminBrochure.vue"),
+        },
+        {
+          path: "analytics",
+          name: "adminAnalytics",
+          component: () => import("../views/admin/AdminAnalytics.vue"),
         },
       ],
     },
@@ -121,6 +127,9 @@ router.beforeEach((to, from, next) => {
 
 router.afterEach((to, from) => {
   if (to.path.startsWith("/admin")) return;
+
+  // 방문자 분석 기록 (내부자 제외는 trackPageview 내부에서 처리)
+  trackPageview(to.path);
 
   const { params } = to;
   officialStore = officialStore || useOfficialStore();

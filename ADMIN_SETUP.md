@@ -40,6 +40,50 @@ Supabase 대시보드 **SQL Editor** 에 [`supabase/contacts.sql`](supabase/cont
 > 로 저장되고, 사이트의 "회사 브로슈어 다운로드" 버튼이 자동으로 이 파일을 받습니다.
 > Storage 에 파일이 없으면 번들된 기본 PDF(`public/brochure/insplanet_brief.pdf`)로 폴백합니다.
 
+## 4-1. 방문자 분석 (선택)
+
+페이지뷰/순방문자/일별 추이/인기 페이지/유입경로를 어드민(`/admin/analytics`)에서
+봅니다. **IP 등 개인정보는 저장하지 않습니다**(익명 식별자만).
+
+### (1) 테이블 생성
+
+SQL Editor 에서 실행:
+- [`supabase/pageviews.sql`](supabase/pageviews.sql) — 페이지뷰 테이블
+- [`supabase/downloads.sql`](supabase/downloads.sql) — 다운로드(브로슈어) 기록 테이블
+- [`supabase/internal_ips.sql`](supabase/internal_ips.sql) — 내부(사무실) IP 목록
+
+기록(insert)은 아래 Edge Function 이 service_role 로 수행하므로, 테이블에는
+어드민 조회/관리 정책만 둡니다(직접 삽입·스팸 차단).
+
+### (2) Edge Function 배포
+
+기록은 [`supabase/functions/track`](supabase/functions/track/index.ts) 함수를
+통해서만 이뤄지고, 이 함수가 **요청 IP 가 내부 IP 면 기록하지 않습니다**
+(IP 는 비교에만 쓰고 저장하지 않음).
+
+```bash
+# Supabase CLI 설치 후
+supabase login
+supabase link --project-ref gepphbqhnuufnincxmor
+
+# 함수 배포 (공개 호출이므로 JWT 검증 끔)
+supabase functions deploy track --no-verify-jwt
+```
+
+> `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` 는 함수에 자동 주입되어 별도 설정 불필요.
+> 대시보드의 **Edge Functions** 메뉴에서 코드 붙여넣기로 배포할 수도 있습니다.
+
+### (3) 사무실 IP 등록 — 어드민에서 직접
+
+`/admin/analytics` 의 **"사무실(내부) IP 관리"** 에서 사무실 네트워크로 접속해
+**"현재 내 IP"** 버튼을 누르고 추가하면 됩니다. (CLI/시크릿 불필요, 반영 최대 1분)
+
+### 내부자 제외 동작 정리
+
+- **등록한 사무실 IP** → 기기와 무관하게 자동 제외 (어드민에서 관리)
+- **어드민 로그인 브라우저** → 자동 제외
+- **재택/외부** → `?internal=1` 한 번 접속으로 그 브라우저 제외 (`?internal=0` 해제)
+
 ## 5. 어드민 계정 만들기
 
 Supabase 대시보드 **Authentication > Users > Add user** 에서

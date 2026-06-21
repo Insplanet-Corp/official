@@ -17,6 +17,7 @@ const handleLogout = async () => {
       <h1 class="admin-logo">INSPLANET Admin</h1>
       <nav class="admin-nav">
         <router-link :to="{ name: 'adminContacts' }">문의 내역</router-link>
+        <router-link :to="{ name: 'adminAnalytics' }">방문자 분석</router-link>
         <router-link :to="{ name: 'adminBrochure' }">브로셔 교체</router-link>
       </nav>
       <div class="admin-account">

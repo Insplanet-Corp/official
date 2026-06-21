@@ -7,9 +7,13 @@ import { createPinia } from "pinia";
 
 import App from "./App.vue";
 import router from "./router";
+import { initAnalytics } from "@/lib/analytics";
 
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+
+// ?internal=1 등 분석 opt-out 처리
+initAnalytics();
 
 const app = createApp(App);
 

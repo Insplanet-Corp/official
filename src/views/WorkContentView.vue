@@ -46,7 +46,12 @@
         </div>
         <div>
           <b>회사 브로슈어 다운로드</b>
-          <a :href="brochureUrl" target="_blank">Download</a>
+          <a
+            :href="brochureUrl"
+            target="_blank"
+            @click="trackDownload('brochure', router.path)"
+            >Download</a
+          >
         </div>
       </div>
     </section>
@@ -130,6 +135,7 @@ import MobileDetect from "mobile-detect";
 import worksSetting from "@/works-setting";
 import route from "@/router";
 import { resolveBrochureUrl, FALLBACK_BROCHURE_URL } from "@/lib/brochure";
+import { trackDownload } from "@/lib/analytics";
 const mobileDetect = new MobileDetect(window.navigator.userAgent);
 const isMobile = mobileDetect.mobile();
 const isTablet = mobileDetect.tablet();

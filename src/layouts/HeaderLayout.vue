@@ -34,6 +34,7 @@
           :href="brochureUrl"
           class="btn-download"
           target="_blank"
+          @click="trackDownload('brochure', '/')"
         >
           회사 브로슈어 다운로드
           <span class="ico-download-wrap">
@@ -59,6 +60,7 @@
 import { ref, onMounted, onBeforeUnmount, nextTick } from "vue";
 import { useOfficialStore } from "@/stores/official";
 import { resolveBrochureUrl, FALLBACK_BROCHURE_URL } from "@/lib/brochure";
+import { trackDownload } from "@/lib/analytics";
 
 const officialStore = useOfficialStore();
 const dialogVisible = ref(false);
