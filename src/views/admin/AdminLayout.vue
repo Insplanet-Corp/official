@@ -39,49 +39,64 @@ const scrollTo = (id) => {
 <style scoped>
 .admin-wrap {
   min-height: 100vh;
-  background: #f5f6f8;
-  color: #1f2329;
+  color: #1d1d1f;
 }
+/* Apple global-nav: 슬림한 블랙 바 */
 .admin-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 28px;
   padding: 0 24px;
-  height: 60px;
-  background: #fff;
-  border-bottom: 1px solid #e5e6eb;
+  height: 52px;
+  background: #000;
+  color: #fff;
 }
 .admin-logo {
-  font-size: 18px;
-  font-weight: 700;
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
   margin: 0;
+  color: #fff;
 }
 .admin-nav {
   flex: 1;
   display: flex;
-  gap: 16px;
+  gap: 24px;
 }
 .admin-nav a {
-  color: #4e5969;
+  color: #cccccc;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
+  letter-spacing: -0.12px;
+  transition: color 0.2s ease;
 }
-.admin-nav a.router-link-exact-active {
-  color: #2454ff;
-  font-weight: 600;
+.admin-nav a:hover {
+  color: #fff;
 }
 .admin-account {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px;
 }
 .admin-email {
-  font-size: 13px;
-  color: #86909c;
+  font-size: 12px;
+  letter-spacing: -0.12px;
+  color: #7a7a7a;
+}
+/* 헤더의 로그아웃 버튼: 다크 유틸 그래머 */
+.admin-account :deep(.el-button) {
+  background: #1d1d1f;
+  border-color: #333;
+  color: #fff;
+  border-radius: 8px;
 }
 .admin-main {
-  padding: 24px;
-  max-width: 1200px;
+  padding: 48px 24px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 </style>

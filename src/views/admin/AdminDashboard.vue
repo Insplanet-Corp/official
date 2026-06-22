@@ -28,6 +28,6 @@ import AdminBrochure from "./AdminBrochure.vue";
 .admin-section + .admin-section {
   margin-top: 48px;
   padding-top: 48px;
-  border-top: 1px solid #e5e6eb;
+  border-top: 1px solid #e0e0e0;
 }
 </style>

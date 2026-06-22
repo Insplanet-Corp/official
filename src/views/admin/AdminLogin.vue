@@ -75,21 +75,23 @@ const handleLogin = async () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f6f8;
+  background: #f5f5f7;
 }
 .login-card {
   width: 360px;
-  padding: 40px 32px;
+  padding: 48px 36px;
   background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
 }
 .login-title {
-  font-size: 20px;
-  font-weight: 700;
+  font-family: "SF Pro Display", system-ui, -apple-system, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   text-align: center;
-  margin: 0 0 28px;
-  color: #1f2329;
+  margin: 0 0 32px;
+  color: #1d1d1f;
 }
 .login-btn {
   width: 100%;

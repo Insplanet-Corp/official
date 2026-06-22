@@ -11,6 +11,8 @@ import { initAnalytics } from "@/lib/analytics";
 
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+// Apple 스타일 어드민 테마 (element-plus 이후에 로드해 토큰을 덮어씀)
+import "./assets/admin-theme.css";
 
 // ?internal=1 등 분석 opt-out 처리
 initAnalytics();

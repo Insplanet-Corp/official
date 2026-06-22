@@ -181,8 +181,9 @@ onMounted(fetchContacts);
   margin-bottom: 16px;
 }
 .contacts-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   margin: 0;
 }
 .contacts-actions {

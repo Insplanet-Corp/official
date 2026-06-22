@@ -412,8 +412,9 @@ onMounted(() => {
   margin-bottom: 16px;
 }
 .analytics-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
   margin: 0;
 }
 .analytics-actions {
@@ -429,9 +430,9 @@ onMounted(() => {
 }
 .stat-card {
   background: #fff;
-  border: 1px solid #e5e6eb;
-  border-radius: 10px;
-  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 18px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -481,7 +482,7 @@ onMounted(() => {
 }
 .trend-bar {
   width: 100%;
-  background: linear-gradient(180deg, #4080ff, #2454ff);
+  background: #0066cc;
   border-radius: 3px 3px 0 0;
   min-height: 2px;
   transition: height 0.3s;
