@@ -11,6 +11,11 @@ let officialStore;
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+  scrollBehavior(to) {
+    if (to.hash) {
+      return { el: to.hash, top: 80, behavior: "smooth" };
+    }
+  },
   routes: [
     {
       path: "/",
@@ -44,19 +49,12 @@ const router = createRouter({
       children: [
         {
           path: "",
-          name: "adminContacts",
-          component: () => import("../views/admin/AdminContacts.vue"),
+          name: "adminDashboard",
+          component: () => import("../views/admin/AdminDashboard.vue"),
         },
-        {
-          path: "brochure",
-          name: "adminBrochure",
-          component: () => import("../views/admin/AdminBrochure.vue"),
-        },
-        {
-          path: "analytics",
-          name: "adminAnalytics",
-          component: () => import("../views/admin/AdminAnalytics.vue"),
-        },
+        // 기존 개별 경로는 통합 페이지의 해당 섹션으로 유지(하위호환)
+        { path: "brochure", redirect: { name: "adminDashboard", hash: "#brochure" } },
+        { path: "analytics", redirect: { name: "adminDashboard", hash: "#analytics" } },
       ],
     },
     {
@@ -75,7 +73,7 @@ router.beforeEach(async (to) => {
   await adminStore.init();
 
   if (to.name === "adminLogin") {
-    return adminStore.isLoggedIn() ? { name: "adminContacts" } : true;
+    return adminStore.isLoggedIn() ? { name: "adminDashboard" } : true;
   }
   if (to.meta.requiresAuth && !adminStore.isLoggedIn()) {
     return { name: "adminLogin", query: { redirect: to.fullPath } };

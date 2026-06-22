@@ -9,6 +9,11 @@ const handleLogout = async () => {
   await adminStore.signOut();
   router.replace({ name: "adminLogin" });
 };
+
+const scrollTo = (id) => {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 </script>
 
 <template>
@@ -16,9 +21,9 @@ const handleLogout = async () => {
     <header class="admin-header">
       <h1 class="admin-logo">INSPLANET Admin</h1>
       <nav class="admin-nav">
-        <router-link :to="{ name: 'adminContacts' }">문의 내역</router-link>
-        <router-link :to="{ name: 'adminAnalytics' }">방문자 분석</router-link>
-        <router-link :to="{ name: 'adminBrochure' }">브로셔 교체</router-link>
+        <a href="#contacts" @click.prevent="scrollTo('contacts')">문의 내역</a>
+        <a href="#analytics" @click.prevent="scrollTo('analytics')">방문자 분석</a>
+        <a href="#brochure" @click.prevent="scrollTo('brochure')">브로셔 교체</a>
       </nav>
       <div class="admin-account">
         <span class="admin-email">{{ adminStore.session?.user?.email }}</span>

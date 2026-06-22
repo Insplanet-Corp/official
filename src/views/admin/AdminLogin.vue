@@ -20,7 +20,7 @@ const handleLogin = async () => {
   loading.value = true;
   try {
     await adminStore.signIn(email.value, password.value);
-    const redirect = route.query.redirect || { name: "adminContacts" };
+    const redirect = route.query.redirect || { name: "adminDashboard" };
     router.replace(redirect);
   } catch (err) {
     ElMessage.error(err.message || "로그인에 실패했습니다.");
