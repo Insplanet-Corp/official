@@ -412,7 +412,7 @@ onMounted(() => {
   margin-bottom: 16px;
 }
 .analytics-title {
-  font-family: var(--ap-font-display);
+  font-family: inherit;
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.5px;
