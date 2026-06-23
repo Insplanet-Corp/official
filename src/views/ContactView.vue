@@ -3,11 +3,28 @@ import { ref, reactive } from "vue";
 import { ElMessage } from "element-plus";
 import { supabase } from "@/lib/supabase";
 
+const SYSTEM_TYPES = [
+  "전체",
+  "웹사이트",
+  "앱",
+  "AI",
+  "CMS",
+  "시스템",
+  "플랫폼개발",
+  "이커머스",
+  "브랜딩",
+  "연간 유지보수",
+  "기타",
+];
+const DEV_TYPES = ["신규", "리뉴얼", "부분개편", "컨설팅", "기타"];
+
 const form = reactive({
   name: "",
   email: "",
   phone: "",
   company: "",
+  systemTypes: [],
+  devType: "",
   message: "",
 });
 const agreed = ref(false);
@@ -34,6 +51,8 @@ const submit = async () => {
     email: form.email.trim() || null,
     phone: form.phone.trim() || null,
     company: form.company.trim() || null,
+    system_types: form.systemTypes.length ? form.systemTypes : null,
+    dev_type: form.devType || null,
     message: form.message.trim(),
     privacy_agreed_at: new Date().toISOString(),
   });
@@ -85,6 +104,22 @@ const submit = async () => {
 
         <el-form-item label="회사 / 소속">
           <el-input v-model="form.company" size="large" placeholder="(선택)" />
+        </el-form-item>
+
+        <el-form-item label="시스템 종류 (중복 선택 가능)">
+          <el-checkbox-group v-model="form.systemTypes" class="toggle-group">
+            <el-checkbox-button v-for="opt in SYSTEM_TYPES" :key="opt" :label="opt">
+              {{ opt }}
+            </el-checkbox-button>
+          </el-checkbox-group>
+        </el-form-item>
+
+        <el-form-item label="개발 구분">
+          <el-radio-group v-model="form.devType" class="toggle-group">
+            <el-radio-button v-for="opt in DEV_TYPES" :key="opt" :label="opt">
+              {{ opt }}
+            </el-radio-button>
+          </el-radio-group>
         </el-form-item>
 
         <el-form-item label="문의 내용" required>
@@ -174,6 +209,24 @@ const submit = async () => {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+/* 토글 버튼 그룹: 연결형이 아닌 개별 pill 형태로 줄바꿈 */
+.toggle-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+}
+.toggle-group :deep(.el-checkbox-button),
+.toggle-group :deep(.el-radio-button) {
+  margin: 0;
+}
+.toggle-group :deep(.el-checkbox-button__inner),
+.toggle-group :deep(.el-radio-button__inner) {
+  border: 1px solid #dcdfe6;
+  border-radius: 8px;
+  box-shadow: none !important;
+  padding: 9px 16px;
 }
 .contact-consent {
   margin: 8px 0 28px;

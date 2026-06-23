@@ -116,6 +116,11 @@ onMounted(fetchContacts);
             <p><strong>이메일:</strong> {{ row.email || "-" }}</p>
             <p><strong>연락처:</strong> {{ row.phone || "-" }}</p>
             <p><strong>회사/소속:</strong> {{ row.company || "-" }}</p>
+            <p>
+              <strong>시스템 종류:</strong>
+              {{ row.system_types?.length ? row.system_types.join(", ") : "-" }}
+            </p>
+            <p><strong>개발 구분:</strong> {{ row.dev_type || "-" }}</p>
             <p class="contact-message">
               <strong>내용:</strong><br />{{ row.message }}
             </p>

@@ -9,11 +9,17 @@ create table if not exists public.contacts (
   email       text,
   phone       text,
   company     text,
+  system_types text[],                      -- 시스템 종류(중복 선택)
+  dev_type    text,                          -- 개발 구분(단일 선택)
   message     text not null,
   status      text not null default 'new', -- new | done | spam
   privacy_agreed_at timestamptz,           -- 개인정보 수집·이용 동의 시각
   created_at  timestamptz not null default now()
 );
+
+-- 기존 테이블이 있는 경우 컬럼 추가 (idempotent)
+alter table public.contacts add column if not exists system_types text[];
+alter table public.contacts add column if not exists dev_type text;
 
 create index if not exists contacts_created_at_idx on public.contacts (created_at desc);
 
