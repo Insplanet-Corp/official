@@ -3,8 +3,8 @@ import { ref, reactive } from "vue";
 import { ElMessage } from "element-plus";
 import { supabase } from "@/lib/supabase";
 
-const SYSTEM_TYPES = [
-  "전체",
+const ALL_LABEL = "전체";
+const REAL_SYSTEM_TYPES = [
   "웹사이트",
   "앱",
   "AI",
@@ -16,6 +16,7 @@ const SYSTEM_TYPES = [
   "연간 유지보수",
   "기타",
 ];
+const SYSTEM_TYPES = [ALL_LABEL, ...REAL_SYSTEM_TYPES];
 const DEV_TYPES = ["신규", "리뉴얼", "부분개편", "컨설팅", "기타"];
 
 const form = reactive({
@@ -30,6 +31,27 @@ const form = reactive({
 const agreed = ref(false);
 const submitting = ref(false);
 const done = ref(false);
+
+// "전체" = 전체 선택/해제 마스터 토글. 개별 항목을 모두 고르면 "전체"도 자동 체크.
+const prevSystemTypes = ref([]);
+const onSystemTypesChange = (val) => {
+  const added = val.filter((v) => !prevSystemTypes.value.includes(v));
+  const removed = prevSystemTypes.value.filter((v) => !val.includes(v));
+  let next;
+  if (added.includes(ALL_LABEL)) {
+    next = [...SYSTEM_TYPES]; // 전체 클릭 → 모두 선택
+  } else if (removed.includes(ALL_LABEL)) {
+    next = []; // 전체 해제 → 모두 해제
+  } else {
+    const reals = REAL_SYSTEM_TYPES.filter((t) => val.includes(t));
+    next =
+      reals.length === REAL_SYSTEM_TYPES.length
+        ? [...SYSTEM_TYPES] // 개별로 전부 선택됨 → 전체도 체크
+        : reals; // 일부만 선택 → 전체 해제
+  }
+  form.systemTypes = next;
+  prevSystemTypes.value = next;
+};
 
 const submit = async () => {
   if (!form.name.trim() || !form.message.trim()) {
@@ -51,7 +73,10 @@ const submit = async () => {
     email: form.email.trim() || null,
     phone: form.phone.trim() || null,
     company: form.company.trim() || null,
-    system_types: form.systemTypes.length ? form.systemTypes : null,
+    system_types: (() => {
+      const reals = form.systemTypes.filter((t) => t !== ALL_LABEL);
+      return reals.length ? reals : null;
+    })(),
     dev_type: form.devType || null,
     message: form.message.trim(),
     privacy_agreed_at: new Date().toISOString(),
@@ -107,7 +132,11 @@ const submit = async () => {
         </el-form-item>
 
         <el-form-item label="시스템 종류 (중복 선택 가능)">
-          <el-checkbox-group v-model="form.systemTypes" class="toggle-group">
+          <el-checkbox-group
+            v-model="form.systemTypes"
+            class="toggle-group"
+            @change="onSystemTypesChange"
+          >
             <el-checkbox-button v-for="opt in SYSTEM_TYPES" :key="opt" :label="opt">
               {{ opt }}
             </el-checkbox-button>
