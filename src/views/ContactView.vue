@@ -50,14 +50,14 @@ const submit = async () => {
 <template>
   <section class="contact-page">
     <div class="contact-inner">
-      <header class="contact-head">
+      <div class="contact-head">
         <p class="contact-eyebrow">CONTACT</p>
         <h1 class="contact-title">프로젝트 문의</h1>
         <p class="contact-desc">
           궁금한 점이나 함께하고 싶은 프로젝트가 있다면 남겨주세요.<span class="br_pc"></span>
           확인 후 빠르게 회신드리겠습니다.
         </p>
-      </header>
+      </div>
 
       <div v-if="done" class="contact-done">
         <h2>문의가 접수되었습니다.</h2>
@@ -141,13 +141,14 @@ const submit = async () => {
 
 <style scoped lang="scss">
 .contact-page {
+  width: 100%;
   min-height: 100vh;
   padding: 160px 24px 120px;
   background: #fff;
   color: #111;
 }
 .contact-inner {
-  max-width: 720px;
+  max-width: 560px;
   margin: 0 auto;
 }
 .contact-head {
