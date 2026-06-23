@@ -56,6 +56,16 @@
   background: var(--ap-parchment) !important;
 }
 
+/* ── 기본 폰트 14px: 전역 *{font-size:16px} 무력화(어드민 한정) ──
+ * 컴포넌트별 스코프 스타일은 [data-v] 특이도(0,2,0)로 이 규칙(0,1,0)을
+ * 이기므로 제목/숫자 등 명시 크기는 그대로 유지된다. */
+.admin-wrap,
+.login-wrap,
+.admin-wrap *,
+.login-wrap * {
+  font-size: 14px;
+}
+
 /* ── 헤드라인: Apple tight (음수 트래킹 + weight 600) ── */
 .admin-wrap h1,
 .admin-wrap h2,

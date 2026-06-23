@@ -134,6 +134,14 @@ onMounted(fetchContacts);
       <el-table-column prop="name" label="이름" width="120" />
       <el-table-column prop="email" label="이메일" min-width="180" />
       <el-table-column prop="message" label="내용" min-width="240" show-overflow-tooltip />
+      <el-table-column label="시스템 종류" min-width="160" show-overflow-tooltip>
+        <template #default="{ row }">
+          {{ row.system_types?.length ? row.system_types.join(", ") : "-" }}
+        </template>
+      </el-table-column>
+      <el-table-column label="개발 구분" width="100">
+        <template #default="{ row }">{{ row.dev_type || "-" }}</template>
+      </el-table-column>
       <el-table-column label="상태" width="100">
         <template #default="{ row }">
           <el-tag :type="statusMeta[row.status]?.type" size="small">
