@@ -207,7 +207,7 @@ const submit = async () => {
 .contact-page {
   width: 100%;
   min-height: 100vh;
-  padding: 160px 24px 120px;
+  padding: 40px 24px 120px;
   background: #fff;
   color: #111;
 }
@@ -318,7 +318,7 @@ const submit = async () => {
 
 @media (max-width: 600px) {
   .contact-page {
-    padding: 120px 20px 80px;
+    padding: 40px 20px 80px;
   }
   .contact-title {
     font-size: 30px;

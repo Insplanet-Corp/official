@@ -70,7 +70,7 @@ const scrollTo = (id) => {
 .admin-nav a {
   color: #cccccc;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.12px;
   transition: color 0.2s ease;
 }
@@ -83,7 +83,7 @@ const scrollTo = (id) => {
   gap: 14px;
 }
 .admin-email {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.12px;
   color: #7a7a7a;
 }

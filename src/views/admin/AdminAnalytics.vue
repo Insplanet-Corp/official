@@ -412,6 +412,7 @@ onMounted(() => {
   margin-bottom: 16px;
 }
 .analytics-title {
+  font-family: var(--ap-font-display);
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -0.5px;
@@ -448,7 +449,7 @@ onMounted(() => {
   line-height: 1.1;
 }
 .stat-sub {
-  font-size: 12px;
+  font-size: 14px;
   color: #c9cdd4;
 }
 .panel {
@@ -509,7 +510,7 @@ onMounted(() => {
 }
 .page-path {
   color: #c9cdd4;
-  font-size: 12px;
+  font-size: 14px;
   margin-left: 6px;
 }
 .ip-add {
