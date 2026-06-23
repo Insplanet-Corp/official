@@ -96,7 +96,5 @@ const scrollTo = (id) => {
 }
 .admin-main {
   padding: 48px 24px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 </style>
