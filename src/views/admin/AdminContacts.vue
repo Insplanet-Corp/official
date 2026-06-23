@@ -92,7 +92,7 @@ onMounted(fetchContacts);
           <el-radio-button
             v-for="opt in statusOptions"
             :key="opt.value"
-            :value="opt.value"
+            :label="opt.value"
           >
             {{ opt.label }}
           </el-radio-button>
